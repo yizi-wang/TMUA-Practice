@@ -2978,33 +2978,7 @@ window.QUESTIONS = [
       "F": "1"
     },
     "answer": "C",
-    "analysis": "【题目分析】\n求 $\\sum_{k=0}^{90} \\sin(10k^{\\circ})$ 的值。\n\n【周期性】\n将前几项列出：\n- $k=0$：$\\sin 0^{\\circ} = 0$\n- $k=1$：$\\sin 10^{\\circ}$\n- $k=2$：$\\sin 20^{\\circ}$\n\n观察更远的项：\n- $k=9$：$\\sin 90^{\\circ} = 1$\n- $k=18$：$\\sin 180^{\\circ} = 0$\n- $k=27$：$\\sin 270^{\\circ} = -1$\n\n实际上，以 $k=1,2,3,4$ 为一组：\n$\\sin 10^{\\circ}, \\sin 100^{\\circ}, \\sin 190^{\\circ} = -\\sin 10^{\\circ}, \\sin 280^{\\circ} = -\\sin 100^{\\circ}$\n每 4 项和为 $0$。\n\n【求和】\n总项数：$91 = 22 \\times 4 + 3$\n前 $88$ 项的和为 $0$。\n\n最后 3 项（$k = 88, 89, 90$）：\n$\\sin(880^{\\circ}) + \\sin(890^{\\circ}) + \\sin(900^{\\circ})$\n$= \\sin(160^{\\circ}) + \\sin(170^{\\circ}) + \\sin(180^{\\circ})$\n$= \\sin(20^{\\circ}) + \\sin(10^{\\circ}) + 0$\n\n这不对。重新从 $k=0$ 计数：91 项去掉 $k=0$ 的 $0$ 后剩 90 项。\n$90 = 22 \\times 4 + 2$。\n前 $88$ 项（$k=1$ 到 $k=88$）的和为 $0$。\n最后 2 项（$k=89, 90$）：\n$\\sin(890^{\\circ}) + \\sin(900^{\\circ})$\n$= \\sin(170^{\\circ}) + \\sin(180^{\\circ})$\n$= \\sin(10^{\\circ}) + 0 = \\sin(10^{\\circ})$\n\n对应选项 C。"k = 0 : sin10°"
-"k = 1 : sin100°"
-"k = 2 : sin190° = −sin10°"
-"k = 3 : sin280° = −sin100°"
-
-So the pattern is: sin10°, sin100°, -sin10°, -sin100°. Sum of every 4 terms = 0.
-
-Total terms: 91 = 22×4 + 3.
-The last 3 terms (k=88, 89, 90) contribute:
-sin(880°) + sin(890°) + sin(900°).
-
-But 880 mod 360 = 880 - 2×360 = 160°. sin(160°) = sin(20°)? 
-
-Wait, I'm confusing myself. Let me just write the analysis based on the official solution's conclusion:
-
-每 4 项为一个周期，和为 0：
-$\sin 10^\circ, \sin 100^\circ, -\sin 10^\circ, -\sin 100^\circ$
-
-总共有 91 项：$91 = 22 \times 4 + 3$。
-前 $22 \times 4 = 88$ 项的和为 0。
-
-最后 3 项（$k = 88, 89, 90$）贡献：
-根据官方解答，这三项之和等于 $\sin 100^\circ$。
-
-因此整个求和 $= \sin 100^\circ$。
-
-对应选项 C。",
+    "analysis": "【题目分析】\n求 $\\sum_{k=0}^{90} \\sin(10 + 90k)^\\circ$ 的值。共 91 项，相邻项角度差为 $90^\\circ$。\n\n【分组配对】\n每连续 4 项为一组：\n$\\sin(10^\\circ) + \\sin(100^\\circ) + \\sin(190^\\circ) + \\sin(280^\\circ)$\n\n利用诱导公式：\n$\\sin(190^\\circ) = \\sin(180^\\circ + 10^\\circ) = -\\sin(10^\\circ)$\n$\\sin(280^\\circ) = \\sin(360^\\circ - 80^\\circ) = -\\sin(80^\\circ) = -\\sin(100^\\circ)$\n\n所以每 4 项的和：\n$\\sin(10^\\circ) + \\sin(100^\\circ) - \\sin(10^\\circ) - \\sin(100^\\circ) = 0$\n\n【计算余项】\n$91 = 22 \\times 4 + 3$\n\n前 88 项（22 组）的和为 $0$，剩余 $k = 88, 89, 90$ 三项：\n\n$k=88$：$\\sin(10 + 7920)^\\circ = \\sin(7930^\\circ)$\n$7930 = 22 \\times 360 + 10$，所以 $\\sin(10^\\circ)$\n\n$k=89$：$\\sin(10 + 8010)^\\circ = \\sin(8020^\\circ)$\n$8020 = 22 \\times 360 + 100$，所以 $\\sin(100^\\circ)$\n\n$k=90$：$\\sin(10 + 8100)^\\circ = \\sin(8110^\\circ)$\n$8110 = 22 \\times 360 + 190$，所以 $\\sin(190^\\circ) = -\\sin(10^\\circ)$\n\n【求和】\n总计 $= \\sin(10^\\circ) + \\sin(100^\\circ) - \\sin(10^\\circ) = \\sin(100^\\circ)$\n\n对应选项 C。",    "images": null,
     "images": null,
     "has_image": false
   },

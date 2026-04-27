@@ -1353,13 +1353,19 @@ class TMUAQuiz {
         document.getElementById('submitBtn').classList.remove('hidden');
         document.getElementById('skipBtn').classList.remove('hidden');
 
+        // 隐藏回顾模式的"返回结果"按钮
+        const reviewBackBtn = document.getElementById('reviewBackBtn');
+        if (reviewBackBtn) reviewBackBtn.classList.add('hidden');
+
         // 确保 mock-active 已移除
         document.getElementById('practiceView').classList.remove('mock-active');
         document.getElementById('mockHeader').classList.add('hidden');
 
-        document.getElementById('welcomeView').classList.remove('hidden');
-        document.getElementById('mockSelectView').classList.add('hidden');
+        // 隐藏所有其他视图（包括模拟结果页）
+        document.getElementById('mockResultView').classList.add('hidden');
         document.getElementById('practiceView').classList.add('hidden');
+        document.getElementById('mockSelectView').classList.add('hidden');
+        document.getElementById('welcomeView').classList.remove('hidden');
         this.updateWelcomeProgress();
     }
 

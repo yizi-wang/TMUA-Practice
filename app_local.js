@@ -683,18 +683,25 @@ class TMUAQuiz {
             btn.classList.add('current');
         }
 
-        if (this.sessionProgress.correct.includes(q.id)) {
-            btn.classList.add('correct');
-        } else if (this.sessionProgress.wrong.includes(q.id)) {
-            btn.classList.add('wrong');
-        } else if (this.currentAnswers[q.id]) {
-            btn.classList.add('pending');
-        } else if (this.progress.correct.includes(q.id)) {
-            btn.classList.add('correct');
-        } else if (this.progress.wrong.includes(q.id)) {
-            btn.classList.add('wrong');
+        // Mock 模式下不显示正误，只区分已答/未答
+        if (this.currentMode === 'mock' && this.mockSession.active) {
+            if (this.currentAnswers[q.id]) {
+                btn.classList.add('answered');
+            }
         } else {
-            btn.classList.add('pending');
+            if (this.sessionProgress.correct.includes(q.id)) {
+                btn.classList.add('correct');
+            } else if (this.sessionProgress.wrong.includes(q.id)) {
+                btn.classList.add('wrong');
+            } else if (this.currentAnswers[q.id]) {
+                btn.classList.add('pending');
+            } else if (this.progress.correct.includes(q.id)) {
+                btn.classList.add('correct');
+            } else if (this.progress.wrong.includes(q.id)) {
+                btn.classList.add('wrong');
+            } else {
+                btn.classList.add('pending');
+            }
         }
 
         btn.addEventListener('click', () => {
@@ -864,7 +871,7 @@ class TMUAQuiz {
             }
         }
 
-        if (this.sessionProgress.completed.includes(q.id)) {
+        if (this.sessionProgress.completed.includes(q.id) && this.currentMode !== 'mock') {
             document.querySelectorAll('.option').forEach(opt => {
                 const key = opt.dataset.key;
                 if (key === q.answer) {

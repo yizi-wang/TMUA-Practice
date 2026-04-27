@@ -179,8 +179,9 @@
         }
         
         .question-text {
-            font-size: 16px;
-            margin-bottom: 20px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 24px;
             white-space: pre-wrap;
         }
         
@@ -237,7 +238,7 @@
         .options {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 12px;
         }
         
         .option {
@@ -256,6 +257,8 @@
         .option.selected {
             border-color: #3498db;
             background: #e8f4fc;
+            box-shadow: inset 4px 0 0 #3498db;
+            font-weight: 600;
         }
         
         .option.correct {
@@ -292,10 +295,16 @@
         .btn-primary {
             background: #3498db;
             color: white;
+            padding: 12px 28px;
+            font-size: 15px;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(52, 152, 219, 0.30);
         }
-        
+
         .btn-primary:hover {
             background: #2980b9;
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.40);
+            transform: translateY(-1px);
         }
         
         .btn-secondary {
@@ -612,6 +621,12 @@
             gap: 12px;
         }
 
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
         .back-link {
             font-size: 14px;
             color: #3498db;
@@ -1423,7 +1438,7 @@
             margin-bottom: 8px;
         }
 
-        .answer-card-header {
+        .answer-c        .answer-card-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -1432,6 +1447,16 @@
             flex-wrap: wrap;
         }
 
+        .answer-card-progress {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 12px;
+            font-size: 13px;
+            color: #555;
+            border-bottom: 1px solid #e0e0e0;
+            margin-bottom: 8px;
+        }
+        
         .answer-card-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(44px, 1fr));
@@ -1909,6 +1934,11 @@
             background: transparent;
         }
 
+        body.dark-mode .answer-card-progress {
+            color: #a0a0b0;
+            border-bottom-color: #2a3a5e;
+        }
+        
         body.dark-mode .answer-card-header strong {
             color: #e0e0e0;
         }
@@ -1963,6 +1993,8 @@
         body.dark-mode .option.selected {
             border-color: #3498db;
             background: #1e4070;
+            box-shadow: inset 4px 0 0 #3498db;
+            font-weight: 600;
         }
 
         body.dark-mode .option.correct {
@@ -2404,10 +2436,8 @@
                     <a href="javascript:void(0)" id="backToHomeLink" class="back-link">🏠 首页</a>
                     <h1>📚 TMUA练习系统</h1>
                 </div>
-                <div class="stats">
-                    <span id="progressText">进度: 0/280</span>
-                    <span id="correctRate">正确率: 0%</span>
-                    <button class="btn btn-small" id="darkModeBtn" onclick="window.quizApp && window.quizApp.toggleDarkMode()" style="margin-left:6px;">🌙</button>
+                <div class="header-right">
+                    <button class="btn btn-small" id="darkModeBtn" onclick="window.quizApp && window.quizApp.toggleDarkMode()">🌙</button>
                     <button class="btn btn-small btn-danger" id="clearProgressBtn">清空进度</button>
                 </div>
             </header>
@@ -2452,7 +2482,7 @@
                 </select>
             </div>
 
-            <details class="collapsible-panel insights-panel" open>
+            <details class="collapsible-panel insights-panel">
                 <summary class="collapsible-summary">
                     <span>📊 数据面板</span>
                     <span class="collapse-arrow">&#9660;</span>
@@ -2526,6 +2556,10 @@
                             <span>📋 答题卡</span>
                             <span class="collapse-arrow">&#9660;</span>
                         </summary>
+                        <div class="answer-card-progress">
+                            <span id="progressText">进度: 0/280</span>
+                            <span id="correctRate">正确率: 0%</span>
+                        </div>
                         <div class="answer-card-header">
                             <button class="btn btn-secondary btn-small" id="redoWrongBtn">错题二刷</button>
                         </div>

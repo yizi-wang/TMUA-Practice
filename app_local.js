@@ -94,6 +94,8 @@ class TMUAQuiz {
         // 回顾模式状态
         this.reviewMode = false;
         this.reviewIndex = 0;
+        // 答错时延迟揭示正确答案：等打开解析面板时再显示
+        this.pendingRevealCorrect = null;
         
         this.init();
     }
@@ -178,7 +180,7 @@ class TMUAQuiz {
             this.submitAnswer();
         });
         
-        // 跳过
+        // 下一题
         document.getElementById('skipBtn').addEventListener('click', () => {
             this.nextQuestion();
         });
@@ -187,6 +189,15 @@ class TMUAQuiz {
         document.getElementById('analysisBtn').addEventListener('click', () => {
             const analysisArea = document.getElementById('analysisArea');
             analysisArea.open = !analysisArea.open;
+        });
+
+        // 解析面板打开时揭示正确答案
+        document.getElementById('analysisArea').addEventListener('toggle', () => {
+            const analysisArea = document.getElementById('analysisArea');
+            if (analysisArea.open && this.pendingRevealCorrect) {
+                this.revealCorrectAnswer(this.pendingRevealCorrect);
+                this.pendingRevealCorrect = null;
+            }
         });
         
         // 上一题
@@ -945,6 +956,7 @@ class TMUAQuiz {
     }
     
     showQuestion() {
+        this.pendingRevealCorrect = null;  // 切换题目时清除待揭示的正确答案
         if (this.filteredQuestions.length === 0) {
             document.getElementById('questionText').textContent = '没有符合条件的题目';
             document.getElementById('optionsArea').innerHTML = '';
@@ -1021,7 +1033,7 @@ class TMUAQuiz {
             div.dataset.key = key;
             
             const renderedValue = renderMath(value);
-            div.innerHTML = `<span class="option-label">${key}.</span> ${renderedValue}`;
+            div.innerHTML = `<span class="option-label">${key}</span><span class="option-content">${renderedValue}</span><span class="option-feedback"></span>`;
             
             div.addEventListener('click', () => {
                 document.querySelectorAll('.option').forEach(o => o.classList.remove('selected'));
@@ -1046,8 +1058,12 @@ class TMUAQuiz {
                 const key = opt.dataset.key;
                 if (key === q.answer) {
                     opt.classList.add('correct');
+                    const feedback = opt.querySelector('.option-feedback');
+                    if (feedback) feedback.textContent = '✅';
                 } else if (key === this.currentAnswers[q.id]) {
                     opt.classList.add('wrong');
+                    const feedback = opt.querySelector('.option-feedback');
+                    if (feedback) feedback.textContent = '❌';
                 }
             });
         }
@@ -1073,8 +1089,12 @@ class TMUAQuiz {
                 const key = opt.dataset.key;
                 if (key === q.answer) {
                     opt.classList.add('correct');
+                    const feedback = opt.querySelector('.option-feedback');
+                    if (feedback) feedback.textContent = '✅';
                 } else if (key === this.currentAnswers[q.id]) {
                     opt.classList.add('wrong');
+                    const feedback = opt.querySelector('.option-feedback');
+                    if (feedback) feedback.textContent = '❌';
                 }
                 // 移除点击提交行为
                 opt.style.pointerEvents = 'none';
@@ -1095,14 +1115,30 @@ class TMUAQuiz {
         const correct = this.selectedOption === q.answer;
 
         if (this.currentMode !== 'mock') {
-            document.querySelectorAll('.option').forEach(opt => {
-                const key = opt.dataset.key;
-                if (key === q.answer) {
-                    opt.classList.add('correct');
-                } else if (key === this.selectedOption && !correct) {
-                    opt.classList.add('wrong');
-                }
-            });
+            if (correct) {
+                // 答对：立即显示正确答案，清除待揭示状态
+                this.pendingRevealCorrect = null;
+                document.querySelectorAll('.option').forEach(opt => {
+                    const key = opt.dataset.key;
+                    if (key === q.answer) {
+                        opt.classList.add('correct', 'animate');
+                        const feedback = opt.querySelector('.option-feedback');
+                        if (feedback) feedback.textContent = '✅';
+                    }
+                });
+            } else {
+                // 答错：只标记错误选项，正确答案等打开解析时再显示
+                document.querySelectorAll('.option').forEach(opt => {
+                    const key = opt.dataset.key;
+                    if (key === this.selectedOption) {
+                        opt.classList.add('wrong', 'animate');
+                        const feedback = opt.querySelector('.option-feedback');
+                        if (feedback) feedback.textContent = '❌';
+                    }
+                });
+                // 标记：等解析打开时再揭示正确答案
+                this.pendingRevealCorrect = q.answer;
+            }
         }
 
         // 错题翻身核心修复：无论是否首次作答，每次提交都实时更新 progress
@@ -1153,7 +1189,18 @@ class TMUAQuiz {
             }, 300);
         }
     }
-    
+
+    revealCorrectAnswer(correctKey) {
+        document.querySelectorAll('.option').forEach(opt => {
+            const key = opt.dataset.key;
+            if (key === correctKey && !opt.classList.contains('correct')) {
+                opt.classList.add('correct', 'animate');
+                const feedback = opt.querySelector('.option-feedback');
+                if (feedback) feedback.textContent = '✅';
+            }
+        });
+    }
+
     prevQuestion() {
         if (this.reviewMode) {
             if (this.reviewIndex > 0) {
@@ -1306,13 +1353,19 @@ class TMUAQuiz {
         document.getElementById('submitBtn').classList.remove('hidden');
         document.getElementById('skipBtn').classList.remove('hidden');
 
+        // 隐藏回顾模式的"返回结果"按钮
+        const reviewBackBtn = document.getElementById('reviewBackBtn');
+        if (reviewBackBtn) reviewBackBtn.classList.add('hidden');
+
         // 确保 mock-active 已移除
         document.getElementById('practiceView').classList.remove('mock-active');
         document.getElementById('mockHeader').classList.add('hidden');
 
-        document.getElementById('welcomeView').classList.remove('hidden');
-        document.getElementById('mockSelectView').classList.add('hidden');
+        // 隐藏所有其他视图（包括模拟结果页）
+        document.getElementById('mockResultView').classList.add('hidden');
         document.getElementById('practiceView').classList.add('hidden');
+        document.getElementById('mockSelectView').classList.add('hidden');
+        document.getElementById('welcomeView').classList.remove('hidden');
         this.updateWelcomeProgress();
     }
 

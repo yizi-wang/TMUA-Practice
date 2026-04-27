@@ -5090,7 +5090,7 @@ window.QUESTIONS = [
       "F": "$1 \\le g(x) \\le f(x)$ **or** $f(x) \\le g(x) \\le 1$"
     },
     "answer": "F",
-    "analysis": "【题目分析】\n比较函数 f(x) = log₂(log₂√x) 和 g(x) = log₂(√log₂x) 的大小关系。\n\n【解题步骤】\n第一步：简化表达式\nf(x) = log₂(log₂√x) = log₂(log₂(x^(1/2))) = log₂((1/2)log₂x)\n\ng(x) = log₂(√log₂x) = log₂((log₂x)^(1/2)) = (1/2)log₂(log₂x)\n\n第二步：设变量简化\n设 a = log₂x，因为 x > 1，所以 a > 0\n\nf(x) = log₂(a/2) = log₂a - log₂2 = log₂a - 1\ng(x) = (1/2)log₂a = log₂√a\n\n第三步：比较 f 和 g\n设 b = log₂a\nf = b - 1\ng = b/2（因为 log₂√a = (1/2)log₂a = b/2）\n\n比较：f - g = b - 1 - b/2 = b/2 - 1 = (log₂a)/2 - 1\n\n当 a = 4（即 x = 16）时：\nlog₂a = 2, f - g = 1 - 1 = 0\n\n当 a > 4（即 x > 16）时：\nf > g\n\n当 0 < a < 4（即 1 < x < 16）时：\nf < g\n\n第四步：分析具体取值范围\nx > 1 → a = log₂x > 0\nf(x) = log₂(a/2)\n当 a > 2（即 x > 4）时，f(x) > 0\n当 a = 2（即 x = 4）时，f(x) = 0\n当 a < 2（即 x < 4）时，f(x) < 0\n\n对于所有 x > 1，需要确定 f 和 g 的相对位置...\n详细分析后，答案为D。\n\n【正确答案】D",
+    "analysis": "【题目分析】\n比较 $f(x)=\\log_2(\\log_2\\sqrt{x})$ 与 $g(x)=\\log_2(\\sqrt{\\log_2 x})$ 的大小关系。\n\n【解题步骤——化简】\n$f(x) = \\log_2\\!\\left(\\frac{1}{2}\\log_2 x\\right) = -1 + \\log_2(\\log_2 x)$\n$g(x) = \\log_2\\!\\left((\\log_2 x)^{1/2}\\right) = \\frac{1}{2}\\log_2(\\log_2 x)$\n\n令 $z = \\log_2(\\log_2 x)$（$x>1$ 时 $\\log_2 x>0$，$z$ 可取任意实数），\n则 $f = z-1$，$g = \\frac{1}{2}z$。\n\n**两函数交点**：$z-1 = \\frac{1}{2}z \\Rightarrow z=2$，此时 $f=g=1$。\n\n**图像分析**：\n- 当 $z \\geq 2$（即 $f,g \\geq 1$）时，$f \\geq g$\n- 当 $z \\leq 2$（即 $f,g \\leq 1$）时，$f \\leq g$\n\n即：$f(x) \\geq g(x) \\geq 1$ 或 $f(x) \\leq g(x) \\leq 1$（两者同时成立）。\n\n对应选项 F。",
     "images": null,
     "has_image": false
   },
@@ -5113,7 +5113,7 @@ window.QUESTIONS = [
       "H": "I, II and III"
     },
     "answer": "C",
-    "analysis": "【题目分析】\n三角形ABC, AB=1, sinA=x, sinB=y, 0<x<y<1\n判断是否能画出唯一/两个/三个三角形。\n\n【解题步骤】\nsinA=x → A=arcsin(x)或π-arcsin(x)\nsinB=y → B=arcsin(y)或π-arcsin(y)\n\n不同组合的角需满足A+B+C=π（C>0）\n组合1: A=α₁,B=α₂ → C=π-α₁-α₂ ✓\n组合2: A=α₁,B=π-α₂ → 需α₂>α₁使C>0\n组合3: A=π-α₁,B=α₂ → 需α₁>α₂使C>0\n\n由于x<y, α₁<α₂，组合2有效，组合3无效。\n最多两个三角形。\n\n命题III（三个三角形）不可能。\n\n但答案A说\"none of them\"，可能题目理解不同。\n\n【正确答案】A",
+    "analysis": "【题目分析】\n三角形 $ABC$，$AB=1$，$\\sin A = x$，$\\sin B = y$，$0 < x < y < 1$。判断命题 I/II/III。\n\n【解题步骤】\n记 $\\theta = \\arcsin x$，$\\phi = \\arcsin y$（均为锐角），则 $\\theta < \\phi$（因 $x < y$）。\n$A$ 可取 $\\theta$ 或 $\\pi - \\theta$；$B$ 可取 $\\phi$ 或 $\\pi - \\phi$。\n\n**Case 1**（$A=\\theta$, $B=\\phi$，均锐角）：\n$A+B = \\theta+\\phi < \\pi$，$C = \\pi - A - B > 0$ ✓。唯一确定一个三角形。\n\n**Case 2**（$A=\\pi-\\theta$, $B=\\phi$，A 钝 B 锐）：\n$A+B = \\pi-\\theta+\\phi > \\pi$（因 $\\phi > \\theta$），$C < 0$ ✗。不可能。\n\n**Case 3**（$A=\\theta$, $B=\\pi-\\phi$，A 锐 B 钝）：\n$A+B = \\pi-(\\phi-\\theta) < \\pi$，$C = \\phi-\\theta > 0$ ✓。唯一确定一个三角形。\n\n**Case 4**（$A=\\pi-\\theta$, $B=\\pi-\\phi$，均钝角）：两钝角之和超过 $\\pi$，不可能。\n\n**总结**：Case 1 和 Case 3 各产生一个三角形，Case 2 和 4 不可能。\n因此**总能画出恰好两个不同的三角形**，与 $x,y$ 的取值无关。\n\n命题 I（恰一个）✗、II（恰两个）✓、III（恰三个）✗。\n\n对应选项 C。",
     "images": null,
     "has_image": false
   },
@@ -5136,7 +5136,7 @@ window.QUESTIONS = [
       "H": "360"
     },
     "answer": "F",
-    "analysis": "【题目分析】\nθ∈{1°,2°,...,360°}\n求满足 sinθ|cosθ|+cosθ|sinθ|=0 的θ个数。\n\n【解题步骤】\n简化：√(1+sinθ)√(1-sinθ)=|cosθ|, √(1+cosθ)√(1-cosθ)=|sinθ|\n方程: sinθ|cosθ|+cosθ|sinθ|=0\n\n分析特定区间：\n当θ∈(90°,180°): sin>0,cos<0 → sin(-cos)+cos(sin)=-sinθcosθ+cosθsinθ=0 ✓恒成立\n当θ∈(270°,360°): sin<0,cos>0 → sin(cos)+cos(-sin)=sinθcosθ-cosθsinθ=0 ✓恒成立\n\n边界点：θ=90°(sin=1,cos=0)→1·0+0·1=0✓\nθ=270°(sin=-1,cos=0)→(-1)·0+0·1=0✓\nθ=0°=360°(sin=0,cos=1)→0·1+1·0=0✓\n\n但答案D=4，可能只考虑特定解而非区间？\n\n【正确答案】D",
+    "analysis": "【题目分析】\n$\theta \\in \\{1°, 2°, \\ldots, 360°\\}$，求满足给定方程的 $\theta$ 的个数。\n\n【解题步骤——化简】\n$\sqrt{(1+\\sin\\theta)(1-\\sin\\theta)} = \\sqrt{\\cos^2\\theta} = |\\cos\\theta|$\n$\sqrt{(1+\\cos\\theta)(1-\\cos\\theta)} = \\sqrt{\\sin^2\\theta} = |\\sin\\theta|$\n\n方程化简为：$\\sin\\theta\\,|\\cos\\theta| + \\cos\\theta\\,|\\sin\\theta| = 0$\n\n**分类讨论**：\n- $\\sin\\theta > 0, \\cos\\theta > 0$（第一象限）：$2\\sin\\theta\\cos\\theta > 0$ ✗\n- $\\sin\\theta < 0, \\cos\\theta < 0$（第三象限）：$-2\\sin\\theta\\cos\\theta > 0$ ✗\n- $\\sin\\theta > 0, \\cos\\theta < 0$（第二象限）：$-\\sin\\theta\\cos\\theta + \\sin\\theta\\cos\\theta = 0$ ✓\n- $\\sin\\theta < 0, \\cos\\theta > 0$（第四象限）：$\\sin\\theta\\cos\\theta - \\sin\\theta\\cos\\theta = 0$ ✓\n- $\\sin\\theta = 0$ 或 $\\cos\\theta = 0$（轴上）：$= 0$ ✓\n\n**满足条件的范围**：$90° \\leq \\theta \\leq 180°$ 或 $270° \\leq \\theta \\leq 360°$。\n\n计数：每个区间 91 个角（含两端点），共 $91 + 91 = 182$ 个。\n\n对应选项 F。",
     "images": null,
     "has_image": false
   },
@@ -5159,7 +5159,7 @@ window.QUESTIONS = [
       "H": "100"
     },
     "answer": "E",
-    "analysis": "【题目分析】\nf₁(x)=|x|\nf_{n+1}(x)=|f_n(x)+x|\n求∫_{-1}^{1}f₉₉(x)dx\n\n【解题步骤】\n计算前几项找规律：\nf₁(x)=|x|\nf₂(x)=||x|+x|\n  x≥0: |x+x|=2x\n  x<0: |(-x)+x|=0\nf₃(x): x≥0→3x, x<0→-x\nf₄(x): x≥0→4x, x<0→0\n\n规律：\n- x≥0: f_n(x)=n·x\n- x<0: n奇数时=-x, n偶数时=0\n\nn=99(奇): f₉₉(x)=99x(x≥0), -x(x<0)\n\n积分: ∫_{-1}^{0}(-x)dx+∫_{0}^{1}99x·dx\n=0.5+49.5=50\n\n【正确答案】E",
+    "analysis": "【题目分析】\n$f_1(x) = |x|$，$f_{n+1}(x) = |f_n(x) + x|$，求 $\\int_{-1}^{1} f_{99}(x)\\,dx$。\n\n【解题步骤——找规律】\n$f_1(x) = |x|$：$x<0$ 时 $=-x$，$x \\geq 0$ 时 $=x$\n\n$f_2(x) = |f_1(x)+x|$：\n- $x<0$：$|-x+x| = 0$\n- $x \\geq 0$：$|x+x| = 2x$\n\n$f_3(x) = |f_2(x)+x|$：\n- $x<0$：$|0+x| = -x$\n- $x \\geq 0$：$|2x+x| = 3x$\n\n$f_4(x) = |f_3(x)+x|$：\n- $x<0$：$|-x+x| = 0$\n- $x \\geq 0$：$|3x+x| = 4x$\n\n**归纳**：\n- $n$ 为偶数：$f_n(x) = 0$（$x<0$），$f_n(x) = nx$（$x \\geq 0$）\n- $n$ 为奇数：$f_n(x) = -x$（$x<0$），$f_n(x) = nx$（$x \\geq 0$）\n\n$n=99$（奇数）：$f_{99}(x) = -x$（$x<0$），$f_{99}(x) = 99x$（$x \\geq 0$）\n\n**计算积分**：\n$\\int_{-1}^{0}(-x)\\,dx + \\int_{0}^{1}99x\\,dx = \\frac{1}{2} + \\frac{99}{2} = 50$\n\n对应选项 E。",
     "images": null,
     "has_image": false
   },

@@ -1021,7 +1021,7 @@ class TMUAQuiz {
             div.dataset.key = key;
             
             const renderedValue = renderMath(value);
-            div.innerHTML = `<span class="option-label">${key}.</span> ${renderedValue}`;
+            div.innerHTML = `<span class="option-label">${key}</span><span class="option-content">${renderedValue}</span><span class="option-feedback"></span>`;
             
             div.addEventListener('click', () => {
                 document.querySelectorAll('.option').forEach(o => o.classList.remove('selected'));
@@ -1046,8 +1046,12 @@ class TMUAQuiz {
                 const key = opt.dataset.key;
                 if (key === q.answer) {
                     opt.classList.add('correct');
+                    const feedback = opt.querySelector('.option-feedback');
+                    if (feedback) feedback.textContent = '✅';
                 } else if (key === this.currentAnswers[q.id]) {
                     opt.classList.add('wrong');
+                    const feedback = opt.querySelector('.option-feedback');
+                    if (feedback) feedback.textContent = '❌';
                 }
             });
         }
@@ -1073,8 +1077,12 @@ class TMUAQuiz {
                 const key = opt.dataset.key;
                 if (key === q.answer) {
                     opt.classList.add('correct');
+                    const feedback = opt.querySelector('.option-feedback');
+                    if (feedback) feedback.textContent = '✅';
                 } else if (key === this.currentAnswers[q.id]) {
                     opt.classList.add('wrong');
+                    const feedback = opt.querySelector('.option-feedback');
+                    if (feedback) feedback.textContent = '❌';
                 }
                 // 移除点击提交行为
                 opt.style.pointerEvents = 'none';
@@ -1098,9 +1106,15 @@ class TMUAQuiz {
             document.querySelectorAll('.option').forEach(opt => {
                 const key = opt.dataset.key;
                 if (key === q.answer) {
-                    opt.classList.add('correct');
+                    opt.classList.add('correct', 'animate');
+                    // 填入 ✅ 图标
+                    const feedback = opt.querySelector('.option-feedback');
+                    if (feedback) feedback.textContent = '✅';
                 } else if (key === this.selectedOption && !correct) {
-                    opt.classList.add('wrong');
+                    opt.classList.add('wrong', 'animate');
+                    // 填入 ❌ 图标
+                    const feedback = opt.querySelector('.option-feedback');
+                    if (feedback) feedback.textContent = '❌';
                 }
             });
         }

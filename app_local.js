@@ -630,6 +630,7 @@ class TMUAQuiz {
             return;
         }
 
+        this.reviewMode = false;  // 修复：退出回顾模式
         this.currentMode = 'wrong-redo';
         this.mockSession.active = false;
         if (this.mockSession.timerId) {
@@ -665,6 +666,7 @@ class TMUAQuiz {
     }
 
     startShuffleMode() {
+        this.reviewMode = false;  // 修复：退出回顾模式
         this.currentMode = 'shuffle';
         this.mockSession.active = false;
         if (this.mockSession.timerId) {
@@ -1297,6 +1299,7 @@ class TMUAQuiz {
     // ===== 欢迎页相关方法 =====
 
     showWelcomeView() {
+        this.reviewMode = false;  // 防御性重置：防止回顾模式状态泄漏
         document.getElementById('welcomeView').classList.remove('hidden');
         document.getElementById('mockSelectView').classList.add('hidden');
         document.getElementById('practiceView').classList.add('hidden');
@@ -1433,6 +1436,7 @@ class TMUAQuiz {
         this.showPracticeView();
 
         if (mode === 'practice') {
+            this.reviewMode = false;  // 修复：退出回顾模式
             this.currentMode = 'practice';
             this.mockSession.active = false;
             this.applyYearPaperFilter();

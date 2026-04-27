@@ -180,7 +180,7 @@ class TMUAQuiz {
             this.submitAnswer();
         });
         
-        // 跳过
+        // 下一题
         document.getElementById('skipBtn').addEventListener('click', () => {
             this.nextQuestion();
         });

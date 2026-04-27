@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TMUA 练习系统</title>
+    
+    <!-- KaTeX 数学公式渲染库 -->
+    <!-- 使用 unpkg CDN 加载 KaTeX，修复 jsdelivr 字体文件加载失败导致 sqrt 无法显示的问题 -->
+    <link rel="stylesheet" href="https://unpkg.com/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://unpkg.com/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://unpkg.com/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        /* 双栏布局 */
+        .main-layout {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .main-content {
+            flex: 1;
+            min-width: 0;
+            max-width: 800px;
+        }
+
+        .sidebar {
+            width: 260px;
+            flex-shrink: 0;
+            position: sticky;
+            top: 20px;
+        }
+
+        @media (max-width: 900px) {
+            .main-layout {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                position: static;
+            }
+        }
+        
+        /* KaTeX 数学公式样式 */
+        .katex {
+            font-size: 1.1em;
+        }
+        .katex-display {
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+        
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        h1 {
+            font-size: 24px;
+            color: #2c3e50;
+        }
+        
+        .stats {
+            font-size: 14px;
+            color: #7f8c8d;
+        }
+        
+        .filters {
+            display: flex;
+            gap: 10px;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 8px 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .filter-btn:hover {
+            background: #3498db;
+            color: white;
+            border-color: #3498db;
+        }
+        
+        .filter-btn.active {
+            background: #3498db;
+            color: white;
+            border-color: #3498db;
+        }
+        
+        /* 年份和试卷选择器样式 */
+        .year-paper-select {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .year-paper-select label {
+            font-size: 14px;
+            color: #7f8c8d;
+        }
+        
+        .year-paper-select select {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: white;
+            cursor: pointer;
+        }
+        
+        .year-paper-select select:focus {
+            border-color: #3498db;
+        }
+
+        .mode-panel {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            flex-wrap: wrap;
+        }
+
+        .mode-status {
+            font-size: 14px;
+            color: #7f8c8d;
+        }
+
+        .mock-timer {
+            font-weight: bold;
+            color: #e67e22;
+            background: #fff3e0;
+            padding: 6px 10px;
+            border-radius: 6px;
+        }
+        
+        .question-container {
+            padding: 20px 0;
+        }
+        
+        .question-meta {
+            font-size: 12px;
+            color: #7f8c8d;
+            margin-bottom: 10px;
+        }
+        
+        .question-text {
+            font-size: 16px;
+            margin-bottom: 20px;
+            white-space: pre-wrap;
+        }
+        
+        /* 题目表格样式 */
+        .question-text table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 14px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+        
+        .question-text thead th {
+            background: #3498db;
+            color: white;
+            padding: 10px 14px;
+            text-align: center;
+            font-weight: 600;
+            border: 1px solid #2980b9;
+        }
+        
+        .question-text tbody td {
+            padding: 9px 14px;
+            border: 1px solid #e0e0e0;
+            text-align: center;
+            background: white;
+        }
+        
+        .question-text tbody tr:nth-child(even) td {
+            background: #f8f9fa;
+        }
+        
+        .question-text tbody tr:hover td {
+            background: #e8f4fc;
+        }
+        
+        .question-text tbody tr td:first-child {
+            font-weight: 700;
+            color: #2c3e50;
+            background: #ecf0f1;
+            width: 50px;
+        }
+        
+        .question-text tbody tr:nth-child(even) td:first-child {
+            background: #e8ecef;
+        }
+        
+        .question-text tbody tr:hover td:first-child {
+            background: #d5e8f3;
+        }
+        
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .option {
+            padding: 12px 16px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .option:hover {
+            border-color: #3498db;
+            background: #f8f9fa;
+        }
+        
+        .option.selected {
+            border-color: #3498db;
+            background: #e8f4fc;
+        }
+        
+        .option.correct {
+            border-color: #27ae60;
+            background: #d4edda;
+        }
+        
+        .option.wrong {
+            border-color: #e74c3c;
+            background: #f8d7da;
+        }
+        
+        .option-label {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .actions {
+            display: flex;
+            gap: 10px;
+            padding-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+        
+        .btn-primary {
+            background: #3498db;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #2980b9;
+        }
+        
+        .btn-secondary {
+            background: #95a5a6;
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background: #7f8c8d;
+        }
+        
+        .btn-nav {
+            background: #ecf0f1;
+            color: #2c3e50;
+            border: 1px solid #bdc3c7;
+        }
+        
+        .btn-nav:hover {
+            background: #bdc3c7;
+        }
+        
+        .btn-nav:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .progress-bar {
+            background: #eee;
+            height: 6px;
+            border-radius: 3px;
+            margin-top: 20px;
+        }
+        
+        .progress-fill {
+            background: #3498db;
+            height: 100%;
+            border-radius: 3px;
+            transition: width 0.3s;
+        }
+        
+        .analysis {
+            margin-top: 20px;
+            padding: 0;
+            background: transparent;
+            display: block;
+        }
+
+        .analysis.collapsible-panel[open] > .collapsible-summary + * {
+            display: block;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 0 0 8px 8px;
+            margin-top: 0;
+        }
+
+        .insights-panel {
+            padding: 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .insights-panel-body {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            padding: 15px 0 5px;
+        }
+
+        .insight-box {
+            padding: 14px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .insight-box h3 {
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #2c3e50;
+        }
+
+        /* ===== 可折叠面板 ===== */
+        .collapsible-panel {
+            margin-bottom: 16px;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+            overflow: hidden;
+        }
+
+        .collapsible-summary {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 14px;
+            background: #f1f3f5;
+            cursor: pointer;
+            user-select: none;
+            font-weight: 600;
+            color: #495057;
+            list-style: none;
+        }
+
+        .collapsible-summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .collapsible-summary .collapse-arrow {
+            font-size: 12px;
+            transition: transform 0.2s;
+            color: #868e96;
+        }
+
+        details[open] .collapse-arrow {
+            transform: rotate(180deg);
+        }
+
+        .answer-card.collapsible-panel {
+            border: none;
+            background: transparent;
+        }
+
+        .answer-card.collapsible-panel > .collapsible-summary {
+            background: #f8f9fa;
+            border: 1px solid #e0e0e0;
+        }
+
+        .answer-card.collapsible-panel[open] .answer-card-header,
+        .answer-card.collapsible-panel[open] .answer-card-grid {
+            padding: 0 4px 4px;
+        }
+
+        .analysis.collapsible-panel {
+            border: none;
+            background: transparent;
+        }
+
+        .analysis.collapsible-panel > .collapsible-summary {
+            background: #f8f9fa;
+            border: 1px solid #e0e0e0;
+        }
+
+        .insights-panel > .collapsible-summary {
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid #e0e0e0;
+            border-radius: 0;
+        }
+
+        .insights-panel[open] > .collapsible-summary {
+            border-radius: 0;
+        }
+
+        .insight-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            font-size: 14px;
+        }
+
+        .insight-item {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            padding: 8px 10px;
+            background: white;
+            border-radius: 6px;
+        }
+
+        .insight-empty {
+            font-size: 14px;
+            color: #7f8c8d;
+        }
+        
+        .topic-select {
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: white;
+        }
+        
+        .hidden {
+            display: none !important;
+        }
+        
+        .result {
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        
+        .result h3 {
+            margin-bottom: 10px;
+        }
+        
+        .question-image, .options-image {
+            margin: 15px 0;
+            text-align: center;
+        }
+        
+        .question-image img, .options-image img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .has-image-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            background: #e8f4fc;
+            color: #3498db;
+            border-radius: 4px;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+        
+        /* 导航按钮区域 */
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            padding-top: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .question-counter {
+            font-size: 14px;
+            color: #7f8c8d;
+            padding: 8px 0;
+        }
+
+        .answer-card {
+            margin-bottom: 0;
+            padding: 12px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .sidebar .answer-card-header {
+            margin-bottom: 8px;
+        }
+
+        .answer-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .answer-card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(44px, 1fr));
+            gap: 8px;
+        }
+
+        /* 按Paper分组 */
+        #answerCardContainer {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        /* 年份层 */
+        .answer-card-year {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .answer-card-year-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: #333;
+            padding: 5px 8px 3px;
+            cursor: pointer;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            user-select: none;
+        }
+
+        .answer-card-year-title:hover {
+            background: #eaeaea;
+        }
+
+        .answer-card-year-title::before {
+            content: '▼';
+            font-size: 10px;
+            transition: transform 0.2s;
+        }
+
+        .answer-card-year-title.collapsed::before {
+            transform: rotate(-90deg);
+        }
+
+        .answer-card-year-title .year-label {
+            font-weight: 700;
+        }
+
+        .answer-card-year-title .year-count {
+            font-size: 11px;
+            color: #888;
+            font-weight: 400;
+        }
+
+        .answer-card-year-body {
+            display: flex;
+            flex-direction: column;
+            padding-left: 10px;
+            gap: 4px;
+        }
+
+        /* Paper子层 */
+        .answer-card-paper {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .answer-card-paper-title {
+            font-size: 12px;
+            font-weight: 600;
+            color: #555;
+            padding: 3px 6px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            user-select: none;
+        }
+
+        .answer-card-paper-title:hover {
+            background: #e8e8e8;
+        }
+
+        .answer-card-paper-title::before {
+            content: '▼';
+            font-size: 9px;
+            color: #aaa;
+            transition: transform 0.2s;
+        }
+
+        .answer-card-paper-title.collapsed::before {
+            transform: rotate(-90deg);
+        }
+
+        .answer-card-paper-title .paper-badge {
+            background: #e0e8f0;
+            color: #3a6ea8;
+            font-size: 11px;
+            padding: 1px 7px;
+            border-radius: 10px;
+            font-weight: 600;
+        }
+
+        .answer-card-paper-title .paper-count {
+            font-size: 11px;
+            color: #888;
+        }
+
+        .answer-card-paper-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 6px;
+            padding-left: 14px;
+        }
+
+        .sidebar .answer-card-item {
+            padding: 6px 0;
+            font-size: 12px;
+        }
+
+        .answer-card-item {
+            padding: 8px 0;
+            border: 1px solid #d0d7de;
+            border-radius: 6px;
+            background: white;
+            cursor: pointer;
+            text-align: center;
+            font-size: 13px;
+            transition: all 0.2s;
+        }
+
+        .answer-card-item.current {
+            border-color: #3498db;
+            background: #e8f4fc;
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        .answer-card-item.correct {
+            border-color: #27ae60;
+            background: #d4edda;
+            color: #1e7e34;
+        }
+
+        .answer-card-item.wrong {
+            border-color: #e74c3c;
+            background: #f8d7da;
+            color: #a71d2a;
+        }
+
+        .answer-card-item.answered {
+            border-color: #3498db;
+            background: #e8f4fc;
+            color: #2980b9;
+        }
+
+        .answer-card-item.pending {
+            border-color: #f39c12;
+            background: #fff3cd;
+            color: #a06a00;
+        }
+
+        .btn-small {
+            padding: 8px 12px;
+            font-size: 13px;
+        }
+
+        .btn-danger {
+            background: #e74c3c;
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background: #c0392b;
+        }
+
+        @media (max-width: 768px) {
+            .insights-panel {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===== 暗黑模式 ===== */
+        body.dark-mode {
+            background: #1a1a2e;
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .container {
+            background: #16213e;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        body.dark-mode h1 {
+            color: #e0e0e0;
+        }
+
+        body.dark-mode header {
+            border-bottom-color: #2a3a5e;
+        }
+
+        body.dark-mode .stats {
+            color: #a0a0b0;
+        }
+
+        body.dark-mode .mode-status {
+            color: #a0a0b0;
+        }
+
+        body.dark-mode .mock-timer {
+            background: #2a2a4a;
+            color: #e67e22;
+        }
+
+        body.dark-mode .question-meta,
+        body.dark-mode .question-counter {
+            color: #a0a0b0;
+        }
+
+        body.dark-mode .question-text {
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .question-text table {
+            border-color: #2a3a5e;
+        }
+
+        body.dark-mode .question-text thead th {
+            background: #1e5080;
+            border-color: #1a4060;
+        }
+
+        body.dark-mode .question-text tbody td {
+            border-color: #2a3a5e;
+            background: #1a2a4e;
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .question-text tbody tr:nth-child(even) td {
+            background: #162040;
+        }
+
+        body.dark-mode .question-text tbody tr:hover td {
+            background: #1e3058;
+        }
+
+        body.dark-mode .question-text tbody tr td:first-child {
+            background: #1a3050;
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .question-text tbody tr:nth-child(even) td:first-child {
+            background: #162040;
+        }
+
+        body.dark-mode .answer-card {
+            background: #1a2a4e;
+            border-color: #2a3a5e;
+        }
+
+        body.dark-mode .sidebar {
+            background: transparent;
+        }
+
+        body.dark-mode .answer-card-header strong {
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .answer-card-item {
+            background: #1e3058;
+            border-color: #2a3a5e;
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .answer-card-item.current {
+            background: #1e5080;
+            border-color: #3498db;
+            color: #7ab8f5;
+        }
+
+        body.dark-mode .answer-card-item.correct {
+            background: #1a4a2e;
+            border-color: #27ae60;
+            color: #6fcf97;
+        }
+
+        body.dark-mode .answer-card-item.wrong {
+            background: #4a1e1e;
+            border-color: #e74c3c;
+            color: #ff6b6b;
+        }
+
+        body.dark-mode .answer-card-item.answered {
+            background: #1e3058;
+            border-color: #3498db;
+            color: #7ab8f5;
+        }
+
+        body.dark-mode .answer-card-item.pending {
+            background: #3a3020;
+            border-color: #f39c12;
+            color: #f5c842;
+        }
+
+        body.dark-mode .option {
+            border-color: #2a3a5e;
+            color: #e0e0e0;
+            background: #1a2a4e;
+        }
+
+        body.dark-mode .option:hover {
+            border-color: #3498db;
+            background: #1e3058;
+        }
+
+        body.dark-mode .option.selected {
+            border-color: #3498db;
+            background: #1e4070;
+        }
+
+        body.dark-mode .option.correct {
+            border-color: #27ae60;
+            background: #1a4a2e;
+            color: #6fcf97;
+        }
+
+        body.dark-mode .option.wrong {
+            border-color: #e74c3c;
+            background: #4a1e1e;
+            color: #ff6b6b;
+        }
+
+        body.dark-mode .analysis {
+            background: transparent;
+        }
+
+        body.dark-mode .analysis.collapsible-panel[open] > .collapsible-summary + * {
+            background: #1a2a4e;
+        }
+
+        body.dark-mode .insights-panel {
+            border-bottom-color: #2a3a5e;
+        }
+
+        body.dark-mode .insights-panel > .collapsible-summary {
+            background: transparent;
+            border-bottom-color: #2a3a5e;
+            color: #c0c8d8;
+        }
+
+        body.dark-mode .insights-panel > .collapsible-summary .collapse-arrow {
+            color: #7a8ab0;
+        }
+
+        body.dark-mode .insight-box {
+            background: #1a2a4e;
+        }
+
+        body.dark-mode .insight-box h3 {
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .collapsible-panel {
+            border-color: #2a3a5e;
+        }
+
+        body.dark-mode .collapsible-summary {
+            background: #1e3058;
+            color: #c0c8d8;
+        }
+
+        body.dark-mode .collapsible-summary .collapse-arrow {
+            color: #7a8ab0;
+        }
+
+        body.dark-mode .answer-card.collapsible-panel > .collapsible-summary {
+            background: #1a2a4e;
+            border-color: #2a3a5e;
+        }
+
+        body.dark-mode .answer-card-year-title {
+            color: #c8d8ec;
+        }
+
+        body.dark-mode .answer-card-year-title:hover {
+            background: #243555;
+        }
+
+        body.dark-mode .answer-card-year-title .year-count {
+            color: #6a8ab0;
+        }
+
+        body.dark-mode .answer-card-paper-title {
+            color: #aabbd4;
+        }
+
+        body.dark-mode .answer-card-paper-title:hover {
+            background: #1e3058;
+        }
+
+        body.dark-mode .answer-card-paper-title .paper-badge {
+            background: #1e3058;
+            color: #7ab8f5;
+        }
+
+        body.dark-mode .answer-card-paper-title::before {
+            color: #4a6a8a;
+        }
+
+        body.dark-mode .analysis.collapsible-panel > .collapsible-summary {
+            background: #1a2a4e;
+            border-color: #2a3a5e;
+        }
+
+        body.dark-mode .insight-item {
+            background: #162040;
+        }
+
+        body.dark-mode .insight-item span:first-child {
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .insight-item span:last-child {
+            color: #a0a0b0;
+        }
+
+        body.dark-mode .insight-empty {
+            color: #707080;
+        }
+
+        body.dark-mode .progress-bar {
+            background: #2a3a5e;
+        }
+
+        body.dark-mode .filters {
+            border-bottom-color: #2a3a5e;
+        }
+
+        body.dark-mode .filter-btn {
+            border-color: #2a3a5e;
+            background: #1a2a4e;
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .filter-btn:hover,
+        body.dark-mode .filter-btn.active {
+            background: #1e5080;
+            border-color: #3498db;
+            color: #7ab8f5;
+        }
+
+        body.dark-mode .year-paper-select {
+            border-bottom-color: #2a3a5e;
+        }
+
+        body.dark-mode .year-paper-select label {
+            color: #a0a0b0;
+        }
+
+        body.dark-mode .year-paper-select select {
+            border-color: #2a3a5e;
+            background: #1a2a4e;
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .topic-select {
+            border-color: #2a3a5e;
+            background: #1a2a4e;
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .btn-nav {
+            background: #1a2a4e;
+            border-color: #2a3a5e;
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .btn-nav:hover {
+            background: #2a3a5e;
+        }
+
+        body.dark-mode .btn-secondary {
+            background: #2a3a5e;
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .btn-secondary:hover {
+            background: #3a4a7e;
+        }
+
+        body.dark-mode .result {
+            background: #1a2a4e;
+        }
+
+        body.dark-mode .result h3 {
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .has-image-badge {
+            background: #1e3058;
+            color: #7ab8f5;
+        }
+
+        body.dark-mode .btn-danger {
+            background: #8b1e1e;
+        }
+
+        body.dark-mode .btn-danger:hover {
+            background: #a52020;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 TMUA练习系统</h1>
+            <div class="stats">
+                <span id="progressText">进度: 0/280</span>
+                <span id="correctRate">正确率: 0%</span>
+                <button class="btn btn-small" id="darkModeBtn" onclick="window.quizApp && window.quizApp.toggleDarkMode()" style="margin-left:6px;">🌙</button>
+                <button class="btn btn-small btn-danger" id="clearProgressBtn">清空进度</button>
+            </div>
+        </header>
+        
+        <!-- 年份和试卷选择 -->
+        <div class="year-paper-select">
+            <label>年份:</label>
+            <select id="yearSelect">
+                <option value="all">全部年份</option>
+                <option value="2016">2016</option>
+                <option value="2017">2017</option>
+                <option value="2018">2018</option>
+                <option value="2019">2019</option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+            </select>
+            
+            <label>Paper:</label>
+            <select id="paperSelect">
+                <option value="all">全部试卷</option>
+                <option value="1">Paper 1</option>
+                <option value="2">Paper 2</option>
+            </select>
+        </div>
+
+        <div class="mode-panel">
+            <button class="btn btn-primary" id="startMockBtn">开始当前试卷模拟</button>
+            <button class="btn btn-secondary" id="startShuffleBtn">随机练习</button>
+            <button class="btn btn-secondary hidden" id="submitMockBtn">提前交卷</button>
+            <span class="mode-status" id="mockStatus">当前模式: 普通练习</span>
+            <span class="mock-timer hidden" id="mockTimer">75:00</span>
+        </div>
+        
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">全部题目</button>
+            <button class="filter-btn" data-filter="topic">按知识点</button>
+            <button class="filter-btn" data-filter="wrong">错题本</button>
+            <button class="filter-btn" data-filter="uncompleted">未完成</button>
+            <select class="topic-select hidden" id="topicSelect">
+                <option value="">选择知识点</option>
+            </select>
+        </div>
+
+        <details class="collapsible-panel insights-panel" open>
+            <summary class="collapsible-summary">
+                <span>📊 数据面板</span>
+                <span class="collapse-arrow">&#9660;</span>
+            </summary>
+            <div class="insights-panel-body">
+                <div class="insight-box">
+                    <h3>知识点诊断</h3>
+                    <div class="insight-list" id="topicStats"></div>
+                </div>
+                <div class="insight-box">
+                    <h3>薄弱点推荐</h3>
+                    <div class="insight-list" id="weakTopics"></div>
+                </div>
+            </div>
+        </details>
+        
+        <div class="main-layout">
+            <div class="main-content">
+                <div class="question-container" id="questionArea">
+                    <!-- 导航按钮 -->
+                    <div class="nav-buttons">
+                        <button class="btn btn-nav" id="prevBtn">⬅️ 上一题</button>
+                        <span class="question-counter" id="questionCounter">第 1 题 / 共 20 题</span>
+                        <button class="btn btn-nav" id="nextBtn">下一题 ➡️</button>
+                    </div>
+
+                    <div class="question-meta">
+                        <span id="questionId">题目 #2016-P1-Q1</span>
+                        <span id="questionTopic">知识点: Differentiation</span>
+                        <span id="questionImageBadge" class="has-image-badge hidden">📷 有图</span>
+                    </div>
+
+                    <div class="question-text" id="questionText">
+                        加载题目中...
+                    </div>
+
+                    <div class="options" id="optionsArea">
+                        <!-- 选项将动态生成 -->
+                    </div>
+
+                    <div class="actions">
+                        <button class="btn btn-primary" id="submitBtn">提交答案</button>
+                        <button class="btn btn-secondary" id="skipBtn">跳过</button>
+                        <button class="btn btn-secondary" id="analysisBtn">查看解析</button>
+                    </div>
+
+                    <details class="collapsible-panel analysis" id="analysisArea" open>
+                        <summary class="collapsible-summary">
+                            <span>📝 解析</span>
+                            <span class="collapse-arrow">&#9660;</span>
+                        </summary>
+                        <p id="analysisText">暂无解析</p>
+                    </details>
+
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar" id="sidebar">
+                <details class="collapsible-panel answer-card" open>
+                    <summary class="collapsible-summary">
+                        <span>📋 答题卡</span>
+                        <span class="collapse-arrow">&#9660;</span>
+                    </summary>
+                    <div class="answer-card-header">
+                        <button class="btn btn-secondary btn-small" id="redoWrongBtn">错题二刷</button>
+                    </div>
+                    <div id="answerCardContainer">
+                    </div>
+                </details>
+            </div>
+        </div>
+        
+        <div class="result hidden" id="resultArea">
+            <h3>📊 练习结果</h3>
+            <p id="resultModeText">模式: 普通练习</p>
+            <p>完成: <span id="finalCompleted">0</span>/<span id="finalTotal">0</span></p>
+            <p>正确: <span id="finalCorrect">0</span></p>
+            <p>正确率: <span id="finalRate">0%</span></p>
+            <p id="mockSummaryText" class="hidden"></p>
+            <button class="btn btn-secondary" id="redoWrongResultBtn">错题二刷</button>
+            <button class="btn btn-primary" id="restartBtn">重新开始</button>
+        </div>
+    </div>
+    
+    <!-- 先加载题库数据 -->
+    <script src="questions_data.js"></script>
+    <!-- 再加载应用逻辑 -->
+    <script src="app_local.js"></script>
+</body>
+</html>

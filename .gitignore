@@ -1,0 +1,17 @@
+# 临时/生成文件
+*.py
+*.pyc
+__pycache__/
+all_analyses.txt
+
+# 系统文件
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# 工作目录（不属于项目本身）
+.workbuddy/

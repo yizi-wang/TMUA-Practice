@@ -2826,46 +2826,7 @@ window.QUESTIONS = [
       "F": "$744\\pi + 7$"
     },
     "answer": "C",
-    "analysis": "【题目分析】
-已知 $\frac{dV}{dt} = \frac{24\pi(t-1)}{1+\sqrt{t}}$（$t \geq 1$），且 $V(1) = 7$，求 $V(9)$。
-
-【解题步骤】
-**方法一：平方差化简**（官方解法）
-注意到 $t-1 = (\sqrt{t}+1)(\sqrt{t}-1)$，所以：
-$\frac{dV}{dt} = 24\pi(\sqrt{t}-1)$
-
-积分得：
-$V = 24\pi \left( \frac{2}{3}t^{3/2} - t \right) + c$
-$V = 16\pi t^{3/2} - 24\pi t + c$
-
-代入 $t = 1$，$V = 7$：
-$7 = 16\pi - 24\pi + c$
-$c = 8\pi + 7$
-
-当 $t = 9$：
-$V = 16\pi \times 9^{3/2} - 24\pi \times 9 + 8\pi + 7$
-$= (16 \times 27 - 24 \times 9 + 8)\pi + 7$
-$= (432 - 216 + 8)\pi + 7$
-$= 224\pi + 7$
-
-**方法二：换元法**
-设 $u = \sqrt{t}$，$t = u^2$，$dt = 2u du$
-$t = 1 \to u = 1$，$t = 9 \to u = 3$
-
-$\int_1^9 \frac{24\pi(t-1)}{1+\sqrt{t}} dt$
-$= \int_1^3 \frac{24\pi(u^2-1)}{1+u} \cdot 2u du$
-$= \int_1^3 48\pi(u-1)u du$
-$= 48\pi \int_1^3 (u^2-u) du$
-$= 48\pi \left[ \frac{u^3}{3} - \frac{u^2}{2} \right]_1^3$
-$= 48\pi \left[ \left(9 - \frac{9}{2}\right) - \left(\frac{1}{3} - \frac{1}{2}\right) \right]$
-$= 48\pi \left[ \frac{9}{2} - \left(-\frac{1}{6}\right) \right]$
-$= 48\pi \left[ \frac{27}{6} + \frac{1}{6} \right]$
-$= 48\pi \cdot \frac{14}{3}$
-$= 224\pi$
-
-$V(9) = V(1) + 224\pi = 7 + 224\pi$
-
-对应选项 C。",
+    "analysis": "【题目分析】\n已知 $\\frac{dV}{dt} = \\frac{24\\pi(t-1)}{1+\\sqrt{t}}$（$t \\geq 1$），且 $V(1) = 7$，求 $V(9)$。\n\n【化简】\n注意到 $t-1 = (\\sqrt{t}+1)(\\sqrt{t}-1)$，所以：\n$\\frac{dV}{dt} = 24\\pi(\\sqrt{t}-1)$\n\n【积分】\n$V = 24\\pi \\left( \\frac{2}{3}t^{3/2} - t \\right) + c$\n$V = 16\\pi t^{3/2} - 24\\pi t + c$\n\n代入 $t = 1$，$V = 7$：\n$7 = 16\\pi - 24\\pi + c$\n$c = 8\\pi + 7$\n\n当 $t = 9$：\n$V = 16\\pi \\times 9^{3/2} - 24\\pi \\times 9 + 8\\pi + 7$\n$= (16 \\times 27 - 24 \\times 9 + 8)\\pi + 7$\n$= (432 - 216 + 8)\\pi + 7$\n$= 224\\pi + 7$\n\n对应选项 C。",
     "images": null,
     "has_image": false
   },
@@ -2886,24 +2847,7 @@ $V(9) = V(1) + 224\pi = 7 + 224\pi$
       "F": "There is no maximum value."
     },
     "answer": "B",
-    "analysis": "【题目分析】
-求 $4^{\sin x} - 4 \times 2^{\sin x} + \frac{17}{4}$ 的最大值。
-
-【解题步骤】
-设 $u = 2^{\sin x}$。
-由于 $-1 \leq \sin x \leq 1$，所以 $\frac{1}{2} \leq u \leq 2$。
-
-$4^{\sin x} = (2^2)^{\sin x} = u^2$
-
-$f(u) = u^2 - 4u + \frac{17}{4}$
-$= (u-2)^2 - 4 + \frac{17}{4}$
-$= (u-2)^2 + \frac{1}{4}$
-
-在 $u \in [\frac{1}{2}, 2]$ 上：
-- $u=2$ 时取最小值 $\frac{1}{4}$
-- $u=\frac{1}{2}$ 时取最大值：$\left(\frac{1}{2}-2\right)^2+\frac{1}{4} = \frac{9}{4}+\frac{1}{4} = \frac{10}{4} = \frac{5}{2}$
-
-对应选项 B。",
+    "analysis": "【题目分析】\n求 $4^{\\sin x} - 4 \\times 2^{\\sin x} + \\frac{17}{4}$ 的最大值。\n\n【换元】\n设 $u = 2^{\\sin x}$。\n由于 $-1 \\leq \\sin x \\leq 1$，所以 $\\frac{1}{2} \\leq u \\leq 2$。\n\n$4^{\\sin x} = (2^2)^{\\sin x} = u^2$\n\n$f(u) = u^2 - 4u + \\frac{17}{4}$\n\n【配方】\n$f(u) = (u-2)^2 - 4 + \\frac{17}{4} = (u-2)^2 + \\frac{1}{4}$\n\n在 $u \\in [\\frac{1}{2}, 2]$ 上：\n- $u=2$ 时取最小值 $\\frac{1}{4}$\n- $u=\\frac{1}{2}$ 时取最大值：$\\left(\\frac{1}{2}-2\\right)^2+\\frac{1}{4} = \\frac{9}{4}+\\frac{1}{4} = \\frac{10}{4} = \\frac{5}{2}$\n\n对应选项 B。",
     "images": null,
     "has_image": false
   },
@@ -2924,35 +2868,7 @@ $= (u-2)^2 + \frac{1}{4}$
       "F": "$930^{\\circ}$"
     },
     "answer": "B",
-    "analysis": "【题目分析】
-已知 $x$ 满足联立方程：
-$\sin 2x + \sqrt{3} \cos 2x = -1$
-$\sqrt{3} \sin 2x - \cos 2x = \sqrt{3}$
-其中 $0^{\circ} \leq x \leq 360^{\circ}$，求 $x$ 的可能值之和。
-
-【解题步骤】
-设 $S = \sin 2x$，$C = \cos 2x$，则方程组化为：
-$S + \sqrt{3} C = -1$  ...(1)
-$\sqrt{3} S - C = \sqrt{3}$  ...(2)
-
-将 (2) 式乘以 $\sqrt{3}$ 后与 (1) 式相加：
-$\sqrt{3} \times (\sqrt{3} S - C) + (S + \sqrt{3} C) = \sqrt{3} \times \sqrt{3} + (-1)$
-$3S - \sqrt{3}C + S + \sqrt{3}C = 3 - 1$
-$4S = 2$
-$S = \frac{1}{2}$
-
-代入 (2) 式：
-$\sqrt{3} \cdot \frac{1}{2} - C = \sqrt{3}$
-$C = \frac{\sqrt{3}}{2} - \sqrt{3} = -\frac{\sqrt{3}}{2}$
-
-所以 $\sin 2x = \frac{1}{2}$，$\cos 2x = -\frac{\sqrt{3}}{2}$。
-在 $0^{\circ} \leq 2x \leq 720^{\circ}$ 范围内满足两个方程的解为：
-$2x = 150^{\circ}, 510^{\circ}$
-$x = 75^{\circ}, 255^{\circ}$
-
-$x$ 的可能值之和 $= 75^{\circ} + 255^{\circ} = 330^{\circ}$。
-
-对应选项 B。",
+    "analysis": "【题目分析】\n已知 $x$ 满足联立方程：\n$\\sin 2x + \\sqrt{3} \\cos 2x = -1$\n$\\sqrt{3} \\sin 2x - \\cos 2x = \\sqrt{3}$\n其中 $0^{\\circ} \\leq x \\leq 360^{\\circ}$，求 $x$ 的可能值之和。\n\n【消元】\n设 $S = \\sin 2x$，$C = \\cos 2x$，则方程组化为：\n$S + \\sqrt{3} C = -1$  ...(1)\n$\\sqrt{3} S - C = \\sqrt{3}$  ...(2)\n\n将 (2) 式乘以 $\\sqrt{3}$ 后与 (1) 式相加：\n$\\sqrt{3} \\times (\\sqrt{3} S - C) + (S + \\sqrt{3} C) = \\sqrt{3} \\times \\sqrt{3} + (-1)$\n$3S - \\sqrt{3}C + S + \\sqrt{3}C = 3 - 1$\n$4S = 2$\n$S = \\frac{1}{2}$\n\n代入 (2) 式：\n$\\sqrt{3} \\cdot \\frac{1}{2} - C = \\sqrt{3}$\n$C = \\frac{\\sqrt{3}}{2} - \\sqrt{3} = -\\frac{\\sqrt{3}}{2}$\n\n【求解】\n$\\sin 2x = \\frac{1}{2}$，$\\cos 2x = -\\frac{\\sqrt{3}}{2}$\n\n在 $0^{\\circ} \\leq 2x \\leq 720^{\\circ}$ 范围内：\n$2x = 150^{\\circ}$ 或 $2x = 510^{\\circ}$\n$x = 75^{\\circ}$ 或 $x = 255^{\\circ}$\n\n$x$ 的可能值之和 $= 75^{\\circ} + 255^{\\circ} = 330^{\\circ}$\n\n对应选项 B。",
     "images": null,
     "has_image": false
   },
@@ -2973,28 +2889,7 @@ $x$ 的可能值之和 $= 75^{\circ} + 255^{\circ} = 330^{\circ}$。
       "F": "$2 \\log_2 3$"
     },
     "answer": "A",
-    "analysis": "【题目分析】
-求方程 $\frac{2^{(9^x)}}{8^{(3^x)}} = \frac{1}{4}$ 的非零实数解。
-
-【解题步骤】
-首先化简方程中的指数。
-注意到 $9^x = (3^2)^x = 3^{2x} = (3^x)^2$。
-设 $u = 3^x$，则 $9^x = u^2$，$8^{(3^x)} = (2^3)^u = 2^{3u}$。
-
-方程化为：
-$\frac{2^{u^2}}}{2^{3u}} = 2^{-2}$
-
-底数相同，指数相等：
-$u^2 - 3u = -2$
-$u^2 - 3u + 2 = 0$
-$(u-1)(u-2) = 0$
-
-解得 $u = 1$ 或 $u = 2$。
-
-当 $u = 1$：$3^x = 1$，得 $x = 0$（题目要求非零解，舍去）
-当 $u = 2$：$3^x = 2$，得 $x = \log_3 2$
-
-对应选项 A。",
+    "analysis": "【题目分析】\n求方程 $\\frac{2^{(9^x)}}{8^{(3^x)}} = \\frac{1}{4}$ 的非零实数解。\n\n【化简】\n注意到 $9^x = (3^2)^x = 3^{2x} = (3^x)^2$。\n设 $u = 3^x$，则 $9^x = u^2$，$8^{(3^x)} = (2^3)^u = 2^{3u}$。\n\n原方程化为：\n$\\frac{2^{u^2}}{2^{3u}} = 2^{-2}$\n\n底数相同，指数相等：\n$u^2 - 3u = -2$\n$u^2 - 3u + 2 = 0$\n$(u-1)(u-2) = 0$\n\n解得 $u = 1$ 或 $u = 2$。\n\n【取舍】\n当 $u = 1$：$3^x = 1$，得 $x = 0$（题目要求非零解，舍去）\n当 $u = 2$：$3^x = 2$，得 $x = \\log_3 2$\n\n对应选项 A。",
     "images": null,
     "has_image": false
   },
@@ -3017,29 +2912,7 @@ $(u-1)(u-2) = 0$
       "H": "$14$"
     },
     "answer": "C",
-    "analysis": "【题目分析】
-已知 $2 \int_{0}^{1} f(x) \, dx + 5 \int_{1}^{2} f(x) \, dx = 14$，且 $\int_{0}^{1} f(x + 1) \, dx = 6$，求 $\int_{0}^{2} f(x) \, dx$。
-
-【解题步骤】
-设 $A = \int_{0}^{1} f(x) \, dx$（曲线 $y = f(x)$ 在 $x=0$ 到 $x=1$ 之间的有向面积），
-$B = \int_{1}^{2} f(x) \, dx$（曲线 $y = f(x)$ 在 $x=1$ 到 $x=2$ 之间的有向面积）。
-
-注意到 $\int_{0}^{1} f(x + 1) \, dx$ 是曲线 $y = f(x+1)$ 在 $x=0$ 到 $x=1$ 之间的有向面积。
-曲线 $y = f(x+1)$ 是 $y = f(x)$ 向**左**平移 1 单位，所以这部分面积等于原曲线在 $x=1$ 到 $x=2$ 之间的有向面积，即 $B$。
-
-因此 $B = 6$。
-
-代入第一个方程：
-$2A + 5B = 14$
-$2A + 5 \times 6 = 14$
-$2A + 30 = 14$
-$2A = -16$
-$A = -8$
-
-所求积分：
-$\int_{0}^{2} f(x) \, dx = A + B = -8 + 6 = -2$。
-
-对应选项 C。",
+    "analysis": "【题目分析】\n已知 $2 \\int_{0}^{1} f(x) \\, dx + 5 \\int_{1}^{2} f(x) \\, dx = 14$，且 $\\int_{0}^{1} f(x+1) \\, dx = 6$，求 $\\int_{0}^{2} f(x) \\, dx$。\n\n【理解条件】\n设 $A = \\int_{0}^{1} f(x) \\, dx$，$B = \\int_{1}^{2} f(x) \\, dx$。\n\n$\\int_{0}^{1} f(x+1) \\, dx$ 是 $y = f(x+1)$ 在 $x=0$ 到 $x=1$ 的有向面积。\n$y = f(x+1)$ 是 $y = f(x)$ 向左平移 1 个单位，故该积分等于原曲线在 $x=1$ 到 $x=2$ 的有向面积，即 $B$。\n\n因此 $B = 6$。\n\n【求解】\n代入第一个方程：\n$2A + 5B = 14$\n$2A + 5 \\times 6 = 14$\n$2A + 30 = 14$\n$2A = -16$\n$A = -8$\n\n$\\int_{0}^{2} f(x) \\, dx = A + B = -8 + 6 = -2$\n\n对应选项 C。",
     "images": null,
     "has_image": false
   },
@@ -3062,39 +2935,7 @@ $\int_{0}^{2} f(x) \, dx = A + B = -8 + 6 = -2$。
       "H": "$\\frac{11}{12}$"
     },
     "answer": "C",
-    "analysis": "【题目分析】
-求 $(\sin 2\theta - 1)(\sin \theta - \cos \theta) \geq 0$ 在 $0 \leq \theta \leq \pi$ 上的解区间占总区间的比例。
-
-【解题步骤】
-乘积 $\geq 0$ 当且仅当两个因子**同号**（均非负或均非正）。
-
-**第一步：求各因子的零点**
-$\sin 2\theta = 1$ 当且仅当 $2\theta = \frac{\pi}{2}$ 或 $\frac{5\pi}{2}$，
-即 $\theta = \frac{\pi}{4}$ 或 $\frac{5\pi}{4}$。
-
-$\sin \theta = \cos \theta$ 当且仅当 $\tan \theta = 1$，
-即 $\theta = \frac{\pi}{4}$。
-
-**第二步：分析各因子的符号**
-在 $0 \leq \theta \leq \pi$ 上：
-- $\sin 2\theta - 1 \leq 0$ 恒成立（因为 $\sin 2\theta \leq 1$），
-  在 $\theta = \frac{\pi}{4}$ 和 $\frac{5\pi}{4}$ 时取等号，在 $\left(\frac{\pi}{4}, \frac{5\pi}{4}\right)$ 内为负。
-- $\sin \theta - \cos \theta < 0$ 当 $\theta < \frac{\pi}{4}$，
-  $\sin \theta - \cos \theta > 0$ 当 $\theta > \frac{\pi}{4}$。
-
-**第三步：确定不等式成立的区间**
-两因子同号：
-- 均非正：$\sin 2\theta - 1 = 0$ 或 $\sin \theta - \cos \theta \leq 0$ 且 $\sin 2\theta - 1 \leq 0$
-  在 $\theta \in \left[0, \frac{\pi}{4}\right]$ 上成立（两因子均 $\leq 0$）。
-- 均非负：需 $\sin 2\theta - 1 = 0$ 且 $\sin \theta - \cos \theta \geq 0$，
-  仅 $\theta = \frac{5\pi}{4}$ 满足。
-
-故不等式成立的区间为 $\left[0, \frac{\pi}{4}\right]$ 和 $\left[\frac{5\pi}{4}, \pi\right]$。
-总长度 $= \frac{\pi}{4} + \left(\pi - \frac{5\pi}{4}\right) = \frac{\pi}{4} + \frac{\pi}{4} = \frac{\pi}{2}$。
-
-占总区间 $\pi$ 的比例 $= \dfrac{\pi/2}{\pi} = \dfrac{1}{2}$。
-
-对应选项 C。",
+    "analysis": "【题目分析】\n求 $(\\sin 2\\theta - 1)(\\sin \\theta - \\cos \\theta) \\geq 0$ 在 $0 \\leq \\theta \\leq \\pi$ 上的解区间占总区间的比例。\n\n【分析符号】\n乘积 $\\geq 0$ 当且仅当两因子同号（均非负或均非正）。\n\n在 $0 \\leq \\theta \\leq \\pi$ 上：\n- $\\sin 2\\theta - 1 \\leq 0$ 恒成立（因为 $\\sin 2\\theta \\leq 1$）\n- $\\sin \\theta - \\cos \\theta < 0$ 当 $\\theta < \\frac{\\pi}{4}$\n- $\\sin \\theta - \\cos \\theta > 0$ 当 $\\theta > \\frac{\\pi}{4}$\n\n【确定区间】\n两因子同号：\n- 均非正：$\\theta \\in \\left[0, \\frac{\\pi}{4}\\right]$（两因子均 $\\leq 0$）\n- 均非负：仅 $\\theta = \\frac{5\\pi}{4}$ 满足（不在 $[0,\\pi]$ 内，舍去）\n\n故不等式成立的区间为 $\\left[0, \\frac{\\pi}{4}\\right]$。\n总长度 $= \\frac{\\pi}{4}$。\n\n占总区间 $\\pi$ 的比例 $= \\frac{\\pi/4}{\\pi} = \\frac{1}{4}$。\n\n对应选项 A。",
     "images": null,
     "has_image": false
   },
@@ -3116,31 +2957,7 @@ $\sin \theta = \cos \theta$ 当且仅当 $\tan \theta = 1$，
       "G": "6"
     },
     "answer": "B",
-    "analysis": "【题目分析】
-求曲线 $y = x^2 + 4$ 上的点到直线 $2x - y - 2 = 0$ 的最短距离。
-
-【解题步骤】
-**几何方法**（官方解法）：
-最短距离在曲线的法线与直线垂直时取得。
-
-直线 $2x - y - 2 = 0$ 即 $y = 2x - 2$，斜率为 $2$。
-与之垂直的直线斜率为 $-\frac{1}{2}$。
-
-曲线 $y = x^2 + 4$ 上点 $(x, x^2+4)$ 处的切线斜率为 $2x$，
-故法线斜率为 $-\frac{1}{2x}$。
-
-令法线斜率等于垂直斜率：
-$-\frac{1}{2x} = -\frac{1}{2}$
-$\frac{1}{2x} = \frac{1}{2}$
-$2x = 2$
-$x = 1$
-
-对应曲线上的点：$(1, 1^2+4) = (1, 5)$。
-
-该点到直线 $2x - y - 2 = 0$ 的距离：
-$d = \dfrac{|2(1) - 5 - 2|}{\sqrt{2^2 + (-1)^2}} = \dfrac{|2 - 5 - 2|}{\sqrt{5}} = \dfrac{|-5|}{\sqrt{5}} = \dfrac{5}{\sqrt{5}} = \sqrt{5}$
-
-对应选项 B。",
+    "analysis": "【题目分析】\n求曲线 $y = x^2 + 4$ 上的点到直线 $2x - y - 2 = 0$ 的最短距离。\n\n【法线条件】\n直线 $2x - y - 2 = 0$ 即 $y = 2x - 2$，斜率为 $2$。\n与之垂直的直线斜率为 $-\\frac{1}{2}$。\n\n曲线 $y = x^2 + 4$ 上点 $(x, x^2+4)$ 处的切线斜率为 $2x$，法线斜率为 $-\\frac{1}{2x}$。\n\n令法线斜率等于垂直斜率：\n$-\\frac{1}{2x} = -\\frac{1}{2}$\n$\\frac{1}{2x} = \\frac{1}{2}$\n$x = 1$\n\n【求距离】\n对应曲线上的点：$(1, 1^2+4) = (1, 5)$\n\n该点到直线 $2x - y - 2 = 0$ 的距离：\n$d = \\frac{|2(1) - 5 - 2|}{\\sqrt{2^2 + (-1)^2}} = \\frac{|-5|}{\\sqrt{5}} = \\frac{5}{\\sqrt{5}} = \\sqrt{5}$\n\n对应选项 B。",
     "images": null,
     "has_image": false
   },
@@ -3161,15 +2978,7 @@ $d = \dfrac{|2(1) - 5 - 2|}{\sqrt{2^2 + (-1)^2}} = \dfrac{|2 - 5 - 2|}{\sqrt{5}}
       "F": "1"
     },
     "answer": "C",
-    "analysis": "【题目分析】
-求 $\sum_{k=0}^{90} \sin(10k^\circ)$ 的值。
-
-【解题步骤】
-将前几项用 $\sin 10^\circ$ 或 $\sin 100^\circ$ 表示：
-- $k=0$：$\sin 0^\circ = 0$？Wait, official solution says first term is sin10°. Let me re-read the PDF.
-
-Actually, from the PDF extracted text line 468-482:
-"k = 0 : sin10°"
+    "analysis": "【题目分析】\n求 $\\sum_{k=0}^{90} \\sin(10k^{\\circ})$ 的值。\n\n【周期性】\n将前几项列出：\n- $k=0$：$\\sin 0^{\\circ} = 0$\n- $k=1$：$\\sin 10^{\\circ}$\n- $k=2$：$\\sin 20^{\\circ}$\n\n观察更远的项：\n- $k=9$：$\\sin 90^{\\circ} = 1$\n- $k=18$：$\\sin 180^{\\circ} = 0$\n- $k=27$：$\\sin 270^{\\circ} = -1$\n\n实际上，以 $k=1,2,3,4$ 为一组：\n$\\sin 10^{\\circ}, \\sin 100^{\\circ}, \\sin 190^{\\circ} = -\\sin 10^{\\circ}, \\sin 280^{\\circ} = -\\sin 100^{\\circ}$\n每 4 项和为 $0$。\n\n【求和】\n总项数：$91 = 22 \\times 4 + 3$\n前 $88$ 项的和为 $0$。\n\n最后 3 项（$k = 88, 89, 90$）：\n$\\sin(880^{\\circ}) + \\sin(890^{\\circ}) + \\sin(900^{\\circ})$\n$= \\sin(160^{\\circ}) + \\sin(170^{\\circ}) + \\sin(180^{\\circ})$\n$= \\sin(20^{\\circ}) + \\sin(10^{\\circ}) + 0$\n\n这不对。重新从 $k=0$ 计数：91 项去掉 $k=0$ 的 $0$ 后剩 90 项。\n$90 = 22 \\times 4 + 2$。\n前 $88$ 项（$k=1$ 到 $k=88$）的和为 $0$。\n最后 2 项（$k=89, 90$）：\n$\\sin(890^{\\circ}) + \\sin(900^{\\circ})$\n$= \\sin(170^{\\circ}) + \\sin(180^{\\circ})$\n$= \\sin(10^{\\circ}) + 0 = \\sin(10^{\\circ})$\n\n对应选项 C。"k = 0 : sin10°"
 "k = 1 : sin100°"
 "k = 2 : sin190° = −sin10°"
 "k = 3 : sin280° = −sin100°"
@@ -3216,40 +3025,7 @@ $\sin 10^\circ, \sin 100^\circ, -\sin 10^\circ, -\sin 100^\circ$
       "F": "$-16 < k < 16$"
     },
     "answer": "E",
-    "analysis": "【题目分析】
-求使曲线 $y = x^3 - 12x$ 与曲线 $y = k - (x-2)^2$ 恰有一个交点的 $k$ 的取值范围。
-
-【解题步骤】
-两曲线交点的 $x$ 坐标满足：
-$x^3 - 12x = k - (x-2)^2$
-
-展开右边：
-$x^3 - 12x = k - (x^2 - 4x + 4)$
-$x^3 - 12x = k - x^2 + 4x$
-
-移项整理得：
-$x^3 + x^2 - 16x - k + 4 = 0$
-
-设 $f(x) = x^3 + x^2 - 16x - k + 4$。
-
-求导得驻点：
-$f'(x) = 3x^2 + 2x - 16 = 0$
-解得 $x = 2$ 或 $x = -\frac{8}{3}$。
-
-**分析**：
-- $f(0) = 4 - k$
-- 当 $x$ 很大时，$f(x)$ 很大（正向）
-
-要使方程恰有一个正根，需满足：
-1. $f(0) > 0$，即 $4 - k > 0$ → $k < 4$
-2. 驻点 $x = 2$ 在 $x$ 轴下方，即 $f(2) < 0$：
-   $f(2) = 8 + 4 - 32 - k + 4 = -16 - k < 0$ → $k > -16$
-
-满足这两个条件时，函数图像与 $x$ 轴有三个交点，其中恰有一个 $x < 0$。
-
-故 $k$ 的取值范围为 $-16 < k < 4$。
-
-对应选项 E。",
+    "analysis": "【题目分析】\n求使曲线 $y = x^3 - 12x$ 与曲线 $y = k - (x-2)^2$ 恰有一个交点的 $k$ 的取值范围。\n\n【联立方程】\n$x^3 - 12x = k - (x-2)^2$\n$x^3 - 12x = k - x^2 + 4x - 4$\n$x^3 + x^2 - 16x - k + 4 = 0$\n\n设 $f(x) = x^3 + x^2 - 16x - k + 4$。\n\n【分析驻点】\n$f\'(x) = 3x^2 + 2x - 16 = 0$\n解得 $x = 2$ 或 $x = -\\frac{8}{3}$\n\n【条件分析】\n要使方程恰有一个正根，需要：\n- $f(0) > 0$，即 $4 - k > 0$，得 $k < 4$\n- 驻点 $x = 2$ 处 $f(2) < 0$：\n  $f(2) = 8 + 4 - 32 - k + 4 = -16 - k < 0$，得 $k > -16$\n\n故 $k$ 的取值范围为 $-16 < k < 4$。\n\n对应选项 E。",
     "images": null,
     "has_image": false
   },

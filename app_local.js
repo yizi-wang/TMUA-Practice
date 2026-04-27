@@ -1300,6 +1300,16 @@ class TMUAQuiz {
 
     showWelcomeView() {
         this.reviewMode = false;  // 防御性重置：防止回顾模式状态泄漏
+
+        // 清理回顾模式的副作用：恢复被 updateReviewUI() 隐藏的元素
+        document.querySelectorAll('.filter-btn').forEach(b => b.style.display = '');
+        document.getElementById('submitBtn').classList.remove('hidden');
+        document.getElementById('skipBtn').classList.remove('hidden');
+
+        // 确保 mock-active 已移除
+        document.getElementById('practiceView').classList.remove('mock-active');
+        document.getElementById('mockHeader').classList.add('hidden');
+
         document.getElementById('welcomeView').classList.remove('hidden');
         document.getElementById('mockSelectView').classList.add('hidden');
         document.getElementById('practiceView').classList.add('hidden');
@@ -1439,6 +1449,13 @@ class TMUAQuiz {
             this.reviewMode = false;  // 修复：退出回顾模式
             this.currentMode = 'practice';
             this.mockSession.active = false;
+
+            // 重置年份/试卷选择为"全部"，避免停留在模拟考试的筛选
+            this.selectedYear = 'all';
+            this.selectedPaper = 'all';
+            document.getElementById('yearSelect').value = 'all';
+            document.getElementById('paperSelect').value = 'all';
+
             this.applyYearPaperFilter();
             this.updateMockUI();
         } else if (mode === 'mock') {

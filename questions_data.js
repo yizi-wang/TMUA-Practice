@@ -2772,7 +2772,7 @@ window.QUESTIONS = [
     "num": 10,
     "topic": "Algebra",
     "difficulty": 3,
-    "question": "$$\\int_{-1}^{3} |x|(1 - x) \\, dx$$",
+    "question": "Evaluate $$\\int_{-1}^{3} |x|(1 - x) \\, dx$$",
     "options": {
       "A": "$\\frac{17}{3}$",
       "B": "$-\\frac{17}{3}$",

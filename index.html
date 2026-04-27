@@ -1263,6 +1263,215 @@
             }
         }
 
+        /* ===== Mock 沉浸式考试界面 ===== */
+        #mockHeader {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 20px;
+            background: #e67e22;
+            color: white;
+            border-radius: 8px;
+            margin-bottom: 16px;
+        }
+
+        .mock-paper-label {
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .mock-timer-large {
+            font-size: 32px;
+            font-weight: 800;
+            font-variant-numeric: tabular-nums;
+            letter-spacing: 2px;
+        }
+
+        .mock-timer-large.warning {
+            color: #ffe0b2;
+            animation: mock-timer-pulse 1s infinite;
+        }
+
+        @keyframes mock-timer-pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+
+        .btn-mock-submit {
+            padding: 8px 20px;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 2px solid rgba(255,255,255,0.5);
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-mock-submit:hover {
+            background: rgba(255,255,255,0.35);
+            border-color: white;
+        }
+
+        /* Mock 模式激活时的全局样式 */
+        #practiceView.mock-active header {
+            display: none;
+        }
+
+        #practiceView.mock-active .year-paper-select {
+            display: none;
+        }
+
+        #practiceView.mock-active .mode-panel {
+            display: none;
+        }
+
+        #practiceView.mock-active .filters {
+            display: none;
+        }
+
+        #practiceView.mock-active .insights-panel {
+            display: none;
+        }
+
+        #practiceView.mock-active .question-meta {
+            display: none;
+        }
+
+        #practiceView.mock-active .analysis {
+            display: none;
+        }
+
+        #practiceView.mock-active .progress-bar {
+            display: none;
+        }
+
+        #practiceView.mock-active #mockHeader {
+            display: flex;
+        }
+
+        /* 单栏布局：题目在上，答题卡在下 */
+        #practiceView.mock-active .main-layout {
+            flex-direction: column;
+        }
+
+        #practiceView.mock-active .main-content {
+            max-width: 100%;
+        }
+
+        #practiceView.mock-active .sidebar {
+            width: 100%;
+            position: static;
+        }
+
+        /* 答题卡在 mock 模式下改为扁平样式 */
+        #practiceView.mock-active .answer-card.collapsible-panel {
+            border: none;
+            background: transparent;
+        }
+
+        #practiceView.mock-active .answer-card.collapsible-panel > .collapsible-summary {
+            display: none;
+        }
+
+        #practiceView.mock-active .answer-card-header {
+            display: none;
+        }
+
+        #practiceView.mock-active #answerCardContainer {
+            display: flex;
+            justify-content: center;
+        }
+
+        #practiceView.mock-active .answer-card-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            justify-content: center;
+        }
+
+        #practiceView.mock-active .answer-card-item {
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            font-size: 13px;
+        }
+
+        /* Mock 底部导航区 */
+        .mock-bottom-nav {
+            display: none;
+        }
+
+        #practiceView.mock-active .mock-bottom-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            margin-top: 8px;
+            border-top: 1px solid #eee;
+        }
+
+        .mock-bottom-nav .btn-nav {
+            min-width: 120px;
+        }
+
+        .mock-bottom-nav .mock-question-counter {
+            font-size: 15px;
+            font-weight: 600;
+            color: #555;
+        }
+
+        /* Mock 暗黑模式 */
+        body.dark-mode #mockHeader {
+            background: #b05a10;
+        }
+
+        body.dark-mode .mock-timer-large.warning {
+            color: #ffd699;
+        }
+
+        body.dark-mode .btn-mock-submit {
+            background: rgba(255,255,255,0.15);
+            border-color: rgba(255,255,255,0.4);
+        }
+
+        body.dark-mode .btn-mock-submit:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        #practiceView.mock-active .mock-bottom-nav {
+            border-top-color: #2a3a5e;
+        }
+
+        #practiceView.mock-active .mock-bottom-nav .mock-question-counter {
+            color: #a0a0b0;
+        }
+
+        /* Mock 响应式 */
+        @media (max-width: 600px) {
+            #mockHeader {
+                padding: 10px 12px;
+                border-radius: 6px;
+            }
+
+            .mock-paper-label {
+                font-size: 13px;
+            }
+
+            .mock-timer-large {
+                font-size: 24px;
+            }
+
+            .btn-mock-submit {
+                padding: 6px 14px;
+                font-size: 13px;
+            }
+        }
+
         /* ===== 暗黑模式 ===== */
         body.dark-mode {
             background: #1a1a2e;
@@ -1759,6 +1968,13 @@
 
         <!-- ===== 练习界面 ===== -->
         <div id="practiceView" class="hidden">
+            <!-- Mock 模式专属顶栏 -->
+            <div id="mockHeader" class="hidden">
+                <span class="mock-paper-label" id="mockPaperLabel">2019 Paper 1</span>
+                <span class="mock-timer-large" id="mockTimerLarge">75:00</span>
+                <button class="btn btn-mock-submit" id="mockSubmitTopBtn">交卷</button>
+            </div>
+
             <header>
                 <div class="header-left">
                     <a href="javascript:void(0)" id="backToHomeLink" class="back-link">🏠 首页</a>
@@ -1833,7 +2049,7 @@
                 <div class="main-content">
                     <div class="question-container" id="questionArea">
                         <!-- 导航按钮 -->
-                        <div class="nav-buttons">
+                        <div class="nav-buttons" id="navButtons">
                             <button class="btn btn-nav" id="prevBtn">⬅️ 上一题</button>
                             <span class="question-counter" id="questionCounter">第 1 题 / 共 20 题</span>
                             <button class="btn btn-nav" id="nextBtn">下一题 ➡️</button>
@@ -1857,6 +2073,13 @@
                             <button class="btn btn-primary" id="submitBtn">提交答案</button>
                             <button class="btn btn-secondary" id="skipBtn">跳过</button>
                             <button class="btn btn-secondary" id="analysisBtn">查看解析</button>
+                        </div>
+
+                        <!-- Mock 模式底部导航 -->
+                        <div class="mock-bottom-nav">
+                            <button class="btn btn-nav" id="mockPrevBtn">⬅ 上一题</button>
+                            <span class="mock-question-counter" id="mockQuestionCounter">第 1 题 / 共 20 题</span>
+                            <button class="btn btn-nav" id="mockNextBtn">下一题 ➡</button>
                         </div>
 
                         <details class="collapsible-panel analysis" id="analysisArea" open>

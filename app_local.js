@@ -213,6 +213,20 @@ class TMUAQuiz {
             this.finishMockMode();
         });
 
+        // Mock 顶栏交卷按钮
+        document.getElementById('mockSubmitTopBtn').addEventListener('click', () => {
+            this.finishMockMode();
+        });
+
+        // Mock 底部导航
+        document.getElementById('mockPrevBtn').addEventListener('click', () => {
+            this.prevQuestion();
+        });
+
+        document.getElementById('mockNextBtn').addEventListener('click', () => {
+            this.nextQuestion();
+        });
+
         document.getElementById('redoWrongBtn').addEventListener('click', () => {
             this.startWrongRedo();
         });
@@ -352,48 +366,41 @@ class TMUAQuiz {
     }
 
     updateMockUI() {
-        const mockStatus = document.getElementById('mockStatus');
-        const mockTimer = document.getElementById('mockTimer');
-        const submitMockBtn = document.getElementById('submitMockBtn');
-
-        const insightsPanel = document.querySelector('.insights-panel');
-        const answerCard = document.querySelector('.answer-card');
-        const skipBtn = document.getElementById('skipBtn');
-        const analysisBtn = document.getElementById('analysisBtn');
-        const progressBar = document.querySelector('.progress-bar');
-        const navButtons = document.querySelector('.nav-buttons');
-        const redoWrongBtn = document.getElementById('redoWrongBtn');
-        const yearPaperSelect = document.querySelector('.year-paper-select');
-        const filtersDiv = document.querySelector('.filters');
+        const practiceView = document.getElementById('practiceView');
+        const mockHeader = document.getElementById('mockHeader');
+        const mockTimerLarge = document.getElementById('mockTimerLarge');
+        const mockPaperLabel = document.getElementById('mockPaperLabel');
 
         if (this.mockSession.active) {
-            mockStatus.textContent = `当前模式: 限时模拟（${this.mockSession.paperLabel}）`;
-            mockTimer.textContent = this.formatTime(this.mockSession.remainingSeconds);
-            mockTimer.classList.remove('hidden');
-            submitMockBtn.classList.remove('hidden');
+            // 进入沉浸式考试模式
+            practiceView.classList.add('mock-active');
+            mockHeader.classList.remove('hidden');
 
-            insightsPanel.classList.add('hidden');
-            skipBtn.classList.add('hidden');
-            analysisBtn.classList.add('hidden');
-            progressBar.classList.add('hidden');
-            navButtons.classList.add('hidden');
-            redoWrongBtn.classList.add('hidden');
-            yearPaperSelect.classList.add('hidden');
-            filtersDiv.classList.add('hidden');
+            // 更新 mock 顶栏数据
+            mockPaperLabel.textContent = this.mockSession.paperLabel;
+            mockTimerLarge.textContent = this.formatTime(this.mockSession.remainingSeconds);
+
+            // 倒计时不足10分钟时闪烁警告
+            if (this.mockSession.remainingSeconds <= 600) {
+                mockTimerLarge.classList.add('warning');
+            } else {
+                mockTimerLarge.classList.remove('warning');
+            }
+
+            // 隐藏不需要的元素（CSS 已通过 .mock-active 处理大部分）
+            // 但部分元素需要显式 hidden
+            document.getElementById('skipBtn').classList.add('hidden');
+            document.getElementById('analysisBtn').classList.add('hidden');
+            document.getElementById('navButtons').classList.add('hidden');
         } else {
-            mockStatus.textContent = this.currentMode === 'wrong-redo' ? '当前模式: 错题二刷' :
-                                     this.currentMode === 'shuffle' ? '当前模式: 随机练习' : '当前模式: 普通练习';
-            mockTimer.classList.add('hidden');
-            submitMockBtn.classList.add('hidden');
+            // 退出考试模式，恢复普通界面
+            practiceView.classList.remove('mock-active');
+            mockHeader.classList.add('hidden');
 
-            insightsPanel.classList.remove('hidden');
-            skipBtn.classList.remove('hidden');
-            analysisBtn.classList.remove('hidden');
-            progressBar.classList.remove('hidden');
-            navButtons.classList.remove('hidden');
-            redoWrongBtn.classList.remove('hidden');
-            yearPaperSelect.classList.remove('hidden');
-            filtersDiv.classList.remove('hidden');
+            // 恢复隐藏的按钮
+            document.getElementById('skipBtn').classList.remove('hidden');
+            document.getElementById('analysisBtn').classList.remove('hidden');
+            document.getElementById('navButtons').classList.remove('hidden');
         }
     }
 
@@ -776,6 +783,12 @@ class TMUAQuiz {
         // 更新题目计数器
         document.getElementById('questionCounter').textContent = 
             `第 ${this.currentIndex + 1} 题 / 共 ${this.filteredQuestions.length} 题`;
+        
+        // 更新 mock 底部导航计数器
+        document.getElementById('mockQuestionCounter').textContent = 
+            `第 ${this.currentIndex + 1} 题 / 共 ${this.filteredQuestions.length} 题`;
+        document.getElementById('mockPrevBtn').disabled = this.currentIndex === 0;
+        document.getElementById('mockNextBtn').disabled = this.currentIndex === this.filteredQuestions.length - 1;
         
         // 更新导航按钮状态
         document.getElementById('prevBtn').disabled = this.currentIndex === 0;

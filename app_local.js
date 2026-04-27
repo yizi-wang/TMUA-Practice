@@ -91,6 +91,9 @@ class TMUAQuiz {
         // 模拟考试选卷状态
         this.mockSelectedYear = null;
         this.mockSelectedPaper = null;
+        // 回顾模式状态
+        this.reviewMode = false;
+        this.reviewIndex = 0;
         
         this.init();
     }
@@ -300,6 +303,19 @@ class TMUAQuiz {
             }
         });
 
+        // 模拟结果页按钮
+        document.getElementById('mockReviewBtn').addEventListener('click', () => {
+            this.enterMockReview(0);
+        });
+
+        document.getElementById('mockRetryBtn').addEventListener('click', () => {
+            this.startMockMode();
+        });
+
+        document.getElementById('mockResultHomeBtn').addEventListener('click', () => {
+            this.showWelcomeView();
+        });
+
         // 继续上次练习
         document.getElementById('welcomeContinueLink').addEventListener('click', () => {
             this.showPracticeView();
@@ -410,6 +426,7 @@ class TMUAQuiz {
             return;
         }
 
+        this.reviewMode = false;
         this.currentMode = 'mock';
         this.filter = 'all';
         document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
@@ -453,7 +470,158 @@ class TMUAQuiz {
 
         this.mockSession.active = false;
         this.updateMockUI();
-        this.showResult();
+        this.showMockResult();
+    }
+
+    showMockResult() {
+        // 隐藏所有视图，显示模拟结果页
+        document.getElementById('welcomeView').classList.add('hidden');
+        document.getElementById('mockSelectView').classList.add('hidden');
+        document.getElementById('practiceView').classList.add('hidden');
+        document.getElementById('resultArea').classList.add('hidden');
+        document.getElementById('mockResultView').classList.remove('hidden');
+
+        const total = this.filteredQuestions.length;
+        const correct = this.sessionProgress.correct.length;
+        const wrong = this.sessionProgress.wrong.length;
+        const unanswered = total - correct - wrong;
+        const pct = total > 0 ? Math.round(correct / total * 100) : 0;
+        const usedSeconds = this.mockSession.durationSeconds - this.mockSession.remainingSeconds;
+        const avgSec = (correct + wrong) > 0 ? Math.round(usedSeconds / (correct + wrong)) : 0;
+
+        // 副标题
+        document.getElementById('mockResultSubtitle').textContent = this.mockSession.paperLabel;
+
+        // 环形图（SVG stroke-dashoffset）
+        const circumference = 2 * Math.PI * 72; // ~452.39
+        const offset = circumference * (1 - pct / 100);
+        const ringFill = document.getElementById('mockRingFill');
+        ringFill.style.strokeDasharray = circumference;
+        ringFill.style.strokeDashoffset = offset;
+        ringFill.classList.remove('medium', 'low');
+        if (pct < 40) ringFill.classList.add('low');
+        else if (pct < 70) ringFill.classList.add('medium');
+
+        document.getElementById('mockRingPct').textContent = pct + '%';
+        document.getElementById('mockRingFrac').textContent = correct + '/' + total;
+
+        // 成绩评语
+        let msg = '继续努力！';
+        if (pct >= 90) msg = '🎉 太棒了！接近满分！';
+        else if (pct >= 70) msg = '👍 成绩不错，继续加油！';
+        else if (pct >= 50) msg = '💪 还有提升空间，继续练习！';
+        document.getElementById('mockScoreMsg').textContent = msg;
+
+        // 统计卡片
+        document.getElementById('mockStatCorrect').textContent = correct;
+        document.getElementById('mockStatWrong').textContent = wrong;
+        document.getElementById('mockStatTime').textContent = this.formatTime(usedSeconds);
+        document.getElementById('mockStatAvg').textContent = avgSec + 's';
+
+        // 题目网格 + 知识点分析
+        this.renderMockQuestionGrid();
+        this.renderMockTopicBreakdown();
+    }
+
+    renderMockQuestionGrid() {
+        const grid = document.getElementById('mockQuestionGrid');
+        grid.innerHTML = '';
+        this.filteredQuestions.forEach((q, i) => {
+            const id = q.id;
+            let cls = 'unanswered';
+            if (this.sessionProgress.correct.includes(id)) cls = 'correct';
+            else if (this.sessionProgress.wrong.includes(id)) cls = 'wrong';
+
+            const div = document.createElement('div');
+            div.className = 'mock-q-item ' + cls;
+            div.textContent = i + 1;
+            div.addEventListener('click', () => this.enterMockReview(i));
+            grid.appendChild(div);
+        });
+    }
+
+    renderMockTopicBreakdown() {
+        const list = document.getElementById('mockTopicList');
+        list.innerHTML = '';
+
+        // 按知识点分组
+        const topicMap = {};
+        this.filteredQuestions.forEach((q, i) => {
+            const t = q.topic || '其他';
+            if (!topicMap[t]) topicMap[t] = { total: 0, correct: 0 };
+            topicMap[t].total++;
+            if (this.sessionProgress.correct.includes(q.id)) topicMap[t].correct++;
+        });
+
+        Object.keys(topicMap).forEach(topic => {
+            const data = topicMap[topic];
+            const pct = Math.round(data.correct / data.total * 100);
+            const barCls = pct < 40 ? 'low' : pct < 70 ? 'medium' : 'high';
+
+            const item = document.createElement('div');
+            item.className = 'mock-topic-item';
+            item.innerHTML = `
+                <span class="mock-topic-name">${topic}</span>
+                <div class="mock-topic-bar-wrap">
+                    <div class="mock-topic-bar ${barCls}" style="width:${pct}%"></div>
+                </div>
+                <span class="mock-topic-count">${data.correct}/${data.total}（${pct}%）</span>
+            `;
+            list.appendChild(item);
+        });
+    }
+
+    enterMockReview(startIndex) {
+        this.reviewMode = true;
+        this.reviewIndex = startIndex || 0;
+        this.currentIndex = this.reviewIndex;
+        document.getElementById('mockResultView').classList.add('hidden');
+        document.getElementById('practiceView').classList.remove('hidden');
+        this.showQuestion();
+        this.updateReviewUI();
+    }
+
+    exitMockReview() {
+        this.reviewMode = false;
+        document.getElementById('practiceView').classList.add('hidden');
+        document.getElementById('mockResultView').classList.remove('hidden');
+        // 隐藏回顾模式的返回按钮
+        const backBtn = document.getElementById('reviewBackBtn');
+        if (backBtn) backBtn.classList.add('hidden');
+        // 恢复被隐藏的按钮
+        document.querySelectorAll('.filter-btn').forEach(b => b.style.display = '');
+        document.getElementById('skipBtn').classList.remove('hidden');
+        document.getElementById('submitBtn').classList.remove('hidden');
+    }
+
+    updateReviewUI() {
+        if (!this.reviewMode) return;
+        const q = this.filteredQuestions[this.reviewIndex];
+        if (!q) return;
+
+        // 隐藏不需要的元素
+        document.querySelectorAll('.filter-btn').forEach(b => b.style.display = 'none');
+        document.getElementById('skipBtn').classList.add('hidden');
+        document.getElementById('submitBtn').classList.add('hidden');
+
+        // 显示返回结果按钮（若尚未添加）
+        let backBtn = document.getElementById('reviewBackBtn');
+        if (!backBtn) {
+            backBtn = document.createElement('button');
+            backBtn.id = 'reviewBackBtn';
+            backBtn.className = 'btn btn-outline';
+            backBtn.textContent = '← 返回结果';
+            backBtn.addEventListener('click', () => this.exitMockReview());
+            document.getElementById('navButtons').appendChild(backBtn);
+        }
+        backBtn.classList.remove('hidden');
+
+        // 更新导航按钮状态
+        document.getElementById('prevBtn').disabled = this.reviewIndex <= 0;
+        document.getElementById('nextBtn').disabled = this.reviewIndex >= this.filteredQuestions.length - 1;
+
+        // 展开解析
+        document.getElementById('analysisArea').open = true;
     }
 
     startWrongRedo() {
@@ -462,6 +630,7 @@ class TMUAQuiz {
             return;
         }
 
+        this.reviewMode = false;  // 修复：退出回顾模式
         this.currentMode = 'wrong-redo';
         this.mockSession.active = false;
         if (this.mockSession.timerId) {
@@ -497,6 +666,7 @@ class TMUAQuiz {
     }
 
     startShuffleMode() {
+        this.reviewMode = false;  // 修复：退出回顾模式
         this.currentMode = 'shuffle';
         this.mockSession.active = false;
         if (this.mockSession.timerId) {
@@ -683,18 +853,25 @@ class TMUAQuiz {
             btn.classList.add('current');
         }
 
-        if (this.sessionProgress.correct.includes(q.id)) {
-            btn.classList.add('correct');
-        } else if (this.sessionProgress.wrong.includes(q.id)) {
-            btn.classList.add('wrong');
-        } else if (this.currentAnswers[q.id]) {
-            btn.classList.add('pending');
-        } else if (this.progress.correct.includes(q.id)) {
-            btn.classList.add('correct');
-        } else if (this.progress.wrong.includes(q.id)) {
-            btn.classList.add('wrong');
+        // Mock 模式下不显示正误，只区分已答/未答
+        if (this.currentMode === 'mock' && this.mockSession.active) {
+            if (this.currentAnswers[q.id]) {
+                btn.classList.add('answered');
+            }
         } else {
-            btn.classList.add('pending');
+            if (this.sessionProgress.correct.includes(q.id)) {
+                btn.classList.add('correct');
+            } else if (this.sessionProgress.wrong.includes(q.id)) {
+                btn.classList.add('wrong');
+            } else if (this.currentAnswers[q.id]) {
+                btn.classList.add('pending');
+            } else if (this.progress.correct.includes(q.id)) {
+                btn.classList.add('correct');
+            } else if (this.progress.wrong.includes(q.id)) {
+                btn.classList.add('wrong');
+            } else {
+                btn.classList.add('pending');
+            }
         }
 
         btn.addEventListener('click', () => {
@@ -864,7 +1041,7 @@ class TMUAQuiz {
             }
         }
 
-        if (this.sessionProgress.completed.includes(q.id)) {
+        if (this.sessionProgress.completed.includes(q.id) && this.currentMode !== 'mock') {
             document.querySelectorAll('.option').forEach(opt => {
                 const key = opt.dataset.key;
                 if (key === q.answer) {
@@ -888,6 +1065,22 @@ class TMUAQuiz {
         
         if (!this.currentAnswers[q.id]) {
             this.selectedOption = null;
+        }
+
+        // 回顾模式：显示正误标识 + 展开解析 + 禁用选项点击
+        if (this.reviewMode) {
+            document.querySelectorAll('.option').forEach(opt => {
+                const key = opt.dataset.key;
+                if (key === q.answer) {
+                    opt.classList.add('correct');
+                } else if (key === this.currentAnswers[q.id]) {
+                    opt.classList.add('wrong');
+                }
+                // 移除点击提交行为
+                opt.style.pointerEvents = 'none';
+            });
+            document.getElementById('analysisArea').open = true;
+            this.updateReviewUI();
         }
     }
     
@@ -962,13 +1155,29 @@ class TMUAQuiz {
     }
     
     prevQuestion() {
+        if (this.reviewMode) {
+            if (this.reviewIndex > 0) {
+                this.reviewIndex--;
+                this.currentIndex = this.reviewIndex;
+                this.showQuestion();
+            }
+            return;
+        }
         if (this.currentIndex > 0) {
             this.currentIndex--;
             this.showQuestion();
         }
     }
-    
+
     nextQuestion() {
+        if (this.reviewMode) {
+            if (this.reviewIndex < this.filteredQuestions.length - 1) {
+                this.reviewIndex++;
+                this.currentIndex = this.reviewIndex;
+                this.showQuestion();
+            }
+            return;
+        }
         if (this.currentIndex < this.filteredQuestions.length - 1) {
             this.currentIndex++;
             this.showQuestion();
@@ -1037,6 +1246,7 @@ class TMUAQuiz {
             this.mockSession.timerId = null;
         }
 
+        this.reviewMode = false;
         this.mockSession.active = false;
         this.currentMode = 'practice';
         this.currentAnswers = {};
@@ -1089,6 +1299,17 @@ class TMUAQuiz {
     // ===== 欢迎页相关方法 =====
 
     showWelcomeView() {
+        this.reviewMode = false;  // 防御性重置：防止回顾模式状态泄漏
+
+        // 清理回顾模式的副作用：恢复被 updateReviewUI() 隐藏的元素
+        document.querySelectorAll('.filter-btn').forEach(b => b.style.display = '');
+        document.getElementById('submitBtn').classList.remove('hidden');
+        document.getElementById('skipBtn').classList.remove('hidden');
+
+        // 确保 mock-active 已移除
+        document.getElementById('practiceView').classList.remove('mock-active');
+        document.getElementById('mockHeader').classList.add('hidden');
+
         document.getElementById('welcomeView').classList.remove('hidden');
         document.getElementById('mockSelectView').classList.add('hidden');
         document.getElementById('practiceView').classList.add('hidden');
@@ -1225,8 +1446,16 @@ class TMUAQuiz {
         this.showPracticeView();
 
         if (mode === 'practice') {
+            this.reviewMode = false;  // 修复：退出回顾模式
             this.currentMode = 'practice';
             this.mockSession.active = false;
+
+            // 重置年份/试卷选择为"全部"，避免停留在模拟考试的筛选
+            this.selectedYear = 'all';
+            this.selectedPaper = 'all';
+            document.getElementById('yearSelect').value = 'all';
+            document.getElementById('paperSelect').value = 'all';
+
             this.applyYearPaperFilter();
             this.updateMockUI();
         } else if (mode === 'mock') {

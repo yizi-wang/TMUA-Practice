@@ -120,6 +120,85 @@
             border-color: #3498db;
         }
         
+        /* ===== 整合控制栏 ===== */
+        .control-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .control-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .control-center {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .control-right {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        /* 控制栏内的年份/试卷选择：去掉底部边框和多余padding */
+        .control-bar .year-paper-select {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            padding: 0;
+            border-bottom: none;
+        }
+
+        /* 控制栏内的筛选按钮：去掉底部边框 */
+        .control-bar .filters {
+            display: flex;
+            gap: 8px;
+            padding: 0;
+            border-bottom: none;
+            flex-wrap: wrap;
+        }
+
+        /* 小号按钮用于控制栏 */
+        .btn-sm {
+            padding: 6px 14px;
+            font-size: 13px;
+        }
+
+        /* 控制栏响应式 */
+        @media (max-width: 900px) {
+            .control-bar {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .control-left,
+            .control-center,
+            .control-right {
+                width: 100%;
+                justify-content: flex-start;
+            }
+
+            .control-right {
+                justify-content: flex-start;
+            }
+        }
+
+        body.dark-mode .control-bar {
+            border-bottom-color: #2a3a5e;
+        }
+
         /* 年份和试卷选择器样式 */
         .year-paper-select {
             display: flex;
@@ -146,15 +225,6 @@
             border-color: #3498db;
         }
 
-        .mode-panel {
-            display: flex;
-            gap: 10px;
-            align-items: center;
-            padding: 12px 0;
-            border-bottom: 1px solid #eee;
-            flex-wrap: wrap;
-        }
-
         .mode-status {
             font-size: 14px;
             color: #7f8c8d;
@@ -179,8 +249,9 @@
         }
         
         .question-text {
-            font-size: 16px;
-            margin-bottom: 20px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 24px;
             white-space: pre-wrap;
         }
         
@@ -237,7 +308,7 @@
         .options {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 12px;
         }
         
         .option {
@@ -256,6 +327,8 @@
         .option.selected {
             border-color: #3498db;
             background: #e8f4fc;
+            box-shadow: inset 4px 0 0 #3498db;
+            font-weight: 600;
         }
         
         .option.correct {
@@ -292,10 +365,16 @@
         .btn-primary {
             background: #3498db;
             color: white;
+            padding: 12px 28px;
+            font-size: 15px;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(52, 152, 219, 0.30);
         }
-        
+
         .btn-primary:hover {
             background: #2980b9;
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.40);
+            transform: translateY(-1px);
         }
         
         .btn-secondary {
@@ -612,6 +691,12 @@
             gap: 12px;
         }
 
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
         .back-link {
             font-size: 14px;
             color: #3498db;
@@ -990,6 +1075,361 @@
             }
         }
 
+        /* ===== 模拟考试结果页 ===== */
+        #mockResultView {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 24px 16px 60px;
+        }
+
+        .mock-result-container {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        /* 顶部标题 */
+        .mock-result-header {
+            text-align: center;
+        }
+
+        .mock-result-header h2 {
+            font-size: 26px;
+            font-weight: 700;
+            margin: 0 0 4px;
+        }
+
+        .mock-result-subtitle {
+            color: #888;
+            font-size: 15px;
+            margin: 0;
+        }
+
+        body.dark-mode .mock-result-subtitle {
+            color: #aaa;
+        }
+
+        /* 成绩环形图 */
+        .mock-score-hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .mock-score-ring {
+            position: relative;
+            width: 160px;
+            height: 160px;
+        }
+
+        .mock-ring-svg {
+            width: 100%;
+            height: 100%;
+            transform: rotate(-90deg);
+        }
+
+        .mock-ring-bg {
+            fill: none;
+            stroke: #e8e8e8;
+            stroke-width: 12;
+        }
+
+        .mock-ring-fill {
+            fill: none;
+            stroke: #4caf50;
+            stroke-width: 12;
+            stroke-linecap: round;
+            stroke-dasharray: 452.39;
+            stroke-dashoffset: 452.39;
+            transition: stroke-dashoffset 1s ease, stroke 0.3s;
+        }
+
+        .mock-ring-fill.medium {
+            stroke: #ff9800;
+        }
+
+        .mock-ring-fill.low {
+            stroke: #f44336;
+        }
+
+        body.dark-mode .mock-ring-bg {
+            stroke: #3a3a4a;
+        }
+
+        .mock-ring-text {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mock-ring-pct {
+            font-size: 36px;
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        .mock-ring-frac {
+            font-size: 14px;
+            color: #888;
+            margin-top: 4px;
+        }
+
+        body.dark-mode .mock-ring-frac {
+            color: #aaa;
+        }
+
+        .mock-score-msg {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        /* 统计卡片行 */
+        .mock-stats-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+
+        .mock-stat-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            padding: 16px 8px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            border: 1px solid #e8e8e8;
+        }
+
+        body.dark-mode .mock-stat-card {
+            background: #2a2a3a;
+            border-color: #3a3a4a;
+        }
+
+        .mock-stat-icon {
+            font-size: 20px;
+        }
+
+        .mock-stat-num {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .mock-stat-num.correct {
+            color: #4caf50;
+        }
+
+        .mock-stat-num.wrong {
+            color: #f44336;
+        }
+
+        .mock-stat-num.unanswered {
+            color: #888;
+        }
+
+        .mock-stat-label {
+            font-size: 12px;
+            color: #888;
+        }
+
+        body.dark-mode .mock-stat-label {
+            color: #aaa;
+        }
+
+        /* 通用区块 */
+        .mock-section {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid #e8e8e8;
+        }
+
+        body.dark-mode .mock-section {
+            background: #2a2a3a;
+            border-color: #3a3a4a;
+        }
+
+        .mock-section h3 {
+            margin: 0 0 14px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        /* 题目网格 */
+        .mock-question-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(52px, 1fr));
+            gap: 8px;
+        }
+
+        .mock-q-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 52px;
+            height: 52px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 15px;
+            cursor: pointer;
+            transition: transform 0.15s, box-shadow 0.15s;
+            border: 2px solid transparent;
+        }
+
+        .mock-q-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+        }
+
+        .mock-q-item.correct {
+            background: #e8f5e9;
+            color: #2e7d32;
+            border-color: #a5d6a7;
+        }
+
+        .mock-q-item.wrong {
+            background: #ffebee;
+            color: #c62828;
+            border-color: #ef9a9a;
+        }
+
+        .mock-q-item.unanswered {
+            background: #f5f5f5;
+            color: #999;
+            border-color: #ddd;
+        }
+
+        body.dark-mode .mock-q-item.correct {
+            background: #1b3a1b;
+            color: #81c784;
+            border-color: #2e7d32;
+        }
+
+        body.dark-mode .mock-q-item.wrong {
+            background: #3a1a1a;
+            color: #ef5350;
+            border-color: #c62828;
+        }
+
+        body.dark-mode .mock-q-item.unanswered {
+            background: #2a2a3a;
+            color: #666;
+            border-color: #444;
+        }
+
+        /* 知识点分析列表 */
+        .mock-topic-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 0;
+            border-bottom: 1px solid #e8e8e8;
+        }
+
+        .mock-topic-item:last-child {
+            border-bottom: none;
+        }
+
+        body.dark-mode .mock-topic-item {
+            border-bottom-color: #3a3a4a;
+        }
+
+        .mock-topic-name {
+            width: 110px;
+            font-size: 14px;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .mock-topic-bar-wrap {
+            flex: 1;
+            height: 10px;
+            background: #e8e8e8;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        body.dark-mode .mock-topic-bar-wrap {
+            background: #3a3a4a;
+        }
+
+        .mock-topic-bar {
+            height: 100%;
+            border-radius: 5px;
+            transition: width 0.6s ease;
+        }
+
+        .mock-topic-bar.high {
+            background: #4caf50;
+        }
+
+        .mock-topic-bar.medium {
+            background: #ff9800;
+        }
+
+        .mock-topic-bar.low {
+            background: #f44336;
+        }
+
+        .mock-topic-count {
+            width: 70px;
+            text-align: right;
+            font-size: 13px;
+            color: #888;
+            flex-shrink: 0;
+        }
+
+        body.dark-mode .mock-topic-count {
+            color: #aaa;
+        }
+
+        /* 操作按钮区 */
+        .mock-result-actions {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* 结果页响应式 */
+        @media (max-width: 600px) {
+            .mock-stats-row {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .mock-result-header h2 {
+                font-size: 22px;
+            }
+
+            .mock-score-ring {
+                width: 130px;
+                height: 130px;
+            }
+
+            .mock-ring-pct {
+                font-size: 28px;
+            }
+
+            .mock-q-item {
+                width: 44px;
+                height: 44px;
+                font-size: 13px;
+            }
+
+            .mock-result-actions {
+                flex-direction: column;
+            }
+
+            .mock-result-actions .btn {
+                width: 100%;
+            }
+        }
+
         /* 响应式 - 移动端欢迎页卡片单列 */
         @media (max-width: 600px) {
             .welcome-cards {
@@ -1068,7 +1508,7 @@
             margin-bottom: 8px;
         }
 
-        .answer-card-header {
+        .answer-c        .answer-card-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -1077,6 +1517,16 @@
             flex-wrap: wrap;
         }
 
+        .answer-card-progress {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 12px;
+            font-size: 13px;
+            color: #555;
+            border-bottom: 1px solid #e0e0e0;
+            margin-bottom: 8px;
+        }
+        
         .answer-card-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(44px, 1fr));
@@ -1319,15 +1769,7 @@
             display: none;
         }
 
-        #practiceView.mock-active .year-paper-select {
-            display: none;
-        }
-
-        #practiceView.mock-active .mode-panel {
-            display: none;
-        }
-
-        #practiceView.mock-active .filters {
+        #practiceView.mock-active .control-bar {
             display: none;
         }
 
@@ -1554,6 +1996,11 @@
             background: transparent;
         }
 
+        body.dark-mode .answer-card-progress {
+            color: #a0a0b0;
+            border-bottom-color: #2a3a5e;
+        }
+        
         body.dark-mode .answer-card-header strong {
             color: #e0e0e0;
         }
@@ -1608,6 +2055,8 @@
         body.dark-mode .option.selected {
             border-color: #3498db;
             background: #1e4070;
+            box-shadow: inset 4px 0 0 #3498db;
+            font-weight: 600;
         }
 
         body.dark-mode .option.correct {
@@ -1966,6 +2415,75 @@
             </div>
         </div>
 
+        <!-- ===== 模拟考试结果页 ===== -->
+        <div id="mockResultView" class="hidden">
+            <div class="mock-result-container">
+                <!-- 顶部标题 -->
+                <div class="mock-result-header">
+                    <h2>📊 模拟考试结果</h2>
+                    <p class="mock-result-subtitle" id="mockResultSubtitle">2019 Paper 1</p>
+                </div>
+
+                <!-- 大号成绩环形图 -->
+                <div class="mock-score-hero">
+                    <div class="mock-score-ring">
+                        <svg viewBox="0 0 160 160" class="mock-ring-svg">
+                            <circle cx="80" cy="80" r="72" class="mock-ring-bg"/>
+                            <circle cx="80" cy="80" r="72" class="mock-ring-fill" id="mockRingFill"/>
+                        </svg>
+                        <div class="mock-ring-text">
+                            <span class="mock-ring-pct" id="mockRingPct">0%</span>
+                            <span class="mock-ring-frac" id="mockRingFrac">0/20</span>
+                        </div>
+                    </div>
+                    <p class="mock-score-msg" id="mockScoreMsg">考试完成</p>
+                </div>
+
+                <!-- 统计卡片 -->
+                <div class="mock-stats-row">
+                    <div class="mock-stat-card">
+                        <span class="mock-stat-icon">✅</span>
+                        <span class="mock-stat-num" id="mockStatCorrect">0</span>
+                        <span class="mock-stat-label">正确</span>
+                    </div>
+                    <div class="mock-stat-card">
+                        <span class="mock-stat-icon">❌</span>
+                        <span class="mock-stat-num" id="mockStatWrong">0</span>
+                        <span class="mock-stat-label">错误</span>
+                    </div>
+                    <div class="mock-stat-card">
+                        <span class="mock-stat-icon">⏱️</span>
+                        <span class="mock-stat-num" id="mockStatTime">0:00</span>
+                        <span class="mock-stat-label">总用时</span>
+                    </div>
+                    <div class="mock-stat-card">
+                        <span class="mock-stat-icon">📝</span>
+                        <span class="mock-stat-num" id="mockStatAvg">0s</span>
+                        <span class="mock-stat-label">平均每题</span>
+                    </div>
+                </div>
+
+                <!-- 题目正误网格 -->
+                <div class="mock-section">
+                    <h3>题目详情（点击回顾）</h3>
+                    <div class="mock-question-grid" id="mockQuestionGrid"></div>
+                </div>
+
+                <!-- 知识点分析 -->
+                <div class="mock-section">
+                    <h3>知识点分析</h3>
+                    <div class="mock-topic-list" id="mockTopicList"></div>
+                </div>
+
+                <!-- 操作按钮 -->
+                <div class="mock-result-actions">
+                    <button class="btn btn-primary" id="mockReviewBtn">📝 回顾答卷</button>
+                    <button class="btn btn-secondary" id="mockRetryBtn">🔄 重新考试</button>
+                    <button class="btn btn-outline" id="mockResultHomeBtn">🏠 返回首页</button>
+                </div>
+            </div>
+        </div>
+
         <!-- ===== 练习界面 ===== -->
         <div id="practiceView" class="hidden">
             <!-- Mock 模式专属顶栏 -->
@@ -1980,55 +2498,57 @@
                     <a href="javascript:void(0)" id="backToHomeLink" class="back-link">🏠 首页</a>
                     <h1>📚 TMUA练习系统</h1>
                 </div>
-                <div class="stats">
-                    <span id="progressText">进度: 0/280</span>
-                    <span id="correctRate">正确率: 0%</span>
-                    <button class="btn btn-small" id="darkModeBtn" onclick="window.quizApp && window.quizApp.toggleDarkMode()" style="margin-left:6px;">🌙</button>
+                <div class="header-right">
+                    <button class="btn btn-small" id="darkModeBtn" onclick="window.quizApp && window.quizApp.toggleDarkMode()">🌙</button>
                     <button class="btn btn-small btn-danger" id="clearProgressBtn">清空进度</button>
                 </div>
             </header>
             
-            <!-- 年份和试卷选择 -->
-            <div class="year-paper-select">
-                <label>年份:</label>
-                <select id="yearSelect">
-                    <option value="all">全部年份</option>
-                    <option value="2016">2016</option>
-                    <option value="2017">2017</option>
-                    <option value="2018">2018</option>
-                    <option value="2019">2019</option>
-                    <option value="2020">2020</option>
-                    <option value="2021">2021</option>
-                    <option value="2022">2022</option>
-                </select>
-                
-                <label>Paper:</label>
-                <select id="paperSelect">
-                    <option value="all">全部试卷</option>
-                    <option value="1">Paper 1</option>
-                    <option value="2">Paper 2</option>
-                </select>
+            <!-- 整合控制栏 -->
+            <div class="control-bar">
+                <div class="control-left">
+                    <div class="year-paper-select">
+                        <label>年份:</label>
+                        <select id="yearSelect">
+                            <option value="all">全部年份</option>
+                            <option value="2016">2016</option>
+                            <option value="2017">2017</option>
+                            <option value="2018">2018</option>
+                            <option value="2019">2019</option>
+                            <option value="2020">2020</option>
+                            <option value="2021">2021</option>
+                            <option value="2022">2022</option>
+                        </select>
+
+                        <label>Paper:</label>
+                        <select id="paperSelect">
+                            <option value="all">全部试卷</option>
+                            <option value="1">Paper 1</option>
+                            <option value="2">Paper 2</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="control-center">
+                    <button class="filter-btn active" data-filter="all">全部题目</button>
+                    <button class="filter-btn" data-filter="topic">按知识点</button>
+                    <button class="filter-btn" data-filter="wrong">错题本</button>
+                    <button class="filter-btn" data-filter="uncompleted">未完成</button>
+                    <select class="topic-select hidden" id="topicSelect">
+                        <option value="">选择知识点</option>
+                    </select>
+                </div>
+
+                <div class="control-right">
+                    <button class="btn btn-primary btn-sm" id="startMockBtn">开始模拟</button>
+                    <button class="btn btn-secondary btn-sm" id="startShuffleBtn">随机练习</button>
+                    <button class="btn btn-secondary btn-sm hidden" id="submitMockBtn">提前交卷</button>
+                    <span class="mode-status hidden" id="mockStatus">当前模式: 普通练习</span>
+                    <span class="mock-timer hidden" id="mockTimer">75:00</span>
+                </div>
             </div>
 
-            <div class="mode-panel">
-                <button class="btn btn-primary" id="startMockBtn">开始当前试卷模拟</button>
-                <button class="btn btn-secondary" id="startShuffleBtn">随机练习</button>
-                <button class="btn btn-secondary hidden" id="submitMockBtn">提前交卷</button>
-                <span class="mode-status" id="mockStatus">当前模式: 普通练习</span>
-                <span class="mock-timer hidden" id="mockTimer">75:00</span>
-            </div>
-            
-            <div class="filters">
-                <button class="filter-btn active" data-filter="all">全部题目</button>
-                <button class="filter-btn" data-filter="topic">按知识点</button>
-                <button class="filter-btn" data-filter="wrong">错题本</button>
-                <button class="filter-btn" data-filter="uncompleted">未完成</button>
-                <select class="topic-select hidden" id="topicSelect">
-                    <option value="">选择知识点</option>
-                </select>
-            </div>
-
-            <details class="collapsible-panel insights-panel" open>
+            <details class="collapsible-panel insights-panel">
                 <summary class="collapsible-summary">
                     <span>📊 数据面板</span>
                     <span class="collapse-arrow">&#9660;</span>
@@ -2102,6 +2622,10 @@
                             <span>📋 答题卡</span>
                             <span class="collapse-arrow">&#9660;</span>
                         </summary>
+                        <div class="answer-card-progress">
+                            <span id="progressText">进度: 0/280</span>
+                            <span id="correctRate">正确率: 0%</span>
+                        </div>
                         <div class="answer-card-header">
                             <button class="btn btn-secondary btn-small" id="redoWrongBtn">错题二刷</button>
                         </div>

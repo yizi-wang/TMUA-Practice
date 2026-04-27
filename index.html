@@ -120,6 +120,85 @@
             border-color: #3498db;
         }
         
+        /* ===== 整合控制栏 ===== */
+        .control-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .control-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .control-center {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .control-right {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        /* 控制栏内的年份/试卷选择：去掉底部边框和多余padding */
+        .control-bar .year-paper-select {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            padding: 0;
+            border-bottom: none;
+        }
+
+        /* 控制栏内的筛选按钮：去掉底部边框 */
+        .control-bar .filters {
+            display: flex;
+            gap: 8px;
+            padding: 0;
+            border-bottom: none;
+            flex-wrap: wrap;
+        }
+
+        /* 小号按钮用于控制栏 */
+        .btn-sm {
+            padding: 6px 14px;
+            font-size: 13px;
+        }
+
+        /* 控制栏响应式 */
+        @media (max-width: 900px) {
+            .control-bar {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .control-left,
+            .control-center,
+            .control-right {
+                width: 100%;
+                justify-content: flex-start;
+            }
+
+            .control-right {
+                justify-content: flex-start;
+            }
+        }
+
+        body.dark-mode .control-bar {
+            border-bottom-color: #2a3a5e;
+        }
+
         /* 年份和试卷选择器样式 */
         .year-paper-select {
             display: flex;
@@ -144,15 +223,6 @@
         
         .year-paper-select select:focus {
             border-color: #3498db;
-        }
-
-        .mode-panel {
-            display: flex;
-            gap: 10px;
-            align-items: center;
-            padding: 12px 0;
-            border-bottom: 1px solid #eee;
-            flex-wrap: wrap;
         }
 
         .mode-status {
@@ -1699,15 +1769,7 @@
             display: none;
         }
 
-        #practiceView.mock-active .year-paper-select {
-            display: none;
-        }
-
-        #practiceView.mock-active .mode-panel {
-            display: none;
-        }
-
-        #practiceView.mock-active .filters {
+        #practiceView.mock-active .control-bar {
             display: none;
         }
 
@@ -2442,44 +2504,48 @@
                 </div>
             </header>
             
-            <!-- 年份和试卷选择 -->
-            <div class="year-paper-select">
-                <label>年份:</label>
-                <select id="yearSelect">
-                    <option value="all">全部年份</option>
-                    <option value="2016">2016</option>
-                    <option value="2017">2017</option>
-                    <option value="2018">2018</option>
-                    <option value="2019">2019</option>
-                    <option value="2020">2020</option>
-                    <option value="2021">2021</option>
-                    <option value="2022">2022</option>
-                </select>
-                
-                <label>Paper:</label>
-                <select id="paperSelect">
-                    <option value="all">全部试卷</option>
-                    <option value="1">Paper 1</option>
-                    <option value="2">Paper 2</option>
-                </select>
-            </div>
+            <!-- 整合控制栏 -->
+            <div class="control-bar">
+                <div class="control-left">
+                    <div class="year-paper-select">
+                        <label>年份:</label>
+                        <select id="yearSelect">
+                            <option value="all">全部年份</option>
+                            <option value="2016">2016</option>
+                            <option value="2017">2017</option>
+                            <option value="2018">2018</option>
+                            <option value="2019">2019</option>
+                            <option value="2020">2020</option>
+                            <option value="2021">2021</option>
+                            <option value="2022">2022</option>
+                        </select>
 
-            <div class="mode-panel">
-                <button class="btn btn-primary" id="startMockBtn">开始当前试卷模拟</button>
-                <button class="btn btn-secondary" id="startShuffleBtn">随机练习</button>
-                <button class="btn btn-secondary hidden" id="submitMockBtn">提前交卷</button>
-                <span class="mode-status" id="mockStatus">当前模式: 普通练习</span>
-                <span class="mock-timer hidden" id="mockTimer">75:00</span>
-            </div>
-            
-            <div class="filters">
-                <button class="filter-btn active" data-filter="all">全部题目</button>
-                <button class="filter-btn" data-filter="topic">按知识点</button>
-                <button class="filter-btn" data-filter="wrong">错题本</button>
-                <button class="filter-btn" data-filter="uncompleted">未完成</button>
-                <select class="topic-select hidden" id="topicSelect">
-                    <option value="">选择知识点</option>
-                </select>
+                        <label>Paper:</label>
+                        <select id="paperSelect">
+                            <option value="all">全部试卷</option>
+                            <option value="1">Paper 1</option>
+                            <option value="2">Paper 2</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="control-center">
+                    <button class="filter-btn active" data-filter="all">全部题目</button>
+                    <button class="filter-btn" data-filter="topic">按知识点</button>
+                    <button class="filter-btn" data-filter="wrong">错题本</button>
+                    <button class="filter-btn" data-filter="uncompleted">未完成</button>
+                    <select class="topic-select hidden" id="topicSelect">
+                        <option value="">选择知识点</option>
+                    </select>
+                </div>
+
+                <div class="control-right">
+                    <button class="btn btn-primary btn-sm" id="startMockBtn">开始模拟</button>
+                    <button class="btn btn-secondary btn-sm" id="startShuffleBtn">随机练习</button>
+                    <button class="btn btn-secondary btn-sm hidden" id="submitMockBtn">提前交卷</button>
+                    <span class="mode-status hidden" id="mockStatus">当前模式: 普通练习</span>
+                    <span class="mock-timer hidden" id="mockTimer">75:00</span>
+                </div>
             </div>
 
             <details class="collapsible-panel insights-panel">

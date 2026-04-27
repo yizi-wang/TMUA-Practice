@@ -1346,6 +1346,100 @@
             font-weight: 600;
         }
 
+        /* 提交成绩区域 */
+        .mock-submit-section {
+            background: linear-gradient(135deg, #e3f2fd 0%, #f8f9fa 100%);
+            border-color: #90caf9;
+        }
+
+        body.dark-mode .mock-submit-section {
+            background: linear-gradient(135deg, #1a237e 0%, #2a2a3a 100%);
+            border-color: #3949ab;
+        }
+
+        .submit-form {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .student-name-input {
+            padding: 10px 14px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 15px;
+            width: 180px;
+            transition: border-color 0.2s;
+        }
+
+        .student-name-input:focus {
+            border-color: #2196F3;
+            outline: none;
+        }
+
+        body.dark-mode .student-name-input {
+            background: #1e1e2e;
+            border-color: #555;
+            color: #fff;
+        }
+
+        .btn-submit-score {
+            background: #2196F3;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 15px;
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn-submit-score:hover {
+            background: #1976D2;
+        }
+
+        .btn-submit-score:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        body.dark-mode .btn-submit-score {
+            background: #1565c0;
+        }
+
+        body.dark-mode .btn-submit-score:hover {
+            background: #0d47a1;
+        }
+
+        .submit-status {
+            font-size: 14px;
+            padding: 8px 12px;
+            border-radius: 6px;
+            animation: fadeIn 0.3s;
+        }
+
+        .submit-status.success {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .submit-status.error {
+            background: #ffebee;
+            color: #c62828;
+        }
+
+        body.dark-mode .submit-status.success {
+            background: #1b5e20;
+            color: #a5d6a7;
+        }
+
+        body.dark-mode .submit-status.error {
+            background: #b71c1c;
+            color: #ffcdd2;
+        }
+
         /* 题目网格 */
         .mock-question-grid {
             display: grid;
@@ -2588,6 +2682,20 @@
                 <div class="mock-section">
                     <h3>知识点分析</h3>
                     <div class="mock-topic-list" id="mockTopicList"></div>
+                </div>
+
+                <!-- 提交成绩到老师系统 -->
+                <div class="mock-section mock-submit-section">
+                    <h3>📤 提交成绩给老师</h3>
+                    <div class="submit-form">
+                        <input type="text" id="studentNameInput" 
+                               placeholder="请输入你的姓名" 
+                               class="student-name-input">
+                        <button class="btn btn-submit-score" id="submitScoreBtn">
+                            提交成绩
+                        </button>
+                        <span class="submit-status hidden" id="submitStatus"></span>
+                    </div>
                 </div>
 
                 <!-- 操作按钮 -->

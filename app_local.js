@@ -327,6 +327,40 @@ class TMUAQuiz {
             this.showWelcomeView();
         });
 
+        // QuickForm 提交成绩按钮
+        document.getElementById('submitScoreBtn').addEventListener('click', async () => {
+            const nameInput = document.getElementById('studentNameInput');
+            const studentName = nameInput.value.trim();
+            
+            if (!studentName) {
+                nameInput.focus();
+                nameInput.style.borderColor = '#f44336';
+                setTimeout(() => nameInput.style.borderColor = '', 2000);
+                return;
+            }
+            
+            const btn = document.getElementById('submitScoreBtn');
+            const status = document.getElementById('submitStatus');
+            
+            btn.disabled = true;
+            btn.textContent = '提交中...';
+            status.classList.add('hidden');
+            
+            const result = await this.submitScoreToQuickForm(studentName);
+            
+            btn.disabled = false;
+            btn.textContent = '提交成绩';
+            
+            status.classList.remove('hidden', 'success', 'error');
+            if (result.success) {
+                status.classList.add('success');
+                status.textContent = '✅ 提交成功！老师已收到你的成绩。';
+            } else {
+                status.classList.add('error');
+                status.textContent = '❌ ' + result.error;
+            }
+        });
+
         // 继续上次练习
         document.getElementById('welcomeContinueLink').addEventListener('click', () => {
             this.showPracticeView();
@@ -580,6 +614,59 @@ class TMUAQuiz {
             `;
             list.appendChild(item);
         });
+    }
+
+    // ===== QuickForm 数据提交 =====
+    async submitScoreToQuickForm(studentName) {
+        const QUICKFORM_API_URL = 'https://quickform.cn/api/6g8ir94jih';
+        
+        const paper = this.mockSession.paperLabel;
+        const total = this.filteredQuestions.length;
+        const correct = this.sessionProgress.correct.length;
+        const wrong = this.sessionProgress.wrong.length;
+        const pct = Math.round(correct / total * 100);
+        const usedSeconds = this.mockSession.durationSeconds - this.mockSession.remainingSeconds;
+        const avgSec = (correct + wrong) > 0 ? Math.round(usedSeconds / (correct + wrong)) : 0;
+        
+        // 构建知识点分析
+        const topicBreakdown = {};
+        this.filteredQuestions.forEach(q => {
+            const t = q.topic || '其他';
+            if (!topicBreakdown[t]) topicBreakdown[t] = {total: 0, correct: 0};
+            topicBreakdown[t].total++;
+            if (this.sessionProgress.correct.includes(q.id)) topicBreakdown[t].correct++;
+        });
+        
+        const payload = {
+            student_name: studentName,
+            exam_date: new Date().toISOString().split('T')[0],
+            paper: paper,
+            score_total: total,
+            score_correct: correct,
+            score_wrong: wrong,
+            score_pct: pct,
+            time_seconds: usedSeconds,
+            avg_seconds: avgSec,
+            wrong_questions: this.sessionProgress.wrong,
+            topic_breakdown: topicBreakdown
+        };
+        
+        try {
+            const response = await fetch(QUICKFORM_API_URL, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(payload)
+            });
+            const result = await response.json();
+            
+            if (result.status === 'success') {
+                return {success: true};
+            } else {
+                return {success: false, error: result.message || '提交失败'};
+            }
+        } catch (e) {
+            return {success: false, error: '网络错误: ' + e.message};
+        }
     }
 
     enterMockReview(startIndex) {

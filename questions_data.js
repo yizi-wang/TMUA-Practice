@@ -494,7 +494,7 @@ window.QUESTIONS = [
       "F": "$18$"
     },
     "answer": "A",
-    "analysis": "【题目分析】\n计算积分 ∫₁² (x² - 4/x²)² dx\n\n【解题步骤】\n第一步：展开平方\n(x² - 4/x²)² = x⁴ - 8 + 16/x⁴\n\n第二步：逐项积分\n∫ x⁴ dx = x⁵/5\n∫ 8 dx $= 8$x\n∫ 16/x⁴ dx $= 16$∫x⁻⁴dx $= 16$ × x⁻³/(-3) = -16/(3x³)\n\n第三步：代入边界计算\n∫₁² (x⁴ - 8 + 16/x⁴)dx = [x⁵/5 - 8x - 16/(3x³)]₁²\n\n= ($\\frac{32}{5}$ - 16 - 16/(3×8)) - ($\\frac{1}{5}$ - 8 - $\\frac{16}{3}$)\n= ($\\frac{32}{5}$ - 16 - $\\frac{2}{3}$) - ($\\frac{1}{5}$ - 8 - $\\frac{16}{3}$)\n= $\\frac{32}{5}$ - $\\frac{1}{5}$ - 16 + 8 - $\\frac{2}{3}$ + $\\frac{16}{3}$\n= $\\frac{31}{5}$ - 8 + $\\frac{14}{3}$\n= $\\frac{31}{5}$ - $\\frac{40}{5}$ + $\\frac{14}{3}$\n= -$\\frac{9}{5}$ + $\\frac{14}{3}$\n\n转换为同分母：\n= -$\\frac{27}{15}$ + $\\frac{70}{15}$\n= $\\frac{43}{15}$\n\n【正确答案】A",
+    "analysis": "【题目分析】\n本题考查定积分的计算。被积函数为$\\left(x^2 - \\frac{4}{x^2}\\right)^2$，积分区间为$[1,2]$。核心思路是先将括号内表达式平方展开，再逐项利用幂函数积分公式$\\int x^n dx = \\frac{x^{n+1}}{n+1}$（$n \\neq -1$）求解，最后代入上下限计算差值。这是定积分计算的标准流程，展开后各项均为幂函数形式，可直接积分。\n\n【解题步骤】\n第一步：展开被积函数\n$\\left(x^2 - \\frac{4}{x^2}\\right)^2 = x^4 - 2 \\cdot x^2 \\cdot \\frac{4}{x^2} + \\frac{16}{x^4} = x^4 - 8 + 16x^{-4}$\n\n第二步：逐项求原函数\n$\\int (x^4 - 8 + 16x^{-4})dx = \\frac{x^5}{5} - 8x - \\frac{16}{3x^3} + C$\n\n第三步：代入上下限$[1,2]$\n$\\left[\\frac{x^5}{5} - 8x - \\frac{16}{3x^3}\\right]_1^2 = \\left(\\frac{32}{5} - 16 - \\frac{2}{3}\\right) - \\left(\\frac{1}{5} - 8 - \\frac{16}{3}\\right) = \\frac{31}{5} - 8 + \\frac{14}{3} = \\frac{93 - 120 + 70}{15} = \\frac{43}{15}$\n\n【快捷思路】\n展开后三项分别为$x^4$、常数项和$x^{-4}$，积分后注意$x^{-4}$积分时指数加一除以新指数，得到$-\\frac{16}{3}x^{-3}$，代入下限时注意负号变正。\n【正确答案】A",
     "images": null,
     "has_image": false
   },
@@ -513,7 +513,7 @@ window.QUESTIONS = [
       "D": "$\\frac{8}{13}x^{\\frac{13}{4}} + 8x^{\\frac{5}{4}}$"
     },
     "answer": "B",
-    "analysis": "【题目分析】\n求 f(x) = (x²+5)(2x)/x^($\\frac{3}{4}$) 的导数 f'(x)。\n\n【解题步骤】\n第一步：简化函数表达式\nf(x) = (x²+5)(2x)/x^($\\frac{3}{4}$)\n     = (x²+5)(2x) × x^(-$\\frac{3}{4}$)\n     $= 2$(x²+5)x × x^(-$\\frac{3}{4}$)\n     $= 2$(x³ + 5x)x^(-$\\frac{3}{4}$)\n     $= 2$x^(3-$\\frac{3}{4}$) + 10x^(1-$\\frac{3}{4}$)\n     $= 2$x^($\\frac{9}{4}$) + 10x^($\\frac{1}{4}$)\n\n第二步：求导\nf'(x) $= 2$ × ($\\frac{9}{4}$) × x^($\\frac{5}{4}$) + 10 × ($\\frac{1}{4}$) × x^(-$\\frac{3}{4}$)\n      = ($\\frac{9}{2}$)x^($\\frac{5}{4}$) + ($\\frac{5}{2}$)x^(-$\\frac{3}{4}$)\n\n第三步：与选项对比\n选项E的形式应该与上面一致。\n\n【正确答案】E",
+    "analysis": "【题目分析】\n本题考查函数求导。函数$f(x) = \\frac{(x^2+5)(2x)}{\\sqrt[4]{x^3}}$中分母含四次根式，直接求导会很繁琐。正确做法是先化简函数表达式：将分母$\\sqrt[4]{x^3}$写成$x^{\\frac{3}{4}}$，分子展开后逐项除以分母，化为幂函数的和，再利用幂函数求导公式$\\frac{d}{dx}x^n = nx^{n-1}$逐项求导。这是处理含根式函数求导的标准技巧。\n\n【解题步骤】\n第一步：化简函数\n分子：$(x^2+5)(2x) = 2x^3 + 10x$\n分母：$\\sqrt[4]{x^3} = x^{\\frac{3}{4}}$\n$f(x) = \\frac{2x^3 + 10x}{x^{\\frac{3}{4}}} = 2x^{3-\\frac{3}{4}} + 10x^{1-\\frac{3}{4}} = 2x^{\\frac{9}{4}} + 10x^{\\frac{1}{4}}$\n\n第二步：逐项求导\n$f'(x) = 2 \\cdot \\frac{9}{4}x^{\\frac{9}{4}-1} + 10 \\cdot \\frac{1}{4}x^{\\frac{1}{4}-1} = \\frac{9}{2}x^{\\frac{5}{4}} + \\frac{5}{2}x^{-\\frac{3}{4}}$\n\n第三步：对照选项\n结果与选项B完全一致。\n\n【快捷思路】\n先化简再求导永远比直接套用商法则简单。关键是将根式转化为分数指数幂，分子展开后分别除以分母，即可化为幂函数线性组合。\n【正确答案】B",
     "images": null,
     "has_image": false
   },
@@ -534,7 +534,7 @@ window.QUESTIONS = [
       "F": "$\\frac{11\\pi}{6}$"
     },
     "answer": "D",
-    "analysis": "【题目分析】\n求方程 8sin²x + 4cos²x $= 7$ 在 [0, $2\\pi$] 内的最大角度x。\n\n【解题步骤】\n第一步：简化方程\n利用 sin²x + cos²x $= 1$：\n8sin²x + 4cos²x $= 8$sin²x + 4(1-sin²x) $= 4$ + 4sin²x\n\n方程：4 + 4sin²x $= 7$\n4sin²x $= 3$\nsin²x = $\\frac{3}{4}$\nsin x = ±√$\\frac{3}{2}$\n\n第二步：求解x的范围\nsin x = √$\\frac{3}{2}$: x = $\\pi$/3, $2\\pi$/3, $\\pi$/3 + $2\\pi$, $2\\pi$/3 + $2\\pi$（在基本周期内）\n在[0, $2\\pi$]：x = $\\pi$/3, $2\\pi$/3, $7\\pi$/3 > $2\\pi$, $8\\pi$/3 > $2\\pi$\n\nsin x = -√$\\frac{3}{2}$: x $= 4$$\\pi$/3, $5\\pi$/3（在[$\\pi$, $2\\pi$]）\n\n所有解：x = $\\pi$/3, $2\\pi$/3, $4\\pi$/3, $5\\pi$/3\n\n最大角度 x $= 5$$\\pi$/3，对应选项D。\n\n【正确答案】D",
+    "analysis": "【题目分析】\n本题考查三角方程求解及区间内最大角的确定。方程$8\\sin^2 x + 4\\cos^2 x = 7$同时含$\\sin x$和$\\cos x$，需用恒等式$\\sin^2 x + \\cos^2 x = 1$消去$\\cos^2 x$，将方程化为仅含$\\sin^2 x$的形式。解出$\\sin x = \\pm\\frac{\\sqrt{3}}{2}$后，在区间$[0, 2\\pi]$内找出所有解，再取最大值。注意正负两个值对应的解分布在不同的半周期。\n\n【解题步骤】\n第一步：利用恒等式化简\n$8\\sin^2 x + 4\\cos^2 x = 8\\sin^2 x + 4(1-\\sin^2 x) = 4\\sin^2 x + 4 = 7$\n$4\\sin^2 x = 3 \\implies \\sin^2 x = \\frac{3}{4} \\implies \\sin x = \\pm\\frac{\\sqrt{3}}{2}$\n\n第二步：在$[0, 2\\pi]$内求解\n$\\sin x = \\frac{\\sqrt{3}}{2}$时，$x = \\frac{\\pi}{3}$或$\\frac{2\\pi}{3}$（第一、二象限）\n$\\sin x = -\\frac{\\sqrt{3}}{2}$时，$x = \\frac{4\\pi}{3}$或$\\frac{5\\pi}{3}$（第三、四象限）\n\n第三步：取最大值\n四个解中$\\frac{5\\pi}{3}$最大，对应选项D。\n\n【快捷思路】\n最大角一定在$\\pi < x < 2\\pi$范围内（因为负值对应的解更大），直接找$\\sin x = -\\frac{\\sqrt{3}}{2}$在该区间的最大解即可，即$2\\pi - \\frac{\\pi}{3} = \\frac{5\\pi}{3}$。\n【正确答案】D",
     "images": null,
     "has_image": false
   },
@@ -554,7 +554,7 @@ window.QUESTIONS = [
       "E": "Urn T"
     },
     "answer": "C",
-    "analysis": "【题目分析】\nTMUA 2016年 Practice Paper 2 第4题 - 逻辑推理题\n\n【已知条件】\n五个瓮 P, Q, R, S, T 各装相同数量的球（n > 0）\n每个瓮有声明，恰好一个瓮的声明为真\n\n各声明：\n- P: 有 1 或 4 个球 → n ∈ {1, 4}\n- Q: 有 2 或 4 个球 → n ∈ {2, 4}\n- R: 有多于 2 个且少于 5 个球 → 2 < n < 5，即 n ∈ {3, 4}\n- S: 有 1 或 2 个球 → n ∈ {1, 2}\n- T: 有少于 3 个球 → n < 3，即 n ∈ {1, 2}\n\n【解题方法】\n假设每个瓮的声明为真，检查其他声明是否都为假\n\n步骤1：假设 P 为真（n $= 1$ 或 4）\n若 n $= 1$：\n  Q: n∈{2,4}？假 ✓\n  R: n∈{3,4}？假 ✓\n  S: n∈{1,2}？真 ✗（矛盾，应全假）\n若 n $= 4$：\n  Q: n∈{2,4}？真 ✗（矛盾）\nP 不可能\n\n步骤2：假设 Q 为真（n $= 2$ 或 4）\n若 n $= 2$：\n  P: n∈{1,4}？假 ✓\n  R: n∈{3,4}？假 ✓\n  S: n∈{1,2}？真 ✗（矛盾）\n若 n $= 4$：\n  P: n∈{1,4}？真 ✗（矛盾）\nQ 不可能\n\n步骤3：假设 R 为真（n $= 3$ 或 4）\n若 n $= 3$：\n  P: n∈{1,4}？假 ✓\n  Q: n∈{2,4}？假 ✓\n  S: n∈{1,2}？假 ✓\n  T: n<3？假 ✓\n  所有其他为假 ✓\n若 n $= 4$：\n  P: n∈{1,4}？真 ✗（矛盾）\nR 为真时，n $= 3$ 可行\n\n步骤4：验证 S 和 T（略）\n根据题目，答案为 R\n\n【结论】\nn $= 3$，瓮 R 的声明为真，其他都为假\n\n【正确答案】C",
+    "analysis": "【题目分析】\n本题考查逻辑推理。五个瓮装有相同数量$n$个球（$n > 0$），每个瓮附有一条关于$n$的陈述，且恰有一条陈述为真。各陈述对应的$n$的取值集合分别为：$P:\\{1,4\\}$，$Q:\\{2,4\\}$，$R:\\{3,4\\}$，$S:\\{1,2\\}$，$T:\\{1,2\\}$（即$n < 3$）。关键观察：当$n=1$时$P$和$S$同时为真，当$n=2$时$Q$、$S$、$T$同时为真，当$n=4$时$P$和$Q$同时为真。唯有$n=3$时仅$R$为真，其余全假。\n\n【解题步骤】\n逐一假设某瓮的陈述为真，检验是否导致矛盾：\n- 假设$P$为真：$n \\in \\{1,4\\}$。若$n=1$则$S$也真（矛盾）；若$n=4$则$Q$也真（矛盾）。\n- 假设$Q$为真：$n \\in \\{2,4\\}$。若$n=2$则$S$和$T$也真（矛盾）；若$n=4$则$P$也真（矛盾）。\n- 假设$R$为真：$n \\in \\{3,4\\}$。若$n=4$则$P$也真（矛盾）；若$n=3$，验证$P$假、$Q$假、$S$假、$T$假，全部通过。\n- 假设$S$为真：$n \\in \\{1,2\\}$。若$n=1$则$P$也真；若$n=2$则$Q$也真。均矛盾。\n- 假设$T$为真：$n < 3$即$n \\in \\{1,2\\}$，此时$S$也真（矛盾）。\n\n唯一无矛盾情形：$n=3$，$R$的陈述为真。\n\n【快捷思路】\n注意到$S$和$T$的集合存在包含关系（$n<3$蕴含$n \\in \\{1,2\\}$），故$T$为真时$S$必为真，直接排除。剩余只需检验$P$、$Q$、$R$三种情况。\n【正确答案】C",
     "images": null,
     "has_image": false
   },
@@ -574,16 +574,19 @@ window.QUESTIONS = [
       "E": "6"
     },
     "answer": "C",
-    "analysis": "【题目分析】\n命题(*)：如果整数n比6的倍数少1或少5（即n≡1或5(mod 6)），则n是质数。\n\n反例：满足n≡1或5(mod 6)但n不是质数的数。\n\n【解题步骤】\n第一步：找出0到50中满足n≡1或5(mod 6)的数\nn $= 6$k+1 或 n $= 6$k-1 (即6k+5)\n\nk=0: 1, 5\nk=1: 7, 11\nk=2: 13, 17\nk=3: 19, 23\nk=4: 25, 29\nk=5: 31, 35\nk=6: 37, 41\nk=7: 43, 47\nk=8: 49\n\n候选数：1, 5, 7, 11, 13, 17, 19, 23, 25, 29, 31, 35, 37, 41, 43, 47, 49\n\n第二步：找出不是质数的反例\n- 1：不是质数（反例1）\n- 25 $= 5$²：不是质数（反例2）\n- 35 $= 5$×7：不是质数（反例3）\n- 49 $= 7$²：不是质数（反例4）\n\n反例总数：4个\n\n【正确答案】C",
+    "analysis": "【题目分析】\n命题(*)：若整数 $n$ 比 6 的倍数少 1 或少 5（即 $n \\equiv 1$ 或 $5 \\pmod{6}$），则 $n$ 是质数。反例即满足该同余条件但本身不是质数的数。本题要求在 $0 < n < 50$ 范围内找出所有反例的个数。\n\n【解题步骤】\n第一步：列出 $0 < n < 50$ 中满足 $n \\equiv 1$ 或 $5 \\pmod{6}$ 的数。这些数形如 $6k+1$ 或 $6k+5$：\n$1, 5, 7, 11, 13, 17, 19, 23, 25, 29, 31, 35, 37, 41, 43, 47, 49$\n\n第二步：逐一判断是否为质数。其中非质数有：\n$1$ 不是质数（定义规定 1 不是质数）；\n$25 = 5 \\times 5$ 是合数；\n$35 = 5 \\times 7$ 是合数；\n$49 = 7 \\times 7$ 是合数。\n\n共 4 个反例，对应选项 C。\n\n【快捷思路】\n形如 $6k \\pm 1$ 包含了所有大于 3 的质数，但并非所有这类数都是质数。只需在范围内找出合数形式的 $6k \\pm 1$ 即可：$25, 35, 49$ 再加上 $1$，共 4 个。注意 1 既不是质数也不是合数，但作为反例是有效的（满足条件但不是质数）。\n\n【正确答案】C",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Number Theory"
+    ]
   },
   {
     "id": "2016-P2-Q6",
     "year": 2016,
     "paper": 2,
     "num": 6,
-    "topic": "Differentiation",
+    "topic": "Sequences and Series",
     "difficulty": 3,
     "question": "The sequence of functions $f_1(x), f_2(x), f_3(x), \\dots$ is defined as follows:\n\n$$f_1(x) = x^{10}$$\n\n$$f_{n+1}(x) = x f_n'(x) \\quad \\text{for } n \\geq 1$$\n\nwhere $f_n'(x) = \\frac{df_n(x)}{dx}$\n\nFind the value of\n\n$$\\sum_{n=1}^{20} f_n(x)$$",
     "options": {
@@ -597,9 +600,12 @@ window.QUESTIONS = [
       "H": "$x^{10} + 10x^9 + (10 \\times 9)x^8 + \\dots + (10 \\times 9 \\times \\dots \\times 2)x + (10 \\times 9 \\times \\dots \\times 2 \\times 1)$"
     },
     "answer": "C",
-    "analysis": "【题目分析】\nf₁(x) = x¹⁰\nf_{n+1}(x) = x·f_n'(x)\n求Σ_{n=1}^{20} f_n(x)\n\n【解题步骤】\n第一步：找规律\nf₁(x) = x¹⁰\nf₂(x) = x·f₁'(x) = x·10x⁹ $= 10$x¹⁰\nf₃(x) = x·f₂'(x) = x·10·10x⁹ $= 10$²x¹⁰\nf_n(x) $= 10$^{n-1}·x¹⁰\n\n第二步：求和\nΣ_{n=1}^{20} f_n(x) = Σ_{n=1}^{20} 10^{n-1}x¹⁰\n= x¹⁰·Σ_{n=0}^{19} 10^n\n= x¹⁰·(10²⁰-1)/(10-1)\n= x¹⁰·(10²⁰-1)/9\n\n【正确答案】D",
+    "analysis": "【题目分析】\n给定函数序列 $f_1(x) = x^{10}$，递推关系 $f_{n+1}(x) = x \\cdot f_n'(x)$。要求计算 $\\sum_{n=1}^{20} f_n(x)$。关键是先找出 $f_n(x)$ 的通项公式。\n\n【解题步骤】\n第一步：逐项计算找规律。\n$f_1(x) = x^{10}$\n$f_2(x) = x \\cdot f_1'(x) = x \\cdot 10x^9 = 10x^{10}$\n$f_3(x) = x \\cdot f_2'(x) = x \\cdot 100x^9 = 100x^{10} = 10^2 x^{10}$\n$f_4(x) = x \\cdot f_3'(x) = x \\cdot 1000x^9 = 10^3 x^{10}$\n归纳得 $f_n(x) = 10^{n-1} x^{10}$。\n\n第二步：利用等比数列求和公式。\n$\\sum_{n=1}^{20} f_n(x) = \\sum_{n=1}^{20} 10^{n-1} x^{10} = x^{10} \\sum_{n=0}^{19} 10^n$\n\n首项 $a = 1$，公比 $r = 10$，项数 $n = 20$，等比数列和 $S_n = \\frac{a(r^n - 1)}{r - 1}$：\n$= x^{10} \\cdot \\frac{10^{20} - 1}{10 - 1} = \\frac{10^{20} - 1}{9} x^{10}$\n\n对应选项 C。\n\n【快捷思路】\n注意到每次求导后乘以 $x$，$x^{10}$ 的次数始终保持为 10，而系数每次乘以指数 10。因此 $f_n(x) = 10^{n-1}x^{10}$ 一眼可看出，之后直接套用等比数列求和即可。注意求和上限是 20 项，分子是 $10^{20} - 1$ 而非 $10^{21} - 1$。\n\n【正确答案】C and Series",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Differentiation"
+    ]
   },
   {
     "id": "2016-P2-Q7",
@@ -620,16 +626,19 @@ window.QUESTIONS = [
       "H": "(1). Then (4), so (7), so (9), so (5), and therefore (3), hence (*) as required."
     },
     "answer": "C",
-    "analysis": "【题目分析】\n已知log_c d = (log_a b)²，证明log_b d = (log_a b)(log_a c)\n\n【解题步骤】\n设x = log_a b, y = log_a c\n\n已知条件：log_c d = x² → d = c^(x²)\n\n要证明：log_b d = xy → d = b^(xy)\n\n证明路径：\n(1) 设x = log_a b, y = log_a c → b = a^x, c = a^y\n(3) 由已知：d = c^(x²)\n(5) d = (a^y)^(x²) = a^(yx²)\n(9) d = a^(x²y)\n(7) d = (a^x)^(xy) = b^(xy)\n(4) 所以log_b d = xy ✓\n\n正确证明顺序：A [(1)(3)(5)(9)(7)(4)]\n\n【正确答案】A",
+    "analysis": "【题目分析】\n已知 $a, b, c, d > 1$ 且 $\\log_c d = (\\log_a b)^2$，需通过给定的推导行构建完整证明，证得 $\\log_b d = (\\log_a b)(\\log_a c)$。本题本质是考查对数运算规则和推导逻辑链的连贯性。\n\n【解题步骤】\n令 $x = \\log_a b$，$y = \\log_a c$，则 $b = a^x$，$c = a^y$。\n\n由已知 $\\log_c d = x^2$，取指数得 $d = c^{x^2}$（行 3）。\n\n将 $c = a^y$ 代入：$d = (a^y)^{x^2} = a^{x^2 y}$（行 5 到行 9）。\n\n再将 $a^x = b$ 代入：$d = a^{x^2 y} = (a^x)^{xy} = b^{xy}$（行 9 到行 7 到行 4）。\n\n因此 $\\log_b d = xy = (\\log_a b)(\\log_a c)$，证毕。\n\n完整推导链：$(1) \\to (3) \\to (5) \\to (9) \\to (7) \\to (4)$，对应选项 C。\n\n【快捷思路】\n从已知出发，$\\log_c d = x^2$ 意味着 $d = c^{x^2}$，只能选行 3（排除含行 2 或行 4 开头的选项）。之后需要将 $c$ 换底为 $a$，即行 5。此时答案锁定为 C。\n\n【正确答案】C",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Proof"
+    ]
   },
   {
     "id": "2016-P2-Q8",
     "year": 2016,
     "paper": 2,
     "num": 8,
-    "topic": "Algebra",
+    "topic": "Coordinate Geometry",
     "difficulty": 3,
     "question": "A region is defined by the inequalities $x + y > 6$ and $x - y > -4$\n\nConsider the three statements:\n\n**1** $x > 1$\n\n**2** $y > 5$\n\n**3** $(x + y)(x - y) > -24$\n\nWhich of the above statements is/are true for **every** point in the region?",
     "options": {
@@ -643,16 +652,19 @@ window.QUESTIONS = [
       "H": "1, 2 and 3"
     },
     "answer": "B",
-    "analysis": "【题目分析】\n区域：x+y > 6, x-y > -4\n判断三个命题是否对区域内所有点成立。\n\n【解题步骤】\n从x+y > 6和x-y > -4：\n相加得：2x > 2 → x > 1 ✓（命题1成立）\n相减得：2y > 10 → y > 5 ✓（命题2成立）\n\n命题3：(x+y)(x-y) > -24\n设u = x+y > 6, v = x-y > -4\n则uv > 6×(-4) = -24 ✓\n\n但注意：u和v都是正数时uv>0>-24成立\nv可能接近-4但大于-4，u大于6\n最小值：当u→6, v→-4时uv→-24（但不到-24）\n所以uv > -24成立 ✓\n\n【正确答案】H（三个命题都成立）",
+    "analysis": "【题目分析】\n区域由 $x + y > 6$ 和 $x - y > -4$ 定义。需判断三个命题中哪些对该区域内所有点恒成立。关键是将两不等式联立分析，并对可疑命题构造反例。\n\n【解题步骤】\n命题 1：两不等式相加得 $2x > 2$，即 $x > 1$。区域边界交于 $(1, 5)$，整个区域在 $x = 1$ 右侧，命题 1 恒成立。\n\n命题 2：两不等式相减得 $2y > 10$，即 $y > 5$。但这是必要条件而非充分推导——实际上区域是两半平面的交集，存在点如 $(7, 0)$ 满足 $7+0=7 > 6$ 且 $7-0=7 > -4$，但 $y = 0 \\ngtr 5$。命题 2 不成立。\n\n命题 3：$(x+y)(x-y) > -24$。虽然 $x+y > 6$ 且 $x-y > -4$，但不能直接将不等式相乘（因为 $x-y$ 可能为负）。构造反例：取 $x = 5, y = 8$，则 $x+y = 13 > 6$，$x-y = -3 > -4$，但 $(x+y)(x-y) = -39 < -24$。命题 3 不成立。\n\n仅命题 1 恒成立，对应选项 B。\n\n【快捷思路】\n相加得 $x > 1$ 直接成立。对命题 2 和 3 不必严格推导，只需各找一个反例即可否定。$(7, 0)$ 否定命题 2，$(5, 8)$ 否定命题 3。不等式不能随意相乘，尤其是涉及负数时。\n\n【正确答案】B Geometry",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Counterexamples"
+    ]
   },
   {
     "id": "2016-P2-Q9",
     "year": 2016,
     "paper": 2,
     "num": 9,
-    "topic": "Algebra",
+    "topic": "Proof",
     "difficulty": 3,
     "question": "Triangles $ABC$ and $XYZ$ have the **same area**.\n\nWhich of these extra conditions, taken independently, would **imply** that they are congruent?\n\n**(1)** $AB = XY$ **and** $BC = YZ$\n\n**(2)** $AB = XY$ **and** $\\angle ABC = \\angle XYZ$\n\n**(3)** $\\angle ABC = \\angle XYZ$ **and** $\\angle BCA = \\angle YZX$\n\n<table>\n  <thead>\n    <tr>\n        <th> </th>\n        <th>Condition (1)</th>\n        <th>Condition (2)</th>\n        <th>Condition (3)</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n        <td>A</td>\n<td>Does not imply congruent</td>\n<td>Does not imply congruent</td>\n<td>Does not imply congruent</td>\n    </tr>\n<tr>\n        <td>B</td>\n<td>Does not imply congruent</td>\n<td>Does not imply congruent</td>\n<td>Implies congruent</td>\n    </tr>\n<tr>\n        <td>C</td>\n<td>Does not imply congruent</td>\n<td>Implies congruent</td>\n<td>Does not imply congruent</td>\n    </tr>\n<tr>\n        <td>D</td>\n<td>Does not imply congruent</td>\n<td>Implies congruent</td>\n<td>Implies congruent</td>\n    </tr>\n<tr>\n        <td>E</td>\n<td>Implies congruent</td>\n<td>Does not imply congruent</td>\n<td>Does not imply congruent</td>\n    </tr>\n<tr>\n        <td>F</td>\n<td>Implies congruent</td>\n<td>Does not imply congruent</td>\n<td>Implies congruent</td>\n    </tr>\n<tr>\n        <td>G</td>\n<td>Implies congruent</td>\n<td>Implies congruent</td>\n<td>Does not imply congruent</td>\n    </tr>\n<tr>\n        <td>H</td>\n<td>Implies congruent</td>\n<td>Implies congruent</td>\n<td>Implies congruent</td>\n    </tr>\n  </tbody>\n</table>",
     "options": {
@@ -666,7 +678,7 @@ window.QUESTIONS = [
       "H": "Option H"
     },
     "answer": "D",
-    "analysis": "【题目分析】\n三角形ABC和XYZ面积相等，判断哪个额外条件能推出全等。\n\n【解题步骤】\n条件(1)：AB=XY且BC=YZ\n两边相等+面积相等不能确定全等（第三边可能不同）\n\n条件(2)：AB=XY且∠ABC=∠XYZ\n一边相等+一角相等+面积相等\n面积=($\\frac{1}{2}$)AB·BC·sin(∠ABC) = ($\\frac{1}{2}$)XY·YZ·sin(∠XYZ)\n由于AB=XY，∠相等，面积相等推出BC=YZ\n得到SAS全等 ✓\n\n条件(3)：∠ABC=∠XYZ且∠BCA=∠YZX\n两角相等，第三角也相等\n但面积相等不能确定边长比例相同\n反例：不同大小的相似三角形面积不等\n如果面积相等且两角相等，则相似且面积相等→全等 ✓\n\n【正确答案】D",
+    "analysis": "【题目分析】\n已知 $\\triangle ABC$ 与 $\\triangle XYZ$ 面积相等，判断三个额外条件中哪些能独立推出两三角形全等。本题核心在于将面积公式与全等判定定理（SSS、SAS、ASA）结合使用，注意面积相等本身不足以保证全等。\n\n【解题步骤】\n条件（1）：$AB = XY$ 且 $BC = YZ$。由面积公式 $\\frac{1}{2}AB\\cdot BC\\sin B = \\frac{1}{2}XY\\cdot YZ\\sin Y$，已知两边相等，可得 $\\sin B = \\sin Y$。但 $\\sin B = \\sin Y$ 不能推出 $B = Y$，因为可能有 $Y = 180^\\circ - B$。此时两边夹角不等，无法用 SAS 判定全等。反例存在，故不推出全等。\n\n条件（2）：$AB = XY$ 且 $\\angle ABC = \\angle XYZ$。面积相等给出 $\\frac{1}{2}AB\\cdot BC\\sin B = \\frac{1}{2}XY\\cdot YZ\\sin Y$。已知 $AB = XY$、$\\angle B = \\angle Y$（角度在 $(0,180^\\circ)$ 内正弦为正），消去后得 $BC = YZ$。于是两边及其夹角对应相等，由 SAS 判定全等。\n\n条件（3）：$\\angle ABC = \\angle XYZ$ 且 $\\angle BCA = \\angle YZX$。两角相等则第三角也相等，两三角形相似。相似三角形面积比等于相似比的平方，面积相等说明相似比为 $1$，即两三角形全等。\n\n综上，条件（2）和（3）各自推出全等，选 D。\n\n【快捷思路】\n条件（1）中 $\\sin B = \\sin Y$ 可能对应互补角，无法锁定夹角；条件（2）中已知一角相等，面积公式直接定出第二边，凑成 SAS；条件（3）中两角相等保证相似，面积相等将相似比锁定为 $1$。\n\n【正确答案】D",
     "images": {
       "image": null
     },
@@ -677,7 +689,7 @@ window.QUESTIONS = [
     "year": 2016,
     "paper": 2,
     "num": 10,
-    "topic": "Algebra",
+    "topic": "Functions",
     "difficulty": 3,
     "question": "In this question $x$ and $y$ are non-zero real numbers.\n\nWhich one of the following is **sufficient** to conclude that $x < y$?",
     "options": {
@@ -689,7 +701,7 @@ window.QUESTIONS = [
       "F": "$y^{\\frac{3}{5}} < x^{\\frac{3}{5}}$"
     },
     "answer": "E",
-    "analysis": "【题目分析】\nTMUA 2016年 Practice Paper 2 第10题，考查充分条件的逻辑判断。\n\n【题目要求】\n找出哪个选项能充分推出 x < y（x, y 是非零实数）\n\n【逐项分析】\n\n选项A：x⁴ < y⁴\n反例：x = -2, y $= 1$\nx⁴ $= 16$, y⁴ $= 1$，x⁴ > y⁴，不满足条件\n但如果 x $= 1$, y $= 2$：x⁴ $= 1$ < 16 = y⁴，此时 x < y ✓\n反例：x = -2, y $= 1$，x⁴ $= 16$, y⁴ $= 1$，x⁴ > y⁴\n即使 x⁴ < y⁴ 成立（如 x=1, y=-2）：1 < 16，但 x > y\n不充分 ✗\n\n选项B：y⁴ < x⁴\n同上分析，不充分 ✗\n\n选项C：x⁻¹ < y⁻¹，即 1/x < 1/y\n当 x, y > 0 时：x > y\n当 x, y < 0 时：x < y\n不确定符号，不充分 ✗\n\n选项D：y⁻¹ < x⁻¹，即 1/y < 1/x\n同上，不充分 ✗\n\n选项E：x^($\\frac{3}{5}$) < y^($\\frac{3}{5}$)\n【关键分析】\nf(t) = t^($\\frac{3}{5}$) = (t³)^($\\frac{1}{5}$)\n- t³ 在实数域单调递增\n- 5次根号在实数域单调递增\n- 复合函数 f(t) 在实数域单调递增\n\n因此：x^($\\frac{3}{5}$) < y^($\\frac{3}{5}$) ⟺ x < y ✓\n\n选项F：y^($\\frac{3}{5}$) < x^($\\frac{3}{5}$)\n相当于 E 的逆命题，推出 y < x，不充分 ✗\n\n【正确答案】E",
+    "analysis": "【题目分析】\n$x, y$ 为非零实数，找出哪个不等式条件足以推出 $x < y$。关键思路：若函数 $f(t)$ 在整个实数域上严格单调递增，则 $f(x) < f(y) \\iff x < y$；否则需要构造反例。\n\n【解题步骤】\n选项 A：$x^4 < y^4$。取 $x = 1, y = -2$，则 $1 < 16$ 成立，但 $x > y$。$f(t) = t^4$ 在 $t < 0$ 递减、$t > 0$ 递增，非整体单调。不充分。\n\n选项 B：$y^4 < x^4$。取 $x = 2, y = 1$，条件成立但 $x > y$。不充分。\n\n选项 C：$x^{-1} < y^{-1}$。取 $x = 2, y = 1$，$\\frac{1}{2} < 1$ 成立，但 $x > y$。$f(t) = t^{-1}$ 在正负两支分别递减但不整体单调。不充分。\n\n选项 D：$y^{-1} < x^{-1}$。取 $x = 1, y = -1$，$-1 < 1$ 成立，但 $x > y$。不充分。\n\n选项 E：$x^{3/5} < y^{3/5}$。注意到 $t^{3/5} = \\sqrt[5]{t^3}$，其中 $t^3$ 和 $\\sqrt[5]{\\cdot}$ 在 $\\mathbb{R}$ 上均严格递增，复合后 $f(t) = t^{3/5}$ 在 $\\mathbb{R}$ 上严格递增。因此 $x^{3/5} < y^{3/5} \\iff x < y$。充分。\n\n选项 F：$y^{3/5} < x^{3/5}$，同理推出 $y < x$，与所需方向相反。不充分。\n\n【快捷思路】\n逐个考察 $f(t) = t^4$、$f(t) = t^{-1}$、$f(t) = t^{3/5}$ 的单调性。前两个函数在 $\\mathbb{R}$ 上非整体单调（$t^4$ 为偶函数，$t^{-1}$ 在正负两侧符号不同），只有 $t^{3/5}$ 全实数严格递增。\n\n【正确答案】E",
     "images": null,
     "has_image": false
   },
@@ -698,7 +710,7 @@ window.QUESTIONS = [
     "year": 2016,
     "paper": 2,
     "num": 11,
-    "topic": "Algebra",
+    "topic": "Proof",
     "difficulty": 3,
     "question": "$f(x)$ is a polynomial with real coefficients.\n\nThe equation $f(x) = 0$ has exactly two real roots, $x = -p$ and $x = p$, where $p > 0$.\n\nConsider the following three statements:\n\n**1** $f'(x) = 0$ for exactly one value of $x$ between $-p$ and $p$\n\n**2** The area between the curve $y = f(x)$, the $x$-axis and the lines $x = -p$ and $x = p$ is given by $2 \\int_{0}^{p} f(x) dx$\n\n**3** The graph of $y = -f(-x)$ intersects the $x$-axis at the points $x = -p$ and $x = p$ only\n\nWhich of the above statements **must** be true?",
     "options": {
@@ -712,9 +724,13 @@ window.QUESTIONS = [
       "H": "1, 2 and 3"
     },
     "answer": "D",
-    "analysis": "【题目分析】\nTMUA 2016年 Practice Paper 2 第11题，考查多项式根的性质与几何特征。\n\n【已知条件】\nf(x) 是实系数多项式，方程 f(x) $= 0$ 恰有两个实根 x = -p 和 x = p（p > 0）\n\n【逐个分析命题】\n\n命题1：f'(x) $= 0$ 在 -p 到 p 之间恰有一个值\n分析：由于 f 是多项式，在两根之间连续可导。\n- 由罗尔定理，在 -p 和 p 之间必存在至少一点使 f'(x) $= 0$\n- 但\"恰好一个值\"不一定成立：考虑 f(x) = (x²-p²)(x²+p²+1) 的情况\n这个例子中，f'(x) 在 -p 到 p 之间可能有多个零点。\n命题1不一定成立 ✗\n\n命题2：曲线与x轴在 [-p, p] 之间的面积是 2∫₀ᵖ f(x)dx\n分析：这要求 f(x) 在 [-p, p] 上非负（或非正），且关于y轴对称。\n题目只说有两个实根，并未说明对称性或区间内正负。\n考虑 f(x) = (x-p)(x+p)g(x)，其中 g(x) 在 [-p, p] 上可正可负。\n面积不一定等于 2∫₀ᵖ f(x)dx。\n命题2不一定成立 ✗\n\n命题3：y = -f(-x) 只在 x = -p 和 x = p 处与x轴相交\n分析：y = -f(-x) 的根是 f(-x) $= 0$ 的根，即 -x = ±p，x = ±p\n新函数的根确实只有 x = -p 和 x = p ✓\n命题3成立 ✓\n\n【正确答案】D",
+    "analysis": "【题目分析】\n$f(x)$ 是实系数多项式，$f(x) = 0$ 恰有两个实根 $x = -p$ 和 $x = p$（$p > 0$）。判断三个命题哪些必然成立。注意：题目未限定多项式次数，也未说明根的数，$f(x)$ 在 $(-p, p)$ 内的性态有多种可能。\n\n【解题步骤】\n命题 1：$f'(x) = 0$ 在 $(-p, p)$ 内恰有一个解。由罗尔定理，$f'(\\xi) = 0$ 至少有一个解 $\\xi \\in (-p, p)$。但罗尔定理只保证存在性，不保证唯一性。可以构造 $f(x)$ 在 $(-p, p)$ 内有多个驻点而不穿过 $x$ 轴（例如在区间内上下波动但不与轴相交）。命题 1 不一定成立。\n\n命题 2：曲线与 $x$ 轴在 $[-p, p]$ 间的面积为 $2\\int_0^p f(x)\\,dx$。这不成立有两方面原因：其一，若 $f(x)$ 在 $[-p, p]$ 上恒为负，则 $\\int_0^p f(x)\\,dx < 0$，但面积必须为正；其二，$f(x)$ 未必关于 $y$ 轴对称，例如 $f(x) = (x+1)(x-1)(x^2 + x + 1)$（此时 $p = 1$），其中 $x^2 + x + 1$ 关于 $x = -\\frac{1}{2}$ 而非 $x = 0$ 对称，积分 $\\int_{-1}^1 f(x)\\,dx \\neq 2\\int_0^1 f(x)\\,dx$。命题 2 不一定成立。\n\n命题 3：$y = -f(-x)$ 与 $x$ 轴的交点仅为 $x = -p$ 和 $x = p$。$y = -f(-x)$ 的零点满足 $f(-x) = 0$，即 $-x = \\pm p$，故 $x = \\pm p$。由于 $f(x) = 0$ 仅有这两个实根，变换后的函数也仅有这两个零点。从变换角度看：$f(-x)$ 是沿 $y$ 轴翻折，$-f(-x)$ 再沿 $x$ 轴翻折，两次翻折的复合等价于绕原点旋转 $180^\\circ$，零点位置不变。命题 3 必然成立。\n\n【快捷思路】\n命题 1 用罗尔定理可知至少一个但未必恰好一个；命题 2 考虑 $f(x)$ 可能为负或不对称；命题 3 中 $x \\mapsto -x$ 仅改变自变量符号，$\\pm p$ 互换后根集合不变。\n\n【正确答案】D",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Integration",
+      "Graphs"
+    ]
   },
   {
     "id": "2016-P2-Q12",
@@ -733,7 +749,7 @@ window.QUESTIONS = [
       "F": "neither the sign of $a$ nor the sign of $d$ can be deduced"
     },
     "answer": "F",
-    "analysis": "【题目分析】\nTMUA 2016年 Practice Paper 2 第12题，考查等差数列求和公式与不等式。\n\n【等差数列求和公式】\nSₙ = n/2 × [2a + (n-1)d] = na + n(n-1)d/2\n\n【建立不等式】\nS₈ > 3S₆\n\n计算：\nS₈ $= 8$a + 8×7×d/2 $= 8$a + 28d\nS₆ $= 6$a + 6×5×d/2 $= 6$a + 15d\n\n不等式：8a + 28d > 3(6a + 15d) $= 18$a + 45d\n\n化简：8a + 28d > 18a + 45d\n     -10a > 17d\n     10a < -17d\n\n【分析 a 和 d 的符号】\n\n情况1：若 d > 0（正）\n则 -17d < 0，10a < -17d < 0，所以 a < 0\n这满足 a 负、d 正\n\n情况2：若 d < 0（负）\n则 -17d > 0，10a < 正数，a 可正可负\n例如 d = -1，则 10a < 17，a < 1.7（可正可负）\n\n【检验选项】\n- A：a 和 d 都负 ✗（若 d<0，a 不一定负）\n- B：a 正，d 负 ✓（此情况可能）\n- C：a 负，d 正 ✓（此情况也可能）\n- D：a 负，d 不确定 ✗\n- E：d 负，a 不确定 ✓\n\n但题目问的是\"能推出什么\"。\n实际上两种情况都可能，所以不能确定任何一方。\n\n【正确答案】F",
+    "analysis": "【题目分析】\n等差数列首项为 $a$、公差为 $d$，前 $n$ 项和为 $S_n$。已知 $S_8 > 3S_6$，判断 $a$ 和 $d$ 的符号。利用求和公式将条件化为关于 $a, d$ 的不等式，再分析符号约束。\n\n【解题步骤】\n等差数列求和公式：$S_n = \\frac{n}{2}[2a + (n-1)d]$。\n\n代入 $n = 8$：$S_8 = 4(2a + 7d) = 8a + 28d$。\n代入 $n = 6$：$S_6 = 3(2a + 5d) = 6a + 15d$。\n\n条件 $S_8 > 3S_6$ 即：\n$$8a + 28d > 3(6a + 15d) = 18a + 45d$$\n\n整理得：$-10a > 17d$，即 $d < -\\frac{10}{17}a$。\n\n分析 $a$ 和 $d$ 的符号可能性：\n\n情形一：$a > 0$。此时 $-\\frac{10}{17}a < 0$，故 $d < \\text{负数}$，即 $d < 0$。例如 $a = 17, d = -10$，验证：$S_8 = 8(17) + 28(-10) = 136 - 280 = -144$，$3S_6 = 3[6(17) + 15(-10)] = 3(102 - 150) = 3(-48) = -144$，取 $d = -11$ 则 $S_8 = 136 - 308 = -172$，$3S_6 = 3(102 - 165) = -189$，$-172 > -189$ 成立。此时 $a > 0, d < 0$。\n\n情形二：$a < 0$。此时 $-\\frac{10}{17}a > 0$，$d$ 可以小于一个正数，故 $d$ 可正可负。例如 $a = -17$，则 $d < 10$：取 $d = 1 > 0$ 或 $d = -1 < 0$ 均可满足。\n\n情形三：$a = 0$。此时 $d < 0$ 才满足条件。\n\n综上，$a$ 可正可负，$d$ 也可正可负（取决于 $a$ 的具体取值），无法从条件唯一确定任何一方的符号。\n\n【快捷思路】\n将 $S_8 > 3S_6$ 化为 $d < -\\frac{10}{17}a$。$a$ 的符号改变时，右边变号，$d$ 的约束方向随之翻转，因此 $a$ 和 $d$ 的符号均无法确定。\n\n【正确答案】F and Series",
     "images": null,
     "has_image": false
   },
@@ -742,7 +758,7 @@ window.QUESTIONS = [
     "year": 2016,
     "paper": 2,
     "num": 13,
-    "topic": "Algebra",
+    "topic": "Number Theory",
     "difficulty": 3,
     "question": "In this question, $a$, $b$, and $c$ are positive integers.\n\nThe following is an attempted proof of the false statement:\n\n> If $a$ divides $bc$, then $a$ divides $b$ or $a$ divides $c$.\n\n['$a$ divides $bc$' means '$a$ is a factor of $bc$']\n\nWhich line contains the error in this proof?\n\n1. The statement is equivalent to 'if $a$ does not divide $b$ and $a$ does not divide $c$ then $a$ does not divide $bc$'.\n2. Suppose $a$ does not divide $b$ and $a$ does not divide $c$. Then the remainder when dividing $b$ by $a$ is $r$, where $0 < r < a$, and the remainder when dividing $c$ by $a$ is $s$, where $0 < s < a$.\n3. So $b = ax + r$ and $c = ay + s$ for some integers $x$ and $y$.\n4. Thus $bc = a(axy + xs + yr) + rs$.\n5. So the remainder when dividing $bc$ by $a$ is $rs$.\n6. Since $r > 0$ and $s > 0$, it follows that $rs > 0$.\n7. Hence $a$ does not divide $bc$.",
     "options": {
@@ -754,16 +770,19 @@ window.QUESTIONS = [
       "F": "Line 6"
     },
     "answer": "E",
-    "analysis": "【题目分析】\nTMUA 2016年 Practice Paper 2 第13题，考查数论中的命题逻辑和证明错误。\n\n【原命题】\n\"若 a 整除 bc，则 a 整除 b 或 a 整除 c\"\n这是错误的命题（反例：a=6, b=2, c=3，6整除6但6不整除2也不整除3）\n\n【逐行分析证明】\n\n第1行：转换为逆否命题\n原命题：a|bc ⟹ a|b 或 a|c\n逆否命题：a 不整除 b 且 a 不整除 c ⟹ a 不整除 bc\n这一步转换是正确的 ✓\n\n第2行：设余数\n设 b = ax + r（0 < r < a）\n设 c = ay + s（0 < s < a）\n这一步是正确的 ✓\n\n第3行：表达式\nb = ax + r, c = ay + s\n正确 ✓\n\n第4行：计算 bc\nbc = (ax+r)(ay+s) = a²xy + axs + ayr + rs = a(axy + xs + yr) + rs\n正确 ✓\n\n第5行：余数分析\n\"bc 除以 a 的余数是 rs\"\n错误！rs 可能大于等于 a。\n例如 a $= 6$, r $= 4$, s $= 5$，rs $= 20$ > 6\n余数应该是 rs mod a，不一定等于 rs。\n这一行有错误 ✗\n\n第6行：rs > 0\n正确 ✓\n\n第7行：结论\n基于第5行的错误，结论也不成立。\n\n【正确答案】A（第5行有错误）",
+    "analysis": "【题目分析】\n本题给出一段对错误命题的尝试性证明，要求找出哪一行包含逻辑错误。原命题为：若正整数 $a$ 整除 $bc$，则 $a$ 整除 $b$ 或 $a$ 整除 $c$。这是一个假命题，例如 $a=6,\\;b=2,\\;c=3$，有 $6\\mid 6$ 但 $6\\nmid 2$ 且 $6\\nmid 3$。\n\n【解题步骤】\n逐行审查证明过程：\n\n第1行：将原命题转换为逆否命题。原命题 $a\\mid bc\\Rightarrow(a\\mid b\\;\\lor\\;a\\mid c)$ 的逆否命题为 $\\neg(a\\mid b)\\land\\neg(a\\mid c)\\Rightarrow\\neg(a\\mid bc)$，即若 $a$ 不整除 $b$ 且 $a$ 不整除 $c$，则 $a$ 不整除 $bc$。转换正确。\n\n第2行：由 $a\\nmid b$，设 $b$ 除以 $a$ 的余数为 $r$，$0<r<a$；同理 $c$ 除以 $a$ 的余数为 $s$，$0<s<a$。正确。\n\n第3行：带余除法表达式 $b=ax+r$，$c=ay+s$。正确。\n\n第4行：展开 $bc=(ax+r)(ay+s)=a^2xy+axs+ayr+rs=a(axy+xs+yr)+rs$。代数运算正确。\n\n第5行：断言 $bc$ 除以 $a$ 的余数是 $rs$。这是错误所在！当 $rs\\geq a$ 时，$rs$ 并非余数，真正的余数应为 $rs\\bmod a$。例如 $a=6,r=2,s=3$，$rs=6=a$，余数为 $0$，此时 $a$ 恰好整除 $bc$。\n\n第6行：由 $r>0,s>0$ 得 $rs>0$。正确。\n\n第7行：若第5行正确则第7行也正确，但第5行已错。\n\n【快捷思路】\n关键是认识到 $rs$ 未必小于 $a$。只需一个反例 $a=6,r=2,s=3\\Rightarrow rs=6$，余数为 $0$，直接推翻第5行的断言。\n\n【正确答案】E Theory",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Proof"
+    ]
   },
   {
     "id": "2016-P2-Q14",
     "year": 2016,
     "paper": 2,
     "num": 14,
-    "topic": "Functions",
+    "topic": "Graphs",
     "difficulty": 3,
     "question": "$f(x) = ax^4 + bx^3 + cx^2 + dx + e$, where $a, b, c, d$, and $e$ are real numbers.\n\nSuppose $f(x) = 1$ has $p$ distinct real solutions, $f(x) = 2$ has $q$ distinct real solutions, $f(x) = 3$ has $r$ distinct real solutions, and $f(x) = 4$ has $s$ distinct real solutions.\n\nWhich one of the following is **not** possible?",
     "options": {
@@ -774,9 +793,13 @@ window.QUESTIONS = [
       "E": "$p = 4, q = 3, r = 2$ and $s = 1$"
     },
     "answer": "B",
-    "analysis": "【题目分析】\nTMUA 2016年 Practice Paper 2 第14题，考查四次多项式的零点数量变化。\n\n【知识点】\n四次多项式最多有4个实根。\n方程 f(x) = k 的解数等于 y = f(x) 与 y = k 的交点数。\n\n【分析各选项】\n需要判断哪个组合不可能。\n\n选项A：p=1, q=2, r=4, s=3\n可能 ✓\n\n选项B：p=1, q=3, r=2, s=4\n1→3→2→4：交点数先增后减再增，违反多项式图像单调区间规律。\n不可能 ✗\n\n选项C：p=1, q=4, r=3, s=2\n1→4→3→2：单调递减，可能 ✓\n\n选项D：p=2, q=4, r=3, s=1\n可能 ✓\n\n选项E：p=4, q=3, r=2, s=1\n单调递减，可能 ✓\n\n【正确答案】B",
+    "analysis": "【题目分析】\n给定四次多项式 $f(x)=ax^4+bx^3+cx^2+dx+e$，$f(x)=k$ 的实根个数等于曲线 $y=f(x)$ 与水平线 $y=k$ 的交点数。题目要求判断哪组 $(p,q,r,s)$ 取值不可能出现。\n\n【解题步骤】\n四次多项式 $f(x)$ 的图像形状取决于最高项系数 $a$ 的正负。\n\n当 $a>0$ 时，图像呈 W 形（两个局部极小、一个局部极大）或类抛物线形（一个局部极小）。当 $a<0$ 时，图像为上述形状的镜像。\n\n逐项检验：\n\n选项A（$p=1,q=2,r=4,s=3$）：取 $a>0$，令 $y=1$ 与曲线相切于极小值点得 $p=1$；适当调整极值高度可使 $y=2$ 交两点、$y=3$ 交四点、$y=4$ 交三点。可行。\n\n选项B（$p=1,q=3,r=2,s=4$）：$p=1$ 要求 $a>0$ 且 $y=1$ 为极小值切线。要使 $s=4$（$y=4$ 交四点），曲线必须是标准 W 形。但 W 形中 $y=3$ 的交点数不可能少于 $y=4$ 的交点数——当 $y=3$ 处于两个极小值之间时交四点，高于极大值时交两点。若 $r=2$，则两个极小值都高于 $y=3$，此时 $y=2$ 最多与每支各交一次，最多两个交点，不可能得到 $q=3$。矛盾，不可行。\n\n选项C、D、E 均可构造出对应的图像，在此略去具体草图。\n\n【快捷思路】\n核心是理解四次函数的 W 形特征：水平线从下往上移动时，交点数的变化模式受极值位置严格限制，不可能出现 B 中的跳变模式。\n\n【正确答案】B",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Functions",
+      "Differentiation"
+    ]
   },
   {
     "id": "2016-P2-Q15",
@@ -794,9 +817,12 @@ window.QUESTIONS = [
       "E": "$q - 2 < p^2 - 3 < q + 2$"
     },
     "answer": "D",
-    "analysis": "【题目分析】\n已知 $f(x) = x^2 - 2px + q$，(*) 表示 $f(x)=0$ 有两个实根，且两根之差在 2 到 4 之间。\n求 (*) 成立的充要条件。\n\n【解题步骤】\n\n**Step 1：两根之差的表达式**\n设两根为 $x_1, x_2$，由求根公式：\n$x_1 = p + \\sqrt{p^2 - q}$\n$x_2 = p - \\sqrt{p^2 - q}$\n\n两根之差：$|x_1 - x_2| = 2\\sqrt{p^2 - q}$\n\n（注意：要有两个实根，需 $p^2 - q > 0$）\n\n**Step 2：代入条件**\n(*) 要求：$2 < |x_1 - x_2| < 4$\n即：$2 < 2\\sqrt{p^2 - q} < 4$\n\n两边除以 2：\n$1 < \\sqrt{p^2 - q} < 2$\n\n两边平方（都是正数，不等号方向不变）：\n$1 < p^2 - q < 4$\n\n**Step 3：整理为选项形式**\n$1 < p^2 - q < 4$\n\n各选项逐一检验：\n\nA: $q < p^2 < q + 4$\n即 $0 < p^2 - q < 4$，与 $1 < p^2 - q < 4$ 不等价 ✗\n\nB: $\\sqrt{q + 1} < p < \\sqrt{q + 4}$\n这要求 $p > 0$，但 $p$ 可以是负数，不等价 ✗\n\nC: $q - 3 \\le p^2 - 4 \\le q$\n即 $q - 3 \\le p^2 - 4$ 且 $p^2 - 4 \\le q$\n即 $p^2 - q \\ge 1$ 且 $p^2 - q \\le 4$\n即 $1 \\le p^2 - q \\le 4$，包含等号，与严格不等式不等价 ✗\n\nD: $q < p^2 - 1 < q + 3$\n即 $q < p^2 - 1$ 且 $p^2 - 1 < q + 3$\n即 $p^2 - q > 1$ 且 $p^2 - q < 4$\n即 $1 < p^2 - q < 4$ ✓ 完全等价！\n\nE: $q - 2 < p^2 - 3 < q + 2$\n即 $p^2 - q > -1$ 且 $p^2 - q < 5$\n即 $-1 < p^2 - q < 5$，不等价 ✗\n\n【正确答案】D",
+    "analysis": "【题目分析】\n已知二次函数 $f(x)=x^2-2px+q$，条件（*）为方程 $f(x)=0$ 有两个实根，且两根之差大于 $2$ 且小于 $4$。求与（*）等价的充要条件。\n\n【解题步骤】\n第一步：用求根公式表示两根。\n$$x_1=p+\\sqrt{p^2-q},\\quad x_2=p-\\sqrt{p^2-q}$$\n两根为实数当且仅当判别式 $p^2-q>0$。\n\n第二步：计算两根之差。\n$$|x_1-x_2|=2\\sqrt{p^2-q}$$\n\n第三步：代入条件（*）。\n条件为 $2<2\\sqrt{p^2-q}<4$，两边同除以 $2$ 得 $1<\\sqrt{p^2-q}<2$。\n\n两边平方（各项均为正）：$1<p^2-q<4$。\n注意 $p^2-q>1$ 已蕴含 $p^2-q>0$，故判别式条件自动满足。\n\n第四步：将不等式与选项逐一比对。\n\n选项A：$q<p^2<q+4$ 即 $0<p^2-q<4$，左端为 $0$ 而非 $1$，范围更宽，不等价。\n\n选项B：$\\sqrt{q+1}<p<\\sqrt{q+4}$ 隐含 $p>0$，但原条件中 $p$ 可正可负，不等价。\n\n选项C：$q-3\\leq p^2-4\\leq q$ 即 $1\\leq p^2-q\\leq 4$，含等号，与严格不等式不等价。\n\n选项D：$q<p^2-1<q+3$，两边同时加 $1$ 得 $q+1<p^2<q+4$，即 $1<p^2-q<4$，完全等价。\n\n选项E：$q-2<p^2-3<q+2$ 即 $-1<p^2-q<5$，范围过大，不等价。\n\n【快捷思路】\n直接计算两根之差 $2\\sqrt{p^2-q}$，利用 $2<2\\sqrt{p^2-q}<4$ 推出 $1<p^2-q<4$，再逐一验证选项哪个与此等价。\n\n【正确答案】D",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Functions"
+    ]
   },
   {
     "id": "2016-P2-Q16",
@@ -814,11 +840,14 @@ window.QUESTIONS = [
       "E": "6"
     },
     "answer": "C",
-    "analysis": "【题目分析】\nTMUA 2016年 Practice Paper 2 第16题，考查梯形中的线段比例关系。\n\n【题目内容】\n梯形 PQRS（PQ ∥ SR），对角线交于 X，过 X 作 UT ∥ PQ，UT 与 SP、RQ 分别交于 U、T。\n已知 PQ = 12 cm，SR = 3 cm，求 UT 长度。\n\n【解题方法：利用梯形中位线性质】\n设梯形高为 h，两平行线间距为 d。\n由相似三角形性质，过交点的平行线段长度满足：\nUT = 2 × PQ × SR / (PQ + SR)\n\n【计算】\nUT = 2 × 12 × 3 / (12 + 3) = 72 / 15 = 4.8 cm\n\n【正确答案】C",
+    "analysis": "【题目分析】\n梯形 $PQRS$ 中 $PQ\\parallel SR$，$PQ=12\\text{ cm}$，$SR=3\\text{ cm}$。对角线 $PR$ 与 $QS$ 交于 $X$。过 $X$ 作 $UT\\parallel PQ$，$U$ 在 $SP$ 上，$T$ 在 $RQ$ 上。求 $UT$ 的长度。\n\n【解题步骤】\n图中存在多对相似三角形：$\\triangle SUX\\sim\\triangle SPQ$，$\\triangle RXT\\sim\\triangle RPQ$，$\\triangle XSR\\sim\\triangle XQP$。\n\n首先利用 $\\triangle XSR\\sim\\triangle XQP$。对应边 $SR=3$，$QP=12$，相似比为 $12/3=4$。因此从 $X$ 到 $QP$ 的高是从 $X$ 到 $SR$ 的高的 $4$ 倍。\n\n由此可得 $UP=4SU$（因为 $X$ 将对角线按 $4:1$ 分割），故 $SP=5SU$。\n\n再由 $\\triangle SUX\\sim\\triangle SPQ$，相似比为 $SU:SP=1:5$，所以 $UX=\\frac{1}{5}\\times 12=\\frac{12}{5}=2.4$。\n\n同理可得 $XT=2.4$。\n\n因此 $UT=UX+XT=2.4+2.4=4.8\\text{ cm}$。\n\n【快捷思路】\n对于梯形中过对角线交点且平行于底边的线段，有公式：\n$$\\frac{2}{UT}=\\frac{1}{PQ}+\\frac{1}{SR}$$\n即 $UT$ 是 $PQ$ 和 $SR$ 的调和平均数。代入得：\n$$UT=\\frac{2\\times 12\\times 3}{12+3}=\\frac{72}{15}=4.8\\text{ cm}$$\n\n【正确答案】C Geometry",
     "images": {
       "image": "2016 P2 Q16.png"
     },
-    "has_image": true
+    "has_image": true,
+    "related_topics": [
+      "Proof"
+    ]
   },
   {
     "id": "2016-P2-Q17",
@@ -839,9 +868,12 @@ window.QUESTIONS = [
       "H": "1, 2 and 3"
     },
     "answer": "H",
-    "analysis": "【题目分析】\nTMUA 2016年 Practice Paper 2 第17题，考查三角函数与直线的交点问题。\n\n【方程组】\ny $= 3$sinx + 2\ny = x + c\n\n即求 3sinx + 2 = x + c 的解数随 c 变化的情况。\n\n【图形分析法】\n设 y = 3sinx + 2（振荡曲线，振幅3，中心线 y=2）\ny = x + c（斜率1的直线）\n\n当直线平移时，与正弦曲线在不同区间内的交点数会发生变化。\n\n【分析各命题】\n\n命题1：存在 c 使得 0≤x≤$\\pi$ 恰有一解，且 -$\\pi$<x<0 至少有一解\n通过调整 c，可以找到一个位置使正区间恰有一个交点，负区间至少一个交点。\n命题1可能成立 ✓\n\n命题2：存在 c 使得 0≤x≤$\\pi$ 恰有一解，且 -$\\pi$<x<0 无解\n当直线向上平移足够多时，在负区间不相交，但正区间仍可能有交点。\n命题2可能成立 ✓\n\n命题3：存在 c 使得 0≤x≤$\\pi$ 恰有一解，且 x>$\\pi$ 无解\n当 x > $\\pi$ 时，3sinx + 2 ≤ 5，若 c > 5 - $\\pi$，则直线始终高于曲线。\n命题3可能成立 ✓\n\n【正确答案】H",
+    "analysis": "【题目分析】\n本题研究曲线 $y = 3\\sin x + 2$（值域 $[-1, 5]$）与直线 $y = x + c$ 的交点分布，核心是分析直线平移时交点数在各区间的变化。\n\n【解题步骤】\n命题1：取 $c$ 略小于 $2$，直线在 $x = 0$ 处从曲线下方穿过，$[0, \\pi]$ 内恰一交点，$(-\\pi, 0)$ 内至少一交点。成立。\n\n命题2：取 $c = 2 - \\pi < -1$，直线过 $(\\pi, 2)$，$[0, \\pi]$ 内恰一交点。因 $c < -1$，$x < 0$ 时直线低于曲线最低点，故 $(-\\pi, 0)$ 无解。成立。\n\n命题3：同上取 $c = 2 - \\pi$。$x = 2\\pi$ 时直线值 $2 + \\pi > 5$，故 $x > 2\\pi$ 无解。在 $\\pi < x < 2\\pi$ 内曲线 $< 2$ 而直线 $> 2$，也无解。故 $x > \\pi$ 无解。成立。\n\n【快捷思路】\n画草图观察直线上下平移。关键截距 $c = 2$ 和 $c = 2 - \\pi$ 决定交点分布变化。\n\n【正确答案】H",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Graphs"
+    ]
   },
   {
     "id": "2016-P2-Q18",
@@ -860,16 +892,19 @@ window.QUESTIONS = [
       "F": "$f(x) = x^2 - x^4$"
     },
     "answer": "D",
-    "analysis": "【题目分析】\nTMUA 2016年 Practice Paper 2 第18题，考查反例的构造。\n\n【命题】\n若 (f(x))² ≤ 1 对所有 -1 ≤ x ≤ 1 成立，\n则 ∫₋₁¹ (f(x))² dx ≤ ∫₋₁¹ f(x) dx\n\n【找反例】\n需要找一个函数满足 |f(x)| ≤ 1，但 ∫ f² dx > ∫ f dx。\n\n【逐项分析】\n\n选项A：f(x) = x + $\\frac{1}{2}$\nf(1) $= 1.5$，|f(1)| > 1，不满足前件 ✗\n\n选项B：f(x) = x - $\\frac{1}{2}$\nf(-1) = -1.5，|f(-1)| > 1，不满足前件 ✗\n\n选项C：f(x) = x + x³\nf(1) $= 2$，不满足前件 ✗\n\n选项D：f(x) = x - x³\n|f(x)| ≤ 1 ✓\n∫₋₁¹ (x - x³) dx $= 0$（奇函数）\n∫₋₁¹ (x - x³)² dx = ∫₋₁¹ (x² - 2x⁴ + x⁶) dx\n$= 2$[$\\frac{1}{3}$ - $\\frac{2}{5}$ + $\\frac{1}{7}$] ≈ 0.28\n∫ f² $= 0.28$ > ∫ f $= 0$ ✓\n找到反例！\n\n选项E：f(x) = x² + x⁴，最大值 $= 2$，不满足前件 ✗\n选项F：f(x) = x² - x⁴，∫ f > 0，∫ f² 需要计算，但D已满足反例条件。\n\n【正确答案】D",
+    "analysis": "【题目分析】\n为命题 $(*)$ 构造反例：若 $(f(x))^2 \\leq 1$ 在 $[-1, 1]$ 上成立，则 $\\int_{-1}^{1}(f(x))^2\\,dx \\leq \\int_{-1}^{1}f(x)\\,dx$。需前件真、后件假。\n\n【解题步骤】\n检验前件：A 中 $f(1) = 3/2$，平方超 $1$，排除。B 中 $f(-1) = -3/2$，排除。C、E 中 $f(1) = 2$，均排除。\n\n仅 D 和 F 可能。对 D：$f(x) = x - x^3$，驻点 $x = \\pm 1/\\sqrt{3}$，极值 $2/(3\\sqrt{3}) < 1$，前件真。$f$ 为奇函数，$\\int_{-1}^{1}f = 0$，而 $\\int_{-1}^{1}f^2 > 0$，后件假，D 是反例。\n\n对 F：$0 \\leq f(x) < 1$，故 $f^2 \\leq f$，后件真，不是反例。\n\n【快捷思路】\nA、B、C、E 端点值超 $1$，秒排除。D 是奇函数，$\\int f = 0 < \\int f^2$，天然反例。\n\n【正确答案】D",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Integration"
+    ]
   },
   {
     "id": "2016-P2-Q19",
     "year": 2016,
     "paper": 2,
     "num": 19,
-    "topic": "Algebra",
+    "topic": "Sets",
     "difficulty": 3,
     "question": "Some identical unit cubes are used to construct a three-dimensional object by gluing them together face to face.\n\nSketches of this object are made by looking at it from the right-hand side, from the front and from above. These sketches are called the side elevation, the front elevation, and the plan view respectively.\n\nHow many cubes were used to construct the object?",
     "options": {
@@ -882,7 +917,7 @@ window.QUESTIONS = [
       "G": "exactly 9"
     },
     "answer": "F",
-    "analysis": "【题目分析】\nTMUA 2016年 Practice Paper 2 第19题，考查三维物体的视图重建。\n\n【题目信息】\n给出侧视图、前视图、俯视图，求立方体数量。\n\n【分析方法】\n从三个视图推断立方体分布：\n- 俯视图（plan view）：从上往下看的布局\n- 前视图（front elevation）：从前面看的高度分布\n- 侧视图（side elevation）：从侧面看的高度分布\n\n【解题步骤】\n1. 根据俯视图确定立方体所在位置的网格布局\n2. 根据前视图和侧视图确定每个位置的最小和最大高度\n3. 满足三个视图的条件后，得出可能的立方体总数范围\n\n【结论】\n根据三视图分析，立方体数量可能是8个或9个（存在不确定性位置）。\n\n【正确答案】F",
+    "analysis": "【题目分析】\n本题给出由单位正方体构成的三维物体的三视图（俯视图、前视图、侧视图），要求确定正方体数量。核心方法是通过三视图交叉约束，逐层逐格确定每个位置是否存在正方体。\n\n【解题步骤】\n物体容纳在 $3 \\times 3$ 底面网格内，最多三层。\n\n由俯视图知正方体分布在 L 形五个位置上，每位置至少一个。\n\n由前视图：左列两层高，底层和中层有正方体、顶层无。中列仅底层有。右列每层至少有一个。\n\n由侧视图：左列高为 $2$，顶层右后方无正方体。中列高为 $3$，三层均有。右列高为 $1$，仅底层有。\n\n至此大部分确定，尚余两个位置不确定。其中至少一个必须有正方体满足俯视图，另一个可有可无。故总数为 $8$ 或 $9$。\n\n【快捷思路】\n逐层分析法：俯视图定 L 形布局，前视图和侧视图定各层有无。注意两个悬格一个必选一个可选，故两种可能。\n\n【正确答案】F",
     "images": {
       "image": "2016 P2 Q19.png"
     },
@@ -907,9 +942,12 @@ window.QUESTIONS = [
       "H": "infinitely many"
     },
     "answer": "E",
-    "analysis": "【题目分析】\nTMUA 2016年 Practice Paper 2 第20题，考查正多边形内角公式。\n\n【内角公式】\n正n边形内角 = (n-2) × $180°$ / n $= 180$° - $360°$/n\n\n【题目条件】\n正n边形内角 = $\\frac{3}{4}$ × 正m边形内角\n\n建立方程：\n$180°$ - $360°$/n = $\\frac{3}{4}$ × ($180°$ - $360°$/m)\n\n化简：\n$180°$ - $360°$/n $= 135$° - $270°$/m\n$180°$ - $135°$ $= 360$°/n - $270°$/m\n$45°$ $= 360$°/n - $270°$/m\n\n即：360/n - 270/m $= 45$\n\n化简：8/n - 6/m $= 1$\n\n【求正整数解】\n方程：8/m - 6/m $= 1$，但这里变量是 n 和 m。\n\n重写：8/n - 6/m $= 1$\n\n两边乘以 nm：\n8m - 6n = nm\nnm + 6n - 8m $= 0$\nn(m + 6) $= 8$m\nn $= 8$m/(m+6)\n\n要求 n 是正整数：\nn $= 8$m/(m+6) $= 8$ - 48/(m+6)\n\n所以 m+6 必须是 48 的因数。\n\n48 的正因数：1, 2, 3, 4, 6, 8, 12, 16, 24, 48\n\nm+6 ∈ {1, 2, 3, 4, 6, 8, 12, 16, 24, 48}\n\nm = m+6 - 6 ∈ {-5, -4, -3, -2, 0, 2, 6, 10, 18, 42}\n\n正整数 m：2, 6, 10, 18, 42\n\n对应的 n：\n- m $= 2$：n = $8 \\times 2$ / 8 $= 2$（但 n≥3 才能构成多边形）✗\n- m $= 6$：n = $8 \\times 6$ / 12 $= 4$ ✓\n- m $= 10$：n = $8 \\times 10$ / 16 $= 5$ ✓\n- m $= 18$：n = $8 \\times 18$ / 24 $= 6$ ✓\n- m $= 42$：n = $8 \\times 42$ / 48 $= 7$ ✓\n\n有效配对：(n, m) = (4, 6), (5, 10), (6, 18), (7, 42)\n共 4 组。\n\n验证：\n(4, 6)：正方形内角$90°$，正六边形内角$120°$，$90°$ = $\\frac{3}{4}$ × $120°$ ✓\n(5, 10)：正五边形内角$108°$，正十边形内角$144°$，$108°$ = $\\frac{3}{4}$ × $144°$ ✓\n(6, 18)：正六边形内角$120°$，正18边形内角$160°$，$120°$ ≠ $\\frac{3}{4}$ × $160°$ $= 120$° ✓\n(7, 42)：正七边形内角约128.$57°$，正42边形内角约171.$43°$，128.$57°$ ≈ $\\frac{3}{4}$ × 171.$43°$ ✓\n\n【结论】\n有4组正整数配对。\n\n【正确答案】E",
+    "analysis": "【题目分析】\n正 $n$ 边形内角为 $180^\\circ - 360^\\circ/n$。题设：正 $n$ 边形内角为正 $m$ 边形内角的 $3/4$，求满足条件的正整数对 $(n,m)$ 组数，其中 $n, m \\geq 3$。\n\n【解题步骤】\n建立方程：$180 - 360/n = \\frac{3}{4}(180 - 360/m)$，化简得 $8/n - 6/m = 1$。\n\n由 $n \\geq 3$ 且 $8/n > 1$ 知 $n < 8$，枚举 $n = 3$ 到 $7$：\n- $n = 3$：$m = 18/5$，非整数\n- $n = 4$：$m = 6$ ✓\n- $n = 5$：$m = 10$ ✓\n- $n = 6$：$m = 18$ ✓\n- $n = 7$：$m = 42$ ✓\n\n共四组解。验证 $(4,6)$：正方形内角 $90^\\circ = \\frac{3}{4} \\times 120^\\circ$（正六边形）。\n\n【快捷思路】\n由 $8/n - 6/m = 1$ 得 $n = 8 - 48/(m+6)$，$m+6$ 须为 $48$ 的因数。$m \\geq 3$ 时仅 $12, 16, 24, 48$ 四种可能，对应四组解。\n\n【正确答案】E Theory",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Algebra"
+    ]
   },
   {
     "id": "2017-P1-Q1",

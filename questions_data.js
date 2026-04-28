@@ -2345,7 +2345,7 @@ window.QUESTIONS = [
       "F": "88"
     },
     "answer": "C",
-    "analysis": "【题目分析】\nf(x)=(x³-4x)/(2√x), x>0\n求f'(4)。\n\n【解题步骤】\nf(x)=(x³-4x)/(2x^(1/2))\n     =x^(5/2)/2-2x^(1/2)\n\nf'(x)=(5/4)x^(3/2)-x^(-1/2)\n\nf'(4)=(5/4)·4^(3/2)-4^(-1/2)\n      =(5/4)·8-1/2\n      =10-1/2\n      =9.5\n\n【正确答案】C",
+    "analysis": "【题目分析】\n给定函数 $f(x)=\\dfrac{x^3-4x}{2\\sqrt{x}}$（$x>0$），求 $f'(4)$ 的值。本题核心在于先用指数法则化简分式，再对化简后的幂函数逐项求导，最后代入求值。直接对原分式用商法则会非常繁琐，化简是本题的关键突破口。\n\n【解题步骤】\n先将分子各项分别除以分母：\n$$f(x)=\\frac{x^3}{2x^{1/2}}-\\frac{4x}{2x^{1/2}}=\\frac{1}{2}x^{5/2}-2x^{1/2}$$\n\n利用幂函数求导公式 $\\dfrac{d}{dx}(x^n)=nx^{n-1}$：\n$$f'(x)=\\frac{1}{2}\\cdot\\frac{5}{2}x^{3/2}-2\\cdot\\frac{1}{2}x^{-1/2}=\\frac{5}{4}x^{3/2}-x^{-1/2}$$\n\n代入 $x=4$：\n$$f'(4)=\\frac{5}{4}\\cdot 4^{3/2}-4^{-1/2}=\\frac{5}{4}\\cdot 8-\\frac{1}{2}=10-\\frac{1}{2}=9.5$$\n\n【快捷思路】\n先化简为幂函数形式是本题唯一高效路径。记住 $\\sqrt{x}=x^{1/2}$，除法即指数相减：$x^3\\div x^{1/2}=x^{5/2}$。化简后求导一步到位，代入时注意 $4^{3/2}=(\\sqrt{4})^3=2^3=8$。\n\n【正确答案】C",
     "images": null,
     "has_image": false
   },
@@ -2366,7 +2366,7 @@ window.QUESTIONS = [
       "F": "$495$"
     },
     "answer": "B",
-    "analysis": "【题目分析】\n(x⁶-1/x²)^¹²展开式的常数项。\n\n【解题步骤】\n展开项：C(12,k)(x⁶)^(12-k)(-1/x²)^k\n=C(12,k)(-1)^k·x^(72-6k-2k)\n=C(12,k)(-1)^k·x^(72-8k)\n\n常数项：72-8k=0 → k=9\n\n系数：C(12,9)(-1)^9=C(12,3)(-1)=220·(-1)=-220\n\n【正确答案】B",
+    "analysis": "【题目分析】\n求 $\\left(x^6-\\dfrac{1}{x^2}\\right)^{12}$ 展开式中的常数项。这是二项式定理的典型应用，关键是写出通项公式并令 $x$ 的指数为零来确定对应的项数。\n\n【解题步骤】\n由二项式定理，第 $k$ 项（$k$ 从 $0$ 开始计数）为：\n$$\\binom{12}{k}(x^6)^{12-k}\\left(-\\frac{1}{x^2}\\right)^k=\\binom{12}{k}(-1)^k x^{6(12-k)}\\cdot x^{-2k}=\\binom{12}{k}(-1)^k x^{72-8k}$$\n\n常数项要求 $x$ 的指数为零：\n$$72-8k=0\\quad\\Rightarrow\\quad k=9$$\n\n代入得常数项：\n$$\\binom{12}{9}(-1)^9=\\binom{12}{3}\\cdot(-1)=\\frac{12\\times 11\\times 10}{3\\times 2\\times 1}\\cdot(-1)=220\\cdot(-1)=-220$$\n\n这里利用了 $\\dbinom{n}{k}=\\dbinom{n}{n-k}$ 将 $\\dbinom{12}{9}$ 化为更易计算的 $\\dbinom{12}{3}$。\n\n【快捷思路】\n通项中 $x$ 的指数为 $6(12-k)-2k=72-8k$，令其为零得 $k=9$。符号由 $(-1)^k=(-1)^9=-1$ 确定为负。二项式系数用 $\\dbinom{12}{3}$ 计算比 $\\dbinom{12}{9}$ 更方便。\n\n【正确答案】B",
     "images": null,
     "has_image": false
   },
@@ -2375,7 +2375,7 @@ window.QUESTIONS = [
     "year": 2018,
     "paper": 2,
     "num": 3,
-    "topic": "Algebra",
+    "topic": "Counterexamples",
     "difficulty": 3,
     "question": "Consider the following statement:\n\n> A car journey consists of two parts. In the first part, the average speed is $u$ km/h. In the second part, the average speed is $v$ km/h. Hence the average speed for the whole journey is $\\frac{1}{2}(u + v)$ km/h.\n\nWhich of the following examples of car journeys provide(s) a **counterexample** to the statement?\n\n*   **I** In the first part of the journey, the car travels at a constant speed of 50 km/h for 100 km. In the second part of the journey, the car travels at a constant speed of 40 km/h for 100 km.\n*   **II** In the first part of the journey, the car travels at a constant speed of 50 km/h for one hour. In the second part of the journey, the car travels at a constant speed of 40 km/h for one hour.\n*   **III** In the first part of the journey, the car travels at a constant speed of 50 km/h for 80 km. In the second part of the journey, the car travels at a constant speed of 40 km/h for 100 km.",
     "options": {
@@ -2389,7 +2389,7 @@ window.QUESTIONS = [
       "H": "I, II and III"
     },
     "answer": "F",
-    "analysis": "【题目分析】\n汽车行程分两段：第一段平均速度30mph，第二段平均速度50mph。\n判断三个命题。\n\n命题I：全程平均速度=40mph\n不一定，取决于每段的时间或距离比例。✗\n\n命题II：全程平均速度在30-50mph之间\n平均速度=总距离/总时间，介于两段速度之间。✓\n\n命题III：如果两段距离相等，平均速度=40mph\n设距离各为d：\n平均速度=2d/(d/30+d/50)=2d/(8d/150)=300/8=37.5≠40 ✗\n\n只有II成立。\n\n【正确答案】C",
+    "analysis": "【题目分析】\n题目给出一个论断：一段行程分两部分，第一部分平均速度为 $u$，第二部分平均速度为 $v$，则全程平均速度为 $\\dfrac{1}{2}(u+v)$。要求判断给出的三个具体行程中，哪些构成该论断的反例（counterexample），即哪些行程的实际平均速度不等于 $\\dfrac{1}{2}(u+v)$。注意 $\\dfrac{1}{2}(u+v)=\\dfrac{1}{2}(50+40)=45$，只需逐一计算各行程的真实平均速度即可。\n\n【解题步骤】\n平均速度 = 总距离 $\\div$ 总时间。\n\n**行程 I**：第一段 $50$ km/h 行驶 $100$ km，用时 $t_1=2$ h；第二段 $40$ km/h 行驶 $100$ km，用时 $t_2=2.5$ h。总距离 $D=200$ km，总时间 $T=4.5$ h，平均速度 $V=\\dfrac{200}{4.5}=\\dfrac{400}{9}\\approx 44.44\\neq 45$，是反例。\n\n**行程 II**：第一段 $50$ km/h 行驶 $1$ h，距离 $d_1=50$ km；第二段 $40$ km/h 行驶 $1$ h，距离 $d_2=40$ km。总距离 $D=90$ km，总时间 $T=2$ h，平均速度 $V=\\dfrac{90}{2}=45$，恰好等于 $\\dfrac{1}{2}(u+v)$，不是反例。\n\n**行程 III**：第一段 $50$ km/h 行驶 $80$ km，用时 $t_1=1.6$ h；第二段 $40$ km/h 行驶 $100$ km，用时 $t_2=2.5$ h。总距离 $D=180$ km，总时间 $T=4.1$ h，平均速度 $V=\\dfrac{180}{4.1}=\\dfrac{1800}{41}\\approx 43.90\\neq 45$，是反例。\n\n因此 I 和 III 是反例。\n\n【快捷思路】\n当两段时间相等时（如行程 II），平均速度恰好是算术平均 $\\dfrac{u+v}{2}$；但当两段距离相等或时间不等时（如行程 I 和 III），实际平均速度是加权平均，不等于算术平均。掌握这个规律可直接判断，无需逐个计算。\n\n【正确答案】F",
     "images": null,
     "has_image": false
   },
@@ -2398,7 +2398,7 @@ window.QUESTIONS = [
     "year": 2018,
     "paper": 2,
     "num": 4,
-    "topic": "Algebra",
+    "topic": "Trigonometry",
     "difficulty": 3,
     "question": "The non-zero real number $c$ is such that the equation $\\cos x = c$ has two solutions for $0 < x < \\frac{3}{2}\\pi$.\n\nHow many solutions of the equation $\\cos^2 2x = c^2$ are there in the range $0 < x < \\frac{3}{2}\\pi$?",
     "options": {
@@ -2410,7 +2410,7 @@ window.QUESTIONS = [
       "F": "8"
     },
     "answer": "D",
-    "analysis": "【题目分析】\ncosx=c在(0,3π/2)有两个解。\n求cos²2x=c²在(0,3π/2)的解数。\n\n【解题步骤】\ncosx=c在(0,3π/2)有两个解 → c∈(-1,1)且c≠0\n\ncos²2x=c² → cos2x=±c\n\ncos2x=c：2x在(0,3π)内，cosθ=c有两个解（θ₁,2π-θ₁）\n所以2x=θ₁或2π-θ₁ → x=θ₁/2或π-θ₁/2（2个解）\n\ncos2x=-c：2x在(0,3π)内，cosθ=-c有两个解（θ₂,2π-θ₂）\n所以2x=θ₂或2π-θ₂ → x=θ₂/2或π-θ₂/2（2个解）\n\n但2x的范围是(0,3π)，cosθ=c在(0,3π)内：\nθ₁∈(0,π)：cosθ₁=c\n2π-θ₁∈(π,2π)：cos(2π-θ₁)=c\n如果3π>2π，还有第三个周期部分...\n\n实际上cosθ=c在(0,3π)内：\nθ₁（第一象限）\n2π-θ₁（第四象限）\n如果3π>2π，还有θ₁+2π？但θ₁+2π>2π，且θ₁+2π<3π（因为θ₁<π）\n所以cosθ=c在(0,3π)内有3个解。\n\ncosθ=-c在(0,3π)内也有3个解。\n\n总共6个解。\n\n【正确答案】D",
+    "analysis": "【题目分析】\n已知 $\\cos x=c$（$c\\neq 0$）在区间 $\\left(0,\\dfrac{3\\pi}{2}\\right)$ 内恰有两个解。由此可确定 $c$ 的取值范围。再求方程 $\\cos^2 2x=c^2$ 在同一区间内的解的个数。本题需结合余弦函数图像分析解的分布。\n\n【解题步骤】\n首先分析条件：在 $\\left(0,\\dfrac{3\\pi}{2}\\right)$ 上，$\\cos x$ 从 $1$ 递减到 $-1$（经过 $x=\\pi$），再从 $-1$ 递增到 $0$（到达 $x=\\frac{3\\pi}{2}$）。要使 $\\cos x=c$ 恰有两个解，直线 $y=c$ 必须与曲线在此区间内相交两次，这要求 $-1<c<0$（此时一条水平线在 $(0,\\pi)$ 和 $(\\pi,\\frac{3\\pi}{2})$ 各交一次）。\n\n方程 $\\cos^2 2x=c^2$ 等价于 $\\cos 2x=c$ 或 $\\cos 2x=-c$。\n\n令 $u=2x$，则 $u\\in(0,3\\pi)$。由于 $-1<c<0$，故 $0<-c<1$。\n\n对于 $\\cos u=c$（$c$ 为负）：在 $(0,2\\pi)$ 内有 $2$ 个解，在 $(2\\pi,3\\pi)$ 内还有 $1$ 个解（因为 $c+2\\pi$ 对应的角在 $(2\\pi,3\\pi)$ 中），共 $3$ 个解。\n\n对于 $\\cos u=-c$（$-c$ 为正）：在 $(0,2\\pi)$ 内有 $2$ 个解，在 $(2\\pi,3\\pi)$ 内还有 $1$ 个解，共 $3$ 个解。\n\n由于 $c\\neq -c$（$c\\neq 0$），两组解互不重合，总计 $6$ 个解。\n\n【快捷思路】\n由 $\\cos x=c$ 在 $(0,\\frac{3\\pi}{2})$ 有两个解 $\\Rightarrow -1<c<0$。换元 $u=2x$，范围扩大到 $(0,3\\pi)$，即 $1.5$ 个完整周期。每条水平线 $y=c$ 和 $y=-c$ 在 $1.5$ 个周期内各交 $3$ 次，共 $6$ 个解。画草图可以直观验证。\n\n【正确答案】D",
     "images": null,
     "has_image": false
   },
@@ -2419,7 +2419,7 @@ window.QUESTIONS = [
     "year": 2018,
     "paper": 2,
     "num": 5,
-    "topic": "Algebra",
+    "topic": "Counterexamples",
     "difficulty": 3,
     "question": "The two diagonals of the quadrilateral $Q$ are perpendicular.\n\nConsider the following statements:\n\nI One of the diagonals of $Q$ is a line of symmetry of $Q$.\n\nII The midpoints of the sides of $Q$ are the vertices of a square.\n\nWhich of these statements is/are **necessarily** true for the quadrilateral $Q$?",
     "options": {
@@ -2429,16 +2429,19 @@ window.QUESTIONS = [
       "D": "I and II"
     },
     "answer": "A",
-    "analysis": "【题目分析】\n四边形Q的对角线互相垂直。\n判断两个命题。\n\n命题I：一条对角线是对称轴\n反例：筝形（对角线垂直但只有一条对称轴），但一般四边形对角线垂直不一定对称。✗\n\n命题II：各边中点构成正方形\nVarignon定理：各边中点构成平行四边形。\n对角线垂直 → 平行四边形是菱形（不是正方形）。\n需要额外条件（对角线相等）才是正方形。✗\n\n两个命题都不必然成立。\n\n【正确答案】A",
+    "analysis": "【题目分析】\n已知四边形$Q$的两条对角线互相垂直，判断两个命题是否必然成立。这是一道典型的反例判断题，核心思路是不需要证明命题为真，而是尝试构造反例说明命题为假。\n\n命题I：一条对角线是对称轴。命题II：四边中点构成正方形。\n\n【解题步骤】\n对于命题I，画图法最直观。画两条垂直的对角线，只需让不在同一条对角线上的两个顶点到该对角线的距离不同，即可破坏对称性。例如取对角线交点为原点，在两条对角线上分别取不对称的点作为顶点，得到的一般四边形满足对角线垂直但没有对称轴，故命题I不必然成立。\n\n对于命题II，由Varignon定理可知，任意四边形各边中点构成平行四边形，其边分别平行于原四边形的对角线。当对角线垂直时，该平行四边形为菱形（邻边互相垂直的平行四边形是矩形，对角线垂直时是菱形）。但菱形不一定是正方形，需要额外条件——对角线相等——才能保证是正方形。构造一个对角线垂直但不相等的四边形即可作为反例。\n\n综上，两个命题都不必然成立。\n\n【快捷思路】\n遇到这类几何判断题，直接画图尝试构造反例比严格证明更高效。对角线垂直只保证了中点四边形是菱形而非正方形，对称性则需要更多条件。\n\n【正确答案】A",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Coordinate Geometry"
+    ]
   },
   {
     "id": "2018-P2-Q6",
     "year": 2018,
     "paper": 2,
     "num": 6,
-    "topic": "Algebra",
+    "topic": "Counterexamples",
     "difficulty": 3,
     "question": "Which one of the following functions provides a **counterexample** to the statement:\n\n> if $f'(x) > 0$ for all real $x$, **then** $f(x) > 0$ for all real $x$.",
     "options": {
@@ -2449,16 +2452,20 @@ window.QUESTIONS = [
       "E": "$f(x) = 2^x$"
     },
     "answer": "C",
-    "analysis": "【题目分析】\n找反例：f'(x)>0对所有x，但f(x)>0不成立。\n\n逐项验证：\nA: f(x)=x²+1, f'(x)=2x，不是对所有x>0 ✗\nB: f(x)=x²-1, f'(x)=2x，不是对所有x>0 ✗\nC: f(x)=x³+x+1, f'(x)=3x²+1>0对所有x ✓\n   但f(-1)=-1-1+1=-1<0 ✓ 是反例\nD: f(x)=1-x, f'(x)=-1<0 ✗\nE: f(x)=2^x>0对所有x，不是反例 ✗\n\n【正确答案】C",
+    "analysis": "【题目分析】\n寻找一个函数作为反例，推翻命题：若$f'(x) > 0$对所有实数$x$成立，则$f(x) > 0$对所有实数$x$成立。\n\n反例的定义是：前提条件成立（$f'(x) > 0$），但结论不成立（$f(x) > 0$不成立），即函数严格递增但函数值可以为负。\n\n【解题步骤】\n逐项检验各选项：\n\n选项A：$f(x)=x^2+1$，$f'(x)=2x$，当$x<0$时$f'(x)<0$，不满足前提，排除。\n\n选项B：$f(x)=x^2-1$，$f'(x)=2x$，同样当$x<0$时$f'(x)<0$，不满足前提，排除。\n\n选项C：$f(x)=x^3+x+1$，$f'(x)=3x^2+1$。由于$3x^2 \\geq 0$恒成立，故$3x^2+1 \\geq 1 > 0$对所有$x$成立，前提满足。再看结论：$f(-1)=-1-1+1=-1 < 0$，函数值可以为负，结论不成立。因此C是反例。\n\n选项D：$f(x)=1-x$，$f'(x)=-1 < 0$，不满足前提，排除。\n\n选项E：$f(x)=2^x$，$f'(x)=2^x\\ln 2 > 0$，且$2^x > 0$恒成立，前提和结论都成立，不是反例，排除。\n\n【快捷思路】\n只需快速筛选导数恒正的函数。二次函数导数为一次式不可能恒正；三次函数$x^3+x+1$的导数$3x^2+1$显然恒正，且$x \\to -\\infty$时函数值趋向负无穷，天然就是反例。\n\n【正确答案】C",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Differentiation",
+      "Functions"
+    ]
   },
   {
     "id": "2018-P2-Q7",
     "year": 2018,
     "paper": 2,
     "num": 7,
-    "topic": "Functions",
+    "topic": "Sequences and Series",
     "difficulty": 3,
     "question": "Sequence 1 is an arithmetic progression with first term 11 and common difference 3.\n\nSequence 2 is an arithmetic progression with first term 2 and common difference 5.\n\nSome numbers that appear in Sequence 1 also appear in Sequence 2. Let $N$ be the 20th such number.\n\nWhat is the remainder when $N$ is divided by 7?",
     "options": {
@@ -2471,16 +2478,19 @@ window.QUESTIONS = [
       "G": "6"
     },
     "answer": "B",
-    "analysis": "【题目分析】\n两个等差数列的公共项。\n数列1：首项11，公差3 → 11,14,17,20,23,26,...\n数列2：首项2，公差5 → 2,7,12,17,22,27,...\n\n求第20个公共项N的余数（被什么除？题目不全）\n\n【解题步骤】\n公共项：17, 32, 47, ...\n满足11+3a=2+5b\n9+3a=5b → b=(9+3a)/5\n\n需要b是整数：9+3a≡0 mod5 → 3a≡-9≡1 mod5 → a≡2 mod5\na=2,7,12,17,...\n\n公共项：11+3·2=17, 11+3·7=32, 11+3·12=47...\n公共项是17+15k，k=0,1,2,...\n\n第20个：N=17+15·19=17+285=302\n\n答案F。\n\n【正确答案】F",
+    "analysis": "【题目分析】\n两个等差数列的公共项问题。数列1：首项$11$，公差$3$；数列2：首项$2$，公差$5$。要求第$20$个公共项$N$被$7$除的余数。\n\n【解题步骤】\n列出两数列前若干项：\n数列1：$11, 14, 17, 20, 23, 26, 29, 32, \\ldots$\n数列2：$2, 7, 12, 17, 22, 27, 32, 37, \\ldots$\n\n观察发现第一个公共项是$17$，第二个是$32$，差值为$15$。这是因为公共项必须同时满足$a_n = 11+3m = 2+5k$，即$3m - 5k = -9$。两数列的公差分别为$3$和$5$，最小公倍数为$15$，故公共项构成以$17$为首项、$15$为公差的等差数列。\n\n第$20$个公共项为：\n$N = 17 + (20-1) \\times 15 = 17 + 285 = 302$\n\n计算$302 \\div 7 = 43 \\cdots 1$，余数为$1$。\n\n【快捷思路】\n直接写出两数列前几项，找出前两个公共项$17$和$32$，差为$15$（即$\\text{lcm}(3,5)$），立即得到公共项通项为$17+15k$。第$20$项$302$除以$7$求余即可。利用同余也可快速验证：$302 = 7 \\times 43 + 1$。\n\n【正确答案】B and Series",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Number Theory"
+    ]
   },
   {
     "id": "2018-P2-Q8",
     "year": 2018,
     "paper": 2,
     "num": 8,
-    "topic": "Integration",
+    "topic": "Combinatorics",
     "difficulty": 3,
     "question": "This consists of *upstrokes* which go upwards from left to right, and *downstrokes* which go downwards from left to right. The example shown has six upstrokes and six downstrokes. The horizontal line at the bottom is known as *sea level*.\n\nA *mountain profile of order n* consists of $n$ upstrokes and $n$ downstrokes, with the condition that the profile begins and ends at sea level and **never** goes **below** sea level (although it might reach sea level at any point). So the example shown is a mountain profile of order 6.\n\nMountain profiles can be coded by using U to indicate an upstroke and D to indicate a downstroke. The example shown has the code UDUUUDUDDUDD. A sequence of U’s and D’s obtained from a mountain profile in this way is known as a *valid code*.\n\nWhich of the following statements is/are true?\n\n*   **I** If a valid code is written in reverse order, the result is always a valid code.\n\n*   **II** If each U in a valid code is replaced by D and each D by U, the result is always a valid code.\n\n*   **III** If U is added at the beginning of a valid code and D is added at the end of the code, the result is always a valid code.",
     "options": {
@@ -2494,11 +2504,14 @@ window.QUESTIONS = [
       "H": "I, II and III"
     },
     "answer": "D",
-    "analysis": "【题目分析】\n山峰剖面图（Mountain profile）：n次上坡和n次下坡，始终不低于海平面。\n\n【解题方法】\n分析三个操作对valid code的影响。\n\n【详细步骤】\n条件I：反转valid code\n- 原code：U和D平衡，且任意前缀U数≥D数\n- 反转后：U变D的位置，D变U的位置\n- 例如：UDUUUDUDDUDD → DDUDDUDUUUDU\n- 反转后不符合山峰条件（可能低于海平面）\n- 条件I错误 ✗\n\n条件II：U和D互换\n- 原code从海平面出发，终点回到海平面，中间不低于海平面\n- 互换后：相当于把山峰倒过来\n- 倒置后从海平面出发，变成低谷，会低于海平面\n- 条件II错误 ✗\n\n条件III：开头加U，结尾加D\n- 原code：n个U和n个D，valid\n- 新code：n+1个U和n+1个D\n- 开头加U：从海平面上升1\n- 之后走原code（始终≥海平面）\n- 结尾加D：回到海平面\n- 条件III正确 ✓\n\n【正确答案】D（只有III正确）",
+    "analysis": "【题目分析】\n山峰剖面图（mountain profile）由$n$个上坡（U）和$n$个下坡（D）组成，从海平面出发、回到海平面，且过程中不低于海平面。这等价于Dyck路径（括号匹配）的编码问题。判断三种变换操作后是否仍是有效编码。\n\n【解题步骤】\n任何有效编码的第一个字符必为U（否则第一步就低于海平面），最后一个字符必为D（否则最后一步无法回到海平面）。\n\n判断I：将有效编码反转。原编码以D结尾，反转后以D开头，第一步就低于海平面，不可能是有效编码。故I错误。\n\n判断II：将每个U换为D、每个D换为U。原编码以U开头，变换后以D开头，同样第一步就低于海平面，不可能是有效编码。故II错误。\n\n判断III：在开头加U、结尾加D。新编码以U开头，先将高度提升至$1$，中间部分走原编码的完整路径。由于原编码全程不低于海平面，现在整体抬高了一层，更不会低于海平面。最后加的D使总高度回到$0$。新编码有$n+1$个U和$n+1$个D，且全程不低于海平面，必为有效编码。故III正确。\n\n【快捷思路】\n抓住有效编码的核心约束：首字母必为U。I的反转使首字母变为D；II的U-D互换也使首字母变为D；两者都不满足基本要求。III开头加U不会破坏首字母条件，且全程抬高一层，天然有效。\n\n【正确答案】D",
     "images": {
       "image": "2018 P2 Q8.png"
     },
-    "has_image": true
+    "has_image": true,
+    "related_topics": [
+      "Proof"
+    ]
   },
   {
     "id": "2018-P2-Q9",
@@ -2518,16 +2531,19 @@ window.QUESTIONS = [
       "G": "There is another value of $x$ that satisfies the original equation and the error arises as a result of step (IV)."
     },
     "answer": "F",
-    "analysis": "【题目分析】\n4x√(2x-1)=10x-5\n\n(I)→(II)：10x-5=5(2x-1) ✓\n(II)→(III)：两边平方 ✓\n(III)→(IV)：两边除以(2x-1) ✗\n   如果2x-1=0，即x=1/2，除以0无效！\n   丢失了x=1/2这个解。\n\n验证x=1/2：\n4(1/2)√(2·1/2-1)=2·0=0\n10(1/2)-5=0 ✓\n\n所以x=1/2也是解，错误来自(IV)。\n\n【正确答案】G",
+    "analysis": "【题目分析】\n本题给出了解方程 $4x\\sqrt{2x - 1} = 10x - 5$ 的完整步骤链，要求识别推理中的错误及其位置。核心在于追踪每一步变换的合法性，特别关注可能丢失解的操作。\n\n【解题步骤】\n原方程 $4x\\sqrt{2x - 1} = 10x - 5$。\n\n步骤(I)：将右边因式分解，$10x - 5 = 5(2x - 1)$，这是恒等变形，正确。\n\n步骤(II)：两边平方，得 $16x^2(2x - 1) = 25(2x - 1)^2$。平方操作不可逆，可能引入增根，但不会丢根。验证 $x = \\frac{5}{8}$ 和 $x = \\frac{5}{2}$ 确实满足原方程。\n\n步骤(III)→(IV)：两边除以 $2x - 1$。这里是关键错误！当 $2x - 1 = 0$ 即 $x = \\frac{1}{2}$ 时，除以零无意义。验证 $x = \\frac{1}{2}$：左边 $4 \\cdot \\frac{1}{2} \\cdot \\sqrt{0} = 0$，右边 $10 \\cdot \\frac{1}{2} - 5 = 0$，等式成立。所以 $x = \\frac{1}{2}$ 是原方程的第三个解，在这一步被丢失。\n\n后续步骤(IV)→(VI)：解二次方程 $16x^2 - 50x + 25 = 0$，得 $x = \\frac{5}{8}$ 和 $x = \\frac{5}{2}$，计算无误，但由于前一步丢根，结论不完整。\n\n正确做法：从 $16x^2(2x - 1) = 25(2x - 1)^2$ 应移项提公因式，得 $(2x - 1)(16x^2 - 25(2x - 1)) = 0$，才能保留 $x = \\frac{1}{2}$ 这个解。\n\n【快捷思路】\n看到方程中出现 $2x - 1$ 同时出现在根号内和方程两边时，警惕除以 $2x - 1$ 可能丢根。正确做法是移项提公因式 $(2x - 1)$，而非直接约去。\n\n【正确答案】G",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Proof"
+    ]
   },
   {
     "id": "2018-P2-Q10",
     "year": 2018,
     "paper": 2,
     "num": 10,
-    "topic": "Integration",
+    "topic": "Functions",
     "difficulty": 3,
     "question": "Consider the following three conditions, where $a$ is a real constant:\n\nI $f(a - x) = f(a + x)$ for all real $x$.\n\nII $f(2a - x) = f(x)$ for all real $x$.\n\nIII $f(a - x) = f(x)$ for all real $x$.\n\nWhich of these conditions is/are **necessary and sufficient** for the graph of $y = f(x)$ to have reflection symmetry in the line $x = a$?\n\n<table>\n  <thead>\n    <tr>\n        <th> </th>\n        <th>Condition I is<br/>necessary and<br/>sufficient</th>\n        <th>Condition II is<br/>necessary and<br/>sufficient</th>\n        <th>Condition III is<br/>necessary and<br/>sufficient</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n        <td>",
     "options": {
@@ -2541,16 +2557,19 @@ window.QUESTIONS = [
       "H": "</td>\n<td>no</td>\n<td>no</td>\n<td>no</td>\n    </tr>\n  </tbody>\n</table>"
     },
     "answer": "B",
-    "analysis": "【题目分析】\n判断三个条件哪些是y=f(x)关于x=a对称的充要条件。\n\n关于x=a对称：f(a-x)=f(a+x) ✓\n\n命题I：f(a-x)=f(a+x) → 充要条件 ✓\n\n命题II：f(2a-x)=f(x)\n设t=a-x，则x=a-t，2a-x=a+t\nf(a+t)=f(a-t) → 与I等价 ✓\n\n命题III：f(a-x)=f(x)\n设x=a，则f(0)=f(a)，这只是单点条件，不是对称的充要条件 ✗\n\nI和II充要，III不充分。\n\n【正确答案】B",
+    "analysis": "【题目分析】\n判断三个条件中哪些是函数图像关于直线 $x = a$ 对称的充要条件。核心是理解对称性的代数刻画：关于 $x = a$ 对称意味着以 $a$ 为中心、等距的两点函数值相等。\n\n【解题步骤】\n关于 $x = a$ 对称的代数表达：对任意实数 $x$，点 $a + x$ 和 $a - x$ 到直线 $x = a$ 的距离均为 $|x|$，因此对称要求 $f(a + x) = f(a - x)$ 对所有 $x$ 成立。\n\n条件I：$f(a - x) = f(a + x)$ 对所有实数 $x$ 成立。这正是对称性的直接代数定义，显然既是必要条件也是充分条件。\n\n条件II：$f(2a - x) = f(x)$ 对所有实数 $x$ 成立。做变量代换，令 $t = a - x$，则 $x = a - t$，$2a - x = a + t$。代入得 $f(a + t) = f(a - t)$，与条件I完全等价。因此条件II也是充要条件。\n\n条件III：$f(a - x) = f(x)$ 对所有实数 $x$ 成立。注意 $a - x$ 和 $x$ 的中点是 $\\frac{(a - x) + x}{2} = \\frac{a}{2}$，因此该条件描述的是关于 $x = \\frac{a}{2}$ 的对称性，而非关于 $x = a$ 的对称性。举反例：取 $f(x) = (x - a)^2$，关于 $x = a$ 对称，但 $f(a - x) = x^2$，$f(x) = (x - a)^2$，两者不等（如取 $x = 0$，得 $f(a) = 0$ 但 $f(0) = a^2 \\neq 0$），说明条件III不是必要条件。\n\n因此条件I和II都是充要条件，条件III不是。\n\n【快捷思路】\n判断对称条件时，关键看两个自变量的中点是否为对称轴。$a+x$ 与 $a-x$ 中点为 $a$（正确），$2a-x$ 与 $x$ 中点为 $a$（正确），但 $a-x$ 与 $x$ 中点为 $a/2$（错误）。\n\n【正确答案】B",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Logic"
+    ]
   },
   {
     "id": "2018-P2-Q11",
     "year": 2018,
     "paper": 2,
     "num": 11,
-    "topic": "Algebra",
+    "topic": "Graphs",
     "difficulty": 3,
     "question": "Consider the equation $2^x = mx + c$, where $m$ and $c$ are real constants.\n\nWhich of the following statements is/are true?\n\nI The equation has a negative real solution **only if** $c > 1$.\n\nII The equation has two distinct real solutions **if** $c > 1$.\n\nIII The equation has two distinct positive real solutions **if and only if** $c \\le 1$.",
     "options": {
@@ -2564,16 +2583,20 @@ window.QUESTIONS = [
       "H": "I, II and III"
     },
     "answer": "A",
-    "analysis": "【题目分析】\n2^x=mx+c，m,c为实常数。\n判断三个命题。\n\n命题I：方程有负实数解仅当c>1\n设x<0：2^x∈(0,1)\nmx+c=2^x∈(0,1)\n如果m>0，x<0→mx<0→c=2^x-mx>0\n如果m<0，x<0→mx>0→c=2^x-mx可能<1\n反例：m=-1,c=0.5,x=-1：2^(-1)=0.5, mx+c=1+0.5=1.5≠0.5\n需要更仔细分析。\n\n命题II：如果c>1，方程有两个不同实数解\n不一定，取决于m的值。\n\n命题III：方程有两个不同正实数解当且仅当c≤1\n不一定。\n\n实际上，2^x=mx+c的解数取决于直线与指数曲线的交点。\n\n【正确答案】A",
+    "analysis": "【题目分析】\n方程 $2^x = mx + c$ 的解对应指数曲线 $y = 2^x$ 与直线 $y = mx + c$ 的交点横坐标。$y = 2^x$ 是严格递增的凸函数，过点 $(0, 1)$，当 $x \\to -\\infty$ 时趋于 $0$，当 $x \\to +\\infty$ 时趋于 $+\\infty$。直线斜率为 $m$，纵截距为 $c$。逐一检验三个命题。\n\n【解题步骤】\n命题I：方程有负实数解仅当 $c > 1$，即若有负解则必有 $c > 1$。取反例 $m = -1$，$c = 0$，直线为 $y = -x$。当 $x = -1$ 时左边 $2^{-1} = 0.5$，右边 $1$；当 $x = -0.5$ 时左边 $\\approx 0.707$，右边 $0.5$。由连续性知在 $(-1, -0.5)$ 之间存在负解，但 $c = 0 \\ngtr 1$。命题I为假。\n\n命题II：若 $c > 1$ 则方程有两个不同实数解。取 $c = 2$，$m = -1$，直线 $y = -x + 2$ 斜率为负。由于 $2^x$ 严格递增而 $-x + 2$ 严格递减，两者最多只有一个交点。事实上当 $x = 0$ 时左边 $1 < 2$，当 $x = 1$ 时左边 $2 < 1$ 不成立，实际仅有一个交点。命题II为假。\n\n命题III：方程有两个不同正实数解当且仅当 $c \\leq 1$。取 $c = 0$，$m = -1$，直线 $y = -x$ 斜率为负，与递增的 $2^x$ 最多一个交点，不可能有两个正解。命题III为假。\n\n三个命题均不成立。\n\n【快捷思路】\n利用图像直观分析：指数函数严格递增，若直线斜率 $m < 0$ 则直线严格递减，两者最多一个交点。构造 $m < 0$ 的反例即可逐一击破三个命题。\n\n【正确答案】A",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Functions",
+      "Logic"
+    ]
   },
   {
     "id": "2018-P2-Q12",
     "year": 2018,
     "paper": 2,
     "num": 12,
-    "topic": "Algebra",
+    "topic": "Logic",
     "difficulty": 3,
     "question": "> For any positive integer $N$ there is a positive integer $K$ such that $N(Km + 1) - 1$ is not prime for any positive integer $m$.\n\nWhich one of the following is the negation of this statement?",
     "options": {
@@ -2587,9 +2610,13 @@ window.QUESTIONS = [
       "H": "There is a positive integer $N$ and a positive integer $K$ for which there is no positive integer $m$ for which $N(Km + 1) - 1$ is prime."
     },
     "answer": "F",
-    "analysis": "【题目分析】\n原命题：∀N>0, ∃K>0, ∀m>0, N(Km+1)-1不是素数\n\n否定：∃N>0, ∀K>0, ∃m>0, N(Km+1)-1是素数\n\n即：存在正整数N，使得对任意正整数K，存在正整数m，使N(Km+1)-1是素数。\n\n【正确答案】F",
+    "analysis": "【题目分析】\n本题考察量词否定的逻辑规则：全称量词 $\\forall$ 与存在量词 $\\exists$ 互换，同时否定内部命题。原命题含有三层量词嵌套，需要逐层取否。\n\n【解题步骤】\n原命题的结构为：\n$$\\forall N \\in \\mathbb{Z}^+, \\; \\exists K \\in \\mathbb{Z}^+, \\; \\forall m \\in \\mathbb{Z}^+, \\; N(Km + 1) - 1 \\text{ 不是素数}$$\n\n逐层取否：\n第一层：$\\forall N$ 取否定为 $\\exists N$。\n第二层：$\\exists K$ 取否定为 $\\forall K$。\n第三层：$\\forall m$ 取否定为 $\\exists m$。\n第四层：不是素数取否定为是素数。\n\n综合得到否定命题：\n$$\\exists N \\in \\mathbb{Z}^+, \\; \\forall K \\in \\mathbb{Z}^+, \\; \\exists m \\in \\mathbb{Z}^+, \\; N(Km + 1) - 1 \\text{ 是素数}$$\n\n用自然语言表述：存在正整数 $N$，使得对任意正整数 $K$，存在正整数 $m$，使得 $N(Km + 1) - 1$ 是素数。\n\n对照选项，选项F恰好匹配此表述。排除过程：A到D仍以对于任意 $N$ 开头，量词第一层未取否；H以存在 $N$ 和存在 $K$ 开头，第二层未取否；G的末尾仍为不是素数，双重否定未消除。\n\n【快捷思路】\n量词否定口诀：全称变存在，存在变全称，最后否定结论。逐层替换即可：$\\forall \\to \\exists$，$\\exists \\to \\forall$，内部命题取反。注意不是素数的否定是是素数（双重否定）。\n\n【正确答案】F",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Proof",
+      "Number Theory"
+    ]
   },
   {
     "id": "2018-P2-Q13",
@@ -2608,16 +2635,20 @@ window.QUESTIONS = [
       "F": "The proof is incorrect, and the first error occurs in line (V)."
     },
     "answer": "F",
-    "analysis": "【题目分析】\n证明：tanθ>0 → sinθ+cosθ>1\n\n(I) sinθ·cosθ=tanθ·cos²θ>0 ✓\n(II) 1+2sinθ·cosθ>1 ✓（因为sinθ·cosθ>0）\n(III) sin²θ+2sinθ·cosθ+cos²θ>1 ✓\n(IV) (sinθ+cosθ)²>1 ✓\n(V) sinθ+cosθ>1 ✗\n\n从a²>1不能推出a>1，因为a可能是负数。\n反例：θ=225°（第三象限），tanθ=1>0\nsin225°+cos225°=-√2/2-√2/2=-√2<1\n\n第一个错误在(V)。\n\n【正确答案】F",
+    "analysis": "【题目分析】\n本题要求找出一个「错误证明」中第一次出现错误的行号。命题为：若 $\\tan\\theta > 0$，则 $\\sin\\theta+\\cos\\theta > 1$。证明通过代数变形从假设推导结论，需逐行检查逻辑。\n\n【解题步骤】\n逐行验证：\n(I) $\\sin\\theta\\cos\\theta = \\tan\\theta\\cos^2\\theta$，因 $\\tan\\theta > 0$、$\\cos^2\\theta > 0$，故 $\\sin\\theta\\cos\\theta > 0$。正确。\n(II) 两边乘 $2$ 加 $1$，得 $1+2\\sin\\theta\\cos\\theta > 1$。正确。\n(III) 用恒等式 $\\sin^2\\theta+\\cos^2\\theta=1$ 替换左边。正确。\n(IV) 配方得 $(\\sin\\theta+\\cos\\theta)^2 > 1$。正确。\n(V) 由 $a^2 > 1$ 推出 $a > 1$。错误：$a$ 也可能 $< -1$。\n\n取反例 $\\theta = \\frac{5\\pi}{4}$：$\\tan\\theta = 1 > 0$，但 $\\sin\\theta+\\cos\\theta = -\\sqrt{2}$，$(\\sin\\theta+\\cos\\theta)^2 = 2 > 1$ 成立，而 $-\\sqrt{2} > 1$ 不成立。故第一个错误在(V)。\n\n【快捷思路】\n直接代入 $\\theta=\\frac{5\\pi}{4}$，前四行成立，(V) 得 $-\\sqrt{2}>1$ 明显错误，一步定位。\n\n【正确答案】F",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Proof",
+      "Counterexamples"
+    ]
   },
   {
     "id": "2018-P2-Q14",
     "year": 2018,
     "paper": 2,
     "num": 14,
-    "topic": "Algebra",
+    "topic": "Trigonometry",
     "difficulty": 3,
     "question": "In the triangle $PQR$, $PR = 2$, $QR = p$ and $\\angle RPQ = 30^\\circ$.\n\nWhat is the set of **all** the values of $p$ for which this information uniquely determines the length of $PQ$?",
     "options": {
@@ -2631,16 +2662,19 @@ window.QUESTIONS = [
       "H": "$p \\ge 2$"
     },
     "answer": "E",
-    "analysis": "【题目分析】\n三角形PQR: PR=2, QR=p, ∠RPQ=30°\n求使PQ唯一确定的p的取值范围。\n\n【解题步骤】\n设PQ=x，由余弦定理：\nQR²=PR²+PQ²-2·PR·PQ·cos30°\np²=4+x²-2·2·x·(√3/2)\np²=4+x²-2√3·x\nx²-2√3·x+(4-p²)=0\n\nPQ唯一确定 → 此方程有唯一正根\n\n判别式Δ=12-4(4-p²)=12-16+4p²=4p²-4\n\n情况1：Δ=0 → p²=1 → p=1\n此时x=√3>0 ✓ 唯一解\n\n情况2：Δ>0 → p>1\n两个根：x=(2√3±√(4p²-4))/2=√3±√(p²-1)\n需要唯一正根：\n- 两根一正一负：乘积=4-p²<0 → p²>4 → p>2\n- 两根相等且正：已包含在p=1中\n\n所以p=1或p≥2时PQ唯一确定。\n\n【正确答案】E",
+    "analysis": "【题目分析】\n三角形 $PQR$ 中已知 $PR=2$、$QR=p$、$\\angle RPQ=30^\\circ$，这是典型的「边边角」(SSA) 问题。需要确定 $p$ 取何值时 $PQ$ 唯一确定。\n\n【解题步骤】\n几何法：以 $R$ 为圆心、$p$ 为半径画圆，射线从 $P$ 出发与 $PR$ 成 $30^\\circ$ 角。圆与射线交点数决定解的个数。\n圆心 $R$ 到射线的距离为 $PR\\cdot\\sin 30^\\circ = 1$。\n- $p < 1$：无交点，无解。\n- $p = 1$：相切，唯一解。\n- $1 < p < 2$：两个交点，两解。\n- $p = 2$：圆经过 $P$，一个交点为 $P$（退化），仅一个有效三角形。\n- $p > 2$：两个交点中一个在射线反向延长线上，仅一个有效解。\n\n故 $p = 1$ 或 $p \\geq 2$ 时 $PQ$ 唯一确定。\n\n【快捷思路】\n画图：圆与 $30^\\circ$ 射线的交点数。相切时 $p=1$（唯一），过大时 $p\\geq 2$（一个交点在射线外），中间 $1<p<2$ 时有两个交点。\n\n【正确答案】E",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Coordinate Geometry"
+    ]
   },
   {
     "id": "2018-P2-Q15",
     "year": 2018,
     "paper": 2,
     "num": 15,
-    "topic": "Algebra",
+    "topic": "Functions",
     "difficulty": 3,
     "question": "It is given that $f(x) = x^3 + 3qx^2 + 2$, where $q$ is a real constant.\n\nThe equation $f(x) = 0$ has 3 distinct real roots.\n\nWhich of the following statements is/are **necessarily** true?\n\n*   I The equation $f(x) + 1 = 0$ has 3 distinct real roots.\n*   II The equation $f(x + 1) = 0$ has 3 distinct real roots.\n*   III The equation $f(-x) - 1 = 0$ has 3 distinct real roots.",
     "options": {
@@ -2654,16 +2688,20 @@ window.QUESTIONS = [
       "H": "I, II and III"
     },
     "answer": "G",
-    "analysis": "【题目分析】\nf(x)=x³+3qx²+2有3个不同实根。\n判断三个命题。\n\nf'(x)=3x²+6qx=3x(x+2q)\n临界点：x=0, x=-2q\nf(0)=2（极大值或极小值）\nf(-2q)=-8q³+12q³+2=4q³+2\n\n3个不同实根 → 极大值>0且极小值<0\nf(0)=2>0，所以x=0是极大值\nx=-2q是极小值：4q³+2<0 → q³<-1/2 → q<-∛(1/2)\n\n命题I：f(x)+1=0 → f(x)=-1\nf(x)图像下移1，极大值=1>0，极小值=4q³+1\n如果4q³+1<0，仍有3个根。但q<-∛(1/2)时，4q³+1可能>0。\n不一定成立 ✗\n\n命题II：f(x+1)=0\n只是水平平移，根的个数不变 ✓\n\n命题III：f(-x)-1=0 → f(-x)=1\nf(-x)=-x³+3qx²，令g(x)=f(-x)\ng(x)=1 → -x³+3qx²=1\n这相当于f(x)=1的根的个数（关于y轴对称）\nf(x)=1：极大值=2>1，极小值=4q³+2<0\n所以f(x)=1有3个根 ✓\n\nII和III成立。\n\n【正确答案】G",
+    "analysis": "【题目分析】\n已知 $f(x)=x^3+3qx^2+2$ 有三个不同实根，判断三个变换后的方程是否必然也有三个不同实根。\n\n【解题步骤】\n求导：$f'(x)=3x(x+2q)$，驻点为 $x=0$ 和 $x=-2q$，函数值为 $f(0)=2$ 和 $f(-2q)=4q^3+2$。\n三个不同实根说明极大值 $>0$、极小值 $<0$。因 $f(0)=2>0$，故 $x=0$ 为极大值，$x=-2q$ 为极小值，且 $4q^3+2<0$。\n\n命题I：$f(x)+1=0$ 即图像上移 $1$，新极小值 $4q^3+3$ 可能 $>0$（当 $q$ 接近临界值），不一定有三个根。✗\n命题II：$f(x+1)=0$ 为水平平移，根的个数不变。✓\n命题III：$f(-x)-1=0$ 先反射（根数不变），再下移 $1$。新极小值 $4q^3+1$，因 $4q^3+2<0$，故 $4q^3+1<0$，极小值仍在轴下，三个根必然。✓\n\n【快捷思路】\n水平平移不变根数（II必成立）；上移可能使极小值过轴（I不一定），下移使极小值更低（III必成立）。\n\n【正确答案】G",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Differentiation",
+      "Graphs"
+    ]
   },
   {
     "id": "2018-P2-Q16",
     "year": 2018,
     "paper": 2,
     "num": 16,
-    "topic": "Algebra",
+    "topic": "Sequences and Series",
     "difficulty": 3,
     "question": "In this question, $x_1, x_2, x_3, \\dots$ is an **arithmetic progression**, all of whose terms are integers.\n\nLet $n$ be a positive integer. If the median of the first $n$ terms of the sequence is an integer, which of the following three statements **must** be true?\n\n        I The median of the first $n + 2$ terms is an integer.\n\n        II The median of the first $2n$ terms is an integer.\n\n        III The median of $x_2, x_4, x_6, \\dots, x_{2n}$ is an integer.",
     "options": {
@@ -2677,16 +2715,19 @@ window.QUESTIONS = [
       "H": "I, II and III"
     },
     "answer": "F",
-    "analysis": "【题目分析】\n等差数列 {xₙ}（所有项为整数），前 n 项中位数是整数。\n判断三个命题是否必然成立。\n\n【命题I：前 n 项中位数整数 → 前 n+2 项中位数整数】\n- n 为奇数：中位数 = x₍ₙ₊₁₎/₂（整数）✓\n- n 为偶数：中位数为整数 → 公差 d 为偶数 → n+2 也是偶数 → 中位数仍为整数 ✓\n\n命题I成立 ✓\n\n【命题II：前 n 项中位数整数 → 前 2n 项中位数整数】\n反例：等差数列 1, 2, 3, 4, 5（d=1）\n前5项中位数 = x₃ = 3（整数）✓\n前10项中位数 = (x₅+x₆)/2 = (5+6)/2 = 5.5（非整数）❌\n\n命题II不成立 ❌\n\n【命题III：前 n 项中位数整数 → {x₂, x₄, ..., x₂ₙ} 中位数整数】\n{x₂ₖ} 以 2d 为公差。\n- n 为奇数：中位数 = xₙ₊₁（整数）✓\n- n 为偶数：中位数 = xₙ + d（整数）✓\n\n命题III成立 ✓\n\n【结论】命题I和III成立，II不成立。\n\n【正确答案】F（I and III only）",
+    "analysis": "【题目分析】\n等差数列 $\\{x_k\\}$ 各项为整数，已知前 $n$ 项中位数为整数，判断三个关于其他中位数的命题是否必然成立。\n\n【解题步骤】\n中位数分析：\n- $n$ 为奇数：中位数为 $x_{\\frac{n+1}{2}}$，本身是整数。\n- $n$ 为偶数：中位数为 $x_{\\frac{n}{2}}+\\frac{d}{2}$（$d$ 为公差），已知为整数，故 $d$ 为偶数。\n\n命题I：前 $n+2$ 项的中位数。\n$n$ 奇 $\\to n+2$ 奇，中位数为某一项，整数。$n$ 偶 $\\to n+2$ 偶，中位数为 $x_{\\frac{n}{2}+1}+\\frac{d}{2}$，因 $d$ 为偶数，整数。I成立。✓\n\n命题II：前 $2n$ 项的中位数。\n反例：$1,2,3,\\ldots$（$d=1$），$n=3$，前 $3$ 项中位数 $=2$（整数），前 $6$ 项中位数 $=\\frac{3+4}{2}=3.5$（非整数）。II不成立。✗\n\n命题III：子列 $x_2,x_4,\\ldots,x_{2n}$（$n$ 项，公差 $2d$）。\n$n$ 奇时中位数为 $x_{n+1}$（整数）；$n$ 偶时中位数为 $\\frac{x_n+x_{n+2}}{2}=x_{n+1}$（整数）。III成立。✓\n\n【快捷思路】\nII用 $1,2,3,\\ldots$、$n=3$ 反例排除。I和III奇偶分类均可证。\n\n【正确答案】F and Series",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Number Theory"
+    ]
   },
   {
     "id": "2018-P2-Q17",
     "year": 2018,
     "paper": 2,
     "num": 17,
-    "topic": "Number Theory",
+    "topic": "Counterexamples",
     "difficulty": 3,
     "question": "A positive integer is called a *squaresum* **if and only if** it can be written as the sum of the squares of two integers. For example, 61 and 9 are both squaresums since $61 = 5^2 + 6^2$ and $9 = 3^2 + 0^2$.\n\nA prime number is called *awkward* **if and only if** it has a remainder of 3 when divided by 4. For example, 23 is awkward since $23 = 5 \\times 4 + 3$.\n\nA (true) theorem due to Fermat states that:\n\n> A positive integer is a squaresum **if and only if** each of its awkward prime factors occurs to an even power in its prime factorisation.\n\nIt follows that $5 \\times 23^2$ is a squaresum, since 23 occurs to the power 2, but $5 \\times 23^3$ is not, since 23 occurs to the power 3.\n\nWhich one of the following statements is **not** true?",
     "options": {
@@ -2696,16 +2737,20 @@ window.QUESTIONS = [
       "D": "If $N$ is not a squaresum, then $kN$ is a squaresum for some number $k$ which is a product of awkward primes."
     },
     "answer": "C",
-    "analysis": "【题目分析】\n定义：\n- squaresum: 能写成两个整数平方之和的正整数\n- awkward prime: 除以4余3的质数（即形如4k+3的质数）\n\nFermat定理：正整数是squaresum **iff** 每个awkward质因子在质因数分解中出现偶数次。\n\n【验证定理】\n例：61 = 5² + 6² = 61，是squaresum\n61的质因数分解：61 = 61（61本身是质数）\n61 ≡ 1 (mod 4)，不是awkward质数，定理成立 ✓\n\n例：9 = 3² + 0²，是squaresum\n9 = 3²，质因数是3，3 ≡ 3 (mod 4)，是awkward质数\n但3在分解中出现偶数次（2次），定理成立 ✓\n\n例：5 × 23²，是squaresum\n5 ≡ 1 (mod 4)，不是awkward\n23 ≡ 3 (mod 4)，是awkward质数，出现偶数次（2次） ✓\n\n例：5 × 23³，不是squaresum\n23是awkward质数，出现奇数次（3次） ✓\n\n【逐项分析】找**不成立**的命题：\n\n**选项A**: 每个平方数都是squaresum\n设n²，需要证明n²是squaresum。\nn² = n² + 0² ✓\n确实是squaresum。命题A成立 ✓\n\n**选项B**: 如果N和M都是squaresum，则NM也是squaresum\n设N = a² + b²，M = c² + d²\nNM = (a²+b²)(c²+d²) = (ac+bd)² + (ad-bc)² 或 (ac-bd)² + (ad+bc)²\n这是平方和恒等式（ Brahmagupta–Fibonacci identity）\n命题B成立 ✓\n\n**选项C**: 如果NM是squaresum，则N和M都是squaresum\n反例：NM = 9 = 3² + 0²是squaresum\n设N = 3，M = 3\nN = 3是质数，3 ≡ 3 (mod 4)，是awkward质数\nN的质因数分解：3¹，awkward质数出现奇数次（1次）\n所以N不是squaresum！\n\n验证：3能否写成平方和？\n检查3 = a² + b²，a,b为整数\n可能的组合：(1,√2)不行，(0,√3)不行，(±1,±√2)不行\n最小的平方数组合：0²+1²=1, 0²+2²=4, 1²+1²=2, 1²+2²=5\n确实3不是squaresum！\n\n命题C不成立 ❌\n\n**选项D**: 如果N不是squaresum，则存在某个k（是awkward质数的乘积）使得kN是squaresum\nN不是squaresum，意味着N有某个awkward质因子出现奇数次。\n设这个因子为p，出现m次（m奇数）。\n\n要使kN是squaresum，需要所有awkward质因子出现偶数次。\n如果k包含p，使得p在kN中出现偶数次...\n设k = p（一个awkward质数）\nN = p^m × 其他因子（m奇数）\nkN = p^(m+1) × 其他因子\n\n如果m是奇数，m+1是偶数，p在kN中出现偶数次！✓\n\n但需要检验其他awkward质因子...\n如果N只有一个awkward质因子p出现奇数次，其他出现偶数次，则k=p就够了。\n如果N有多个awkward质因子出现奇数次，k需要是这些质因子的乘积。\n\n设N的awkward质因子为p₁, p₂, ..., pₖ，各自出现m₁, m₂, ..., mₖ次（奇数）\nk = p₁ × p₂ × ... × pₖ\nkN中每个p_i出现m_i+1次（偶数）✓\n\n命题D成立 ✓\n\n【结论】选项C不成立。\n\n【正确答案】C",
+    "analysis": "【题目分析】\n本题引入两个新概念与一条费马定理，考查逻辑推理和反例构造能力。\n\n定义梳理：\n- squaresum：能写成两个整数平方和的正整数，即 $N = a^2 + b^2$（$a, b \\in \\mathbb{Z}$）\n- awkward prime：除以4余3的质数，即形如 $4k+3$ 的质数（如3, 7, 11, 19, 23等）\n\nFermat定理：正整数是squaresum $\\iff$ 其每个awkward质因子在质因数分解中出现偶数次幂。\n\n核心任务是找出四个命题中唯一不成立的那一个。\n\n【解题步骤】\n逐项分析：\n\n选项A：每个平方数都是squaresum。直接构造 $n^2 = n^2 + 0^2$，显然成立。\n\n选项B：若 $N, M$ 都是squaresum，则 $NM$ 也是。由定理，$N$ 和 $M$ 的每个awkward质因子都出现偶数次。$NM$ 的质因数分解是两者的合并，每个awkward质因子的总次数为两个偶数之和，仍为偶数。故 $NM$ 是squaresum。也可用Brahmagupta-Fibonacci恒等式 $(a^2+b^2)(c^2+d^2) = (ac-bd)^2+(ad+bc)^2$ 直接构造。命题成立。\n\n选项C：若 $NM$ 是squaresum，则 $N$ 和 $M$ 都是squaresum。取反例：令 $N = M = 23$。23是awkward质数（$23 \\equiv 3 \\pmod 4$），出现1次（奇数次），故23不是squaresum。但 $NM = 23^2$，awkward质因子23出现2次（偶数次），所以 $23^2$ 是squaresum。反例说明命题不成立。\n\n选项D：若 $N$ 不是squaresum，取 $k$ 为 $N$ 中所有出现奇数次的awkward质因子的乘积。乘入后每个这样的质因子次数加1变为偶数，$kN$ 满足定理条件，是squaresum。命题成立。\n\n【快捷思路】\n找反例最快。C说乘积是squaresum则因子都是——取一个awkward质数 $p$，$p$ 本身不是squaresum但 $p^2$ 是（awkward质因子出现偶数次），即 $N=M=p$ 时 $NM$ 是squaresum但 $N$ 不是。秒杀。\n\n【正确答案】C",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Number Theory",
+      "Proof"
+    ]
   },
   {
     "id": "2018-P2-Q18",
     "year": 2018,
     "paper": 2,
     "num": 18,
-    "topic": "Algebra",
+    "topic": "Differentiation",
     "difficulty": 3,
     "question": "$f(x)$ is a polynomial function defined for all real $x$.\n\nWhich of the following is a **necessary** condition for the inequality\n\n$$\\frac{f(a) + f(b)}{2} \\geq f\\left(\\frac{a + b}{2}\\right)$$\n\nto be true for all real numbers $a$ and $b$ with $a < b$ ?",
     "options": {
@@ -2717,9 +2762,13 @@ window.QUESTIONS = [
       "F": "$f''(x) \\leq 0$ for all real $x$"
     },
     "answer": "C",
-    "analysis": "【题目分析】\n(f(a)+f(b))/2 ≥ f((a+b)/2) 对所有a<b成立。\n这是凸函数（下凸）的定义。\n\n凸函数的充要条件：f''(x) ≥ 0 对所有x。\n\n所以f''(x)≥0是必要条件。\n\n【正确答案】C",
+    "analysis": "【题目分析】\n题目给出不等式 $\\frac{f(a)+f(b)}{2} \\geq f\\left(\\frac{a+b}{2}\\right)$ 对所有 $a < b$ 成立，问哪个是必要条件。\n\n这是凸函数的经典定义：连接曲线上任意两点的弦，其中点的纵坐标不小于曲线上对应中点的纵坐标。直观理解就是曲线整体向上弯曲。\n\n对于二阶可导的多项式函数，凸性等价于 $f''(x) \\geq 0$。\n\n【解题步骤】\n几何理解：$(a, f(a))$ 到 $(b, f(b))$ 的弦的中点纵坐标为 $\\frac{f(a)+f(b)}{2}$，曲线上同横坐标点的纵坐标为 $f\\left(\\frac{a+b}{2}\\right)$。不等式要求弦在曲线上方，即曲线向上弯曲（凸函数）。\n\n逐项排除：\n\n选项A（$f(x) \\geq 0$）：将凸函数整体下移仍保持凸性，故非函数值非负不是必要条件。\n\n选项B（$f'(x) \\geq 0$）：凸函数可以有递减区间，例如 $f(x) = x^2$ 在 $x < 0$ 时导数为负，仍满足不等式。非必要条件。\n\n选项C（$f''(x) \\geq 0$）：凸函数的充要条件。官方解答用逆否命题严格证明：若存在某点 $f''(x) < 0$，则曲线在该点附近向下弯曲，弦在中点处低于曲线，不等式不成立。故 $f''(x) \\geq 0$ 是必要条件。\n\n选项D、E、F 分别与A、B、C反向，同样可排除。\n\n【快捷思路】\n识别出这是凸函数的定义式。对于多项式函数，凸 $\\iff f''(x) \\geq 0$。直接选C。排除法也很快：$f(x)=x^2$ 满足原不等式但 $f'(x)$ 可负、$f(x)$ 可负，排除A、B。\n\n【正确答案】C",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Graphs",
+      "Proof"
+    ]
   },
   {
     "id": "2018-P2-Q19",
@@ -2736,16 +2785,19 @@ window.QUESTIONS = [
       "D": "$2 < \\frac{7^x + 7^z}{7^y}$"
     },
     "answer": "C",
-    "analysis": "【题目分析】\n三个实数x > y > z > 1，判断哪个选项必须成立。\n\n【解题方法】\n对于一般形式 $\\frac{k \\cdot a^x}{a^z} > \\frac{a^x + a^z}{a^y}$，化简：\n- 左边 =  \\cdot a^{x-z}$\n- 右边 = ^{x-y} + a^{z-y}$\n\n要使左边 > 右边，需要  > a^{y-z} + a^{x-y} \\cdot a^{y-z}$\n\n设 $ 为底数， > y > z > 1$。\n\n【逐项验证】\n**选项A**: 底数2\n- 左边 = $\\frac{2^{z+1}}{2^x} = 2^{z+1-x} = 2^{-(x-z-1)}$\n- 右边 = $\\frac{2^x + 2^z}{2^y} = 2^{x-y} + 2^{z-y}$\n由于x > y > z，左边是负指数（小于1），右边可能有较大值。\n例如取x=4, y=3, z=2：\n- 左边 = ^{2+1-4} = 2^{-1} = 0.5$\n- 右边 = ^{4-3} + 2^{2-3} = 2 + 0.5 = 2.5$\n左边 < 右边，不成立。❌\n\n**选项B**: 底数3\n- 需要  > \\frac{3^x + 3^z}{3^y} = 3^{x-y} + 3^{z-y}$\n取x=4, y=3, z=2：\n- ^{4-3} + 3^{2-3} = 3 + \\frac{1}{3} = 3.33 > 2$\n不成立。❌\n\n**选项C**: 底数5\n- 左边 = $\\frac{2 \\times 5^x}{5^z} = 2 \\times 5^{x-z}$\n- 右边 = $\\frac{5^x + 5^z}{5^y} = 5^{x-y} + 5^{z-y}$\n\n要证明  \\times 5^{x-z} > 5^{x-y} + 5^{z-y}$\n\n设  = x-y > 0$,  = y-z > 0$\n则 -z = u+v$\n\n左边 =  \\times 5^{u+v} = 2 \\times 5^u \\times 5^v$\n右边 = ^u + 5^{-v}$\n\n由于 ^u \\geq 5$, ^v \\geq 5$（因为u,v > 0且x,y,z > 1）\n左边 $\\geq 2 \\times 5 \\times 5 = 50$\n右边 $\\leq 5^u + 1$（最大当v趋近0）\n\n实际上更严格： \\times 5^u \\times 5^v > 5^u + 5^{-v}$\n因为  \\times 5^v > 1 + \\frac{1}{5^{u+v}}$\n\n当u,v都为正时，^v \\geq 5$，所以  \\times 5^v \\geq 10 > 1$\n左边确实大于右边。✅\n\n**选项D**: 底数7\n- 需要  < \\frac{7^x + 7^z}{7^y} = 7^{x-y} + 7^{z-y}$\n由于x > y, ^{x-y} \\geq 7$，右边必然 > 7 > 2\n但这意味着D说必须成立，然而D说2<右边，这个确实成立。\n\n等等，让我重新检查D：\nD说  < \\frac{7^x + 7^z}{7^y}$，这确实成立因为 ^{x-y} \\geq 7^1 = 7 > 2$。\n\n但题目问必须为真的唯一选项，所以如果C和D都对，题目就有问题。\n\n让我重新验证C。关键点：x,y,z > 1是下界，不是最小间距。\n例如x=2.1, y=2.05, z=2.01\n- u = x-y = 0.05\n- v = y-z = 0.04\n\n左边 =  \\times 5^{0.09} \\approx 2 \\times 1.23 = 2.46$\n右边 = ^{0.05} + 5^{-0.04} \\approx 1.08 + 0.82 = 1.90$\n\nC成立！\n\n再验D：^{0.05} + 7^{-0.04} \\approx 1.10 + 0.87 = 1.97 < 2$\n\n所以D不成立！因为当x,y,z很接近时，右边可能小于2。\n\n【正确答案】C",
+    "analysis": "【题目分析】\n已知 $x > y > z > 1$，判断四个含指数表达式的不等式中哪个必定成立。\n\n这类题的标准策略是：对错误选项构造反例（取一组特定的 $x, y, z$ 使不等式不成立），对正确选项给出适用于任意取值的代数证明。核心在于利用指数函数 $a^t$（$a > 1$）的单调递增性质，以及变量之间的大小关系。\n\n【解题步骤】\n逐项验证：\n\n选项A：$2^{z+1-x} > 2^{x-y} + 2^{z-y}$。取 $x=10, y=5, z=3$，左边 $= 2^{-6} = \\frac{1}{64}$，右边 $= 2^5 + 2^{-2} = 32.25$。左边远小于右边，命题不必然成立。\n\n选项B：$2 > 3^{x-y} + 3^{z-y}$。取 $x=10, y=2$，右边第一项 $= 3^8 = 6561 \\gg 2$。命题不必然成立。\n\n选项C：$\\frac{2 \\times 5^x}{5^z} > \\frac{5^x + 5^z}{5^y}$。两边同乘 $5^y \\cdot 5^z$（底数大于1，各项为正，不等号方向不变）：\n$$2 \\times 5^{x+y} > 5^{x+z} + 5^{2z}$$\n由于 $x > y > z$，可得 $x+y > x+z$，利用指数函数递增性得 $5^{x+y} > 5^{x+z}$；同理 $x+y > z+z = 2z$，故 $5^{x+y} > 5^{2z}$。两式相加即得所需不等式，对任意满足条件的 $x, y, z$ 严格成立。\n\n选项D：$2 < 7^{x-y} + 7^{z-y}$。取 $x=1000, y=999.99, z=1.1$，则 $7^{x-y} = 7^{0.01} \\approx 1.02$，$7^{z-y} = 7^{-998.89} \\approx 0$，右边仅约1.02，小于2。命题不必然成立。\n\n【快捷思路】\n对于A、B、D，选择使左右差距最大的极端值快速排除。C的证明关键在于去分母后利用 $x+y$ 同时大于 $x+z$ 和 $2z$ 这一简单不等式，无需复杂计算。值得注意，本题的难点在于识别出C选项可以化为指数项之间的直接比较，而其他选项均可通过构造极端反例迅速排除。\n\n【正确答案】C",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Proof"
+    ]
   },
   {
     "id": "2018-P2-Q20",
     "year": 2018,
     "paper": 2,
     "num": 20,
-    "topic": "Functions",
+    "topic": "Algebra",
     "difficulty": 3,
     "question": "It is given that the equation $\\sqrt{x + p} + \\sqrt{x} = p$ has at least one real solution for $x$, where $p$ is a real constant.\n\nWhat is the complete set of possible values for $p$?",
     "options": {
@@ -2757,9 +2809,12 @@ window.QUESTIONS = [
       "F": "$p \\ge 1$"
     },
     "answer": "B",
-    "analysis": "【题目分析】\n√(x+p)+√x=p 至少有一个实数解。\n求p的取值范围。\n\n【解题步骤】\n√(x+p) = p-√x\n\n两边平方：x+p = p²-2p√x+x\np = p²-2p√x\n2p√x = p²-p\n\n如果p=0：0=0，x=0是解 ✓\n\n如果p≠0：2√x = p-1\n√x = (p-1)/2\n\n需要√x≥0：(p-1)/2≥0 → p≥1\n\n又x+p≥0且x≥0：\nx=((p-1)/2)²≥0 ✓\nx+p=((p-1)/2)²+p≥0（当p≥1时显然成立）\n\n所以p=0或p≥1。\n\n【正确答案】B",
+    "analysis": "【题目分析】\n方程 $\\sqrt{x+p} + \\sqrt{x} = p$ 至少有一个实数解，求 $p$ 的完整取值范围。\n\n这是含参数的根号方程问题，解题的关键步骤包括：移项隔离根号、平方消去根号、分类讨论参数、代回原方程验证解的有效性。需要特别注意平方操作可能引入增根，以及根号内表达式的定义域限制。\n\n【解题步骤】\n首先观察：左边 $\\sqrt{x+p} + \\sqrt{x}$ 是两个平方根之和，值域为非负数，因此若 $p < 0$ 则方程无解。\n\n移项隔离根号：$\\sqrt{x+p} = p - \\sqrt{x}$。\n\n两边平方（注意右边需非负，即 $p \\geq \\sqrt{x} \\geq 0$）：\n$$x + p = p^2 - 2p\\sqrt{x} + x$$\n化简消去 $x$ 得 $2p\\sqrt{x} = p^2 - p$。\n\n情况一：$p = 0$。原方程变为 $2\\sqrt{x} = 0$，解得 $x = 0$。代入验证 $\\sqrt{0} + \\sqrt{0} = 0$，成立。\n\n情况二：$p \\neq 0$。两边除以 $p$ 得 $2\\sqrt{x} = p - 1$。左边 $\\geq 0$，故 $p - 1 \\geq 0$ 即 $p \\geq 1$。此时 $x = \\frac{(p-1)^2}{4}$。\n\n代回原方程验证：\n$$\\sqrt{\\frac{(p-1)^2}{4} + p} + \\sqrt{\\frac{(p-1)^2}{4}} = \\sqrt{\\frac{p^2+2p+1}{4}} + \\frac{p-1}{2} = \\frac{p+1}{2} + \\frac{p-1}{2} = p$$\n验证通过，确为有效解。\n\n综上，$p = 0$ 或 $p \\geq 1$。\n\n【快捷思路】\n左边非负排除 $p < 0$。$p = 0$ 时显然 $x = 0$ 成立。$p \\neq 0$ 时平方化简得 $2\\sqrt{x} = p - 1 \\geq 0$，直接得 $p \\geq 1$。两步到位，选B。官方还提供了图象法作为验证：令 $y = \\sqrt{x+p} + \\sqrt{x}$，它是 $x \\geq 0$ 上的递增函数，最小值为 $x=0$ 处的 $\\sqrt{p}$，令 $\\sqrt{p} \\leq p$ 即得 $p \\geq 1$ 或 $p = 0$。两种方法殊途同归，代数法更直接，图象法更直观。\n\n【正确答案】B",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Graphs"
+    ]
   },
   {
     "id": "2019-P1-Q1",

@@ -997,7 +997,7 @@ window.QUESTIONS = [
       "D": "$\\frac{185}{8}$"
     },
     "answer": "B",
-    "analysis": "【题目分析】\n等差数列前三项为 p, q, p²；等比数列前三项为 p, p², q。求等差数列前10项和。\n\n【利用等比数列求 q = p³】\n等比数列 p, p², q：\n公比 r = p²/p = p\n第三项：p × p² = p³ = q\n\n【利用等差数列建立方程】\n等差数列 p, q, p²：\n公差 d = q − p\n第三项：p + 2d = p²\n代入 q = p³ 得：p + 2(p³ − p) = p²\n2p³ − p² − p = 0\np(2p² − p − 1) = 0\n\np ≠ 0，解 2p² − p − 1 = 0：\np = [1 ± √(1+8)]/4 = (1 ± 3)/4\np = 1 或 p = −1/2\n\n取 p < 0，得 p = −1/2。\n\n【求等差数列各项】\np = −1/2，q = p³ = −1/8\n公差 d = q − p = (−1/8) − (−1/2) = 3/8\n\n前10项和：\nS₁₀ = 10/2 × (2p + 9d)\n    = 5 × (2×(−1/2) + 9×3/8)\n    = 5 × (−1 + 27/8)\n    = 5 × 19/8 = 95/8\n\n【正确答案】B（95/8）",
+    "analysis": "【题目分析】\n等差数列前三项为 p, q, p²；等比数列前三项为 p, p², q。求等差数列前10项和。\n\n【利用等比数列求 q = p³】\n等比数列 p, p², q：\n公比 r = p²/p = p\n第三项：p × p² = p³ = q\n\n【利用等差数列建立方程】\n等差数列 p, q, p²：\n公差 d = q - p\n第三项：p + 2d = p²\n代入 q = p³ 得：p + 2(p³ - p) = p²\n2p³ - p² - p = 0\np(2p² - p - 1) = 0\n\np ≠ 0，解 2p² - p - 1 = 0：\np = [1 ± √(1+8)]/4 = (1 ± 3)/4\np = 1 或 p = -1/2\n\n取 p < 0，得 p = -1/2。\n\n【求等差数列各项】\np = -1/2，q = p³ = -1/8\n公差 d = q - p = (-1/8) - (-1/2) = 3/8\n\n前10项和：\nS₁₀ = 10/2 × (2p + 9d)\n    = 5 × (2×(-1/2) + 9×3/8)\n    = 5 × (-1 + 27/8)\n    = 5 × 19/8 = 95/8\n\n【正确答案】B（95/8）",
     "images": null,
     "has_image": false
   },
@@ -1494,7 +1494,7 @@ window.QUESTIONS = [
       "E": "$f(x - 2) = -f(2 - x)$ for all $x$"
     },
     "answer": "D",
-    "analysis": "【题目分析】\n∫₁³f(x)dx=0的充分条件。\n\n【解题步骤】\n分析各选项：\nA: f(2)=0 — 不充分，单点值不决定积分\nB: f(1)=f(3)=0 — 不充分，边界值不决定积分\nC: f(-x)=-f(x)（奇函数）— 奇函数关于原点对称\n   积分区间[1,3]不关于原点对称，不保证积分为0 ✗\nD: f(x+2)=-f(2-x)\n   设t=x+2，则x=t-2\n   f(t)=-f(4-t)\n   这说明f关于点(2,0)中心对称。\n   在区间[1,3]上，关于x=2对称。\n   设u=x-2∈[-1,1]：\n   ∫₁³f(x)dx=∫₋₁¹f(u+2)du\n   由f(t)=-f(4-t)，当t=u+2时：f(u+2)=-f(2-u)\n   所以∫₋₁¹f(u+2)du=∫₋₁¹-f(2-u)du\n   设v=2-u：u=-1→v=3, u=1→v=1\n   =∫₃¹-f(v)(-dv)=∫₁³f(v)dv\n   所以∫₁³f(x)dx=-∫₁³f(v)dv → 积分=0 ✓\n\n选项D充分。\n\n【正确答案】D",
+    "analysis": "【题目分析】\n∫₁³f(x)dx=0的充分条件。\n\n【解题步骤】\n分析各选项：\nA: f(2)=0 - 不充分，单点值不决定积分\nB: f(1)=f(3)=0 - 不充分，边界值不决定积分\nC: f(-x)=-f(x)（奇函数）- 奇函数关于原点对称\n   积分区间[1,3]不关于原点对称，不保证积分为0 ✗\nD: f(x+2)=-f(2-x)\n   设t=x+2，则x=t-2\n   f(t)=-f(4-t)\n   这说明f关于点(2,0)中心对称。\n   在区间[1,3]上，关于x=2对称。\n   设u=x-2∈[-1,1]：\n   ∫₁³f(x)dx=∫₋₁¹f(u+2)du\n   由f(t)=-f(4-t)，当t=u+2时：f(u+2)=-f(2-u)\n   所以∫₋₁¹f(u+2)du=∫₋₁¹-f(2-u)du\n   设v=2-u：u=-1→v=3, u=1→v=1\n   =∫₃¹-f(v)(-dv)=∫₁³f(v)dv\n   所以∫₁³f(x)dx=-∫₁³f(v)dv → 积分=0 ✓\n\n选项D充分。\n\n【正确答案】D",
     "images": null,
     "has_image": false
   },
@@ -1537,7 +1537,7 @@ window.QUESTIONS = [
       "F": "$\\tan x < \\cos 2x < \\sin 2x$ for some real number $x$ with $-\\frac{\\pi}{2} < x < \\frac{\\pi}{2}$"
     },
     "answer": "C",
-    "analysis": "【题目分析】\n在 −π/2 < x < π/2 范围内，判断哪个不等式 **不成立**。\n函数：y = sin(2x)，y = cos(2x)，y = tan(x)\n\n【关键点取值】\n\n| x | sin(2x) | cos(2x) | tan(x) |\n|---|---------|---------|--------|\n| 0 | 0 | 1 | 0 |\n| π/4 | 1 | 0 | 1 |\n| −π/4 | −1 | 0 | −1 |\n| → π/2 | → 0 | → −1 | → +∞ |\n| → −π/2 | → 0 | → −1 | → −∞ |\n\n【逐项验证】\n\n选项A：cos(2x) < sin(2x) < tan(x)\n在 x → π/2 时：cos(2x) → −1，sin(2x) → 0，tan(x) → +∞\n−1 < 0 < +∞ ✓ 成立\n\n选项B：cos(2x) < tan(x) < sin(2x)\n取 x = 0.5：cos(1) ≈ 0.54，tan(0.5) ≈ 0.55，sin(1) ≈ 0.84\n0.54 < 0.55 < 0.84 ✓ 成立\n\n选项C：sin(2x) < cos(2x) < tan(x)\n在 x ∈ (0, π/8)：sin(2x) < cos(2x)（因为 2x < π/4）\n但此时 tan(x) 很小而 cos(2x) ≈ 1，始终有 tan(x) < cos(2x)\n不可能满足 cos(2x) < tan(x)。不成立 ❌\n\n选项D：sin(2x) < tan(x) < cos(2x)\n取 x = −0.1：sin(−0.2) ≈ −0.198，tan(−0.1) ≈ −0.100，cos(−0.2) ≈ 0.98\n−0.198 < −0.100 < 0.98 ✓ 成立\n\n选项E：tan(x) < sin(2x) < cos(2x)\n在 x → −π/2：tan → −∞，sin → 0，cos → −1\ntan < sin ✓，但 cos = −1 < sin = 0，sin < cos 不成立 ❌\n\n选项F：tan(x) < cos(2x) < sin(2x)\n在 x → −π/2：tan → −∞，cos → −1，sin → 0\n−∞ < −1 < 0 ✓ 成立\n\n【结论】\n选项C和E不成立。严格来说两者均不成立，但若只选一个，选项C的不成立条件（cos < tan）更明确直接。\n\n【正确答案】C",
+    "analysis": "【题目分析】\n在 -π/2 < x < π/2 范围内，判断哪个不等式 **不成立**。\n函数：y = sin(2x)，y = cos(2x)，y = tan(x)\n\n【关键点取值】\n\n| x | sin(2x) | cos(2x) | tan(x) |\n|---|---------|---------|--------|\n| 0 | 0 | 1 | 0 |\n| π/4 | 1 | 0 | 1 |\n| -π/4 | -1 | 0 | -1 |\n| → π/2 | → 0 | → -1 | → +∞ |\n| → -π/2 | → 0 | → -1 | → -∞ |\n\n【逐项验证】\n\n选项A：cos(2x) < sin(2x) < tan(x)\n在 x → π/2 时：cos(2x) → -1，sin(2x) → 0，tan(x) → +∞\n-1 < 0 < +∞ ✓ 成立\n\n选项B：cos(2x) < tan(x) < sin(2x)\n取 x = 0.5：cos(1) ≈ 0.54，tan(0.5) ≈ 0.55，sin(1) ≈ 0.84\n0.54 < 0.55 < 0.84 ✓ 成立\n\n选项C：sin(2x) < cos(2x) < tan(x)\n在 x ∈ (0, π/8)：sin(2x) < cos(2x)（因为 2x < π/4）\n但此时 tan(x) 很小而 cos(2x) ≈ 1，始终有 tan(x) < cos(2x)\n不可能满足 cos(2x) < tan(x)。不成立 ❌\n\n选项D：sin(2x) < tan(x) < cos(2x)\n取 x = -0.1：sin(-0.2) ≈ -0.198，tan(-0.1) ≈ -0.100，cos(-0.2) ≈ 0.98\n-0.198 < -0.100 < 0.98 ✓ 成立\n\n选项E：tan(x) < sin(2x) < cos(2x)\n在 x → -π/2：tan → -∞，sin → 0，cos → -1\ntan < sin ✓，但 cos = -1 < sin = 0，sin < cos 不成立 ❌\n\n选项F：tan(x) < cos(2x) < sin(2x)\n在 x → -π/2：tan → -∞，cos → -1，sin → 0\n-∞ < -1 < 0 ✓ 成立\n\n【结论】\n选项C和E不成立。严格来说两者均不成立，但若只选一个，选项C的不成立条件（cos < tan）更明确直接。\n\n【正确答案】C",
     "images": {
       "image": "2017 P2 Q12.png"
     },
@@ -1778,7 +1778,7 @@ window.QUESTIONS = [
       "E": "$5\\sqrt{2}$"
     },
     "answer": "E",
-    "analysis": "【题目分析】\n求两圆的最短距离。\n\n圆1：(x+2)² + (y−3)² = 18，圆心 C₁ = (−2, 3)，半径 r₁ = √18 = 3√2 ≈ 4.24\n圆2：(x−7)² + (y+6)² = 2，圆心 C₂ = (7, −6)，半径 r₂ = √2 ≈ 1.41\n\n【计算圆心距离】\nd(C₁, C₂) = √[(7−(−2))² + (−6−3)²]\n          = √[9² + (−9)²]\n          = √[81 + 81] = √162 = 9√2 ≈ 12.73\n\n【判断位置关系】\nr₁ + r₂ = 3√2 + √2 = 4√2 ≈ 5.66\nd = 9√2 > r₁ + r₂，两圆外离\n\n最短距离 = 圆心距离 − 两半径之和 = 9√2 − 4√2 = 5√2\n\n【正确答案】E（5√2）",
+    "analysis": "【题目分析】\n求两圆的最短距离。\n\n圆1：(x+2)² + (y-3)² = 18，圆心 C₁ = (-2, 3)，半径 r₁ = √18 = 3√2 ≈ 4.24\n圆2：(x-7)² + (y+6)² = 2，圆心 C₂ = (7, -6)，半径 r₂ = √2 ≈ 1.41\n\n【计算圆心距离】\nd(C₁, C₂) = √[(7-(-2))² + (-6-3)²]\n          = √[9² + (-9)²]\n          = √[81 + 81] = √162 = 9√2 ≈ 12.73\n\n【判断位置关系】\nr₁ + r₂ = 3√2 + √2 = 4√2 ≈ 5.66\nd = 9√2 > r₁ + r₂，两圆外离\n\n最短距离 = 圆心距离 - 两半径之和 = 9√2 - 4√2 = 5√2\n\n【正确答案】E（5√2）",
     "images": null,
     "has_image": false
   },
@@ -1820,7 +1820,7 @@ window.QUESTIONS = [
       "E": "$29$"
     },
     "answer": "D",
-    "analysis": "【题目分析】\nf(x) = x³ + ax² + bx + c，a, b, c 取 1, 2, 3（各不相同）。\n求 R − S 的最大值，其中 R = f(−2)，S = f(−3)。\n\n【余数定理】\nR = f(−2) = −8 + 4a − 2b + c\nS = f(−3) = −27 + 9a − 3b + c\n\n【计算 R − S】\nR − S = (−8 + 4a − 2b + c) − (−27 + 9a − 3b + c)\n      = 19 − 5a + b\n\n【求最大值】\na, b ∈ {1, 2, 3}，a ≠ b\na 越小（−5a 越大），b 越大（+b 越大），R − S 越大。\n最大值：a = 1，b = 3\nR − S = 19 − 5(1) + 3 = 17\n\n验证：a=1, b=3, c=2 满足各不相同 ✓\n\n【正确答案】D（17）",
+    "analysis": "【题目分析】\nf(x) = x³ + ax² + bx + c，a, b, c 取 1, 2, 3（各不相同）。\n求 R - S 的最大值，其中 R = f(-2)，S = f(-3)。\n\n【余数定理】\nR = f(-2) = -8 + 4a - 2b + c\nS = f(-3) = -27 + 9a - 3b + c\n\n【计算 R - S】\nR - S = (-8 + 4a - 2b + c) - (-27 + 9a - 3b + c)\n      = 19 - 5a + b\n\n【求最大值】\na, b ∈ {1, 2, 3}，a ≠ b\na 越小（-5a 越大），b 越大（+b 越大），R - S 越大。\n最大值：a = 1，b = 3\nR - S = 19 - 5(1) + 3 = 17\n\n验证：a=1, b=3, c=2 满足各不相同 ✓\n\n【正确答案】D（17）",
     "images": null,
     "has_image": false
   },
@@ -1840,7 +1840,7 @@ window.QUESTIONS = [
       "E": "4"
     },
     "answer": "E",
-    "analysis": "【题目分析】\n求方程 x sin 2x = cos 2x 在 0 ≤ x ≤ 2π 的解的个数。\n\n【变形方程】\ncos 2x ≠ 0 时：x tan 2x = 1\n设 t = 2x，t ∈ [0, 4π]，得 tan t = 2/t\n\n【分析交点个数】\ntan t 在每个 (kπ − π/2, kπ + π/2) 内从 −∞ 增到 +∞。\n\n| 区间 | tan t 与 2/t 交点 |\n|------|------------------|\n| (0, π/2) | ✓ 有1个 |\n| (π/2, π) | ✗ 无（tan<0, 2/t>0）|\n| (π, 3π/2) | ✓ 有1个 |\n| (3π/2, 2π) | ✗ 无 |\n| (2π, 5π/2) | ✓ 有1个 |\n| (5π/2, 3π) | ✗ 无 |\n| (3π, 7π/2) | ✓ 有1个 |\n| (7π/2, 4π) | ✗ 无 |\n\nt ∈ [0, 4π] 共 4 个交点 → x ∈ [0, 2π] 共 4 个解。\n\ncos 2x = 0 时：x·(±1) = 0 → x = 0，但 cos 0 = 1 ≠ 0，无额外解。\n\n【正确答案】E（4个解）",
+    "analysis": "【题目分析】\n求方程 x sin 2x = cos 2x 在 0 ≤ x ≤ 2π 的解的个数。\n\n【变形方程】\ncos 2x ≠ 0 时：x tan 2x = 1\n设 t = 2x，t ∈ [0, 4π]，得 tan t = 2/t\n\n【分析交点个数】\ntan t 在每个 (kπ - π/2, kπ + π/2) 内从 -∞ 增到 +∞。\n\n| 区间 | tan t 与 2/t 交点 |\n|------|------------------|\n| (0, π/2) | ✓ 有1个 |\n| (π/2, π) | ✗ 无（tan<0, 2/t>0）|\n| (π, 3π/2) | ✓ 有1个 |\n| (3π/2, 2π) | ✗ 无 |\n| (2π, 5π/2) | ✓ 有1个 |\n| (5π/2, 3π) | ✗ 无 |\n| (3π, 7π/2) | ✓ 有1个 |\n| (7π/2, 4π) | ✗ 无 |\n\nt ∈ [0, 4π] 共 4 个交点 → x ∈ [0, 2π] 共 4 个解。\n\ncos 2x = 0 时：x·(±1) = 0 → x = 0，但 cos 0 = 1 ≠ 0，无额外解。\n\n【正确答案】E（4个解）",
     "images": null,
     "has_image": false
   },
@@ -1882,7 +1882,7 @@ window.QUESTIONS = [
       "F": "216"
     },
     "answer": "D",
-    "analysis": "【题目分析】\n等比数列各项无穷和 = 6，各项平方的无穷和 = 12，求各项立方的无穷和。\n\n【建立方程组】\n设首项 a，公比 r（|r| < 1）\n\nS = a/(1−r) = 6  →  a = 6(1−r)  ...(1)\n平方数列：a²/(1−r²) = 12  ...(2)\n\n代入(1)：36(1−r)² = 12(1−r²)\n3(1−r)² = 1−r²\n3 − 6r + 3r² = 1 − r²\n4r² − 6r + 2 = 0\n(2r−1)(r−1) = 0\n\n|r| < 1，取 r = 1/2，a = 6(1 − 1/2) = 3。\n\n【求立方和】\n立方数列公比 = r³ = 1/8\n无穷和 = a³/(1−r³) = 27/(1−1/8) = 27/(7/8) = 216/7\n\n【正确答案】D（216/7）",
+    "analysis": "【题目分析】\n等比数列各项无穷和 = 6，各项平方的无穷和 = 12，求各项立方的无穷和。\n\n【建立方程组】\n设首项 a，公比 r（|r| < 1）\n\nS = a/(1-r) = 6  →  a = 6(1-r)  ...(1)\n平方数列：a²/(1-r²) = 12  ...(2)\n\n代入(1)：36(1-r)² = 12(1-r²)\n3(1-r)² = 1-r²\n3 - 6r + 3r² = 1 - r²\n4r² - 6r + 2 = 0\n(2r-1)(r-1) = 0\n\n|r| < 1，取 r = 1/2，a = 6(1 - 1/2) = 3。\n\n【求立方和】\n立方数列公比 = r³ = 1/8\n无穷和 = a³/(1-r³) = 27/(1-1/8) = 27/(7/8) = 216/7\n\n【正确答案】D（216/7）",
     "images": null,
     "has_image": false
   },
@@ -1903,7 +1903,7 @@ window.QUESTIONS = [
       "F": "$c < -20$"
     },
     "answer": "B",
-    "analysis": "【题目分析】\n三次方程 2x³ − 3x² − 12x + c = 0 有三个不同实根，求 c 的范围。\n\n【求极值点】\nf(x) = 2x³ − 3x² − 12x + c\nf'(x) = 6x² − 6x − 12 = 6(x−2)(x+1)\n临界点：x = −1，x = 2\n\n【计算极值】\nf(−1) = −2 − 3 + 12 + c = 7 + c（极大值）\nf(2) = 16 − 12 − 24 + c = −20 + c（极小值）\n\n【三实根条件】\n极大值 > 0 且极小值 < 0：\n7 + c > 0  →  c > −7\n−20 + c < 0  →  c < 20\n\n故 −7 < c < 20\n\n【正确答案】B",
+    "analysis": "【题目分析】\n三次方程 2x³ - 3x² - 12x + c = 0 有三个不同实根，求 c 的范围。\n\n【求极值点】\nf(x) = 2x³ - 3x² - 12x + c\nf'(x) = 6x² - 6x - 12 = 6(x-2)(x+1)\n临界点：x = -1，x = 2\n\n【计算极值】\nf(-1) = -2 - 3 + 12 + c = 7 + c（极大值）\nf(2) = 16 - 12 - 24 + c = -20 + c（极小值）\n\n【三实根条件】\n极大值 > 0 且极小值 < 0：\n7 + c > 0  →  c > -7\n-20 + c < 0  →  c < 20\n\n故 -7 < c < 20\n\n【正确答案】B",
     "images": null,
     "has_image": false
   },
@@ -2291,7 +2291,7 @@ window.QUESTIONS = [
     "num": 8,
     "topic": "Integration",
     "difficulty": 3,
-    "question": "This consists of *upstrokes* which go upwards from left to right, and *downstrokes* which go downwards from left to right. The example shown has six upstrokes and six downstrokes. The horizontal line at the bottom is known as *sea level*.\n\nA *mountain profile of order n* consists of $n$ upstrokes and $n$ downstrokes, with the condition that the profile begins and ends at sea level and **never** goes **below** sea level (although it might reach sea level at any point). So the example shown is a mountain profile of order 6.\n\nMountain profiles can be coded by using U to indicate an upstroke and D to indicate a downstroke. The example shown has the code UDUUUDUDDUDD. A sequence of U’s and D’s obtained from a mountain profile in this way is known as a *valid code*.\n\nWhich of the following statements is/are true?\n\n*   **I** If a valid code is written in reverse order, the result is always a valid code.\n\n*   **II** If each U in a valid code is replaced by D and each D by U, the result is always a valid code.\n\n*   **III** If U is added at the beginning of a valid code and D is added at the end of the code, the result is always a valid code.",
+    "question": "This consists of *upstrokes* which go upwards from left to right, and *downstrokes* which go downwards from left to right. The example shown has six upstrokes and six downstrokes. The horizontal line at the bottom is known as *sea level*.\n\nA *mountain profile of order n* consists of $n$ upstrokes and $n$ downstrokes, with the condition that the profile begins and ends at sea level and **never** goes **below** sea level (although it might reach sea level at any point). So the example shown is a mountain profile of order 6.\n\nMountain profiles can be coded by using U to indicate an upstroke and D to indicate a downstroke. The example shown has the code UDUUUDUDDUDD. A sequence of U's and D's obtained from a mountain profile in this way is known as a *valid code*.\n\nWhich of the following statements is/are true?\n\n*   **I** If a valid code is written in reverse order, the result is always a valid code.\n\n*   **II** If each U in a valid code is replaced by D and each D by U, the result is always a valid code.\n\n*   **III** If U is added at the beginning of a valid code and D is added at the end of the code, the result is always a valid code.",
     "options": {
       "A": "none of them",
       "B": "I only",
@@ -2505,7 +2505,7 @@ window.QUESTIONS = [
       "D": "If $N$ is not a squaresum, then $kN$ is a squaresum for some number $k$ which is a product of awkward primes."
     },
     "answer": "C",
-    "analysis": "【题目分析】\n定义：\n- squaresum: 能写成两个整数平方之和的正整数\n- awkward prime: 除以4余3的质数（即形如4k+3的质数）\n\nFermat定理：正整数是squaresum **iff** 每个awkward质因子在质因数分解中出现偶数次。\n\n【验证定理】\n例：61 = 5² + 6² = 61，是squaresum\n61的质因数分解：61 = 61（61本身是质数）\n61 ≡ 1 (mod 4)，不是awkward质数，定理成立 ✓\n\n例：9 = 3² + 0²，是squaresum\n9 = 3²，质因数是3，3 ≡ 3 (mod 4)，是awkward质数\n但3在分解中出现偶数次（2次），定理成立 ✓\n\n例：5 × 23²，是squaresum\n5 ≡ 1 (mod 4)，不是awkward\n23 ≡ 3 (mod 4)，是awkward质数，出现偶数次（2次） ✓\n\n例：5 × 23³，不是squaresum\n23是awkward质数，出现奇数次（3次） ✓\n\n【逐项分析】找**不成立**的命题：\n\n**选项A**: 每个平方数都是squaresum\n设n²，需要证明n²是squaresum。\nn² = n² + 0² ✓\n确实是squaresum。命题A成立 ✓\n\n**选项B**: 如果N和M都是squaresum，则NM也是squaresum\n设N = a² + b²，M = c² + d²\nNM = (a²+b²)(c²+d²) = (ac+bd)² + (ad-bc)² 或 (ac-bd)² + (ad+bc)²\n这是平方和恒等式（ Brahmagupta–Fibonacci identity）\n命题B成立 ✓\n\n**选项C**: 如果NM是squaresum，则N和M都是squaresum\n反例：NM = 9 = 3² + 0²是squaresum\n设N = 3，M = 3\nN = 3是质数，3 ≡ 3 (mod 4)，是awkward质数\nN的质因数分解：3¹，awkward质数出现奇数次（1次）\n所以N不是squaresum！\n\n验证：3能否写成平方和？\n检查3 = a² + b²，a,b为整数\n可能的组合：(1,√2)不行，(0,√3)不行，(±1,±√2)不行\n最小的平方数组合：0²+1²=1, 0²+2²=4, 1²+1²=2, 1²+2²=5\n确实3不是squaresum！\n\n命题C不成立 ❌\n\n**选项D**: 如果N不是squaresum，则存在某个k（是awkward质数的乘积）使得kN是squaresum\nN不是squaresum，意味着N有某个awkward质因子出现奇数次。\n设这个因子为p，出现m次（m奇数）。\n\n要使kN是squaresum，需要所有awkward质因子出现偶数次。\n如果k包含p，使得p在kN中出现偶数次...\n设k = p（一个awkward质数）\nN = p^m × 其他因子（m奇数）\nkN = p^(m+1) × 其他因子\n\n如果m是奇数，m+1是偶数，p在kN中出现偶数次！✓\n\n但需要检验其他awkward质因子...\n如果N只有一个awkward质因子p出现奇数次，其他出现偶数次，则k=p就够了。\n如果N有多个awkward质因子出现奇数次，k需要是这些质因子的乘积。\n\n设N的awkward质因子为p₁, p₂, ..., pₖ，各自出现m₁, m₂, ..., mₖ次（奇数）\nk = p₁ × p₂ × ... × pₖ\nkN中每个p_i出现m_i+1次（偶数）✓\n\n命题D成立 ✓\n\n【结论】选项C不成立。\n\n【正确答案】C",
+    "analysis": "【题目分析】\n定义：\n- squaresum: 能写成两个整数平方之和的正整数\n- awkward prime: 除以4余3的质数（即形如4k+3的质数）\n\nFermat定理：正整数是squaresum **iff** 每个awkward质因子在质因数分解中出现偶数次。\n\n【验证定理】\n例：61 = 5² + 6² = 61，是squaresum\n61的质因数分解：61 = 61（61本身是质数）\n61 ≡ 1 (mod 4)，不是awkward质数，定理成立 ✓\n\n例：9 = 3² + 0²，是squaresum\n9 = 3²，质因数是3，3 ≡ 3 (mod 4)，是awkward质数\n但3在分解中出现偶数次（2次），定理成立 ✓\n\n例：5 × 23²，是squaresum\n5 ≡ 1 (mod 4)，不是awkward\n23 ≡ 3 (mod 4)，是awkward质数，出现偶数次（2次） ✓\n\n例：5 × 23³，不是squaresum\n23是awkward质数，出现奇数次（3次） ✓\n\n【逐项分析】找**不成立**的命题：\n\n**选项A**: 每个平方数都是squaresum\n设n²，需要证明n²是squaresum。\nn² = n² + 0² ✓\n确实是squaresum。命题A成立 ✓\n\n**选项B**: 如果N和M都是squaresum，则NM也是squaresum\n设N = a² + b²，M = c² + d²\nNM = (a²+b²)(c²+d²) = (ac+bd)² + (ad-bc)² 或 (ac-bd)² + (ad+bc)²\n这是平方和恒等式（ Brahmagupta-Fibonacci identity）\n命题B成立 ✓\n\n**选项C**: 如果NM是squaresum，则N和M都是squaresum\n反例：NM = 9 = 3² + 0²是squaresum\n设N = 3，M = 3\nN = 3是质数，3 ≡ 3 (mod 4)，是awkward质数\nN的质因数分解：3¹，awkward质数出现奇数次（1次）\n所以N不是squaresum！\n\n验证：3能否写成平方和？\n检查3 = a² + b²，a,b为整数\n可能的组合：(1,√2)不行，(0,√3)不行，(±1,±√2)不行\n最小的平方数组合：0²+1²=1, 0²+2²=4, 1²+1²=2, 1²+2²=5\n确实3不是squaresum！\n\n命题C不成立 ❌\n\n**选项D**: 如果N不是squaresum，则存在某个k（是awkward质数的乘积）使得kN是squaresum\nN不是squaresum，意味着N有某个awkward质因子出现奇数次。\n设这个因子为p，出现m次（m奇数）。\n\n要使kN是squaresum，需要所有awkward质因子出现偶数次。\n如果k包含p，使得p在kN中出现偶数次...\n设k = p（一个awkward质数）\nN = p^m × 其他因子（m奇数）\nkN = p^(m+1) × 其他因子\n\n如果m是奇数，m+1是偶数，p在kN中出现偶数次！✓\n\n但需要检验其他awkward质因子...\n如果N只有一个awkward质因子p出现奇数次，其他出现偶数次，则k=p就够了。\n如果N有多个awkward质因子出现奇数次，k需要是这些质因子的乘积。\n\n设N的awkward质因子为p₁, p₂, ..., pₖ，各自出现m₁, m₂, ..., mₖ次（奇数）\nk = p₁ × p₂ × ... × pₖ\nkN中每个p_i出现m_i+1次（偶数）✓\n\n命题D成立 ✓\n\n【结论】选项C不成立。\n\n【正确答案】C",
     "images": null,
     "has_image": false
   },
@@ -2587,7 +2587,7 @@ window.QUESTIONS = [
       "F": "$-2x^2 - 4x + 5$"
     },
     "answer": "A",
-    "analysis": "【题目分析】\n已知二次函数图像过点 $(1,−1)$ 和 $(−1,3)$，且顶点在 $x = −1$ 处。求 $f(x)$ 的表达式。\n\n【方法一：代入排除法】\n将 $x = 1$ 和 $x = −1$ 代入六个选项验证：\n- $x = 1$ 时，只有 A、C、D、F 给出 $y = −1$\n- $x = −1$ 时，只有 A 和 C 给出 $y = 3$\n- 需要顶点在 $x = −1$（即 $f'(−1) = 0$）：\n  - A: $f'(x) = −2x−2$，$f'(−1) = 2−2 = 0$ ✓\n  - C: $f'(x) = 2x−2$，$f'(−1) = −2−2 = −4 \neq 0$ ✗\n\n【方法二：直接求解析式】\n设 $f(x) = ax^2+bx+c$，由已知条件：\n- $f(1) = −1$ → $a+b+c = −1$  ...(1)\n- $f(−1) = 3$ → $a−b+c = 3$    ...(2)\n- (1)+(2)：$2a+2c = 2$ → $a+c = 1$，进而 $b = −2$\n- 顶点在 $x = −1$：$f'(x) = 2ax+b$，$f'(−1) = −2a+b = 0$\n- 代入 $b = −2$：$−2a−2 = 0$ → $a = −1$\n- 由 $a+c = 1$：$c = 2$\n\n因此 $f(x) = −x^2−2x+2$，对应选项 A。",
+    "analysis": "【题目分析】\n已知二次函数图像过点 $(1,-1)$ 和 $(-1,3)$，且顶点在 $x = -1$ 处。求 $f(x)$ 的表达式。\n\n【方法一：代入排除法】\n将 $x = 1$ 和 $x = -1$ 代入六个选项验证：\n- $x = 1$ 时，只有 A、C、D、F 给出 $y = -1$\n- $x = -1$ 时，只有 A 和 C 给出 $y = 3$\n- 需要顶点在 $x = -1$（即 $f'(-1) = 0$）：\n  - A: $f'(x) = -2x-2$，$f'(-1) = 2-2 = 0$ ✓\n  - C: $f'(x) = 2x-2$，$f'(-1) = -2-2 = -4 \neq 0$ ✗\n\n【方法二：直接求解析式】\n设 $f(x) = ax^2+bx+c$，由已知条件：\n- $f(1) = -1$ → $a+b+c = -1$  ...(1)\n- $f(-1) = 3$ → $a-b+c = 3$    ...(2)\n- (1)+(2)：$2a+2c = 2$ → $a+c = 1$，进而 $b = -2$\n- 顶点在 $x = -1$：$f'(x) = 2ax+b$，$f'(-1) = -2a+b = 0$\n- 代入 $b = -2$：$-2a-2 = 0$ → $a = -1$\n- 由 $a+c = 1$：$c = 2$\n\n因此 $f(x) = -x^2-2x+2$，对应选项 A。",
     "images": null,
     "has_image": false
   },
@@ -3019,7 +3019,7 @@ window.QUESTIONS = [
       "E": "240"
     },
     "answer": "E",
-    "analysis": "【题目分析】\n求x²(2x+1/x)⁶展开式中x⁴的系数。\n\n【解题步骤】\n(2x+1/x)⁶展开项：C(6,a)(2x)^a(1/x)^b，a+b=6\n= C·2^a·x^(a-b)\n\n整体：x²·C·2^a·x^(a-b) = C·2^a·x^(a-b+2)\n\n需要a-b+2=4 → a-b=2\na+b=6 → a=4, b=2\n\n系数 = C(6,4)·2⁴ = 15·16 = 240\n\n【正确答案】E",
+    "analysis": "【题目分析】\n求 $x^2 \\left(2x + \\frac{1}{x}\\right)^6$ 展开式中 $x^4$ 的系数。\n\n【解题步骤】\n\n**方法：需要 $(2x + \\frac{1}{x})^6$ 中 $x^2$ 的系数，再乘 $x^2$ 得 $x^4$。\n\n使用二项式定理展开：\n$$\\left(2x + \\frac{1}{x}\\right)^6 = \\binom{6}{6}(2x)^6 + \\binom{6}{5}(2x)^5 \\cdot \\frac{1}{x} + \\binom{6}{4}(2x)^4 \\cdot \\frac{1}{x^2} + \\cdots$$\n\n**计算所需项**：\n第三项：$\\binom{6}{4}(2x)^4 \\cdot \\frac{1}{x^2}$\n$$= 15 \\cdot 16x^4 \\cdot x^{-2} = 15 \\cdot 16 \\cdot x^2 = 240x^2$$\n\n**乘以 $x^2$**：\n$$x^2 \\cdot 240x^2 = 240x^4$$\n\n$x^4$ 的系数为 **240**。\n\n【正确答案】E",
     "images": null,
     "has_image": false
   },
@@ -3040,7 +3040,7 @@ window.QUESTIONS = [
       "F": "$10$"
     },
     "answer": "C",
-    "analysis": "【题目分析】\n已知 (2x+1) 和 (x−2) 是 2x³ + px² + q 的因式，求 2p + q。\n\n【因式定理】\n(2x+1) 是因式 → x = −1/2 是根\n2(−1/2)³ + p(−1/2)² + q = 0\n−1/4 + p/4 + q = 0  ...(1)\n\n(x−2) 是因式 → x = 2 是根\n2(8) + 4p + q = 0\n16 + 4p + q = 0  ...(2)\n\n【解方程组】\n由(1)：p + 4q = 1\n由(2)：4p + q = −16\n\nq = −16 − 4p，代入(1)：\np + 4(−16 − 4p) = 1\np − 64 − 16p = 1\n−15p = 65\np = −13/3\n\nq = −16 − 4(−13/3) = −16 + 52/3 = 4/3\n\n【计算 2p + q】\n2p + q = −26/3 + 4/3 = −22/3\n\n【正确答案】C（−22/3）",
+    "analysis": "【题目分析】\n$(2x + 1)$ 和 $(x - 2)$ 是 $2x^3 + px^2 + q$ 的因式。求 $2p + q$。\n\n【因式定理】\n设 $f(x) = 2x^3 + px^2 + q$。\n\n$(2x + 1) = 2(x + \\frac{1}{2})$ 是因式 → $f\\left(-\\frac{1}{2}\\right) = 0$\n$$2\\left(-\\frac{1}{2}\\right)^3 + p\\left(-\\frac{1}{2}\\right)^2 + q = 0$$\n$$-\\frac{1}{4} + \\frac{p}{4} + q = 0$$ ...(1)\n\n$(x - 2)$ 是因式 → $f(2) = 0$\n$$2(2)^3 + p(2)^2 + q = 0$$\n$$16 + 4p + q = 0$$ ...(2)\n\n【解方程组】\n方程 (1) 乘以 16：$-4 + 4p + 16q = 0$ ...(3)\n\n(3) - (2)：$-20 + 15q = 0$ → $q = \\frac{4}{3}$\n\n代入 (2)：$4p = -16 - q = -16 - \\frac{4}{3} = -\\frac{52}{3}$ → $p = -\\frac{13}{3}$\n\n【计算 $2p + q$】\n$$2p + q = 2 \\cdot \\left(-\\frac{13}{3}\\right) + \\frac{4}{3} = -\\frac{26}{3} + \\frac{4}{3} = -\\frac{22}{3}$$\n\n【正确答案】C",
     "images": null,
     "has_image": false
   },
@@ -3063,7 +3063,7 @@ window.QUESTIONS = [
       "H": "I, II and III"
     },
     "answer": "A",
-    "analysis": "【题目分析】\nab = ac，判断哪些命题必须成立。\n\n【解题步骤】\nab = ac → a(b-c) = 0\n\n命题I \"a = 0\"：不一定，a可以非零，只要b=c\n命题II \"b=0或c=0\"：不一定，a=0时b,c可任意\n命题III \"b = c\"：不一定，a=0时b,c可任意\n\n三个命题都不必须成立。\n\n【正确答案】A",
+    "analysis": "【题目分析】\n已知 $ab = ac$，判断哪些命题**必须**成立。\n\n【关键】\n不能直接除以 $a$（因为 $a$ 可能为 0），需要移项并因式分解。\n\n**移项因式分解**：\n$$ab - ac = 0 \\Rightarrow a(b - c) = 0$$\n由此可得：$a = 0$ **或** $b - c = 0$（即 $b = c$）。\n\n【逐项检验】\n\n**命题 I：$a = 0$**\n不一定！可以选择 $b = c$ 而 $a \\neq 0$。\n例如：$a = 1, b = 3, c = 3$，满足 $ab = ac = 3$，但 $a \\neq 0$。\n✗ 不必须成立\n\n**命题 II：$b = 0$ 或 $c = 0$**\n不一定！可以 $b = c = 1$ 而 $a$ 为任意值。\n例如：$a = 5, b = 1, c = 1$，满足 $ab = ac = 5$，但 $b \\neq 0$ 且 $c \\neq 0$。\n✗ 不必须成立\n\n**命题 III：$b = c$**\n不一定！可以选择 $a = 0$ 而 $b, c$ 任意。\n例如：$a = 0, b = 2, c = 5$，满足 $ab = ac = 0$，但 $b \\neq c$。\n✗ 不必须成立\n\n【结论】\n三个命题都不必须成立，对应选项 A。",
     "images": null,
     "has_image": false
   },
@@ -3086,7 +3086,7 @@ window.QUESTIONS = [
       "H": "I, II and III"
     },
     "answer": "D",
-    "analysis": "【题目分析】\nN由数字1组成（如1, 11, 111, ...）。\n判断三个命题。\n\n命题I：N是素数\n反例：111=3×37，不是素数 ✗\n\n命题II：N是合数\n反例：11是素数 ✗\n\n命题III：N的各位数字之和能被3整除\nN由m个1组成，各位数字之和=m\n当m是3的倍数时成立，但不是对所有N成立 ✗\n\n实际上，N=11...1（m个1）=(10^m-1)/9\n\n需要看哪个命题必然成立。\n\n【正确答案】D",
+    "analysis": "【题目分析】\n反例需要同时满足：\n1. 前件（条件）为真：$N$ 由 1 开头、奇数个 0、最后是 1\n2. 后件（结论）为假：$N$ 不是素数\n\n【逐项检验】\n\n**I. $N = 101$**\n- 形式检验：1个0（奇数），符合条件 ✓ 前件为真\n- 但 $101$ 是素数 ✓ 后件也为真\n- 不是反例（反例需要结论为假）\n\n**II. $N = 1001$**\n- 形式检验：2个0（偶数），不符合条件 ✗ 前件为假\n- 不满足反例的第一条件\n\n**III. $N = 10001$**\n- 形式检验：3个0（奇数），符合条件 ✓ 前件为真\n- $10001 = 73 \\times 137$，不是素数 ✓ 后件为假\n- 这**是反例** ✓\n\n【结论】\n只有 III 是反例，对应选项 D。",
     "images": null,
     "has_image": false
   },
@@ -3097,7 +3097,7 @@ window.QUESTIONS = [
     "num": 5,
     "topic": "Algebra",
     "difficulty": 3,
-    "question": "Consider the following statement about the positive integers $a$, $b$ and $n$:\n\n> ($\\ast$): $ab$ is divisible by $n$\n\nThe condition ‘either $a$ or $b$ is divisible by $n$’ is:",
+    "question": "Consider the following statement about the positive integers $a$, $b$ and $n$:\n\n> ($\\ast$): $ab$ is divisible by $n$\n\nThe condition 'either $a$ or $b$ is divisible by $n$' is:",
     "options": {
       "A": "**necessary** but **not sufficient** for ($\\ast$)",
       "B": "**sufficient** but **not necessary** for ($\\ast$)",
@@ -3105,7 +3105,7 @@ window.QUESTIONS = [
       "D": "**not necessary** and **not sufficient** for ($\\ast$)"
     },
     "answer": "B",
-    "analysis": "【题目分析】\nab是n的倍数，判断\"a或b是n的倍数\"是什么条件。\n\n【解题步骤】\n充分性：如果a或b是n的倍数，则ab一定是n的倍数 ✓\n\n必要性：如果ab是n的倍数，a或b一定是n的倍数吗？\n反例：n=6, a=2, b=3\nab=6是6的倍数，但a=2不是6的倍数，b=3也不是6的倍数 ✗\n\n所以是充分但不必要条件。\n\n【正确答案】B",
+    "analysis": "【题目分析】\n($*$)：$ab$ 被 $n$ 整除。\n条件：\"$a$ 或 $b$ 被 $n$ 整除\"。判断这是必要还是充分条件。\n\n【必要条件】\n必要：$(*)$ 成立 → 条件必须成立。\n即：若 $ab$ 被 $n$ 整除，则 $a$ 或 $b$ 被 $n$ 整除。\n\n**寻找反例**：\n取 $n = 4$（最小的非素数），$a = 2, b = 2$。\n- $ab = 4$ 被 $4$ 整除 ✓\n- 但 $a = 2$ 不被 $4$ 整除，$b = 2$ 也不被 $4$ 整除 ✗\n\n结论：条件**不是必要条件**。\n\n【充分条件】\n充分：条件成立 → $(*)$ 成立。\n即：若 $a$ 被 $n$ 整除，则 $ab$ 被 $n$ 整除。\n\n**证明**：\n若 $a$ 被 $n$ 整除，则 $a$ 是 $n$ 的倍数，$a = kn$。\n因此 $ab = knb$，也是 $n$ 的倍数。\n同理，若 $b$ 被 $n$ 整除，则 $ab$ 被 $n$ 整除。\n\n结论：条件**是充分条件**。\n\n【综合】\n条件是**充分但不必要**，对应选项 B。",
     "images": null,
     "has_image": false
   },
@@ -3116,7 +3116,7 @@ window.QUESTIONS = [
     "num": 6,
     "topic": "Algebra",
     "difficulty": 3,
-    "question": "$$ \\cos x + \\sin x \\tan x = 2 \\sin x - 1 $$\n\nin the range $0 \\le x \\le 2\\pi$.\n\nThe student’s attempt is as follows:\n\n$$ \\cos x + \\sin x \\tan x = 2 \\sin x - 1 $$\n\nSo $\\cos x - \\sin x + \\sin x \\tan x - \\sin x = -1$ (I)\n\nSo $(\\sin x - \\cos x)(\\tan x - 1) = -1$ (II)\n\nSo $\\sin x - \\cos x = -1$ or $\\tan x - 1 = -1$ (III)\n\nSo $(\\sin x - \\cos x)^2 = 1$ or $\\tan x = 0$ (IV)\n\nSo $2 \\sin x \\cos x = 0$ or $\\tan x = 0$ (V)\n\nSo $x = 0, \\frac{\\pi}{2}, \\pi, \\frac{3\\pi}{2}, 2\\pi$ (VI)\n\nWhich of the following best describes this attempt?",
+    "question": "$$ \\cos x + \\sin x \\tan x = 2 \\sin x - 1 $$\n\nin the range $0 \\le x \\le 2\\pi$.\n\nThe student's attempt is as follows:\n\n$$ \\cos x + \\sin x \\tan x = 2 \\sin x - 1 $$\n\nSo $\\cos x - \\sin x + \\sin x \\tan x - \\sin x = -1$ (I)\n\nSo $(\\sin x - \\cos x)(\\tan x - 1) = -1$ (II)\n\nSo $\\sin x - \\cos x = -1$ or $\\tan x - 1 = -1$ (III)\n\nSo $(\\sin x - \\cos x)^2 = 1$ or $\\tan x = 0$ (IV)\n\nSo $2 \\sin x \\cos x = 0$ or $\\tan x = 0$ (V)\n\nSo $x = 0, \\frac{\\pi}{2}, \\pi, \\frac{3\\pi}{2}, 2\\pi$ (VI)\n\nWhich of the following best describes this attempt?",
     "options": {
       "A": "It is completely correct",
       "B": "It is incorrect, and the first error occurs on line (I)",
@@ -3127,7 +3127,7 @@ window.QUESTIONS = [
       "G": "It is incorrect, and the first error is not eliminating the values where $\\tan x$ is undefined on line (VI)"
     },
     "answer": "D",
-    "analysis": "【题目分析】\n学生解 cosx+sinxtanx=2sinx-1\n\n(I) cosx+sin²x/cosx=2sinx-1 ✓\n(II) cos²x+sin²x=2sinxcosx-cosx\n   两边乘cosx：cos²x+sin²x=2sinxcosx-cosx\n   但左边=1，右边=2sinxcosx-cosx\n   学生写成了1=2sinxcosx-cosx ✓\n(III) 1=2sinxcosx-cosx\n   1=cosx(2sinx-1) ✓\n(IV) cosx=1 或 2sinx-1=0\n   但cosx(2sinx-1)=1，不是cosx(2sinx-1)=0！\n   错误在(IV)：把=1当成了=0 ✗\n\n【正确答案】D",
+    "analysis": "【题目分析】\n学生解方程 $\\cos x + \\sin x \\tan x = 2\\sin x - 1$，找出第一个错误位置。\n\n【验证方法】\n先检验最终解：$x = 0$ 时，左边 $= 1$，右边 $= -1$，矛盾！\n说明解答错误。由于 $x = 0$ 时 $\\tan x$ 有定义，选项 G 不正确。\n\n逐行检验错误解 $x = 0$：\n\n**行 (I)**：$x=0$ 代入，左边 $= 1 - 0 + 0 - 0 = 1$，右边 $= -1$，矛盾！\n但检查代数操作：从原方程两边减去 $2\\sin x$，操作正确。$\\cos x + \\sin x\\tan x - 2\\sin x = -1$。\n验证：$\\cos x - \\sin x + \\sin x\\tan x - \\sin x$，即 $\\cos x + \\sin x\\tan x - 2\\sin x = -1$ ✓ 正确\n\n**行 (II)**：$x=0$ 代入，$(-1)(-1) = 1 \\neq -1$，矛盾！\n展开 $(\\sin x - \\cos x)(\\tan x - 1)$ 检验是否等于行 (I)：\n$(\\sin x - \\cos x)(\\tan x - 1) = \\sin x\\tan x - \\sin x - \\cos x\\tan x + \\cos x$\n原方程有 $\\cos x + \\sin x\\tan x$，而行 (I) 有 $\\cos x - \\sin x + \\sin x\\tan x - \\sin x$。\n由于 $\\cos x\\tan x = \\sin x$，所以 $-\\cos x\\tan x + \\cos x = -\\sin x + \\cos x$ ✓ 正确\n\n**行 (III)**：断言\"两数乘积为 $-1$，则其中一个必为 $-1$\"。\n这在整数情况下成立，但这里不一定是整数！\n例如：$2 \\times (-\\frac{1}{2}) = -1$，但 $2 \\neq -1$ 且 $-\\frac{1}{2} \\neq -1$。\n这是一个**无效推理**，是第一个错误 ✓\n\n【正确答案】D",
     "images": null,
     "has_image": false
   },
@@ -3146,7 +3146,7 @@ window.QUESTIONS = [
       "D": "If $a$, $b$ and $c$ are positive integers which satisfy the equation $a^2 + b^2 = c^2$, then one is the arithmetic mean of the other two."
     },
     "answer": "B",
-    "analysis": "【题目分析】\n12²+16²=20²，找能用它作为反例的命题。\n\nA: a,b,c无公因子 → 12,16,20有公因子4，不适用 ✗\nB: a⁴+b²=c²无正整数解\n   12²+16²=20² → (2²)²+16²=20² → 2⁴+16²=20²\n   a=2, b=16, c=20都是正整数，是解！\n   所以B说无解是错的，12²+16²=20²是反例 ✓\n\n【正确答案】B",
+    "analysis": "【题目分析】\n利用 $12^2 + 16^2 = 20^2$ 作为反例，找出哪个命题是错误的。\n\n【逐项分析】\n\n**选项 A**：无公因子 → 两奇一偶。\n反例需要前件真、后件假。\n- 前件：$a = 12, b = 16, c = 20$ **有公因子 4** ✗ 前件为假\n- 即使除以 4 得 $(3, 4, 5)$，满足条件且结论也成立。\n- 此命题为真，无反例。\n\n**选项 B**：$a^4 + b^2 = c^2$ 无正整数解。\n反例需要展示一个解！\n- 注意 $16 = 4^2$，所以 $16^2 = 4^4$。\n- $12^2 + 4^4 = 20^2$ → $a = 4, b = 12, c = 20$ 都是正整数 ✓\n- 这是解！原命题\"无解\"错误，存在反例 ✓\n\n**选项 C**：$a^4 + b^4 = c^4$ 无正整数解。\n- $12$ 和 $20$ 都不是完美平方。\n- 无法从 $12^2 + 16^2 = 20^2$ 构造 $a^4 + b^4 = c^4$ 的形式。\n- 此命题为真（费马定理的特例），无反例。\n\n**选项 D**：满足 $a^2 + b^2 = c^2$ → 一个数是另两个的算术平均。\n- $16 = \\frac{12 + 20}{2}$ ✓ 结论成立\n- 需要找其他反例（如 $5^2 + 12^2 = 13^2$），但本题无法用 $12^2 + 16^2 = 20^2$ 作为反例。\n\n【正确答案】B",
     "images": null,
     "has_image": false
   },
@@ -3169,7 +3169,7 @@ window.QUESTIONS = [
       "H": "I, II and III"
     },
     "answer": "E",
-    "analysis": "【题目分析】\na<b<c<0（三个负数递增）\n判断三个命题。\n\n【解题步骤】\n分析负数关系：\na<b<c<0 → |a|>|b|>|c|\n\n命题I \"ac<ab<a²\"：\nac=a·c，两负数相乘=正数\nab=a·b，正数\na²=正数\n由于|a|>|b|>|c|：a²>ab>ac ✓ 命题I成立\n\n命题II \"b(c+a)>0\"：\nc+a（两负数相加）<0\nb<0，乘积b(c+a)>0 ✓ 命题II成立\n\n命题III \"c/b>a/b\"：\nc/b和a/b都是正数（负/负）\n由于c>a（注意负数递增：-5<-3<-1，c=-1最大）\nc/b>a/b ✓ 命题III成立\n\n三个命题都成立。\n\n答案D说只有部分成立？\n\n【正确答案】D",
+    "analysis": "【题目分析】\n$a, b, c$ 均为负数且满足 $a < b < c < 0$。\n注意：负数越小，绝对值越大，即 $|a| > |b| > |c|$。\n\n【逐项分析】\n\n**命题 I：$ac < ab < a^2$**\n从 $a < b < c$ 出发，两边乘以 $a < 0$，不等号方向改变：\n$a^2 > ab > ac$（注意顺序颠倒）\n即 $ac < ab < a^2$ ✓ **必须成立**\n\n**命题 II：$b(c + a) > 0$**\n- 由于 $a < 0$ 且 $c < 0$，所以 $a + c < 0$\n- 又 $b < 0$，所以负 × 负 = 正\n- $b(c + a) > 0$ ✓ **必须成立**\n\n**命题 III：$\\frac{c}{b} > \\frac{a}{b}$**\n从 $c > a$（因为 $a < c$）出发，两边除以 $b < 0$，不等号方向改变：\n$\\frac{c}{b} < \\frac{a}{b}$ ✗ **不成立**\n\n【结论】\n只有命题 I 和 II 必须成立，对应选项 E。",
     "images": null,
     "has_image": false
   },
@@ -3190,7 +3190,7 @@ window.QUESTIONS = [
       "F": "20"
     },
     "answer": "D",
-    "analysis": "【题目分析】\n40座位圆形桌，最少已坐多少人使下一个人必须坐相邻？\n\n【解题步骤】\n抽屉原理：要使新坐者必须相邻，空座位不能有连续两个以上。\n最多空座位间隔：每个空座位两边都有人。\n\n设已坐n人，空座位40-n个。\n空座位不能连续超过1个，即最多40-n个\"单独空座位\"。\n这需要每两个空座位间有人分隔，但\"单独空座位\"本身已经被人包围。\n\n最优安排：人分散坐，使人之间最多空1座位。\n若n人坐，相邻两人间最多空1座位，共n个间隔（圆形）。\n空座位≤n（每个间隔最多1个）\n\n条件：40-n≤n → n≥20\n\n但可能更优的安排？\n若人坐成\"间隔模式\"：人、空、人、空、人...\n这样n人，空座位=n（圆形需要调整）\n40=n+n → n=20\n\n少于20人时，存在连续空座位超过1个，新坐者可不相邻。\n\n答案F=？\n\n精确计算需要更细致分析。\n\n【正确答案】F",
+    "analysis": "【题目分析】\n40个座位圆形桌，最少已坐多少人，使得下一个人坐下时**必然**坐在某人旁边。\n\n【关键条件】\n新坐者必须相邻 = 不存在连续3个空座位。\n\n【最优安排】\n要最小化人数，应最大化空座位。最优情况：所有空座位间隔**恰好2个**。\n\n安排座位号：$1, 4, 7, 10, \\ldots$（每3个座位坐1人）\n\n座位列表：$1, 4, 7, 10, 13, 16, 19, 22, 25, 28, 31, 34, 37, 40$\n\n【计数】\n共14个座位在列表中。\n\n【验证】\n- 每两个相邻座位之间恰好2个空座位\n- 第40号座位与第1号座位相邻（圆形），但这是\"恰好相邻\"，不影响条件\n- 任何新座位都会在某个已坐座位旁边（因为空座位间隔不超过2）\n\n【结论】\n最少需要 **14人**，对应选项 D。",
     "images": null,
     "has_image": false
   },
@@ -3209,7 +3209,7 @@ window.QUESTIONS = [
       "D": "$PR = QS$"
     },
     "answer": "A",
-    "analysis": "【题目分析】\nPQRS逆时针标记，找平行四边形的必要但不充分条件。\n\nA: PQ=SR且PS∥QR\n   平行四边形必有对边相等且一组对边平行 ✓ 必要\n   但等腰梯形也满足：PQ=SR且PS∥QR，但不是平行四边形 ✗ 不充分\n   所以A是必要但不充分 ✓\n\nB: PQ=SR且PQ∥SR\n   一组对边相等且平行 → 平行四边形 ✓ 充分\n\nC: 四边相等 → 菱形 → 平行四边形 ✓ 充分\n\nD: PR=QS\n   对角线相等不是平行四边形的必要条件（一般平行四边形对角线不等）✗\n\n【正确答案】A",
+    "analysis": "【题目分析】\n$PQRS$ 逆时针标记四边形，找**必要但不充分**条件。\n\n【平行四边形的必要条件】\n- 对边相等（$PQ = SR$ 且 $PS = QR$）\n- 对边平行（$PQ \\parallel SR$ 且 $PS \\parallel QR$）\n- 对角线互相平分\n\n【逐项分析】\n\n**选项 A**：$PQ = SR$ 且 $PS \\parallel QR$\n必要：平行四边形必有对边相等且一组对边平行 ✓\n不充分：等腰梯形也满足（两底相等 + 两腰平行），但不是平行四边形 ✗\n因此是**必要但不充分** ✓\n\n**选项 B**：$PQ = SR$ 且 $PQ \\parallel SR$\n必要且充分：一组对边相等且平行 → 平行四边形。\n（证明：设 $\\overrightarrow{PQ} = \\overrightarrow{SR} = \\mathbf{a}$，则 $\\overrightarrow{QR} = \\overrightarrow{QP} + \\overrightarrow{PS} + \\overrightarrow{SR} = -\\mathbf{a} + \\mathbf{b} + \\mathbf{a} = \\mathbf{b} = \\overrightarrow{PS}$）\n\n**选项 C**：四边相等\n充分（菱形是平行四边形），但非必要。\n\n**选项 D**：对角线相等\n不必要（一般平行四边形对角线不等），也不充分（等腰梯形对角线相等）。\n\n【正确答案】A",
     "images": null,
     "has_image": false
   },
@@ -3232,7 +3232,7 @@ window.QUESTIONS = [
       "H": "I, II and III"
     },
     "answer": "A",
-    "analysis": "【题目分析】\n等差数列n项，都是整数，和=20。\n判断三个命题。\n\n命题I：首项是偶数\n反例：1, 3, 5, 11（n=4, d=2, 首项=1奇数）\n和=1+3+5+11=20 ✓\n所以I不必须成立 ✗\n\n命题II：n是偶数\n反例：20（n=1, 首项=20）\n和=20 ✓\n所以II不必须成立 ✗\n\n命题III：公差是偶数\n反例：5, 7, 8（n=3, d=2）\n和=5+7+8=20 ✓\n但d=2是偶数...\n\n再找：10, 10, 10（n=3, d=0）\n和=30≠20 ✗\n\n反例：4, 6, 10（n=3, d=2）\n和=20 ✓, d=2偶数\n\n实际上，如果n是奇数，中间项=20/n必须是整数。\nn=5：中间项=4，数列：2,3,4,5,6，和=20，d=1奇数 ✓\n所以III不必须成立 ✗\n\n三个命题都不必须成立。\n\n【正确答案】A",
+    "analysis": "【题目分析】\n等差数列 $n$ 项，全为整数，和为 20。判断哪些命题**必须**成立。\n\n【等差数列求和公式】\n$$S_n = \\frac{n}{2}(2a + (n-1)d) = 20$$\n其中 $a$ 为首项，$d$ 为公差。\n化简得：$n(2a + (n-1)d) = 40$。\n\n【枚举可能情况】\n$n$ 必为 40 的因子：$n = 1, 2, 4, 5, 8, 10, 20, 40$。\n\n| $n$ | $2a + (n-1)d$ | 可能例子 |\n|-----|---------------|----------|\n| 1 | 40 | $a = 20$（偶数） |\n| 2 | 20 | $a = 9, d = 2$（首项奇数） |\n| 5 | 8 | $a = 2, d = 1$（公差奇数） |\n\n【逐项检验】\n\n**命题 I：首项是偶数**\n$n = 2$ 时，$2a + d = 20$。\n取 $d = 2$，则 $a = 9$（奇数）。\n验证：$9 + 11 = 20$ ✓ 和为 20，首项为奇数。\n✗ 不必须成立\n\n**命题 II：$n$ 是偶数**\n$n = 5$ 时，$2a + 4d = 8$。\n取 $a = 2, d = 1$，数列为 $2, 3, 4, 5, 6$，和 = 20 ✓\n$n = 5$（奇数）满足条件。\n✗ 不必须成立\n\n**命题 III：公差是偶数**\n同上例：$a = 2, d = 1$（公差奇数），和为 20 ✓\n✗ 不必须成立\n\n【结论】\n三个命题都不必须成立，对应选项 A。",
     "images": null,
     "has_image": false
   },
@@ -3295,7 +3295,7 @@ window.QUESTIONS = [
       "H": "I, II and III"
     },
     "answer": "B",
-    "analysis": "【题目分析】\np(x)在[a,b]上递增，判断必要条件。\n\n【解题步骤】\np(x)在[a,b]上递增 → p'(x) ≥ 0 对所有x∈[a,b]\n\n命题I \"p(a) ≤ p(b)\"：\n递增函数必然p(a) ≤ p(b) ✓ 必要条件\n\n命题II \"p'(a) ≤ p'(b)\"：\n递增不要求导数递增。\n反例：p(x) = -x³ + 10x，在[0,2]上递增\np'(x) = -3x² + 10\np'(0) = 10, p'(2) = -2\np'(a) > p'(b) ✗\n\n命题III \"p''(a) ≤ p''(b)\"：\n递增不要求二阶导数递增。\n反例同上。\n\n只有命题I是必要条件。\n\n【正确答案】B",
+    "analysis": "【题目分析】\n$p(x)$ 在 $[a, b]$ 上递增，判断哪些条件是**必要条件**。\n必要条件：必须满足的条件，否则不可能递增。\n\n【逐项分析】\n\n**命题 I：$p(a) \\le p(b)$**\n递增函数的定义就是当 $a \\le x \\le b$ 时，$p(x)$ 不减小。\n因此必有 $p(a) \\le p(b)$。\n这是**必要条件** ✓\n\n**命题 II：$p'(a) \\le p'(b)$**\n递增只需 $p'(x) \\ge 0$，不要求导数本身递增。\n**反例**：$p(x) = 9 - x^2$ 在 $[-3, 0]$ 上递增\n- $p'(-3) = 6 > 0$，$p'(0) = 0$\n- $p'(-3) > p'(0)$，命题 II 不成立\n因此**不是必要条件** ✗\n\n**命题 III：$p''(a) \\le p''(b)$**\n递增只涉及函数值，不涉及二阶导数。\n**反例**：设 $p''(x) = -x$（递减）\n则 $p'(x) = -\\frac{1}{2}x^2 + c$, $p(x) = -\\frac{1}{6}x^3 + cx$\n取 $c = 1$，则 $p'(x) > 0$ 在 $[0, 1]$ 上成立，$p(x)$ 递增。\n但 $p''(0) = 0 > p''(1) = -1$，命题 III 不成立。\n因此**不是必要条件** ✗\n\n【核心洞察】\n\"$p(x)$ 在 $[a,b]$ 上递增\" 只告诉我们函数值的变化趋势，不涉及导数的变化。所以 II 和 III 都不可能是必要条件。\n\n【正确答案】B",
     "images": null,
     "has_image": false
   },
@@ -3382,7 +3382,7 @@ window.QUESTIONS = [
       "H": "There are no such values of $a$."
     },
     "answer": "E",
-    "analysis": "【题目分析】\n不等式a|x|+1≤|x-2|对所有x成立的a范围。\n\n【解题步骤】\n分析|x|和|x-2|的关系。\n\nx≥2时：ax+1≤x-2 → a≤(x-2-1)/x=(x-3)/x=1-3/x\n当x→∞时：a≤1\n\nx∈[0,2]时：ax+1≤2-x → a≤(2-x-1)/x=(1-x)/x=1/x-1\n当x→0+时：a可以任意小（右边→∞）\n当x=2时：2a+1≤0 → a≤-1/2\n\nx<0时：-ax+1≤|x-2|=|负数-2|=|负数|=-(x-2)或x-2？\n\nx<0时x-2<0，所以|x-2|=-(x-2)=2-x\n不等式：-ax+1≤2-x → -ax≤1-x → a≥(x-1)/x=1-1/x\n\n综合分析各区间...\n\n答案C。\n\n【正确答案】C",
+    "analysis": "【题目分析】\n不等式 $a|x| + 1 \\le |x - 2|$ 对所有实数 $x$ 成立，求 $a$ 的范围。\n\n【图形分析】\n画出两个函数的草图：\n- $y = a|x| + 1$：$|x|$ 先沿 y 方向伸缩因子 $a$，再向上平移 1\n- $y = |x - 2|$：$|x|$ 向右平移 2\n\n【关键观察】\n当 $a > 0$ 时，$y = a|x| + 1$ 开口向上，与 $y = |x - 2|$ 一定相交，不可能始终在下方。\n当 $a < 0$ 时，$y = a|x| + 1$ 开口向下，可能始终在 $y = |x - 2|$ 下方。\n\n【临界条件】\n找 $y = a|x| + 1$ 与 $y = |x - 2|$ 相切或相交的临界值。\n关键点：$(2, 0)$ 是 $y = |x - 2|$ 的最低点。\n若 $y = a|x| + 1$ 在 $(2, 0)$ 处刚好等于 0，则为临界情况：\n$$a|2| + 1 = 0 \\Rightarrow 2a = -1 \\Rightarrow a = -\\frac{1}{2}$$\n\n【验证】\n当 $a = -\\frac{1}{2}$ 时，$y = -\\frac{1}{2}|x| + 1$ 在 $x = 2$ 处恰好过原点。\n当 $a < -\\frac{1}{2}$ 时，曲线更低，始终满足不等式。\n\n【结论】\n$a \\le -\\frac{1}{2}$，对应选项 E。",
     "images": null,
     "has_image": false
   },
@@ -3426,7 +3426,7 @@ window.QUESTIONS = [
       "G": "$f(x) = f(8 - x)$ for all $x$"
     },
     "answer": "B",
-    "analysis": "【题目分析】\ny=f(x)关于y轴反射→y=f(-x)\n再向右移4→y=f(-(x-4))=f(4-x)\n结果与原图相同：f(4-x)=f(x)\n\n【正确答案】B",
+    "analysis": "【题目分析】\n研究两种变换操作顺序对结果的影响：\n1. **先反射后平移** → $g(x)$\n2. **先平移后反射** → $h(x)$\n\n【变换规则】\n- **关于 y 轴反射**：$y = f(x)$ → $y = f(-x)$\n- **向负 x 方向平移 2 单位**：$y = f(x)$ → $y = f(x + 2)$\n\n【推导 $g(x)$】\n第一步：反射 → $y = f(-x)$\n第二步：平移 → $y = f(-(x + 2)) = f(-x - 2)$\n所以 $g(x) = f(-x - 2)$\n\n【推导 $h(x)$】\n第一步：平移 → $y = f(x + 2)$\n第二步：反射 → $y = f(-x + 2) = f(2 - x)$\n所以 $h(x) = f(-x + 2) = f(2 - x)$\n\n【条件分析】\n要使 $g(x) = h(x)$ 对所有 $x$ 成立：\n$$f(-x - 2) = f(-x + 2)$$\n\n令 $u = -x - 2$，则 $-x + 2 = u + 4$。\n代入得：\n$$f(u) = f(u + 4)$$ 对所有 $u$ 成立。\n\n这表示 $f(x)$ 是周期为 4 的周期函数。\n\n【结论】\n必要且充分条件：$f(x) = f(x + 4)$，对应选项 B。",
     "images": null,
     "has_image": false
   },
@@ -3615,7 +3615,7 @@ window.QUESTIONS = [
       "F": "$x^2 + 196x + 81$"
     },
     "answer": "C",
-    "analysis": "【题目分析】\n$x^2 - 14x + 9 = (x-\\alpha)(x-\\beta)$，$\\alpha, \\beta$ 为正实数。求可分解为 $(x-\\sqrt{\\alpha})(x-\\sqrt{\\beta})$ 的二次表达式。\n\n【解题步骤——利用 $\\alpha$ 和 $\\beta$ 的性质】\n\n由原式展开：$(x-\\alpha)(x-\\beta) = x^2 - (\\alpha+\\beta)x + \\alpha\\beta = x^2 - 14x + 9$\n\n所以 $\\alpha + \\beta = 14$，$\\alpha\\beta = 9$。\n\n目标表达式：$(x-\\sqrt{\\alpha})(x-\\sqrt{\\beta}) = x^2 - (\\sqrt{\\alpha}+\\sqrt{\\beta})x + \\sqrt{\\alpha\\beta}$\n\n**求 $\\sqrt{\\alpha\\beta}$：** 由 $\\alpha\\beta = 9$，得 $\\sqrt{\\alpha\\beta} = \\sqrt{\\alpha} \\cdot \\sqrt{\\beta} = 3$\n\n**求 $\\sqrt{\\alpha}+\\sqrt{\\beta}$：**\n$(\\sqrt{\\alpha}+\\sqrt{\\beta})^2 = \\alpha + \\beta + 2\\sqrt{\\alpha\\beta} = 14 + 2 \\times 3 = 20$\n所以 $\\sqrt{\\alpha}+\\sqrt{\\beta} = \\sqrt{20}$\n\n目标表达式为 $x^2 - \\sqrt{20}\\,x + 3$，对应选项 C。",
+    "analysis": "【题目分析】\n$x^2 - 14x + 9 = (x-\\alpha)(x-\\beta)$，$\\alpha, \\beta$ 为正实数。求可分解为 $(x-\\sqrt{\\alpha})(x-\\sqrt{\\beta})$ 的二次表达式。\n\n【解题步骤--利用 $\\alpha$ 和 $\\beta$ 的性质】\n\n由原式展开：$(x-\\alpha)(x-\\beta) = x^2 - (\\alpha+\\beta)x + \\alpha\\beta = x^2 - 14x + 9$\n\n所以 $\\alpha + \\beta = 14$，$\\alpha\\beta = 9$。\n\n目标表达式：$(x-\\sqrt{\\alpha})(x-\\sqrt{\\beta}) = x^2 - (\\sqrt{\\alpha}+\\sqrt{\\beta})x + \\sqrt{\\alpha\\beta}$\n\n**求 $\\sqrt{\\alpha\\beta}$：** 由 $\\alpha\\beta = 9$，得 $\\sqrt{\\alpha\\beta} = \\sqrt{\\alpha} \\cdot \\sqrt{\\beta} = 3$\n\n**求 $\\sqrt{\\alpha}+\\sqrt{\\beta}$：**\n$(\\sqrt{\\alpha}+\\sqrt{\\beta})^2 = \\alpha + \\beta + 2\\sqrt{\\alpha\\beta} = 14 + 2 \\times 3 = 20$\n所以 $\\sqrt{\\alpha}+\\sqrt{\\beta} = \\sqrt{20}$\n\n目标表达式为 $x^2 - \\sqrt{20}\\,x + 3$，对应选项 C。",
     "images": null,
     "has_image": false
   },
@@ -3897,7 +3897,7 @@ window.QUESTIONS = [
       "H": "$-\\frac{2\\sqrt{5}}{5}$"
     },
     "answer": "F",
-    "analysis": "【题目分析】\n已知 tan θ = 2，θ 在第三象限（180° < θ < 360°），求 cos θ。\n\n【确定符号】\ntan θ = 2 > 0 → θ 在第三象限 ✓\n第三象限：sin θ < 0，cos θ < 0\n\n【构造直角三角形】\n|tan θ| = |对边|/|邻边| = 2/1\n斜边 = √(2² + 1²) = √5\n\ncos θ = 邻边/斜边 = 1/√5 = √5/5\n第三象限取负值：cos θ = −√5/5\n\n【验证】\ntan θ = (−2√5/5)/(−√5/5) = 2 ✓\n\n【正确答案】F（−√5/5）",
+    "analysis": "【题目分析】\n已知 tan θ = 2，θ 在第三象限（180° < θ < 360°），求 cos θ。\n\n【确定符号】\ntan θ = 2 > 0 → θ 在第三象限 ✓\n第三象限：sin θ < 0，cos θ < 0\n\n【构造直角三角形】\n|tan θ| = |对边|/|邻边| = 2/1\n斜边 = √(2² + 1²) = √5\n\ncos θ = 邻边/斜边 = 1/√5 = √5/5\n第三象限取负值：cos θ = -√5/5\n\n【验证】\ntan θ = (-2√5/5)/(-√5/5) = 2 ✓\n\n【正确答案】F（-√5/5）",
     "images": null,
     "has_image": false
   },
@@ -3908,7 +3908,7 @@ window.QUESTIONS = [
     "num": 3,
     "topic": "Proof",
     "difficulty": 3,
-    "question": "A student makes the following claim:\n\nFor all integers $n$, the expression $4 \\left( \\frac{9n + 1}{2} - \\frac{3n - 1}{2} \\right)$ is divisible by 3.\n\nHere is the student’s argument:\n\n$$ 4 \\left( \\frac{9n + 1}{2} - \\frac{3n - 1}{2} \\right) = 2 \\left( 2 \\left( \\frac{9n + 1}{2} - \\frac{3n - 1}{2} \\right) \\right) \\quad \\text{(I)} $$\n$$ = 2(9n + 1 - 3n - 1) \\quad \\text{(II)} $$\n$$ = 2(6n) \\quad \\text{(III)} $$\n$$ = 12n \\quad \\text{(IV)} $$\n$$ = 3(4n) \\quad \\text{(V)} $$\n\nwhich is always a multiple of 3. (VI)\n\nSo the expression $4 \\left( \\frac{9n + 1}{2} - \\frac{3n - 1}{2} \\right)$ is always divisible by 3.\n\nWhich one of the following is true?",
+    "question": "A student makes the following claim:\n\nFor all integers $n$, the expression $4 \\left( \\frac{9n + 1}{2} - \\frac{3n - 1}{2} \\right)$ is divisible by 3.\n\nHere is the student's argument:\n\n$$ 4 \\left( \\frac{9n + 1}{2} - \\frac{3n - 1}{2} \\right) = 2 \\left( 2 \\left( \\frac{9n + 1}{2} - \\frac{3n - 1}{2} \\right) \\right) \\quad \\text{(I)} $$\n$$ = 2(9n + 1 - 3n - 1) \\quad \\text{(II)} $$\n$$ = 2(6n) \\quad \\text{(III)} $$\n$$ = 12n \\quad \\text{(IV)} $$\n$$ = 3(4n) \\quad \\text{(V)} $$\n\nwhich is always a multiple of 3. (VI)\n\nSo the expression $4 \\left( \\frac{9n + 1}{2} - \\frac{3n - 1}{2} \\right)$ is always divisible by 3.\n\nWhich one of the following is true?",
     "options": {
       "A": "The argument is correct.",
       "B": "The argument is incorrect, and the first error occurs on line (I).",
@@ -4019,13 +4019,13 @@ window.QUESTIONS = [
     "num": 8,
     "topic": "Trigonometry",
     "difficulty": 3,
-    "question": "A student is asked to prove whether the following statement ($*$) is true or false:\n\n> ($*$) For all real numbers $a$ and $b$, $|a + b| < |a| + |b|$\n\nThe student’s proof is as follows:\n\n> Statement ($*$) is **false**. A counterexample is $a = 3$, $b = 4$, as $|3 + 4| = 7$ and $|3| + |4| = 7$, but $7 < 7$ is false.\n\nWhich of the following best describes the student’s proof?",
+    "question": "A student is asked to prove whether the following statement ($*$) is true or false:\n\n> ($*$) For all real numbers $a$ and $b$, $|a + b| < |a| + |b|$\n\nThe student's proof is as follows:\n\n> Statement ($*$) is **false**. A counterexample is $a = 3$, $b = 4$, as $|3 + 4| = 7$ and $|3| + |4| = 7$, but $7 < 7$ is false.\n\nWhich of the following best describes the student's proof?",
     "options": {
-      "A": "The statement ($*$) is true, and the student’s proof is not correct.",
-      "B": "The statement ($*$) is false, but the student’s proof is not correct: the counterexample is not valid.",
-      "C": "The statement ($*$) is false, but the student’s proof is not correct: the student needs to give *all* the values of $a$ and $b$ where $|a + b| < |a| + |b|$ is false.",
-      "D": "The statement ($*$) is false, but the student’s proof is not correct: the student should have instead stated that for all real numbers $a$ and $b$, $|a + b| \\le |a| + |b|$.",
-      "E": "The statement ($*$) is false, and the student’s proof is fully correct."
+      "A": "The statement ($*$) is true, and the student's proof is not correct.",
+      "B": "The statement ($*$) is false, but the student's proof is not correct: the counterexample is not valid.",
+      "C": "The statement ($*$) is false, but the student's proof is not correct: the student needs to give *all* the values of $a$ and $b$ where $|a + b| < |a| + |b|$ is false.",
+      "D": "The statement ($*$) is false, but the student's proof is not correct: the student should have instead stated that for all real numbers $a$ and $b$, $|a + b| \\le |a| + |b|$.",
+      "E": "The statement ($*$) is false, and the student's proof is fully correct."
     },
     "answer": "E",
     "analysis": "【题目分析】\n命题(*): 对所有实数a,b, |a+b| < |a|+|b|\n\n学生反例：a=3, b=4\n|3+4|=7, |3|+|4|=7\n7<7是假的，所以命题是假的。\n\n三角不等式：|a+b| ≤ |a|+|b|，等号在a,b同号时成立。\n学生的反例正确，证明完整。\n\n【正确答案】E",
@@ -4049,7 +4049,7 @@ window.QUESTIONS = [
       "F": "$4 \\times \\sin(180 \\times 4 \\div \\pi)$"
     },
     "answer": "F",
-    "analysis": "【题目分析】\n计算f(x)=x·sin(x)（弧度）\n但计算器只接受度数。如何正确计算f(4)？\n\n【解题步骤】\nf(4)=4·sin(4弧度)\n弧度→度数：4弧度=4×180/π度≈229.2度\n\n计算器输入（度数模式）：\nsin(4弧度)=sin(229.2度)=sin(4×180/π度)\n正确输入：sin(180×4/π)（度数）\n\n完整f(4)：需x用弧度值（4），sin用度数转换\nf(4)=4×sin(180×4/π度)\n\n选项D：(180×4/π)×sin(4) — 错误，4是弧度不能直接sin(4度)\n选项F：4×sin(180×4/π) — 正确！\n\n等等，选项F是正确答案。但让我重新检查：\n选项D：(180×4÷π)×sin(4) — 度数×sin(4度) ✗\n选项F：4×sin(180×4÷π) — 弧度×sin(转换后度数) ✓\n\n【正确答案】F",
+    "analysis": "【题目分析】\n计算f(x)=x·sin(x)（弧度）\n但计算器只接受度数。如何正确计算f(4)？\n\n【解题步骤】\nf(4)=4·sin(4弧度)\n弧度→度数：4弧度=4×180/π度≈229.2度\n\n计算器输入（度数模式）：\nsin(4弧度)=sin(229.2度)=sin(4×180/π度)\n正确输入：sin(180×4/π)（度数）\n\n完整f(4)：需x用弧度值（4），sin用度数转换\nf(4)=4×sin(180×4/π度)\n\n选项D：(180×4/π)×sin(4) - 错误，4是弧度不能直接sin(4度)\n选项F：4×sin(180×4/π) - 正确！\n\n等等，选项F是正确答案。但让我重新检查：\n选项D：(180×4÷π)×sin(4) - 度数×sin(4度) ✗\n选项F：4×sin(180×4÷π) - 弧度×sin(转换后度数) ✓\n\n【正确答案】F",
     "images": null,
     "has_image": false
   },
@@ -4086,13 +4086,13 @@ window.QUESTIONS = [
     "question": "A spiral line is drawn as shown.\n\n(page_11_image_1_v2.jpg)\n\nThis spiral pattern continues indefinitely.\n\nWhich one of the following points is **not** on the spiral line?",
     "options": {
       "A": "(99, 100)",
-      "B": "(99, −100)",
-      "C": "(−99, 100)",
-      "D": "(−99, −100)",
+      "B": "(99, -100)",
+      "C": "(-99, 100)",
+      "D": "(-99, -100)",
       "E": "(100, 99)",
-      "F": "(100, −99)",
-      "G": "(−100, 99)",
-      "H": "(−100, −99)"
+      "F": "(100, -99)",
+      "G": "(-100, 99)",
+      "H": "(-100, -99)"
     },
     "answer": "G",
     "analysis": "【题目分析】\n螺旋从(0,0)→(-2,0)→(-2,-2)→(2,-2)→(2,2)→(-4,2)→(-4,-4)→(4,-4)→(4,4)...\n判断哪个点不在螺旋上。\n\n【解题步骤】\n观察螺旋规律：\n- 每圈向外扩展2单位\n- 方向：左→下→右→上→左...\n\n第n圈（n=1,2,3...）：\n- 左边界：x=-2n（向左移动）\n- 下边界：y=-2n\n- 右边界：x=2n\n- 上边界：y=2n（向右后向上）\n\n检查各点：\nA(99,100)：接近边界，100>99，在上边界？\n上边界轨迹：从右边界向上到左边界上方\n(2,2)→(-4,2)经过y=2的水平线（非上边界）\n上边界是(-4,2)→(-4,-4)？不对，这是左边界向下。\n\n重新分析：\n路径点：(-2,0),(-2,-2),(2,-2),(2,2),(-4,2),(-4,-4),(4,-4),(4,4),(-6,4)...\n规律：奇数圈右边界为正偶数，偶数圈左边界为负偶数\n第n圈右边界=2n（当n个\"向右\"完成后）\n\n分析(99,-100)：\n99接近某个右边界？右边界值：2,4,6,8...偶数\n99不是偶数边界值！\n可能在路径上？需要精确匹配。\n\n关键：螺旋上的x,y值都是偶数（±2,±4,±6...）\n(99,-100)：99不是偶数 ✗不在螺旋上？\n\n但奇数圈结束后可能停在某位置？\n(4,4)后箭头指向左，说明继续向左移动。\n向左移动过程中x值从4递减经过3,2,1,0,-1,-2...？\n但题目说\"square spiral\"，应该是离散点还是连续线？\n\n如果连续线，则x,y可以取中间值。\n(99,-100)：检查是否在路径段上\n水平段：y=-100水平线存在？第50圈下边界y=-100\n路径：(-100,-100)→(100,-100)（下边界水平段）\n(99,-100)在下边界段上 ✓\n\n答案B说(99,-100)不在螺旋上？\n\n重新理解：题目显示箭头\"pointing left\"从(4,4)开始\n说明下一段是从(4,4)向左到某个点。\n规律：上边界从右向左移动。\n第n圈上边界y=2n（偶数）\n从(2n,2n)向左到(-2(n+1),2n)\n\n(99,100)：在上边界y=100的水平段？\n第50圈上边界y=100，从(100,100)向左到(-102,100)\n(99,100)在这段上 ✓\n\n(99,-100)：在下边界y=-100的水平段？\n第50圈下边界y=-100，从(-100,-100)向右到(100,-100)\n(99,-100)在这段上 ✓\n\n答案B说(99,-100)不在？\n可能需要更精确分析转折点。\n\n转折点坐标都是偶数，但路径段包含中间值。\n除非题目暗示只有转折点算\"在螺旋上\"？\n\n【正确答案】B",
@@ -4188,7 +4188,7 @@ window.QUESTIONS = [
     "num": 16,
     "topic": "Algebra",
     "difficulty": 3,
-    "question": "The Fundamental Theorem of Calculus (FTC) tells us that for any polynomial f :\n\n$$\\frac{d}{dx} \\left( \\int_{0}^{x} f(t) \\, dt \\right) = f(x)$$\n\nA student calculates $\\frac{d}{dx} \\left( \\int_{x}^{2x} t^2 \\, dt \\right)$ as follows:\n\n(I) $\\int_{x}^{2x} t^2 \\, dt = \\int_{0}^{2x} t^2 \\, dt - \\int_{0}^{x} t^2 \\, dt$\n\n(II) By FTC, $\\frac{d}{dx} \\left( \\int_{0}^{x} t^2 \\, dt \\right) = x^2$\n\n(III) By FTC, $\\frac{d}{dx} \\left( \\int_{0}^{2x} t^2 \\, dt \\right) = (2x)^2 = 4x^2$\n\n(IV) So $\\frac{d}{dx} \\left( \\int_{x}^{2x} t^2 \\, dt \\right) = 4x^2 - x^2$\n\n(V) giving $\\frac{d}{dx} \\left( \\int_{x}^{2x} t^2 \\, dt \\right) = 3x^2$\n\nWhich of the following best describes the student’s calculation?",
+    "question": "The Fundamental Theorem of Calculus (FTC) tells us that for any polynomial f :\n\n$$\\frac{d}{dx} \\left( \\int_{0}^{x} f(t) \\, dt \\right) = f(x)$$\n\nA student calculates $\\frac{d}{dx} \\left( \\int_{x}^{2x} t^2 \\, dt \\right)$ as follows:\n\n(I) $\\int_{x}^{2x} t^2 \\, dt = \\int_{0}^{2x} t^2 \\, dt - \\int_{0}^{x} t^2 \\, dt$\n\n(II) By FTC, $\\frac{d}{dx} \\left( \\int_{0}^{x} t^2 \\, dt \\right) = x^2$\n\n(III) By FTC, $\\frac{d}{dx} \\left( \\int_{0}^{2x} t^2 \\, dt \\right) = (2x)^2 = 4x^2$\n\n(IV) So $\\frac{d}{dx} \\left( \\int_{x}^{2x} t^2 \\, dt \\right) = 4x^2 - x^2$\n\n(V) giving $\\frac{d}{dx} \\left( \\int_{x}^{2x} t^2 \\, dt \\right) = 3x^2$\n\nWhich of the following best describes the student's calculation?",
     "options": {
       "A": "The calculation is completely correct.",
       "B": "The calculation is incorrect, and the first error occurs on line (I).",
@@ -4253,7 +4253,7 @@ window.QUESTIONS = [
     "num": 19,
     "topic": "Algebra",
     "difficulty": 3,
-    "question": "Nine people are sitting in the squares of a 3 by 3 grid, one in each square, as shown. Two people are called *neighbours* if they are sitting in squares that share a side. (People in diagonally adjacent squares, which only have a point in common, are not called neighbours.)\n\nEach of the nine people in the grid is either a truth-teller who **always** tells the truth, or a liar who **always** lies.\n\nEvery person in the grid says: ‘My neighbours are all liars’.\n\nGiven only this information, what are the **smallest** number and the **largest** number of people who could be telling the truth?",
+    "question": "Nine people are sitting in the squares of a 3 by 3 grid, one in each square, as shown. Two people are called *neighbours* if they are sitting in squares that share a side. (People in diagonally adjacent squares, which only have a point in common, are not called neighbours.)\n\nEach of the nine people in the grid is either a truth-teller who **always** tells the truth, or a liar who **always** lies.\n\nEvery person in the grid says: 'My neighbours are all liars'.\n\nGiven only this information, what are the **smallest** number and the **largest** number of people who could be telling the truth?",
     "options": {
       "A": "Smallest: 1, Largest: 4",
       "B": "Smallest: 2, Largest: 4",
@@ -4299,7 +4299,7 @@ window.QUESTIONS = [
     "num": 1,
     "topic": "Coordinate Geometry",
     "difficulty": 3,
-    "question": "Two circles have the same radius.\n\nThe centre of one circle is (–2, 1).\n\nThe centre of the other circle is (3, –2).\n\nThe circles intersect at two distinct points.\n\nWhat is the equation of the straight line through the two points at which the circles intersect?",
+    "question": "Two circles have the same radius.\n\nThe centre of one circle is (-2, 1).\n\nThe centre of the other circle is (3, -2).\n\nThe circles intersect at two distinct points.\n\nWhat is the equation of the straight line through the two points at which the circles intersect?",
     "options": {
       "A": "$3x - 5y = 4$",
       "B": "$3x + 5y = -1$",
@@ -4310,7 +4310,7 @@ window.QUESTIONS = [
       "G": "$5x + 3y = 1$"
     },
     "answer": "F",
-    "analysis": "【题目分析】\n两圆半径相同，相交于两点，求交点连线方程。\n\n【解题步骤——方法1：联立方程】\n\n设两圆半径均为 $r$，则：\n$(x+2)^2 + (y-1)^2 = r^2$\n$(x-3)^2 + (y+2)^2 = r^2$\n\n展开：\n$x^2 + 4x + 4 + y^2 - 2y + 1 = r^2$\n$x^2 - 6x + 9 + y^2 + 4y + 4 = r^2$\n\n两式相减，消去 $x^2, y^2, r^2$：\n$10x - 6y - 8 = 0$\n\n化简得 $5x - 3y = 4$\n\n对应选项 F。\n\n【解题步骤——方法2：几何法】\n\n两圆半径相同，交点连线是圆心连线的中垂线。\n\n圆心 $O_1 = (-2, 1)$，$O_2 = (3, -2)$\n\n中点 $M = \\left(\\frac{1}{2}, -\\frac{1}{2}\\right)$\n\n$O_1O_2$ 斜率 $= \\frac{-2-1}{3-(-2)} = -\\frac{3}{5}$\n\n中垂线斜率 $= \\frac{5}{3}$\n\n方程：$y - \\left(-\\frac{1}{2}\\right) = \\frac{5}{3}\\left(x - \\frac{1}{2}\\right)$\n\n化简得 $5x - 3y = 4$，对应选项 F。",
+    "analysis": "【题目分析】\n两圆半径相同，相交于两点，求交点连线方程。\n\n【解题步骤--方法1：联立方程】\n\n设两圆半径均为 $r$，则：\n$(x+2)^2 + (y-1)^2 = r^2$\n$(x-3)^2 + (y+2)^2 = r^2$\n\n展开：\n$x^2 + 4x + 4 + y^2 - 2y + 1 = r^2$\n$x^2 - 6x + 9 + y^2 + 4y + 4 = r^2$\n\n两式相减，消去 $x^2, y^2, r^2$：\n$10x - 6y - 8 = 0$\n\n化简得 $5x - 3y = 4$\n\n对应选项 F。\n\n【解题步骤--方法2：几何法】\n\n两圆半径相同，交点连线是圆心连线的中垂线。\n\n圆心 $O_1 = (-2, 1)$，$O_2 = (3, -2)$\n\n中点 $M = \\left(\\frac{1}{2}, -\\frac{1}{2}\\right)$\n\n$O_1O_2$ 斜率 $= \\frac{-2-1}{3-(-2)} = -\\frac{3}{5}$\n\n中垂线斜率 $= \\frac{5}{3}$\n\n方程：$y - \\left(-\\frac{1}{2}\\right) = \\frac{5}{3}\\left(x - \\frac{1}{2}\\right)$\n\n化简得 $5x - 3y = 4$，对应选项 F。",
     "images": null,
     "has_image": false
   },
@@ -4653,7 +4653,7 @@ window.QUESTIONS = [
       "E": "Sketch E"
     },
     "answer": "A",
-    "analysis": "【题目分析】\n识别 $\\sin(x^2+y^2) = \\frac{1}{2}$（$x^2+y^2 \\leq 8\\pi$）的图形。\n\n【解题步骤】\n设 $r^2 = x^2 + y^2 \\geq 0$，方程变为 $\\sin r^2 = \\frac{1}{2}$。\n\n$r^2 = \\frac{\\pi}{6} + 2k\\pi$ 或 $r^2 = \\frac{5\\pi}{6} + 2k\\pi$（$k$ 为整数）\n\n在 $r^2 \\leq 8\\pi$ 范围内，$k = 0,1,2,3$，共8个圆：\n\n$r^2 = \\frac{\\pi}{6}, \\frac{5\\pi}{6}, \\frac{13\\pi}{6}, \\frac{17\\pi}{6}, \\frac{25\\pi}{6}, \\frac{29\\pi}{6}, \\frac{37\\pi}{6}, \\frac{41\\pi}{6}$\n\n提取公因子 $\\sqrt{\\pi/6}$，各圆半径为：\n\n$\\sqrt{\\frac{\\pi}{6}} \\times 1, \\sqrt{5}, \\sqrt{13}, \\sqrt{17}, \\sqrt{25}, \\sqrt{29}, \\sqrt{37}, \\sqrt{41}$\n\n近似值：$\\rho \\approx 1, 2, 3.5, 4, 5, 5.5, 6, 6.5$\n\n最小的几个圆间距较大，后面的圆越来越密，且成对出现——这对应选项 A。",
+    "analysis": "【题目分析】\n识别 $\\sin(x^2+y^2) = \\frac{1}{2}$（$x^2+y^2 \\leq 8\\pi$）的图形。\n\n【解题步骤】\n设 $r^2 = x^2 + y^2 \\geq 0$，方程变为 $\\sin r^2 = \\frac{1}{2}$。\n\n$r^2 = \\frac{\\pi}{6} + 2k\\pi$ 或 $r^2 = \\frac{5\\pi}{6} + 2k\\pi$（$k$ 为整数）\n\n在 $r^2 \\leq 8\\pi$ 范围内，$k = 0,1,2,3$，共8个圆：\n\n$r^2 = \\frac{\\pi}{6}, \\frac{5\\pi}{6}, \\frac{13\\pi}{6}, \\frac{17\\pi}{6}, \\frac{25\\pi}{6}, \\frac{29\\pi}{6}, \\frac{37\\pi}{6}, \\frac{41\\pi}{6}$\n\n提取公因子 $\\sqrt{\\pi/6}$，各圆半径为：\n\n$\\sqrt{\\frac{\\pi}{6}} \\times 1, \\sqrt{5}, \\sqrt{13}, \\sqrt{17}, \\sqrt{25}, \\sqrt{29}, \\sqrt{37}, \\sqrt{41}$\n\n近似值：$\\rho \\approx 1, 2, 3.5, 4, 5, 5.5, 6, 6.5$\n\n最小的几个圆间距较大，后面的圆越来越密，且成对出现--这对应选项 A。",
     "images": {
       "image": "2021 P1 Q17 5 options.png"
     },
@@ -4786,7 +4786,7 @@ window.QUESTIONS = [
       "H": "I, II and III"
     },
     "answer": "C",
-    "analysis": "【题目分析】\n概率 $= \\frac{4}{15}$（最简分数），判断哪些条件是**必要条件**。\n\n【解题步骤】\n不戴眼镜概率 $= \\frac{11}{15}$，所以戴眼镜与不戴眼镜之比为 $4:11$。\n\n因此人数可以是 $(4, 11)$（共15人）、$(8, 22)$（共30人）等。\n\n**条件I**：恰好11人不戴眼镜——不必要，也可以22人不戴眼镜。\n\n**条件II**：总人数能被3整除——必要！因为总人数 $= 15k$，必为3的倍数。\n\n**条件III**：30人，8人戴眼镜——不必要，15人4人戴眼镜也满足。\n\n只有条件II是必要条件。\n\n对应选项 C。",
+    "analysis": "【题目分析】\n概率 $= \\frac{4}{15}$（最简分数），判断哪些条件是**必要条件**。\n\n【解题步骤】\n不戴眼镜概率 $= \\frac{11}{15}$，所以戴眼镜与不戴眼镜之比为 $4:11$。\n\n因此人数可以是 $(4, 11)$（共15人）、$(8, 22)$（共30人）等。\n\n**条件I**：恰好11人不戴眼镜--不必要，也可以22人不戴眼镜。\n\n**条件II**：总人数能被3整除--必要！因为总人数 $= 15k$，必为3的倍数。\n\n**条件III**：30人，8人戴眼镜--不必要，15人4人戴眼镜也满足。\n\n只有条件II是必要条件。\n\n对应选项 C。",
     "images": null,
     "has_image": false
   },
@@ -4958,7 +4958,7 @@ window.QUESTIONS = [
       "F": "It is incorrect because there is an error in line (IV)."
     },
     "answer": "C",
-    "analysis": "【题目分析】\n学生的证明目标：若 $a^2-4b^3 \\\geq 0$，则存在实数 $x,y$ 使 $a=xy(x+y)$ 且 $b=xy$。\n\n逐行检查推导：\n**(I)** $(x-y)^2 \\\geq 0$ ✓\n**(II)** 展开得 $x^2+y^2-2xy \\\geq 0$ ✓\n**(III)** 由 $x^2+y^2 = (x+y)^2-2xy$，得 $(x+y)^2-4xy \\\geq 0$ ✓\n**(IV)** 两边乘 $x^2y^2$（$x^2y^2 \\\geq 0$，不等号方向不变）✓\n**(V)** 代入 $a=xy(x+y), b=xy$，得 $a^2-4b^3 \\\geq 0$ ✓\n\n**问题**：第(V)行是从第(IV)行**代入** $a,b$ 的定义推出的，即假设了 $a=xy(x+y)$ 和 $b=xy$ 成立。\n\n因此整个推导证明的是：**若存在 $x,y$ 使 $a=xy(x+y)$ 且 $b=xy$，则 $a^2-4b^3 \\\geq 0$**——这正是原命题的**逆命题**，而非原命题本身。\n\n对应选项 C。",
+    "analysis": "【题目分析】\n学生的证明目标：若 $a^2-4b^3 \\\geq 0$，则存在实数 $x,y$ 使 $a=xy(x+y)$ 且 $b=xy$。\n\n逐行检查推导：\n**(I)** $(x-y)^2 \\\geq 0$ ✓\n**(II)** 展开得 $x^2+y^2-2xy \\\geq 0$ ✓\n**(III)** 由 $x^2+y^2 = (x+y)^2-2xy$，得 $(x+y)^2-4xy \\\geq 0$ ✓\n**(IV)** 两边乘 $x^2y^2$（$x^2y^2 \\\geq 0$，不等号方向不变）✓\n**(V)** 代入 $a=xy(x+y), b=xy$，得 $a^2-4b^3 \\\geq 0$ ✓\n\n**问题**：第(V)行是从第(IV)行**代入** $a,b$ 的定义推出的，即假设了 $a=xy(x+y)$ 和 $b=xy$ 成立。\n\n因此整个推导证明的是：**若存在 $x,y$ 使 $a=xy(x+y)$ 且 $b=xy$，则 $a^2-4b^3 \\\geq 0$**--这正是原命题的**逆命题**，而非原命题本身。\n\n对应选项 C。",
     "images": null,
     "has_image": false
   },
@@ -5004,7 +5004,7 @@ window.QUESTIONS = [
       "H": "I, II and III"
     },
     "answer": "A",
-    "analysis": "【题目分析】\n区域 $R: y-x < 3$ 且 $y-x^2 < 1$。判断哪些命题对 $R$ 中**所有**点成立。\n\n【解题步骤——逐个找反例】\n\n**命题 I** ($-1 < x < 2$)：\n反例：$(10, 0) \\\in R$（$0-10=-10<3$ ✓，$0-100=-100<1$ ✓），但 $x=10$ 不满足 $-1<x<2$。✗\n\n**命题 II** ($(y-x)(y-x^2) < 3$)：\n反例：$(0, -2) \\\in R$（$(-2)-0=-2<3$ ✓，$(-2)-0=-2<1$ ✓），\n但 $(y-x)(y-x^2)=(-2-0)(-2-0)=4 > 3$。✗\n\n**命题 III** ($y < 5$)：\n反例：$(6, 6) \\\in R$（$6-6=0<3$ ✓，$6-36=-30<1$ ✓），\n但 $y=6 \\\geq 5$。✗\n\n三个命题均非恒成立。\n\n对应选项 A。",
+    "analysis": "【题目分析】\n区域 $R: y-x < 3$ 且 $y-x^2 < 1$。判断哪些命题对 $R$ 中**所有**点成立。\n\n【解题步骤--逐个找反例】\n\n**命题 I** ($-1 < x < 2$)：\n反例：$(10, 0) \\\in R$（$0-10=-10<3$ ✓，$0-100=-100<1$ ✓），但 $x=10$ 不满足 $-1<x<2$。✗\n\n**命题 II** ($(y-x)(y-x^2) < 3$)：\n反例：$(0, -2) \\\in R$（$(-2)-0=-2<3$ ✓，$(-2)-0=-2<1$ ✓），\n但 $(y-x)(y-x^2)=(-2-0)(-2-0)=4 > 3$。✗\n\n**命题 III** ($y < 5$)：\n反例：$(6, 6) \\\in R$（$6-6=0<3$ ✓，$6-36=-30<1$ ✓），\n但 $y=6 \\\geq 5$。✗\n\n三个命题均非恒成立。\n\n对应选项 A。",
     "images": null,
     "has_image": false
   },
@@ -5048,7 +5048,7 @@ window.QUESTIONS = [
       "F": "$-\\frac{b}{2} = \\sqrt{\\frac{a^2 + b^2}{4} - c}$"
     },
     "answer": "B",
-    "analysis": "【题目分析】\n圆 $x^2+ax+y^2+by+c=0$ 与 $y$ 轴相切，求充要条件。\n\n【解题步骤——方法一：配方法】\n配方得 $\\\left(x+\\\\frac{a}{2}\\\\right)^2 + \\\left(y+\\\\frac{b}{2}\\\\right)^2 = \\\frac{a^2}{4}+\\\\frac{b^2}{4}-c$\n\n圆心 $\\\\left(-\\\\frac{a}{2}, -\\\\frac{b}{2}\\\\right)$，半径 $r = \\\\sqrt{\\\\frac{a^2}{4}+\\\\frac{b^2}{4}-c}$。\n\n与 $y$ 轴（$x=0$）相切 $\\\Leftrightarrow$ 半径 $r = |$圆心的 $x$ 坐标 $| = \\\\left|-\\\\frac{a}{2}\\\\right|$。\n\n两边平方：$\\\\frac{a^2}{4}+\\\\frac{b^2}{4}-c = \\\frac{a^2}{4}$\n\n化简得 $\\\\frac{b^2}{4} = c$，即 $b^2 = 4c$。\n\n【解题步骤——方法二：代入法】\n与 $y$ 轴相切 $\\\Leftrightarrow$ 代入 $x=0$ 后 $y^2+by+c=0$ 有重根。\n判别式 $\\\\Delta = b^2-4c = 0$，即 $b^2 = 4c$。\n\n对应选项 B。",
+    "analysis": "【题目分析】\n圆 $x^2+ax+y^2+by+c=0$ 与 $y$ 轴相切，求充要条件。\n\n【解题步骤--方法一：配方法】\n配方得 $\\\left(x+\\\\frac{a}{2}\\\\right)^2 + \\\left(y+\\\\frac{b}{2}\\\\right)^2 = \\\frac{a^2}{4}+\\\\frac{b^2}{4}-c$\n\n圆心 $\\\\left(-\\\\frac{a}{2}, -\\\\frac{b}{2}\\\\right)$，半径 $r = \\\\sqrt{\\\\frac{a^2}{4}+\\\\frac{b^2}{4}-c}$。\n\n与 $y$ 轴（$x=0$）相切 $\\\Leftrightarrow$ 半径 $r = |$圆心的 $x$ 坐标 $| = \\\\left|-\\\\frac{a}{2}\\\\right|$。\n\n两边平方：$\\\\frac{a^2}{4}+\\\\frac{b^2}{4}-c = \\\frac{a^2}{4}$\n\n化简得 $\\\\frac{b^2}{4} = c$，即 $b^2 = 4c$。\n\n【解题步骤--方法二：代入法】\n与 $y$ 轴相切 $\\\Leftrightarrow$ 代入 $x=0$ 后 $y^2+by+c=0$ 有重根。\n判别式 $\\\\Delta = b^2-4c = 0$，即 $b^2 = 4c$。\n\n对应选项 B。",
     "images": null,
     "has_image": false
   },
@@ -5069,7 +5069,7 @@ window.QUESTIONS = [
       "F": "1, 2, 3, 4"
     },
     "answer": "E",
-    "analysis": "【题目分析】\n$x|x| = px+q$ 恰有 $k$ 个实数解，求 $k$ 的所有可能值。\n\n【解题步骤——画图/代数分析】\n当 $x \\\geq 0$，方程为 $x^2 = px+q$；当 $x < 0$，方程为 $-x^2 = px+q$。\n每个二次方程最多两个实根，但需满足对应的符号条件。\n\n**可能值分析**：\n- $k=1$：例如 $p=q=0$，$x=0$ 是唯一解 ✓\n- $k=2$：例如 $p=-1,q=0$，$x=0$ 和 $x=1$ 两个解 ✓\n- $k=3$：例如 $p=-2,q=1$，$x=1$ 和 $x=-1\\\\pm\\\\sqrt{2}$（$-1+\\\\sqrt{2}>0$ 不合，$x<0$ 只有一个有效根）—— 实际例子：$p=-1,q=1$ 给出三个解 ✓\n- $k=4$ 不可能：两个方程各需两个有效根，但符号条件矛盾（$x\\\\geq 0$ 要求 $q<0$，$x<0$ 要求 $q>0$）。\n\n$k$ 的可能值为 $1,2,3$。\n\n对应选项 E。",
+    "analysis": "【题目分析】\n$x|x| = px+q$ 恰有 $k$ 个实数解，求 $k$ 的所有可能值。\n\n【解题步骤--画图/代数分析】\n当 $x \\\geq 0$，方程为 $x^2 = px+q$；当 $x < 0$，方程为 $-x^2 = px+q$。\n每个二次方程最多两个实根，但需满足对应的符号条件。\n\n**可能值分析**：\n- $k=1$：例如 $p=q=0$，$x=0$ 是唯一解 ✓\n- $k=2$：例如 $p=-1,q=0$，$x=0$ 和 $x=1$ 两个解 ✓\n- $k=3$：例如 $p=-2,q=1$，$x=1$ 和 $x=-1\\\\pm\\\\sqrt{2}$（$-1+\\\\sqrt{2}>0$ 不合，$x<0$ 只有一个有效根）-- 实际例子：$p=-1,q=1$ 给出三个解 ✓\n- $k=4$ 不可能：两个方程各需两个有效根，但符号条件矛盾（$x\\\\geq 0$ 要求 $q<0$，$x<0$ 要求 $q>0$）。\n\n$k$ 的可能值为 $1,2,3$。\n\n对应选项 E。",
     "images": null,
     "has_image": false
   },
@@ -5090,7 +5090,7 @@ window.QUESTIONS = [
       "F": "$1 \\le g(x) \\le f(x)$ **or** $f(x) \\le g(x) \\le 1$"
     },
     "answer": "F",
-    "analysis": "【题目分析】\n比较 $f(x)=\\log_2(\\log_2\\sqrt{x})$ 与 $g(x)=\\log_2(\\sqrt{\\log_2 x})$ 的大小关系。\n\n【解题步骤——化简】\n$f(x) = \\log_2\\!\\left(\\frac{1}{2}\\log_2 x\\right) = -1 + \\log_2(\\log_2 x)$\n$g(x) = \\log_2\\!\\left((\\log_2 x)^{1/2}\\right) = \\frac{1}{2}\\log_2(\\log_2 x)$\n\n令 $z = \\log_2(\\log_2 x)$（$x>1$ 时 $\\log_2 x>0$，$z$ 可取任意实数），\n则 $f = z-1$，$g = \\frac{1}{2}z$。\n\n**两函数交点**：$z-1 = \\frac{1}{2}z \\Rightarrow z=2$，此时 $f=g=1$。\n\n**图像分析**：\n- 当 $z \\geq 2$（即 $f,g \\geq 1$）时，$f \\geq g$\n- 当 $z \\leq 2$（即 $f,g \\leq 1$）时，$f \\leq g$\n\n即：$f(x) \\geq g(x) \\geq 1$ 或 $f(x) \\leq g(x) \\leq 1$（两者同时成立）。\n\n对应选项 F。",
+    "analysis": "【题目分析】\n比较 $f(x)=\\log_2(\\log_2\\sqrt{x})$ 与 $g(x)=\\log_2(\\sqrt{\\log_2 x})$ 的大小关系。\n\n【解题步骤--化简】\n$f(x) = \\log_2\\!\\left(\\frac{1}{2}\\log_2 x\\right) = -1 + \\log_2(\\log_2 x)$\n$g(x) = \\log_2\\!\\left((\\log_2 x)^{1/2}\\right) = \\frac{1}{2}\\log_2(\\log_2 x)$\n\n令 $z = \\log_2(\\log_2 x)$（$x>1$ 时 $\\log_2 x>0$，$z$ 可取任意实数），\n则 $f = z-1$，$g = \\frac{1}{2}z$。\n\n**两函数交点**：$z-1 = \\frac{1}{2}z \\Rightarrow z=2$，此时 $f=g=1$。\n\n**图像分析**：\n- 当 $z \\geq 2$（即 $f,g \\geq 1$）时，$f \\geq g$\n- 当 $z \\leq 2$（即 $f,g \\leq 1$）时，$f \\leq g$\n\n即：$f(x) \\geq g(x) \\geq 1$ 或 $f(x) \\leq g(x) \\leq 1$（两者同时成立）。\n\n对应选项 F。",
     "images": null,
     "has_image": false
   },
@@ -5136,7 +5136,7 @@ window.QUESTIONS = [
       "H": "360"
     },
     "answer": "F",
-    "analysis": "【题目分析】\n$\theta \\in \\{1°, 2°, \\ldots, 360°\\}$，求满足给定方程的 $\theta$ 的个数。\n\n【解题步骤——化简】\n$\sqrt{(1+\\sin\\theta)(1-\\sin\\theta)} = \\sqrt{\\cos^2\\theta} = |\\cos\\theta|$\n$\sqrt{(1+\\cos\\theta)(1-\\cos\\theta)} = \\sqrt{\\sin^2\\theta} = |\\sin\\theta|$\n\n方程化简为：$\\sin\\theta\\,|\\cos\\theta| + \\cos\\theta\\,|\\sin\\theta| = 0$\n\n**分类讨论**：\n- $\\sin\\theta > 0, \\cos\\theta > 0$（第一象限）：$2\\sin\\theta\\cos\\theta > 0$ ✗\n- $\\sin\\theta < 0, \\cos\\theta < 0$（第三象限）：$-2\\sin\\theta\\cos\\theta > 0$ ✗\n- $\\sin\\theta > 0, \\cos\\theta < 0$（第二象限）：$-\\sin\\theta\\cos\\theta + \\sin\\theta\\cos\\theta = 0$ ✓\n- $\\sin\\theta < 0, \\cos\\theta > 0$（第四象限）：$\\sin\\theta\\cos\\theta - \\sin\\theta\\cos\\theta = 0$ ✓\n- $\\sin\\theta = 0$ 或 $\\cos\\theta = 0$（轴上）：$= 0$ ✓\n\n**满足条件的范围**：$90° \\leq \\theta \\leq 180°$ 或 $270° \\leq \\theta \\leq 360°$。\n\n计数：每个区间 91 个角（含两端点），共 $91 + 91 = 182$ 个。\n\n对应选项 F。",
+    "analysis": "【题目分析】\n$\theta \\in \\{1°, 2°, \\ldots, 360°\\}$，求满足给定方程的 $\theta$ 的个数。\n\n【解题步骤--化简】\n$\sqrt{(1+\\sin\\theta)(1-\\sin\\theta)} = \\sqrt{\\cos^2\\theta} = |\\cos\\theta|$\n$\sqrt{(1+\\cos\\theta)(1-\\cos\\theta)} = \\sqrt{\\sin^2\\theta} = |\\sin\\theta|$\n\n方程化简为：$\\sin\\theta\\,|\\cos\\theta| + \\cos\\theta\\,|\\sin\\theta| = 0$\n\n**分类讨论**：\n- $\\sin\\theta > 0, \\cos\\theta > 0$（第一象限）：$2\\sin\\theta\\cos\\theta > 0$ ✗\n- $\\sin\\theta < 0, \\cos\\theta < 0$（第三象限）：$-2\\sin\\theta\\cos\\theta > 0$ ✗\n- $\\sin\\theta > 0, \\cos\\theta < 0$（第二象限）：$-\\sin\\theta\\cos\\theta + \\sin\\theta\\cos\\theta = 0$ ✓\n- $\\sin\\theta < 0, \\cos\\theta > 0$（第四象限）：$\\sin\\theta\\cos\\theta - \\sin\\theta\\cos\\theta = 0$ ✓\n- $\\sin\\theta = 0$ 或 $\\cos\\theta = 0$（轴上）：$= 0$ ✓\n\n**满足条件的范围**：$90° \\leq \\theta \\leq 180°$ 或 $270° \\leq \\theta \\leq 360°$。\n\n计数：每个区间 91 个角（含两端点），共 $91 + 91 = 182$ 个。\n\n对应选项 F。",
     "images": null,
     "has_image": false
   },
@@ -5159,7 +5159,7 @@ window.QUESTIONS = [
       "H": "100"
     },
     "answer": "E",
-    "analysis": "【题目分析】\n$f_1(x) = |x|$，$f_{n+1}(x) = |f_n(x) + x|$，求 $\\int_{-1}^{1} f_{99}(x)\\,dx$。\n\n【解题步骤——找规律】\n$f_1(x) = |x|$：$x<0$ 时 $=-x$，$x \\geq 0$ 时 $=x$\n\n$f_2(x) = |f_1(x)+x|$：\n- $x<0$：$|-x+x| = 0$\n- $x \\geq 0$：$|x+x| = 2x$\n\n$f_3(x) = |f_2(x)+x|$：\n- $x<0$：$|0+x| = -x$\n- $x \\geq 0$：$|2x+x| = 3x$\n\n$f_4(x) = |f_3(x)+x|$：\n- $x<0$：$|-x+x| = 0$\n- $x \\geq 0$：$|3x+x| = 4x$\n\n**归纳**：\n- $n$ 为偶数：$f_n(x) = 0$（$x<0$），$f_n(x) = nx$（$x \\geq 0$）\n- $n$ 为奇数：$f_n(x) = -x$（$x<0$），$f_n(x) = nx$（$x \\geq 0$）\n\n$n=99$（奇数）：$f_{99}(x) = -x$（$x<0$），$f_{99}(x) = 99x$（$x \\geq 0$）\n\n**计算积分**：\n$\\int_{-1}^{0}(-x)\\,dx + \\int_{0}^{1}99x\\,dx = \\frac{1}{2} + \\frac{99}{2} = 50$\n\n对应选项 E。",
+    "analysis": "【题目分析】\n$f_1(x) = |x|$，$f_{n+1}(x) = |f_n(x) + x|$，求 $\\int_{-1}^{1} f_{99}(x)\\,dx$。\n\n【解题步骤--找规律】\n$f_1(x) = |x|$：$x<0$ 时 $=-x$，$x \\geq 0$ 时 $=x$\n\n$f_2(x) = |f_1(x)+x|$：\n- $x<0$：$|-x+x| = 0$\n- $x \\geq 0$：$|x+x| = 2x$\n\n$f_3(x) = |f_2(x)+x|$：\n- $x<0$：$|0+x| = -x$\n- $x \\geq 0$：$|2x+x| = 3x$\n\n$f_4(x) = |f_3(x)+x|$：\n- $x<0$：$|-x+x| = 0$\n- $x \\geq 0$：$|3x+x| = 4x$\n\n**归纳**：\n- $n$ 为偶数：$f_n(x) = 0$（$x<0$），$f_n(x) = nx$（$x \\geq 0$）\n- $n$ 为奇数：$f_n(x) = -x$（$x<0$），$f_n(x) = nx$（$x \\geq 0$）\n\n$n=99$（奇数）：$f_{99}(x) = -x$（$x<0$），$f_{99}(x) = 99x$（$x \\geq 0$）\n\n**计算积分**：\n$\\int_{-1}^{0}(-x)\\,dx + \\int_{0}^{1}99x\\,dx = \\frac{1}{2} + \\frac{99}{2} = 50$\n\n对应选项 E。",
     "images": null,
     "has_image": false
   },
@@ -5182,7 +5182,7 @@ window.QUESTIONS = [
       "H": "8"
     },
     "answer": "C",
-    "analysis": "【题目分析】\n方程 2cos⁴θ − 5cos²θ + 3 = 0 在 [0, 2π] 内有多少实解？\n\n【换元求解】\n设 u = cos²θ，方程：2u² − 5u + 3 = 0\n(2u − 3)(u − 1) = 0\nu = 3/2（无效，>1）或 u = 1（有效）\n\ncos²θ = 1 → cos θ = ±1\n\n【求 θ 的解】\ncos θ = 1：θ = 0，2π\ncos θ = −1：θ = π\n\n[0, 2π] 内的解：θ = 0，π，2π，共 3 个。\n\n【正确答案】C（3）",
+    "analysis": "【题目分析】\n方程 2cos⁴θ - 5cos²θ + 3 = 0 在 [0, 2π] 内有多少实解？\n\n【换元求解】\n设 u = cos²θ，方程：2u² - 5u + 3 = 0\n(2u - 3)(u - 1) = 0\nu = 3/2（无效，>1）或 u = 1（有效）\n\ncos²θ = 1 → cos θ = ±1\n\n【求 θ 的解】\ncos θ = 1：θ = 0，2π\ncos θ = -1：θ = π\n\n[0, 2π] 内的解：θ = 0，π，2π，共 3 个。\n\n【正确答案】C（3）",
     "images": null,
     "has_image": false
   },
@@ -5203,7 +5203,7 @@ window.QUESTIONS = [
       "F": "all real values of $p$"
     },
     "answer": "D",
-    "analysis": "【题目分析】\nx² − 2px + y² − 6y − p² + 8p + 9 = 0 描述圆，求 p 的范围。\n\n【配方化圆】\nx² − 2px + y² − 6y = p² − 8p − 9\n\n(x − p)² + (y − 3)² = p² − 8p − 9 + p² + 9\n                 = 2p² − 8p\n\n即 (x − p)² + (y − 3)² = 2p² − 8p\n\n【圆的条件】\n半径² = 2p² − 8p > 0\n即 2p² − 8p > 0\np(p − 4) > 0\n\n判别式 Δ = (−8)² − 4·2·0 = 64 > 0\n2p² − 8p = 2(p² − 4p) = 2(p(p − 4))\n\np(p − 4) > 0 → p < 0 或 p > 4\n\n【正确答案】D（p < 0 或 p > 4）",
+    "analysis": "【题目分析】\nx² - 2px + y² - 6y - p² + 8p + 9 = 0 描述圆，求 p 的范围。\n\n【配方化圆】\nx² - 2px + y² - 6y = p² - 8p - 9\n\n(x - p)² + (y - 3)² = p² - 8p - 9 + p² + 9\n                 = 2p² - 8p\n\n即 (x - p)² + (y - 3)² = 2p² - 8p\n\n【圆的条件】\n半径² = 2p² - 8p > 0\n即 2p² - 8p > 0\np(p - 4) > 0\n\n判别式 Δ = (-8)² - 4·2·0 = 64 > 0\n2p² - 8p = 2(p² - 4p) = 2(p(p - 4))\n\np(p - 4) > 0 → p < 0 或 p > 4\n\n【正确答案】D（p < 0 或 p > 4）",
     "images": null,
     "has_image": false
   },
@@ -5224,7 +5224,7 @@ window.QUESTIONS = [
       "F": "$6$"
     },
     "answer": "F",
-    "analysis": "【题目分析】\n已知 f''(x) = a（常数），f(0) = 1，f(1) = 2，∫₀¹ f(x)dx = 1，求 a。\n\n【由二阶导数求函数形式】\nf''(x) = a（常数）\nf'(x) = ax + b₁\nf(x) = ax²/2 + b₁x + b₀\n\n【利用条件求参数】\nf(0) = 1 → b₀ = 1\nf(1) = 2 → a/2 + b₁ + 1 = 2 → a/2 + b₁ = 1  ...(1)\n∫₀¹ f(x)dx = 1 → a/6 + b₁/2 = 0  ...(2)\n\n由(2)：a = −3b₁\n代入(1)：−3b₁/2 + b₁ = 1 → b₁ = −2\na = −3(−2) = 6\n\n【验证】\nf(x) = 3x² − 2x + 1\nf(0) = 1 ✓，f(1) = 2 ✓\n∫₀¹ (3x² − 2x + 1)dx = 1 ✓\n\n【正确答案】F（a = 6）",
+    "analysis": "【题目分析】\n已知 f''(x) = a（常数），f(0) = 1，f(1) = 2，∫₀¹ f(x)dx = 1，求 a。\n\n【由二阶导数求函数形式】\nf''(x) = a（常数）\nf'(x) = ax + b₁\nf(x) = ax²/2 + b₁x + b₀\n\n【利用条件求参数】\nf(0) = 1 → b₀ = 1\nf(1) = 2 → a/2 + b₁ + 1 = 2 → a/2 + b₁ = 1  ...(1)\n∫₀¹ f(x)dx = 1 → a/6 + b₁/2 = 0  ...(2)\n\n由(2)：a = -3b₁\n代入(1)：-3b₁/2 + b₁ = 1 → b₁ = -2\na = -3(-2) = 6\n\n【验证】\nf(x) = 3x² - 2x + 1\nf(0) = 1 ✓，f(1) = 2 ✓\n∫₀¹ (3x² - 2x + 1)dx = 1 ✓\n\n【正确答案】F（a = 6）",
     "images": null,
     "has_image": false
   },
@@ -5246,7 +5246,7 @@ window.QUESTIONS = [
       "G": "15"
     },
     "answer": "C",
-    "analysis": "【题目分析】\n两个相似扇形，小扇形半径 r，弧长 6，面积差 21，求周长差。\n\n【建立方程】\n小扇形：弧长 = θr = 6，面积 = (1/2)θr² = 3r\n\n设相似比为 k，大扇形半径 = kr\n大扇形面积 = 3rk²\n\n面积差：3rk² − 3r = 3r(k² − 1) = 21  ...(1)\n\n由题意（大半径比小半径大 3）：kr = r + 3 → k = (r+3)/r  ...(2)\n\n代入(1)：r((r+3)²/r² − 1) = 7\n((r+3)² − r²)/r = 7\n(6r + 9)/r = 7\n6r + 9 = 7r → r = 9\n\nk = (9+3)/9 = 4/3\n\n【求周长差】\n小周长 = r + 6 = 15\n大周长 = kr + 6k = (4/3)×9 + 6×(4/3) = 12 + 8 = 20\n周长差 = 20 − 15 = 5\n\n【正确答案】C（5）",
+    "analysis": "【题目分析】\n两个相似扇形，小扇形半径 r，弧长 6，面积差 21，求周长差。\n\n【建立方程】\n小扇形：弧长 = θr = 6，面积 = (1/2)θr² = 3r\n\n设相似比为 k，大扇形半径 = kr\n大扇形面积 = 3rk²\n\n面积差：3rk² - 3r = 3r(k² - 1) = 21  ...(1)\n\n由题意（大半径比小半径大 3）：kr = r + 3 → k = (r+3)/r  ...(2)\n\n代入(1)：r((r+3)²/r² - 1) = 7\n((r+3)² - r²)/r = 7\n(6r + 9)/r = 7\n6r + 9 = 7r → r = 9\n\nk = (9+3)/9 = 4/3\n\n【求周长差】\n小周长 = r + 6 = 15\n大周长 = kr + 6k = (4/3)×9 + 6×(4/3) = 12 + 8 = 20\n周长差 = 20 - 15 = 5\n\n【正确答案】C（5）",
     "images": {
       "image": "2022 P1 Q4.png"
     },
@@ -5293,7 +5293,7 @@ window.QUESTIONS = [
       "G": "10000"
     },
     "answer": "F",
-    "analysis": "【题目分析】\n计算积分 ∫[log₂5 到 log₂20] x dx = log₂M，求 M。\n\n【计算积分】\n∫ x dx = x²/2\n\n积分值 = [(log₂20)² − (log₂5)²]/2\n\n【化简】\nlog₂20 = 2 + log₂5\n\n(log₂20)² − (log₂5)² = (2 + log₂5)² − (log₂5)²\n                      = 4 + 4log₂5\n\n积分值 = (4 + 4log₂5)/2 = 2 + 2log₂5\n\n【求 M】\nlog₂M = 2 + 2log₂5 = log₂4 + log₂25 = log₂(4×25) = log₂100\n\nM = 100\n\n【正确答案】F（M = 100）",
+    "analysis": "【题目分析】\n计算积分 ∫[log₂5 到 log₂20] x dx = log₂M，求 M。\n\n【计算积分】\n∫ x dx = x²/2\n\n积分值 = [(log₂20)² - (log₂5)²]/2\n\n【化简】\nlog₂20 = 2 + log₂5\n\n(log₂20)² - (log₂5)² = (2 + log₂5)² - (log₂5)²\n                      = 4 + 4log₂5\n\n积分值 = (4 + 4log₂5)/2 = 2 + 2log₂5\n\n【求 M】\nlog₂M = 2 + 2log₂5 = log₂4 + log₂25 = log₂(4×25) = log₂100\n\nM = 100\n\n【正确答案】F（M = 100）",
     "images": null,
     "has_image": false
   },
@@ -5701,7 +5701,7 @@ window.QUESTIONS = [
       "H": "I, II and III"
     },
     "answer": "F",
-    "analysis": "【题目分析】\n直线L过(1,2)，命题P：“若y截距<0则x截距>0”\n判断I=P, II=逆命题, III=逆否命题哪些必须成立。\n\n【解题步骤】\n设y截距=c，直线过(1,2)→斜率m=2-c\nx截距=-c/(2-c)\n\n分析各命题：\n命题P：若c<0则x截距>0\n当c<0时，-c>0, 2-c>2>0 → x截距>0 ✓ P成立\n\n逆命题：若x截距>0则c<0\n当c>2时，-c<0, 2-c<0 → x截距=负/负=正>0，但c>0\n所以逆命题有反例 ✗\n\n逆否命题：若x截距≤0则c≥0\n与P逻辑等价 ✓ 成立\n\n按此分析，I和III成立 → 应选F\n\n但官方答案是C（只有II成立），题目可能有特殊理解。\n\n【正确答案】C",
+    "analysis": "【题目分析】\n直线L过(1,2)，命题P："若y截距<0则x截距>0"\n判断I=P, II=逆命题, III=逆否命题哪些必须成立。\n\n【解题步骤】\n设y截距=c，直线过(1,2)→斜率m=2-c\nx截距=-c/(2-c)\n\n分析各命题：\n命题P：若c<0则x截距>0\n当c<0时，-c>0, 2-c>2>0 → x截距>0 ✓ P成立\n\n逆命题：若x截距>0则c<0\n当c>2时，-c<0, 2-c<0 → x截距=负/负=正>0，但c>0\n所以逆命题有反例 ✗\n\n逆否命题：若x截距≤0则c≥0\n与P逻辑等价 ✓ 成立\n\n按此分析，I和III成立 → 应选F\n\n但官方答案是C（只有II成立），题目可能有特殊理解。\n\n【正确答案】C",
     "images": null,
     "has_image": false
   },
@@ -5951,7 +5951,7 @@ window.QUESTIONS = [
     "num": 17,
     "topic": "Algebra",
     "difficulty": 3,
-    "question": "A student answered the following question:\n\n$a$ and $b$ are non-zero real numbers.\n\nProve that the equation $x^3 + ax^2 + b = 0$ has three distinct real roots if\n$$27b \\left( b + \\frac{4a^3}{27} \\right) < 0$$\n\nHere is the student’s solution:\n\nI We differentiate $y = x^3 + ax^2 + b$ to get $\\frac{dy}{dx} = 3x^2 + 2ax = x(3x + 2a)$\n\nSolving $\\frac{dy}{dx} = 0$ shows that the stationary points are at $(0, b)$ and $\\left( -\\frac{2a}{3}, b + \\frac{4a^3}{27} \\right)$\n\nII If $27b \\left( b + \\frac{4a^3}{27} \\right) < 0$, then $b$ and $b + \\frac{4a^3}{27}$ must have opposite signs, and so one of the stationary points is above the $x$-axis and one is below.\n\nIII If the cubic has three distinct real roots, then one of the stationary points is above the $x$-axis and one is below.\n\nIV Hence if $27b \\left( b + \\frac{4a^3}{27} \\right) < 0$, then the equation has three distinct real roots.\n\nWhich one of the following options best describes the student’s solution?",
+    "question": "A student answered the following question:\n\n$a$ and $b$ are non-zero real numbers.\n\nProve that the equation $x^3 + ax^2 + b = 0$ has three distinct real roots if\n$$27b \\left( b + \\frac{4a^3}{27} \\right) < 0$$\n\nHere is the student's solution:\n\nI We differentiate $y = x^3 + ax^2 + b$ to get $\\frac{dy}{dx} = 3x^2 + 2ax = x(3x + 2a)$\n\nSolving $\\frac{dy}{dx} = 0$ shows that the stationary points are at $(0, b)$ and $\\left( -\\frac{2a}{3}, b + \\frac{4a^3}{27} \\right)$\n\nII If $27b \\left( b + \\frac{4a^3}{27} \\right) < 0$, then $b$ and $b + \\frac{4a^3}{27}$ must have opposite signs, and so one of the stationary points is above the $x$-axis and one is below.\n\nIII If the cubic has three distinct real roots, then one of the stationary points is above the $x$-axis and one is below.\n\nIV Hence if $27b \\left( b + \\frac{4a^3}{27} \\right) < 0$, then the equation has three distinct real roots.\n\nWhich one of the following options best describes the student's solution?",
     "options": {
       "A": "It is a completely correct solution.",
       "B": "The student has instead proved the converse of the statement in the question.",

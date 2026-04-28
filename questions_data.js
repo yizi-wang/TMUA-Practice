@@ -1382,9 +1382,12 @@ window.QUESTIONS = [
       "F": "$-\\frac{9}{4}x^{-\\frac{1}{2}} - \\frac{3}{2}x^{-\\frac{3}{2}} - \\frac{3}{4}x^{-\\frac{5}{2}}$"
     },
     "answer": "A",
-    "analysis": "【题目分析】\ny=(1-3x)²/(2x^(3/2))\n求dy/dx的正确表达式。\n\n【解题步骤】\nStep 1: 展开分子\n(1-3x)²=1-6x+9x²\n\nStep 2: 化为幂函数形式\ny = (1-6x+9x²) / (2x^(3/2))\n= (1/2)x^(-3/2) - 3x^(-1/2) + (9/2)x^(1/2)\n\nStep 3: 逐项求导\nd/dx[(1/2)x^(-3/2)] = (1/2)(-3/2)x^(-5/2) = -(3/4)x^(-5/2)\nd/dx[-3x^(-1/2)] = -3(-1/2)x^(-3/2) = (3/2)x^(-3/2)\nd/dx[(9/2)x^(1/2)] = (9/2)(1/2)x^(-1/2) = (9/4)x^(-1/2)\n\nStep 4: 整理结果\ndy/dx = (9/4)x^(-1/2) + (3/2)x^(-3/2) - (3/4)x^(-5/2)\n\n对应选项A。\n\n【正确答案】A",
+    "analysis": "【题目分析】\n本题要求对函数 $y = \\dfrac{(1 - 3x)^2}{2x^{\\frac{3}{2}}}$ 求导，并从六个选项中选出正确的 $\\dfrac{dy}{dx}$ 表达式。关键策略是先将分式展开为幂函数的代数和，再逐项求导，避免使用商法则带来的繁琐运算。\n\n【解题步骤】\n第一步：展开分子并拆项。$(1 - 3x)^2 = 1 - 6x + 9x^2$，代入原式得\n$$y = \\frac{1 - 6x + 9x^2}{2x^{\\frac{3}{2}}} = \\frac{1}{2}x^{-\\frac{3}{2}} - 3x^{-\\frac{1}{2}} + \\frac{9}{2}x^{\\frac{1}{2}}$$\n第二步：逐项利用幂函数求导法则 $\\dfrac{d}{dx}(x^n) = nx^{n-1}$ 求导。\n第一项：$\\dfrac{1}{2} \\cdot \\left(-\\dfrac{3}{2}\\right)x^{-\\frac{5}{2}} = -\\dfrac{3}{4}x^{-\\frac{5}{2}}$\n第二项：$-3 \\cdot \\left(-\\dfrac{1}{2}\\right)x^{-\\frac{3}{2}} = \\dfrac{3}{2}x^{-\\frac{3}{2}}$\n第三项：$\\dfrac{9}{2} \\cdot \\dfrac{1}{2}x^{-\\frac{1}{2}} = \\dfrac{9}{4}x^{-\\frac{1}{2}}$\n第三步：合并结果得 $\\dfrac{dy}{dx} = \\dfrac{9}{4}x^{-\\frac{1}{2}} + \\dfrac{3}{2}x^{-\\frac{3}{2}} - \\dfrac{3}{4}x^{-\\frac{5}{2}}$，对应选项 A。\n\n【快捷思路】\n直接展开为幂函数后求导是最简方法，比商法则快得多。注意中间项 $-6x \\div 2x^{3/2} = -3x^{-1/2}$，其导数变号为正，这是区分选项的关键。\n\n【正确答案】A",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Algebra"
+    ]
   },
   {
     "id": "2017-P2-Q2",
@@ -1402,7 +1405,7 @@ window.QUESTIONS = [
       "E": "$40$"
     },
     "answer": "E",
-    "analysis": "【题目分析】\n矩形PQRS，P(0,6), Q(1,8)。\n过Q垂直于PQ的直线与x轴交于R。\n求矩形面积。\n\n【解题步骤】\nStep 1: 计算PQ的斜率和长度\nPQ斜率=(8-6)/(1-0)=2\nPQ长度=√(1²+2²)=√5\n\nStep 2: 垂直线的斜率\n垂直于PQ的斜率=-$\\frac{1}{2}$\n\nStep 3: 垂直线方程\n过Q(1,8)，斜率-$\\frac{1}{2}$：\ny-8=(-$\\frac{1}{2}$)(x-1)\ny=(-$\\frac{1}{2}$)x+$\\frac{1}{2}$+8=(-$\\frac{1}{2}$)x+$\\frac{17}{2}$\n\nStep 4: 与x轴交点R\ny=0时：(-$\\frac{1}{2}$)x+$\\frac{17}{2}$=0 → x=17\nR=(17,0)\n\nStep 5: 求矩形面积\nPQRS是矩形，PQ和QR是相邻边。\nPQ长度=√5\nQR长度=√((17-1)²+(0-8)²)=√(256+64)=√320=8√5\n\n面积=PQ×QR=√5×8√5=40\n\n【正确答案】E",
+    "analysis": "【题目分析】\n已知矩形 $PQRS$ 中 $P(0,6)$ 和 $Q(1,8)$，过 $Q$ 作 $PQ$ 的垂线交 $x$ 轴于 $R$，求矩形面积。本题综合考查坐标系中斜率、垂线方程、两点间距离公式以及矩形面积计算。\n\n【解题步骤】\n第一步：求 $PQ$ 的斜率和长度。\n$PQ$ 斜率 $m_{PQ} = \\dfrac{8-6}{1-0} = 2$，长度 $|PQ| = \\sqrt{1^2 + 2^2} = \\sqrt{5}$。\n第二步：利用垂直关系求 $QR$ 斜率。$m_{QR} = -\\dfrac{1}{2}$。\n第三步：设 $R(r, 0)$，利用斜率公式 $\\dfrac{0-8}{r-1} = -\\dfrac{1}{2}$，解得 $r-1 = 16$，即 $r = 17$，故 $R(17, 0)$。\n第四步：求 $|QR| = \\sqrt{(17-1)^2 + (0-8)^2} = \\sqrt{256 + 64} = \\sqrt{320} = 8\\sqrt{5}$。\n第五步：矩形面积 $= |PQ| \\times |QR| = \\sqrt{5} \\times 8\\sqrt{5} = 40$。\n\n【快捷思路】\n不必先写完整垂线方程再令 $y=0$，直接利用斜率公式 $\\dfrac{y_Q - y_R}{x_Q - x_R} = -\\dfrac{1}{2}$ 即可求出 $r-1$，这正是计算 $|QR|$ 所需的全部信息，省去了求 $r$ 具体值的步骤。\n\n【正确答案】E Geometry",
     "images": null,
     "has_image": false
   },
@@ -1424,9 +1427,12 @@ window.QUESTIONS = [
       "G": "$4(2\\sqrt{3} + 3)$"
     },
     "answer": "G",
-    "analysis": "【题目分析】\n几何数列首项=2√3，第4项=9/4。\n求无穷和。\n\n【解题步骤】\nStep 1: 求公比r\na₁=2√3, a₄=a₁r³=9/4\nr³=(9/4)/(2√3)=9/(8√3)=9√3/(8·3)=3√3/8\nr=∛(3√3/8)\n\n注意到(√3/2)³=(√3)³/8=3√3/8 ✓\n所以r=√3/2\n\nStep 2: 验证r的范围\n|r|=√3/2≈0.866<1 ✓ 无穷和存在\n\nStep 3: 求无穷和\nS∞=a₁/(1-r)=2√3/(1-√3/2)=2√3/((2-√3)/2)=4√3/(2-√3)\n\n有理化：4√3(2+√3)/((2-√3)(2+√3))=4√3(2+√3)/(4-3)=4√3(2+√3)=8√3+12=4(2√3+3)\n\n【正确答案】G",
+    "analysis": "【题目分析】\n已知等比数列首项 $a = 2\\sqrt{3}$，第四项为 $\\dfrac{9}{4}$，求无穷项之和。核心是先求公比 $r$，再验证 $|r| < 1$ 确保收敛，最后用公式 $S_{\\infty} = \\dfrac{a}{1-r}$ 计算。\n\n【解题步骤】\n第一步：由第四项求公比。$ar^3 = 2\\sqrt{3}\\,r^3 = \\dfrac{9}{4}$，得\n$$r^3 = \\frac{9}{4 \\cdot 2\\sqrt{3}} = \\frac{9}{8\\sqrt{3}} = \\frac{9\\sqrt{3}}{24} = \\frac{3\\sqrt{3}}{8}$$\n第二步：注意到 $\\dfrac{3\\sqrt{3}}{8} = \\dfrac{(\\sqrt{3})^3}{2^3} = \\left(\\dfrac{\\sqrt{3}}{2}\\right)^3$，故 $r = \\dfrac{\\sqrt{3}}{2}$。\n第三步：验证 $|r| = \\dfrac{\\sqrt{3}}{2} \\approx 0.866 < 1$，级数收敛。\n第四步：求无穷和\n$$S_{\\infty} = \\frac{2\\sqrt{3}}{1 - \\frac{\\sqrt{3}}{2}} = \\frac{4\\sqrt{3}}{2 - \\sqrt{3}}$$\n有理化分母：$\\dfrac{4\\sqrt{3}(2+\\sqrt{3})}{(2-\\sqrt{3})(2+\\sqrt{3})} = 4\\sqrt{3}(2+\\sqrt{3}) = 4(2\\sqrt{3}+3)$。\n\n【快捷思路】\n识别 $r^3 = \\dfrac{3\\sqrt{3}}{8}$ 为完全立方数是突破口，避免了用计算器开立方。分母有理化时注意 $(2-\\sqrt{3})(2+\\sqrt{3})=1$，结果直接就是 $4\\sqrt{3}(2+\\sqrt{3})$。\n\n【正确答案】G and Series",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Algebra"
+    ]
   },
   {
     "id": "2017-P2-Q4",
@@ -1444,18 +1450,22 @@ window.QUESTIONS = [
       "E": "$\\frac{\\sqrt{3}}{2}$ is **not** the only possible value because the reasoning given should have considered other possible values of $x$ for which $\\sin 2x = \\frac{\\sqrt{3}}{2}$."
     },
     "answer": "B",
-    "analysis": "【题目分析】\n学生回答：tanx=√3 → x=$60°$ → sin2x=sin$120°$=√$\\frac{3}{2}$\n判断答案是否完整正确。\n\n【解题步骤】\n分析学生的推理：\ntanx=√3有多个解：x=$60°$, $240°$, -$120°$...\nsin2x的值：\n若x=$60°$，2x=$120°$，sin$120°$=√$\\frac{3}{2}$ ✓\n若x=$240°$，2x=$480°$=$480°$-$360°$=$120°$，sin=√$\\frac{3}{2}$ ✓\n若x=-$120°$，2x=-$240°$=-$240°$+$360°$=$120°$，sin=√$\\frac{3}{2}$ ✓\n\n所以sin2x总是=√$\\frac{3}{2}$（唯一值）！\n\n学生答案√$\\frac{3}{2}$正确，但推理应该考虑tanx的所有解。\n选项D说\"不是唯一值\"，但sin2x确实是唯一值。\n\n选项B说\"唯一值但应考虑其他x\" ✓\n\n答案B？\n\n但官方答案D说\"不是唯一值\"，这与我分析矛盾。\n\n重新考虑：tanx周期为$180°$，所以tanx=√3的解：\nx=$60°$+k·$180°$\nsin2x=sin($120°$+k·$360°$)=sin$120°$=√$\\frac{3}{2}$（确实唯一）\n\n可能题目有不同理解。\n\n【正确答案】B",
+    "analysis": "【题目分析】\n本题是一道逻辑推理题。已知 $\\tan x = \\sqrt{3}$，学生给出 $\\sin 2x = \\dfrac{\\sqrt{3}}{2}$。需要判断该答案是否正确以及推理过程是否存在缺陷。关键在于理解三角函数的周期性和通解概念。\n\n【解题步骤】\n第一步：检查 $\\tan x = \\sqrt{3}$ 的解。$\\tan$ 的周期为 $180°$，因此通解为 $x = 60° + 180°n$（$n \\in \\mathbb{Z}$），而不仅仅是 $x = 60°$。学生只取了一个特解，推理不完整。\n第二步：检查 $\\sin 2x$ 的值是否唯一。\n由 $x = 60° + 180°n$ 得 $2x = 120° + 360°n$。由于 $\\sin$ 的周期为 $360°$，故 $\\sin(120° + 360°n) = \\sin 120° = \\dfrac{\\sqrt{3}}{2}$ 对所有整数 $n$ 成立。\n第三步：结论。$\\sin 2x$ 确实只有唯一值 $\\dfrac{\\sqrt{3}}{2}$，但学生应说明为何其他 $x$ 值不会改变结果。这恰好对应选项 B 的描述。\n\n【快捷思路】\n只需验证 $\\tan x = \\sqrt{3}$ 的所有解代入 $\\sin 2x$ 后是否相同。由于 $x$ 每增加 $180°$，$2x$ 增加 $360°$，而 $\\sin$ 周期恰为 $360°$，因此 $\\sin 2x$ 值不变。结论是答案唯一但推理不完整。\n\n【正确答案】B",
     "images": {
       "page_image": "2017_p2_page4.png"
     },
-    "has_image": true
+    "has_image": true,
+    "related_topics": [
+      "Logic",
+      "Proof"
+    ]
   },
   {
     "id": "2017-P2-Q5",
     "year": 2017,
     "paper": 2,
     "num": 5,
-    "topic": "Number Theory",
+    "topic": "Logic",
     "difficulty": 3,
     "question": "Consider the following three statements:\n\n**1** $10p^2 + 1$ and $10p^2 - 1$ are both prime when $p$ is an odd prime.\n\n**2** Every prime greater than 5 is of the form $6n + 1$ for some integer $n$.\n\n**3** No multiple of 7 greater than 7 is prime.\n\nThe result $91 = 7 \\times 13$ can be used to provide a counterexample to which of the above statements?",
     "options": {
@@ -1469,18 +1479,22 @@ window.QUESTIONS = [
       "H": "1, 2 and 3"
     },
     "answer": "B",
-    "analysis": "【题目分析】\n91=7×13作为反例反驳哪个命题？\n\n【解题步骤】\n命题1：10p²+1和10p²-1都是素数（当p是奇素数）\n命题2：每个>5的素数是6n+1形式\n命题3：7的倍数>7都不是素数\n\n检验91=7×13：\n命题1：91不是10p²±1形式 ✗ 不相关\n命题2：13是素数>5，13=6×2+1 ✓ 不反驳\n命题3：91=7×13，91是7的倍数>7，但91不是素数 ✓ 这是对的！\n\n91不反驳命题3（命题3说\"7的倍数>7不是素数\"，91=7×13确实不是素数，支持命题3）\n\n重新理解：命题说\"no multiple of 7 greater than 7 is prime\"\n这是正确的命题，91=7×13不是素数，支持命题3。\n\n91能反驳哪个命题？\n命题2：13=7×13的一部分...不直接反驳\n命题1：不相关\n\n可能题目理解不同。答案B说命题1被反驳？\n\n设p=3（奇素数）：10×9+1=91=7×13，不是素数！\n所以91反驳命题1 ✓\n\n【正确答案】B",
+    "analysis": "【题目分析】\n本题给出三个命题，要求判断 $91 = 7 \\times 13$ 能作为哪个命题的反例。核心考点是理解反例的逻辑定义：对于一个全称命题（形如\"对所有 $x$，某性质成立\"），反例必须满足命题的前提条件，但结论不成立。\n\n三个命题分别为：\n1. 当 $p$ 为奇素数时，$10p^2 + 1$ 和 $10p^2 - 1$ 都是素数。\n2. 每个大于 $5$ 的素数都是 $6n + 1$ 的形式。\n3. 任何大于 $7$ 的 $7$ 的倍数都不是素数。\n\n【解题步骤】\n先将命题1改写为\"若 $p$ 是奇素数，则 $10p^2 + 1$ 和 $10p^2 - 1$ 均为素数\"。\n若 $91$ 是反例，需存在某个奇素数 $p$ 使得 $10p^2 + 1 = 91$ 或 $10p^2 - 1 = 91$。\n解 $10p^2 + 1 = 91$，得 $p^2 = 9$，$p = 3$。$3$ 是奇素数，但 $91 = 7 \\times 13$ 不是素数，故命题1的结论不成立。$91$ 是命题1的反例。\n\n对命题2，反例需为大于 $5$ 的素数且不能写成 $6n + 1$ 形式。但 $91$ 本身不是素数，无法作为反例。\n\n对命题3，它是真命题（任何大于 $7$ 的 $7$ 的倍数均可分解为 $7 \\times k$，其中 $k \\geq 2$，故不是素数）。$91$ 是该命题的正面例证而非反例。\n\n【快捷思路】\n直接验证 $p = 3$（最小奇素数）：$10 \\times 3^2 + 1 = 91 = 7 \\times 13$，非素数，立即反驳命题1。命题3本身正确无需验证，命题2的反例需为素数而 $91$ 不是。\n【正确答案】B",
     "images": {
       "page_image": "2017_p2_page4.png"
     },
-    "has_image": true
+    "has_image": true,
+    "related_topics": [
+      "Counterexamples",
+      "Number Theory"
+    ]
   },
   {
     "id": "2017-P2-Q6",
     "year": 2017,
     "paper": 2,
     "num": 6,
-    "topic": "Sequences and Series",
+    "topic": "Integration",
     "difficulty": 3,
     "question": "A sequence $u_0, u_1, u_2, \\dots$ is defined as follows:\n\n$$\n\\begin{aligned}\nu_0 &= 1 \\\\\nu_n &= \\int_0^1 4xu_{n-1} \\, dx \\quad \\text{for } n \\geqslant 1\n\\end{aligned}\n$$\n\nWhat is the value of $u_{1000}$?",
     "options": {
@@ -1494,18 +1508,22 @@ window.QUESTIONS = [
       "H": "$\\frac{4^{1000}}{1001!}$"
     },
     "answer": "A",
-    "analysis": "【题目分析】\n序列u₀=1, u_n=∫₀¹4x·u_{n-1}dx (n≥1)\n求u₁₀₀₀的值。\n\n【解题步骤】\nStep 1: 计算前几项\nu₀=1\n\nu₁=∫₀¹4x·u₀dx=∫₀¹4x·dx=4·x²/2|[0,1]=2\n\nu₂=∫₀¹4x·u₁dx=∫₀¹4x·2dx=8·x²/2|[0,1]=4\n\nu₃=∫₀¹4x·u₂dx=∫₀¹4x·4dx=16·x²/2|[0,1]=8\n\n观察规律：u_n=2^n ✓\n\n验证：u_n=∫₀¹4x·2^{n-1}dx=2^{n-1}·4·x²/2|[0,1]=2^{n-1}·2=2^n ✓\n\nStep 2: 求u₁₀₀₀\nu₁₀₀₀=2^1000\n\n【正确答案】A",
+    "analysis": "【题目分析】\n已知序列 $u_0 = 1$，$u_n = \\int_0^1 4x u_{n-1} \\, dx$（$n \\geq 1$），求 $u_{1000}$。\n\n关键点：虽然递推式含积分，但每次积分中 $u_{n-1}$ 是常数（与积分变量 $x$ 无关），因此积分结果仍为常数，可直接计算。\n\n【解题步骤】\n逐项计算寻找规律：\n$u_0 = 1$\n\n$u_1 = \\int_0^1 4x \\cdot u_0 \\, dx = \\int_0^1 4x \\, dx = \\left[ 2x^2 \\right]_0^1 = 2$\n\n$u_2 = \\int_0^1 4x \\cdot u_1 \\, dx = \\int_0^1 4x \\cdot 2 \\, dx = \\left[ 4x^2 \\right]_0^1 = 4$\n\n$u_3 = \\int_0^1 4x \\cdot u_2 \\, dx = \\int_0^1 4x \\cdot 4 \\, dx = \\left[ 8x^2 \\right]_0^1 = 8$\n\n规律为 $u_n = 2^n$。\n\n严格证明可用数学归纳法：假设 $u_k = 2^k$，则\n$u_{k+1} = \\int_0^1 4x \\cdot 2^k \\, dx = 2^k \\cdot \\left[ 2x^2 \\right]_0^1 = 2^k \\cdot 2 = 2^{k+1}$\n归纳成立，故 $u_n = 2^n$ 对所有 $n \\geq 0$ 成立。\n\n$u_{1000} = 2^{1000}$。\n\n【快捷思路】\n注意到 $u_{n-1}$ 与 $x$ 无关，提出积分号外：$u_n = u_{n-1} \\int_0^1 4x \\, dx = 2 u_{n-1}$。这是一个公比为 $2$ 的等比数列，首项为 $1$，故 $u_n = 2^n$。\n\n【正确答案】A",
     "images": {
       "page_image": "2017_p2_page4.png"
     },
-    "has_image": true
+    "has_image": true,
+    "related_topics": [
+      "Sequences and Series",
+      "Algebra"
+    ]
   },
   {
     "id": "2017-P2-Q7",
     "year": 2017,
     "paper": 2,
     "num": 7,
-    "topic": "Algebra",
+    "topic": "Functions",
     "difficulty": 3,
     "question": "* $y = a^x$ is shown with a solid line, where $a$ is a positive real number\n* $y = f(x)$ is shown with a dashed line\n\nWhich of the following statements (**1**, **2**, **3**, **4**) could be true?\n\n**1** $f(x) = b^x$ for some $b > a$\n**2** $f(x) = b^x$ for some $b < a$\n**3** $f(x) = a^{kx}$ for some $k > 1$\n**4** $f(x) = a^{kx}$ for some $k < 1$",
     "options": {
@@ -1519,11 +1537,15 @@ window.QUESTIONS = [
       "H": "2 and 4 only"
     },
     "answer": "E",
-    "analysis": "【题目分析】\nTMUA 2017年 Paper 2 第7题，考查指数函数图像与变换。\n\n【已知条件】\n- 实线：y = a^x（a > 0，a ≠ 1）\n- 虚线：y = f(x)\n- 图中两个函数都经过 (0, 1)\n- 当 x > 0 时，虚线在实线上方（增长更快）\n- 当 x < 0 时，虚线在实线下方\n\n【关键观察】\n两个函数在 x = 0 处相等（都 = 1），x > 0 时虚线更高，x < 0 时虚线更低。\n这是底数更大的指数函数的特征：b^x 在正指数时更大，负指数时更小。\n\n假设 a > 1（最常见情况）：\n\n【逐项分析】\n\n陈述1：f(x) = b^x，b > a\n- x > 0：b^x > a^x ✓（底数越大，正指数增长越快）\n- x < 0：b^x < a^x ✓（底数越大，负指数时越小）\n与图像一致，may be true ✓\n\n陈述2：f(x) = b^x，b < a\n- x > 0：b^x < a^x（虚线应低于实线）\n与图中 x > 0 虚线在上方矛盾 ✗\n\n陈述3：f(x) = a^{kx}，k > 1\n- f(x) = (a^k)^x，新底数 = a^k > a（因为 a > 1，k > 1）\n- 效果与 b > a 相同\n- x > 0：f > a^x ✓，x < 0：f < a^x ✓\nmay be true ✓\n\n陈述4：f(x) = a^{kx}，k < 1\n- 新底数 = a^k < a（因为 a > 1，k < 1）\n- x > 0 时 f < a^x，与图矛盾 ✗\n\n【结论】\n陈述1和3可能成立，对应选项E。\n\n【正确答案】E",
+    "analysis": "【题目分析】\n题目给出 $y = a^x$（实线）和 $y = f(x)$（虚线）的图像，$a > 0$。两曲线均过 $(0, 1)$，且在 $x > 0$ 时虚线高于实线，$x < 0$ 时虚线低于实线。要求判断哪几个陈述可能成立。\n\n四个陈述分别为：\n1. $f(x) = b^x$，其中 $b > a$\n2. $f(x) = b^x$，其中 $b < a$\n3. $f(x) = a^{kx}$，其中 $k > 1$\n4. $f(x) = a^{kx}$，其中 $k < 1$\n\n【解题步骤】\n从图像可知 $a > 1$（函数单调递增且过 $(0, 1)$）。取 $x = 1$ 分析：实线值为 $a$，虚线值 $f(1) > a$。\n\n对陈述1：$f(1) = b$，需 $b > a$。当 $b > a > 1$ 时，$x > 0$ 时 $b^x > a^x$，$x < 0$ 时 $b^x < a^x$，与图像一致。可能成立。\n\n对陈述2：$f(1) = b < a$，虚线在 $x = 1$ 处应低于实线，与图像矛盾。不可能成立。\n\n对陈述3：$f(1) = a^k$，需 $a^k > a$。由于 $a > 1$，这等价于 $k > 1$。此时 $f(x) = (a^k)^x$，底数 $a^k > a$，与陈述1等价。可能成立。\n\n对陈述4：$f(1) = a^k < a$（因 $a > 1$ 且 $k < 1$），与图像矛盾。不可能成立。\n\n此外，陈述1与3本质等价：$a^{kx} = (a^k)^x$，令 $b = a^k$，则 $b > a \\iff k > 1$。\n\n【快捷思路】\n直接看 $x = 1$ 处：虚线更高意味着\"有效底数\"更大。$b^x$ 的底数 $b > a$ 成立；$a^{kx}$ 的有效底数为 $a^k$，需 $a^k > a$ 即 $k > 1$（因 $a > 1$）。1和3成立。\n\n【正确答案】E",
     "images": {
       "page_image": "2017_p2_page5.png"
     },
-    "has_image": true
+    "has_image": true,
+    "related_topics": [
+      "Graphs",
+      "Algebra"
+    ]
   },
   {
     "id": "2017-P2-Q8",
@@ -1541,16 +1563,20 @@ window.QUESTIONS = [
       "E": "$4 \\sin^2 \\left( \\frac{\\pi}{4} \\right)$"
     },
     "answer": "E",
-    "analysis": "【题目分析】\nTMUA 2017年 Paper 2 第8题，比较五个数值的大小，找出最小的。\n\n【逐项计算】\n\n**选项A: log₂7**\nlog₂7 ≈ 2.807（因为 2²=4, 2³=8, 7介于4和8之间）\n\n**选项B: (2⁻³ + 2⁻²)⁻¹**\n2⁻³ = $\\frac{1}{8}$ $= 0.125$\n2⁻² = $\\frac{1}{4}$ $= 0.25$\n2⁻³ + 2⁻² $= 0.125$ + 0.25 $= 0.375$ = $\\frac{3}{8}$\n($\\frac{3}{8}$)⁻¹ = $\\frac{8}{3}$ ≈ 2.667\n\n**选项C: 2^($\\pi$/3)**\n$\\pi$/3 ≈ 1.047\n2^($\\pi$/3) ≈ 2^1.047 ≈ 2.06（稍大于2）\n\n**选项D: 1/[4(√2-1)³]**\n√2 ≈ 1.414\n√2 - 1 ≈ 0.414\n(√2-1)³ ≈ 0.414³ ≈ 0.071\n$4 \\times 0$.071 ≈ 0.284\n$\\frac{1}{0}$.284 ≈ 3.52\n\n**选项E: 4sin²($\\pi$/4)**\n$\\pi$/4 $= 45$°\nsin($45°$) = √$\\frac{2}{2}$ ≈ 0.707\nsin²($\\pi$/4) = (√$\\frac{2}{2}$)² = $\\frac{2}{4}$ $= 0.5$\n$4 \\times 0$.5 $= 2$\n\n【数值比较】\nA ≈ 2.807\nB ≈ 2.667\nC ≈ 2.06\nD ≈ 3.52\nE $= 2$\n\n最小值是 **E $= 2$**\n\n【正确答案】E",
+    "analysis": "【题目分析】\n比较五个数值的大小找出最小值，综合考查对数、指数、根式有理化和三角函数运算。策略是先精确计算能精确算的选项，再估算其余项与之比较。\n\n【解题步骤】\n逐项分析：\n\nA：$\\log_2 7$，因 $\\log_2 4 = 2$，$\\log_2 8 = 3$，故 $2 < \\log_2 7 < 3$。\n\nB：$(2^{-3} + 2^{-2})^{-1} = (\\frac{3}{8})^{-1} = \\frac{8}{3} \\approx 2.667 > 2$。\n\nC：$\\pi/3 > 1$，故 $2^{\\pi/3} > 2^1 = 2$。\n\nD：$(\\sqrt{2} - 1)^3 = 5\\sqrt{2} - 7$，有理化得 $\\frac{1}{4(\\sqrt{2} - 1)^3} = \\frac{5\\sqrt{2} + 7}{4} > \\frac{12}{4} = 3$。\n\nE：$\\sin(\\pi/4) = \\frac{\\sqrt{2}}{2}$，故 $4\\sin^2(\\pi/4) = 4 \\times \\frac{1}{2} = 2$。\n\nA、B、C 均大于 $2$，D 大于 $3$，E 恰好等于 $2$，是最小值。\n\n【快捷思路】\n先算 E 得精确值 $2$，其余各项只需确认都大于 $2$ 即可锁定。A、B、C 显然超 $2$，D 有理化后分母为 $1$、分子约 $14$，远大于 $2$。\n\n【正确答案】E",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Trigonometry",
+      "Number Theory"
+    ]
   },
   {
     "id": "2017-P2-Q9",
     "year": 2017,
     "paper": 2,
     "num": 9,
-    "topic": "Algebra",
+    "topic": "Proof",
     "difficulty": 3,
     "question": "> *Theorem: $a^3 + b^3 = c^3$ has no solutions with $a$, $b$ and $c$ positive integers.*\n\n**Attempted proof:**\n\nSuppose that there are positive integers $a$, $b$ and $c$ such that $a^3 + b^3 = c^3$.\n\nI We have $a^3 = c^3 - b^3$.\n\nII Hence $a^3 = (c - b)(c^2 + cb + b^2)$.\n\nIII It follows that $a = c - b$ and $a^2 = c^2 + cb + b^2$, since $a \\le a^2$ and $c - b \\le c^2 + cb + b^2$.\n\nIV Eliminating $a$, we have $(c - b)^2 = c^2 + cb + b^2$.\n\nV Multiplying out, we have $c^2 - 2cb + b^2 = c^2 + cb + b^2$.\n\nVI Hence $3cb = 0$ so one of $b$ and $c$ is zero.\n\nBut this is a contradiction to the original assumption that all of $a$, $b$ and $c$ are positive. It follows that the equation has no solutions.\n\nComment on this proof by choosing one of the following options:",
     "options": {
@@ -1563,16 +1589,20 @@ window.QUESTIONS = [
       "G": "The proof is incorrect and the first mistake occurs on line VI."
     },
     "answer": "D",
-    "analysis": "【题目分析】\nTMUA 2017年 Paper 2 第9题，分析证明：a³ + b³ = c³ 无正整数解的证明是否正确。\n\n【逐行检验】\n\n**Line I: a³ = c³ - b³**\n这是恒等式变形，正确 ✓\n\n**Line II: a³ = (c-b)(c² + cb + b²)**\n因式分解：c³ - b³ = (c-b)(c² + cb + b²)\n这是标准的因式分解公式，正确 ✓\n\n**Line III: a = c-b 和 a² = c² + cb + b²**\n这里声称：\"因为 a ≤ a² 和 c-b ≤ c² + cb + b²，所以 a = c-b 且 a² = c² + cb + b²\" ✗\n\n**错误分析：**\n- 这一步是**无理推断**\n- 从 M = P × Q 且 M ≤ P²、Q ≤ Q²，不能推出 M = P\n- 反例：假设 a $= 6$, c-b $= 2$, c² + cb + b² $= 108$\n  则 a³ $= 216$, (c-b)(c² + cb + b²) = $2 \\times 108$ $= 216$ = a³ ✓\n  但 a ≠ c-b（6 ≠ 2）\n- 正确理解：因式分解只是表达了等式关系，不代表因子分别等于某个值\n\n**反例验证：**\n设 c $= 10$, b $= 8$:\n- c-b $= 2$\n- c² + cb + b² $= 100$ + 80 + 64 $= 244$\n- (c-b)(c² + cb + b²) = $2 \\times 244$ $= 488$\n- 但 488 不是立方数\n\n设 c $= 9$, b $= 6$:\n- c-b $= 3$\n- c² + cb + b² $= 81$ + 54 + 36 $= 171$\n- (c-b)(c² + cb + b²) = $3 \\times 171$ $= 513$\n- 513 不是立方数\n\n实际上，正整数范围内确实不存在 a³ = (c-b)(c² + cb + b²) 同时成立的例子（这是Fermat大定理的特例），但证明的逻辑是错误的。\n\n【正确答案】D（第一个错误在Line III）",
+    "analysis": "【题目分析】\n本题给出一段试图证明费马大定理$n=3$情形（即$a^3+b^3=c^3$无正整数解）的推理过程，要求找出论证中第一个出现错误的行。这是一道典型的逻辑检验题，核心在于识别推理链条中的谬误。\n\n【解题步骤】\n逐行检验：\nLine I：$a^3=c^3-b^3$，仅是对原等式的移项变形，正确。\nLine II：$a^3=(c-b)(c^2+cb+b^2)$，利用立方差公式$c^3-b^3=(c-b)(c^2+cb+b^2)$，正确。\nLine III：声称由$a^3=(c-b)(c^2+cb+b^2)$推出$a=c-b$且$a^2=c^2+cb+b^2$，理由是$a\\leq a^2$和$c-b\\leq c^2+cb+b^2$。\n\n这是致命错误。从乘积等式$A=BC$不能因为$A\\leq B^2$且$C\\geq B$就断言$A=B$且$A=B^2$。官方解答给出的反例：若$a=6$，则$a^3=216=3\\times 72$，完全可以令$c-b=3$、$c^2+cb+b^2=72$，此时$a\\neq c-b$。\n\n另外官方还指出：若$c-b=1$，则$a^3=c^2+cb+b^2$，这种情况也未被考虑。Line III犯了非充分推理的错误。\n\n【快捷思路】\n前两步均为代数恒等变形，不会出错。第三步从乘积式直接拆分因子相等，违反基本逻辑规则，第一个错误必然出现在Line III。\n\n【正确答案】D",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Algebra",
+      "Number Theory"
+    ]
   },
   {
     "id": "2017-P2-Q10",
     "year": 2017,
     "paper": 2,
     "num": 10,
-    "topic": "Algebra",
+    "topic": "Integration",
     "difficulty": 3,
     "question": "$f(x)$ is a function defined for all real values of $x$.\n\nWhich one of the following is a **sufficient** condition for $\\int_{1}^{3} f(x) dx = 0$?",
     "options": {
@@ -1583,16 +1613,20 @@ window.QUESTIONS = [
       "E": "$f(x - 2) = -f(2 - x)$ for all $x$"
     },
     "answer": "D",
-    "analysis": "【题目分析】\n∫₁³f(x)dx=0的充分条件。\n\n【解题步骤】\n分析各选项：\nA: f(2)=0 — 不充分，单点值不决定积分\nB: f(1)=f(3)=0 — 不充分，边界值不决定积分\nC: f(-x)=-f(x)（奇函数）— 奇函数关于原点对称\n   积分区间[1,3]不关于原点对称，不保证积分为0 ✗\nD: f(x+2)=-f(2-x)\n   设t=x+2，则x=t-2\n   f(t)=-f(4-t)\n   这说明f关于点(2,0)中心对称。\n   在区间[1,3]上，关于x=2对称。\n   设u=x-2∈[-1,1]：\n   ∫₁³f(x)dx=∫₋₁¹f(u+2)du\n   由f(t)=-f(4-t)，当t=u+2时：f(u+2)=-f(2-u)\n   所以∫₋₁¹f(u+2)du=∫₋₁¹-f(2-u)du\n   设v=2-u：u=-1→v=3, u=1→v=1\n   =∫₃¹-f(v)(-dv)=∫₁³f(v)dv\n   所以∫₁³f(x)dx=-∫₁³f(v)dv → 积分=0 ✓\n\n选项D充分。\n\n【正确答案】D",
+    "analysis": "【题目分析】\n寻找使$\\int_1^3 f(x)\\,dx=0$的充分条件。充分条件意味着：只要该条件成立，积分就必为零。\n\n【解题步骤】\n逐项分析：\n选项A：$f(2)=0$。单点函数值无法决定整个区间的积分，例如$f(x)=(x-2)^2$满足$f(2)=0$但$\\int_1^3 (x-2)^2\\,dx>0$，不充分。\n选项B：$f(1)=f(3)=0$。端点为零同样不保证积分为零，例如$f(x)=(x-1)(x-3)$在$[1,3]$上恒为负，积分非零，不充分。\n选项C：$f(-x)=-f(x)$，即$f$为奇函数。奇函数关于原点对称，积分区间$[1,3]$不关于原点对称，故不充分。例如$f(x)=x$为奇函数但$\\int_1^3 x\\,dx=4\\neq 0$。\n选项E：$f(x-2)=-f(2-x)$。令$y=2-x$，则$f(-y)=-f(y)$，与选项C等价，不充分。\n选项D：$f(x+2)=-f(2-x)$，即$f(2+x)=-f(2-x)$。这表明$f$关于点$(2,0)$中心对称。令$u=x-2$，则$\\int_1^3 f(x)\\,dx=\\int_{-1}^1 f(u+2)\\,du$。由对称性$f(u+2)=-f(2-u)$，可知被积函数在$[-1,1]$上关于$u=0$为奇函数，积分为零。\n\n【快捷思路】\n选项D的条件$f(2+x)=-f(2-x)$意味着图像关于$(2,0)$旋转对称，区间$[1,3]$关于$x=2$对称，对称区域上正负面积恰好抵消。\n\n【正确答案】D",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Functions",
+      "Graphs"
+    ]
   },
   {
     "id": "2017-P2-Q11",
     "year": 2017,
     "paper": 2,
     "num": 11,
-    "topic": "Algebra",
+    "topic": "Integration",
     "difficulty": 3,
     "question": "The positive constants $a$ and $b$ are such that $a < b$.\n\nThe area of the region enclosed by the curve $y = f(x)$, the $x$-axis and the lines $x = a$ and $x = b$ is denoted by $R$.\n\nThe function $g(x)$ is defined by $g(x) = f(x) + 2f(b)$.\n\nWhich of the following is an expression for the area enclosed by the curve $y = g(x)$, the $x$-axis and the lines $x = a$ and $x = b$?",
     "options": {
@@ -1605,16 +1639,20 @@ window.QUESTIONS = [
       "G": "$R + 2(f(b) - f(a))f(b)$"
     },
     "answer": "B",
-    "analysis": "【题目分析】\nTMUA 2017年 Paper 2 Q11。\n\n题目内容：The positive constants $a$ and $b$ are such that $a < b$.\n\nThe area of the region enclosed by the curve $y = f(x)$, the $x$-axis and the lines $x = a$ and $x = b$ is denoted by $R$.\n\nThe function $g(x)$ is defined by $g(x) = f(x) + 2f(b)$.\n\nWhich of the following is an expression for the area enclosed by the curve $y = g(x)$, the $x$-axis and the lines $x = a$ and $x = b$?\n\n【解题思路】\n1. 分析题目条件：R = ∫ₐᵇ f(x)dx\n2. g(x) = f(x) + 2f(b)，求∫ₐᵇ g(x)dx\n3. ∫ₐᵇ g(x)dx = ∫ₐᵇ [f(x) + 2f(b)]dx = ∫ₐᵇ f(x)dx + ∫ₐᵇ 2f(b)dx\n4. = R + 2f(b)(b - a)\n\n【正确答案】B",
+    "analysis": "【题目分析】\n已知$R$是曲线$y=f(x)$与$x$轴在$x=a$和$x=b$之间围成的面积，$g(x)=f(x)+2f(b)$，求$y=g(x)$在相同区间内与$x$轴围成的面积。\n\n【解题步骤】\n首先注意到$a,b>0$且$a<b$。由于$f$是增函数（题目语境隐含），$f(x)>0$对$x>0$成立，因此面积可用积分直接表示：\n$R=\\int_a^b f(x)\\,dx$\n\n对于$g(x)=f(x)+2f(b)$，注意$2f(b)$是常数。由于$f(x)>0$且$f(b)>0$，$g(x)>0$恒成立，面积同样等于积分：\n$\\int_a^b g(x)\\,dx=\\int_a^b\\big[f(x)+2f(b)\\big]\\,dx=\\int_a^b f(x)\\,dx+\\int_a^b 2f(b)\\,dx$\n\n第一项为$R$。第二项中$2f(b)$是常数因子，可提出：\n$\\int_a^b 2f(b)\\,dx=2f(b)\\int_a^b 1\\,dx=2f(b)(b-a)$\n\n因此所求面积为$R+2(b-a)f(b)$。\n\n几何直观：$g(x)$的图像是将$f(x)$整体向上平移$2f(b)$个单位，新增的面积是一个宽为$b-a$、高为$2f(b)$的矩形。\n\n【快捷思路】\n积分的线性性质：$\\int_a^b[f(x)+C]\\,dx=\\int_a^b f(x)\\,dx+C(b-a)$，直接套用$C=2f(b)$即得答案。\n\n【正确答案】B",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Functions",
+      "Graphs"
+    ]
   },
   {
     "id": "2017-P2-Q12",
     "year": 2017,
     "paper": 2,
     "num": 12,
-    "topic": "Algebra",
+    "topic": "Trigonometry",
     "difficulty": 3,
     "question": "The diagram shows the graphs of $y = \\sin 2x$ and $y = \\cos 2x$ for $-\\frac{\\pi}{2} < x < \\frac{\\pi}{2}$\n\nWhich one of the following is **not** true?",
     "options": {
@@ -1626,18 +1664,21 @@ window.QUESTIONS = [
       "F": "$\\tan x < \\cos 2x < \\sin 2x$ for some real number $x$ with $-\\frac{\\pi}{2} < x < \\frac{\\pi}{2}$"
     },
     "answer": "C",
-    "analysis": "【题目分析】\n在 −π/2 < x < π/2 范围内，判断哪个不等式 **不成立**。\n函数：y = sin(2x)，y = cos(2x)，y = tan(x)\n\n【关键点取值】\n\n| x | sin(2x) | cos(2x) | tan(x) |\n|---|---------|---------|--------|\n| 0 | 0 | 1 | 0 |\n| π/4 | 1 | 0 | 1 |\n| −π/4 | −1 | 0 | −1 |\n| → π/2 | → 0 | → −1 | → +∞ |\n| → −π/2 | → 0 | → −1 | → −∞ |\n\n【逐项验证】\n\n选项A：cos(2x) < sin(2x) < tan(x)\n在 x → π/2 时：cos(2x) → −1，sin(2x) → 0，tan(x) → +∞\n−1 < 0 < +∞ ✓ 成立\n\n选项B：cos(2x) < tan(x) < sin(2x)\n取 x = 0.5：cos(1) ≈ 0.54，tan(0.5) ≈ 0.55，sin(1) ≈ 0.84\n0.54 < 0.55 < 0.84 ✓ 成立\n\n选项C：sin(2x) < cos(2x) < tan(x)\n在 x ∈ (0, π/8)：sin(2x) < cos(2x)（因为 2x < π/4）\n但此时 tan(x) 很小而 cos(2x) ≈ 1，始终有 tan(x) < cos(2x)\n不可能满足 cos(2x) < tan(x)。不成立 ❌\n\n选项D：sin(2x) < tan(x) < cos(2x)\n取 x = −0.1：sin(−0.2) ≈ −0.198，tan(−0.1) ≈ −0.100，cos(−0.2) ≈ 0.98\n−0.198 < −0.100 < 0.98 ✓ 成立\n\n选项E：tan(x) < sin(2x) < cos(2x)\n在 x → −π/2：tan → −∞，sin → 0，cos → −1\ntan < sin ✓，但 cos = −1 < sin = 0，sin < cos 不成立 ❌\n\n选项F：tan(x) < cos(2x) < sin(2x)\n在 x → −π/2：tan → −∞，cos → −1，sin → 0\n−∞ < −1 < 0 ✓ 成立\n\n【结论】\n选项C和E不成立。严格来说两者均不成立，但若只选一个，选项C的不成立条件（cos < tan）更明确直接。\n\n【正确答案】C",
+    "analysis": "【题目分析】\n在区间$-\\frac{\\pi}{2}<x<\\frac{\\pi}{2}$内比较$\\sin 2x$、$\\cos 2x$、$\\tan x$三者的大小，找出哪种排序顺序不可能出现。\n\n【解题步骤】\n将三个函数画在同一坐标系中，从$x=-\\frac{\\pi}{2}$到$x=\\frac{\\pi}{2}$逐段检验各选项：\n$x\\to-\\frac{\\pi}{2}$时：$\\tan x<\\cos 2x<\\sin 2x$，选项F成立\n$x$略小于$-\\frac{\\pi}{4}$时：$\\tan x<\\sin 2x<\\cos 2x$，选项E成立\n$x$略大于$-\\frac{\\pi}{4}$时：$\\sin 2x<\\tan x<\\cos 2x$，选项D成立\n$x$略小于$\\frac{\\pi}{4}$时：$\\cos 2x<\\tan x<\\sin 2x$，选项B成立\n$x$略大于$\\frac{\\pi}{4}$时：$\\cos 2x<\\sin 2x<\\tan x$，选项A成立\n\n唯一未被覆盖的是选项C：$\\sin 2x<\\cos 2x<\\tan x$。要使$\\tan x$最大，需$x>\\frac{\\pi}{4}$，但在该区间内$\\cos 2x<0<\\sin 2x$恒成立，故$\\cos 2x$不可能大于$\\sin 2x$。因此C不可能出现。\n\n【快捷思路】\n$\\tan x$超过另外两个函数时必有$x>\\frac{\\pi}{4}$，此时$\\cos 2x<0<\\sin 2x$，$\\cos 2x$不可能夹在中间。\n\n【正确答案】C",
     "images": {
       "image": "2017 P2 Q12.png"
     },
-    "has_image": true
+    "has_image": true,
+    "related_topics": [
+      "Graphs"
+    ]
   },
   {
     "id": "2017-P2-Q13",
     "year": 2017,
     "paper": 2,
     "num": 13,
-    "topic": "Algebra",
+    "topic": "Number Theory",
     "difficulty": 3,
     "question": "The positive real numbers $a \\times 10^{-3}$, $b \\times 10^{-2}$ and $c \\times 10^{-1}$ are each in standard form, and\n\n$$(a \\times 10^{-3}) + (b \\times 10^{-2}) = (c \\times 10^{-1}).$$\n\nWhich of the following statements (I, II, III, IV) **must** be true?\n\nI $a > 9$\n\nII $b > 9$\n\nIII $a < c$\n\nIV $b < c$",
     "options": {
@@ -1651,7 +1692,7 @@ window.QUESTIONS = [
       "H": "I, II, III and IV"
     },
     "answer": "B",
-    "analysis": "【题目分析】\n$a \\times 10^{-3} + b \\times 10^{-2} = c \\times 10^{-1}$\n标准形式：$1 \\le a,b,c < 10$\n\n两边乘$10^3$：$a + 10b = 100c$\n\n由于$a < 10$：$100c - 10b < 10$ → $b > 10c - 1$\n由于$c \\ge 1$：$b > 9$ ✓ (II必须成立)\n\n由于$b < 10$：$100c - 10b > 100c - 100$\n由于$a \\ge 1$：$100c - 10b \\ge 1$ → $b \\le 10c - 0.1$\n\n$a = 100c - 10b$，$a$的范围取决于$c$和$b$的具体值，$a > 9$不一定成立。\n\n【正确答案】B",
+    "analysis": "【题目分析】\n本题考察标准形式下的加法运算与数位分析。三个正实数分别写成标准形式，满足$a \\times 10^{-3} + b \\times 10^{-2} = c \\times 10^{-1}$，其中标准形式要求$1 \\le a, b, c < 10$。需要判断四个命题中哪些必然成立。\n\n【解题步骤】\n将等式统一量纲，两边同乘$10^3$得：$a + 10b = 100c$。\n\n用竖式加法理解最为直观。将三个数写成小数：\n$0.00a_1a_2\\ldots + 0.0b_1b_2\\ldots = 0.c_1c_2\\ldots$\n\n由于$c \\ge 1$，结果小数点左移至少一位，意味着千分位和百分位之和必须向十分位进位。要产生进位，$b$的第一位数字必须为$9$且后面还有非零数字，即必须有$b > 9$，故命题II必成立。\n\n命题I不必要：可以取较小的数字组合仍能进位。\n\n对于命题III和IV：由于进位后$1 \\le c < 2$，而已证得$b > 9$，故$b > c$，IV不可能成立。$a$的值可以大于或小于$c$，III不必然成立。\n\n【快捷思路】\n统一量纲得$100c = a + 10b$。由于$a < 10$，要产生从十位到百位的进位，必须有$10b \\ge 91$，即$b \\ge 9.1$，故$b > 9$必成立。其余命题可用反例排除。\n\n【正确答案】B Theory",
     "images": null,
     "has_image": false
   },
@@ -1660,7 +1701,7 @@ window.QUESTIONS = [
     "year": 2017,
     "paper": 2,
     "num": 14,
-    "topic": "Algebra",
+    "topic": "Graphs",
     "difficulty": 3,
     "question": "The diagram below shows the graph of $y = x^2 - 2bx + c$. The vertex of this graph is at the point $P$.\n\nWhich one of the following could be the graph of $y = x^2 - 2Bx + c$, where $B > b$?",
     "options": {
@@ -1674,19 +1715,23 @@ window.QUESTIONS = [
       "H": "Graph H"
     },
     "answer": "F",
-    "analysis": "【题目分析】\n抛物线 y=x²-2bx+c 的顶点为P。\n判断 y=x²-2Bx+c（B>b）的图像。\n\n【解题步骤】\n原抛物线：y=x²-2bx+c=(x-b)²+c-b²\n顶点P=(b, c-b²)\n\n新抛物线：y=x²-2Bx+c=(x-B)²+c-B²\n顶点=(B, c-B²)\n\n由于B>b：\n- 顶点横坐标从b变为B（向右移动）\n- 顶点纵坐标从c-b²变为c-B²（因为B>b，B²>b²，所以c-B²<c-b²，向下移动）\n\n开口方向不变（二次项系数都是1，向上开口）。\n\n与y轴交点：x=0时y=c，两个抛物线交于同一点(0,c)。\n\n根据选项图像判断：顶点向右下方移动，且过(0,c)点。\n\n【正确答案】F",
+    "analysis": "【题目分析】\n本题考察二次函数图像的变换。已知抛物线$y = x^2 - 2bx + c$的顶点为$P$，要求判断当系数从$2b$变为$2B$（其中$B > b$）时，新抛物线的图像。\n\n【解题步骤】\n原抛物线配方：$y = x^2 - 2bx + c = (x - b)^2 + c - b^2$\n顶点$P$坐标为$(b, c - b^2)$。由已知图像可知$P$在第一象限，故$b > 0$且$c - b^2 > 0$。\n\n新抛物线配方：$y = x^2 - 2Bx + c = (x - B)^2 + c - B^2$\n新顶点坐标为$(B, c - B^2)$。\n\n由于$B > b > 0$：\n横坐标：$B > b$，新顶点在$P$的右侧。\n纵坐标：$B^2 > b^2$，故$c - B^2 < c - b^2$，新顶点在$P$的下方。\n\n综合可知新顶点位于$P$的右下方。开口方向不变（二次项系数均为$1$，开口向上）。\n\n另外，两条抛物线在$y$轴上的交点相同：$x = 0$时$y = c$，均过点$(0, c)$。\n\n【快捷思路】\n顶点横坐标从$2b$的一半变为$2B$的一半，即从$B > b$知顶点右移。纵坐标为$-b^2 + c$变为$-B^2 + c$，因$B^2 > b^2$故下移。顶点向右下方移动即为答案。\n\n【正确答案】F",
     "images": {
       "question_image": "2017 P2 Q14 Questions.png",
       "options_image": "2017 P2 Q14 8 options.png"
     },
-    "has_image": true
+    "has_image": true,
+    "related_topics": [
+      "Coordinate Geometry",
+      "Functions"
+    ]
   },
   {
     "id": "2017-P2-Q15",
     "year": 2017,
     "paper": 2,
     "num": 15,
-    "topic": "Algebra",
+    "topic": "Sequences and Series",
     "difficulty": 3,
     "question": "The function $f$ is defined on the positive integers as follows:\n\n$$f(1) = 5, \\text{ and for } n \\geqslant 1: \\quad \\begin{aligned} f(n + 1) &= 3f(n) + 1 && \\text{if } f(n) \\text{ is odd} \\\\ f(n + 1) &= \\frac{1}{2}f(n) && \\text{if } f(n) \\text{ is even} \\end{aligned}$$\n\nThe function $g$ is defined on the positive integers as follows:\n\n$$g(1) = 3, \\text{ and for } n \\geqslant 1: \\quad \\begin{aligned} g(n + 1) &= g(n) + 5 && \\text{if } g(n) \\text{ is odd} \\\\ g(n + 1) &= \\frac{1}{2}g(n) && \\text{if } g(n) \\text{ is even} \\end{aligned}$$\n\nWhat is the value of $f(1000) - g(1000)$?",
     "options": {
@@ -1698,7 +1743,7 @@ window.QUESTIONS = [
       "F": "$8$"
     },
     "answer": "D",
-    "analysis": "【题目分析】\nTMUA 2017年 Paper 2 Q15。\n\n题目内容：The function $f$ is defined on the positive integers as follows:\n\n$f(1) = 5$, and for $n \\ge 1$:\n$f(n+1) = 3f(n) + 1$ if $f(n)$ is odd\n$f(n+1) = \\frac{1}{2}f(n)$ if $f(n)$ is even\n\n$g(1) = 3$, and for $n \\ge 1$:\n$g(n+1) = g(n) + 5$ if $g(n)$ is odd\n$g(n+1) = \\frac{1}{2}g(n)$ if $g(n)$ is even\n\nWhat is $f(1000) - g(1000)$?\n\n【解题思路】\n1. 计算$f$的前几项：\n$f(1) = 5$ (odd) → $f(2) = 3(5) + 1 = 16$\n$f(2) = 16$ (even) → $f(3) = 8$\n$f(3) = 8$ (even) → $f(4) = 4$\n$f(4) = 4$ (even) → $f(5) = 2$\n$f(5) = 2$ (even) → $f(6) = 1$\n$f(6) = 1$ (odd) → $f(7) = 3(1) + 1 = 4$\n$f(7) = 4$ (even) → $f(8) = 2$\n$f(8) = 2$ (even) → $f(9) = 1$\n\n从$f(6)=1$开始循环：1 → 4 → 2 → 1 → ...\n周期为3。\n\n$f(6)=1, f(7)=4, f(8)=2, f(9)=1, f(10)=4, f(11)=2, ...$\n$f(n)$ for $n \\ge 6$：周期3，$f(n) = f(6 + (n-6) \\bmod 3)$\n\n$1000 - 6 = 994$\n$994 \\bmod 3 = 1$\n$f(1000) = f(7) = 4$\n\n2. 计算$g$的前几项：\n$g(1) = 3$ (odd) → $g(2) = 3 + 5 = 8$\n$g(2) = 8$ (even) → $g(3) = 4$\n$g(3) = 4$ (even) → $g(4) = 2$\n$g(4) = 2$ (even) → $g(5) = 1$\n$g(5) = 1$ (odd) → $g(6) = 1 + 5 = 6$\n$g(6) = 6$ (even) → $g(7) = 3$\n$g(7) = 3$ (odd) → $g(8) = 3 + 5 = 8$\n\n从$g(7)=8$开始循环：8 → 4 → 2 → 1 → 6 → 3 → 8 → ...\n周期为6。\n\n$g(1)=3, g(2)=8, g(3)=4, g(4)=2, g(5)=1, g(6)=6, g(7)=3, ...$\n周期从$g(1)$开始：3 → 8 → 4 → 2 → 1 → 6 → 3 → ...\n周期为6。\n\n$1000 \\bmod 6 = 4$\n$g(1000) = g(4) = 2$\n\n3. $f(1000) - g(1000) = 4 - 2 = 2$\n\n【正确答案】D",
+    "analysis": "【题目分析】\n本题考察递归定义的数列周期性。函数$f$和$g$根据前一项的奇偶性分别采用不同的递推规则，需要计算$f(1000) - g(1000)$。这类问题通常先枚举前若干项寻找循环规律。\n\n【解题步骤】\n先计算数列的前几项：\n\n数列：\n$f(1) = 5$（奇）$\\to f(2) = 16$（偶）$\\to f(3) = 8$（偶）$\\to f(4) = 4$（偶）$\\to f(5) = 2$（偶）$\\to f(6) = 1$（奇）$\\to f(7) = 4$（偶）$\\to f(8) = 2$（偶）$\\to f(9) = 1$\n\n从第$6$项开始进入周期为$3$的循环：$1 \\to 4 \\to 2 \\to 1\\ldots$\n$1000 - 6 = 994$，$994 \\div 3$余$1$，故\n$f(1000) = f(7) = 4$\n\n数列：\n$g(1) = 3$（奇）$\\to g(2) = 8$（偶）$\\to g(3) = 4$（偶）$\\to g(4) = 2$（偶）$\\to g(5) = 1$（奇）$\\to g(6) = 6$（偶）$\\to g(7) = 3$\n\n从第$1$项开始进入周期为$6$的循环：$3 \\to 8 \\to 4 \\to 2 \\to 1 \\to 6 \\to 3\\ldots$\n$1000 \\div 6$余$4$，故\n$g(1000) = g(4) = 2$\n\n最终：$f(1000) - g(1000) = 4 - 2 = 2$\n\n【快捷思路】\n此类递推数列问题，先手算前几项找循环节。$f$的循环从第$6$项开始、周期为$3$；$g$从第$1$项开始、周期为$6$。利用余数直接定位第$1000$项的值。\n\n【正确答案】D and Series",
     "images": null,
     "has_image": false
   },
@@ -1707,7 +1752,7 @@ window.QUESTIONS = [
     "year": 2017,
     "paper": 2,
     "num": 16,
-    "topic": "Algebra",
+    "topic": "Counterexamples",
     "difficulty": 3,
     "question": "Consider the following statement:\n\n> ($\\ast$) **If** $f(x)$ is an integer for every integer $x$, **then** $f'(x)$ is an integer for every integer $x$.\n\nWhich one of the following is a **counterexample** to ($\\ast$)?",
     "options": {
@@ -1717,16 +1762,19 @@ window.QUESTIONS = [
       "D": "$f(x) = \\frac{x^4 + 2x^3 + x^2}{4}$"
     },
     "answer": "C",
-    "analysis": "【题目分析】\nTMUA 2017年 Paper 2 Q16。\n\n题目内容：Consider the following statement:\n\n(*) **If** $f(x)$ is an integer for every integer $x$, **then** $f'(x)$ is an integer for every integer $x$.\n\nWhich one of the following is a **counterexample** to (*)?\n\n【解题思路】\n1. 需要找一个函数$f(x)$，满足：\n   - 对所有整数$x$，$f(x)$是整数\n   - 存在某个整数$x$，$f'(x)$不是整数\n\n2. 逐项验证：\n\nA: $f(x) = \\frac{x^3 + x + 1}{4}$\n$f(0) = 1/4$，不是整数 ✗\n\nB: $f(x) = \\frac{x^4 + x^2 + x}{2}$\n$f(0) = 0$ ✓\n$f(1) = 3/2$，不是整数 ✗\n\nC: $f(x) = \\frac{x^4 + x^3 + x^2 + x}{2}$\n$f(0) = 0$ ✓\n$f(1) = 4/2 = 2$ ✓\n$f(2) = (16+8+4+2)/2 = 30/2 = 15$ ✓\n$f(-1) = (1-1+1-1)/2 = 0$ ✓\n$f(-2) = (16-8+4-2)/2 = 10/2 = 5$ ✓\n\n$f'(x) = \\frac{4x^3 + 3x^2 + 2x + 1}{2}$\n$f'(0) = 1/2$，不是整数！✓\n\n所以C是反例。\n\nD: $f(x) = \\frac{x^4 + 2x^3 + x^2}{4}$\n$f(0) = 0$ ✓\n$f(1) = 4/4 = 1$ ✓\n$f(2) = (16+16+4)/4 = 36/4 = 9$ ✓\n$f(-1) = (1-2+1)/4 = 0$ ✓\n$f(-2) = (16-16+4)/4 = 1$ ✓\n\n$f'(x) = \\frac{4x^3 + 6x^2 + 2x}{4}$\n$f'(0) = 0$ ✓\n$f'(1) = 12/4 = 3$ ✓\n$f'(-1) = (-4+6-2)/4 = 0$ ✓\n\nD对所有整数$x$，$f'(x)$也是整数，不是反例。\n\n【正确答案】C",
+    "analysis": "【题目分析】\n本题考察反例的构造与验证。命题：若函数在所有整数处取整数值，则其导数也在所有整数处取整数值。需要找出一个使前提成立但结论不成立的函数作为反例。\n\n【解题步骤】\n反例需同时满足两个条件：\n条件一：对所有整数，$f(x)$为整数。\n条件二：存在某个整数$x$，使导数非整数。\n\n先用简单值快速筛选。代入：\n$A$：$f(0) = 1/4$，不满足条件一，排除。\n$B$：$f(1) = 3/2$，不满足条件一，排除。\n$C$：$f(0) = 0$，$f(1) = 2$，均为整数。\n$D$：$f(0) = 0$，$f(1) = 1$，均为整数。\n\n检查$C$和$D$的导数：\n$C$：$f'(x) = \\frac{4x^3 + 3x^2 + 2x + 1}{2}$，$f'(0) = 1/2$非整数。\n$D$：$f'(x) = \\frac{4x^3 + 6x^2 + 2x}{4}$，$f'(0) = 0$为整数。\n\n因此$C$是候选反例。验证条件一：因式分解得\n$f(x) = \\frac{x(x+1)(x^2+1)}{2}$\n对任意整数，$x(x+1)$为两连续整数之积必为偶数，故分子总为偶数，$f(x)$恒为整数。\n\n验证$D$非反例：$f'(x) = \\frac{x(x+1)(2x+1)}{2}$，分子同样恒为偶数，导数总为整数。\n\n【快捷思路】\n先用代入法排除$A$、$B$。对$C$、$D$分别求导并代入$0$即可区分：$C$的导数在$0$处为$1/2$，而$D$的导数在$0$处为$0$。\n\n【正确答案】C",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Differentiation"
+    ]
   },
   {
     "id": "2017-P2-Q17",
     "year": 2017,
     "paper": 2,
     "num": 17,
-    "topic": "Algebra",
+    "topic": "Logic",
     "difficulty": 3,
     "question": "A set $S$ of whole numbers is called *stapled* **if and only if** for every whole number $a$ which is in $S$ there exists a prime factor of $a$ which divides at least one other number in $S$.\n\nLet $T$ be a set of whole numbers. Which of the following is true **if and only if** $T$ is **not** stapled?",
     "options": {
@@ -1740,9 +1788,13 @@ window.QUESTIONS = [
       "H": "There exists a number $a$ which is in $T$ such that there is a prime factor of $a$ which does not divide at least one other number in $T$."
     },
     "answer": "F",
-    "analysis": "【题目分析】\nstapled定义：对S中每个a，存在a的一个质因子能整除S中至少一个其他数。\nT不是stapled的充要条件。\n\n【解题步骤】\nT不是stapled = 存在a∈T，使得a的每个质因子都不整除T中任何其他数。\n\n即：存在a∈T，a的每个质因子p，对T中所有其他数b，p不整除b。\n\n选项F：存在a∈T，a没有能整除T中至少一个其他数的质因子。\n这正是T不是stapled的定义。\n\n【正确答案】F",
+    "analysis": "【题目分析】\n本题考察逻辑量词的否定运算，属于集合论与数理逻辑的结合题。题目定义了一个新概念stapled：集合$S$称为stapled，当且仅当对$S$中每个元素$a$，都存在$a$的某个质因子能整除$S$中至少一个其他数。要求找出$T$不是stapled的充要条件。解题核心在于准确地将复合逻辑命题进行否定。\n\n【解题步骤】\n原命题：$T$是stapled$\\iff\\forall a\\in T,\\;\\exists p$( $p$是$a$的质因子$\\;\\land\\;$$p$整除$T$中至少一个其他数)。\n\n否定过程分两步：\n第一步，否定外层全称量词$\\forall$，变为存在量词$\\exists$：\n$T$不是stapled$\\iff\\exists a\\in T$，使得并非存在这样的质因子。\n\n第二步，并非存在这样的质因子，等价于不存在这样的质因子，即there is no prime factor of $a$ which divides at least one other number in $T$。\n\n综合得到：$T$不是stapled$\\iff$存在$a\\in T$，使得$a$没有能整除$T$中至少一个其他数的质因子。\n\n对照选项，F项正是此表述。\n\n注意：不要混淆at least one与every的区别。选项A、D等使用了every other number，与原定义中的at least one other number不等价。\n\n【快捷思路】\n直接套用逻辑否定规则：$\\neg(\\forall x,P(x))\\iff\\exists x,\\neg P(x)$，$\\neg(\\exists x,Q(x))\\iff\\forall x,\\neg Q(x)$。这里只需否定最外层的for every变为there exists，内层的there exists变为there is no，其余文字完全保留即可选出F。\n【正确答案】F",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Sets",
+      "Proof"
+    ]
   },
   {
     "id": "2017-P2-Q18",
@@ -1761,16 +1813,20 @@ window.QUESTIONS = [
       "F": "Only step (V) is invalid; the rest are correct"
     },
     "answer": "B",
-    "analysis": "【题目分析】\n解不等式(1/4)^n < (1/32)^10，n为正整数。\n学生论证哪一步无效？\n\n【解题步骤】\n(1/4)^n < (1/32)^10\n\n(I) 两边取log_(1/2)：\nlog_(1/2)(1/4)^n < log_(1/2)(1/32)^10\n由于底数1/2 < 1，取对数后不等号方向不变？\n不对！底数在(0,1)之间时，log是递减函数。\n所以不等号应该反转！\n\n但学生没有反转，所以(I)就是错误的。\n\n验证：\n(1/4)^n < (1/32)^10\n取log_(1/2)：\nlog_(1/2)(1/4)^n = n·log_(1/2)(1/4) = n·2\nlog_(1/2)(1/32)^10 = 10·log_(1/2)(1/32) = 10·5 = 50\n\n由于log_(1/2)递减，不等号应反转：\n2n > 50 → n > 25\n\n学生得到n < 25，错误来自(I)。\n\n【正确答案】B",
+    "analysis": "【题目分析】\n本题考察对数运算与不等式性质，属于代数与函数的交叉题。学生通过五步推导解不等式$\\left(\\frac{1}{4}\\right)^n<\\left(\\frac{1}{32}\\right)^{10}$，需找出哪一步无效。这类题目要求考生不仅会计算，还要理解每一步的逻辑有效性。\n\n【解题步骤】\n逐步检验学生的推导：\n\n步骤(I)：两边同时取以$\\frac{1}{2}$为底的对数。关键问题在于底数$\\frac{1}{2}\\in(0,1)$，此时对数函数$y=\\log_{\\frac{1}{2}}x$是严格递减函数。对于递减函数，若$A<B$，则$f(A)>f(B)$，即不等号方向必须反转！学生保持不等号不变，这是根本性错误。\n\n步骤(II)：利用对数幂法则$\\log_b(x^k)=k\\log_b x$，正确。\n\n步骤(III)：两边除以$\\log_{\\frac{1}{2}}\\left(\\frac{1}{4}\\right)=2$，除数为正，不等号方向不变，正确。\n\n步骤(IV)：计算$\\frac{10\\times 5}{2}=25$，正确。\n\n步骤(V)：$n$为正整数且$n<25$，得$1\\leq n\\leq 24$，形式上正确（但前提已错）。\n\n验证：取$n=1$代入原不等式，$\\frac{1}{4}<\\left(\\frac{1}{32}\\right)^{10}$显然不成立，但学生推导却将$n=1$包含在解集中，说明推导有误，且错误出现在步骤(I)。\n\n正确解法应为：取对数后反转不等号，得$2n>50$，即$n>25$。\n\n【快捷思路】\n看到对数底数小于$1$，立即警觉：不等号必须反转。这是最常见的对数陷阱之一。直接锁定步骤(I)即可。\n【正确答案】B",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Functions",
+      "Graphs"
+    ]
   },
   {
     "id": "2017-P2-Q19",
     "year": 2017,
     "paper": 2,
     "num": 19,
-    "topic": "Algebra",
+    "topic": "Differentiation",
     "difficulty": 3,
     "question": "Which one of the following is a **sufficient** condition for the equation $x^3 - 3x^2 + a = 0$, where $a$ is a constant, to have exactly one real root?",
     "options": {
@@ -1784,9 +1840,13 @@ window.QUESTIONS = [
       "H": "$|a| = \\frac{3}{2}$"
     },
     "answer": "E",
-    "analysis": "【题目分析】\nx³-3x²+a=0恰有一个实根的充分条件。\n\n【解题步骤】\nf(x)=x³-3x²+a\nf'(x)=3x²-6x=3x(x-2)\n临界点：x=0, x=2\n\nf(0)=a（极大值）\nf(2)=8-12+a=a-4（极小值）\n\n三次函数恰有一个实根的条件：\n极大值和极小值同号（都>0或都<0）\n\n情况1：a>0且a-4>0 → a>4\n情况2：a<0且a-4<0 → a<0\n\n综合：a>4或a<0，即|a|>4\n\n【正确答案】E",
+    "analysis": "【题目分析】\n本题考察三次方程实根个数与参数取值范围的关系，属于微分学与函数的综合题。要求找出方程$x^3-3x^2+a=0$恰有一个实根的充分条件。充分条件的含义是：若该条件成立，则结论必然成立（但结论成立不一定需要该条件）。\n\n【解题步骤】\n设$f(x)=x^3-3x^2+a$。求驻点：\n$f'(x)=3x^2-6x=3x(x-2)=0$，得驻点$x=0$和$x=2$。\n\n计算函数值：\n$f(0)=a$（局部极大值点），$f(2)=8-12+a=a-4$（局部极小值点）。\n\n三次函数图像大致呈N型（首项系数为正）。方程恰有一个实根的充要条件是：局部极大值和局部极小值在$x$轴同侧。即：\n极大值$<0$：$a<0$；或\n极小值$>0$：$a-4>0$，即$a>4$。\n\n因此充要条件为$a<0$或$a>4$，但这不在选项中。题目要求充分条件，即选项给出的范围必须是上述范围的真子集。\n\n逐一检验：\nA：$a>0$包含$a=1$（此时两根），不充分。\nB：$a\\leq 0$包含$a=0$（此时$x=0$为重根，超过一个实根），不充分。\nC：$a\\geq 4$包含$a=4$（此时极大值在轴上，超过一个实根），不充分。\nD：$a<4$包含$a=1$，不充分。\nE：$|a|>4$等价于$a>4$或$a<-4$，均落在有效范围内，充分。\nG：$a=\\frac{9}{4}$落在$(0,4)$内，此时三个实根，不充分。\nH：$|a|=\\frac{3}{2}$包含正负值，正侧不充分。\n\n【快捷思路】\n先求出充要条件为$|a|>4$（即$a>4$或$a<0$），再找选项中的子集。E项$|a|>4$恰好是充要条件的一部分（排除了$-4\\leq a<0$），故为充分条件。\n【正确答案】E",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Functions",
+      "Graphs"
+    ]
   },
   {
     "id": "2017-P2-Q20",
@@ -1804,9 +1864,13 @@ window.QUESTIONS = [
       "E": "More than three"
     },
     "answer": "B",
-    "analysis": "【题目分析】\n密码由abcde五个字母排列组成，共5! $= 120$种可能。\n通过三次尝试得到的信息，推断还需要多少次尝试才能保证找到密码。\n\n【已知条件】\n1. 尝试abcde：0个位置正确\n2. 尝试cdbea：0个位置正确  \n3. 尝试eadbc：0个位置正确\n\n【逐步推理】\n**第一步：从abcde得0正确推断**\n\n用表格表示每个位置：\n位置：  1  2  3  4  5\nabcde： a  b  c  d  e\n\n位置1不是a，位置2不是b，位置3不是c，位置4不是d，位置5不是e\n\n**第二步：从cdbea得0正确推断**\ncdbea： c  d  b  e  a\n\n位置1不是c，位置2不是d，位置3不是b，位置4不是e，位置5不是a\n\n**第三步：从eadbc得0正确推断**\neadbc： e  a  d  b  c\n\n位置1不是e，位置2不是a，位置3不是d，位置4不是b，位置5不是c\n\n**综合三个条件**\n\n位置1禁止：a, c, e → 位置1只能是b或d\n位置2禁止：b, d, a → 位置2只能是c或e\n位置3禁止：c, b, d → 位置3只能是a或e\n位置4禁止：d, e, b → 位置4只能是a或c\n位置5禁止：e, a, c → 位置5只能是b或d\n\n**第四步：进一步推导**\n\n位置1如果是b：\n- 则位置5不能是b（位置5只能是d）\n- 检查位置5=d时，是否矛盾\n\n位置1如果是d：\n- 则位置4不能是d（已经确定位置4只能a或c，不矛盾）\n- 需要继续分析\n\n**枚举可能情况**\n\n情况1：位置1=b\n- 位置5必须是d\n- 位置2必须是c或e\n  - 若位置2=c，则位置4=a，位置3=e → 密码是bcead\n  - 若位置2=e，则位置3只能是a，位置4=c → 密码是beacd\n\n情况2：位置1=d\n- 位置2=c或e\n  - 若位置2=c：\n    - 位置4只能a，位置3=e，位置5=b → 密码是dceab\n  - 若位置2=e：\n    - 位置3只能a，位置4=c，位置5=b → 密码是deacb\n\n**验证这4种可能**\nbcead: 检查三次尝试是否都得0？\n- abcde vs bcead: a✗ b✗ c✗ d✗ e✗ → 0正确 ✓\n- cdbea vs bcead: c✗ d✗ b✗ e✗ a✗ → 0正确 ✓\n- eadbc vs bcead: e✗ a✗ d✗ b✗ c✗ → 0正确 ✓\n\nbeacd、dceab、deacb同样验证通过。\n\n**第五步：确定还需要几次**\n\n剩余4种可能：bcead, beacd, dceab, deacb\n\n第4次尝试：选择beacd\n- 如果得0正确，排除beacd，剩3种\n- 如果得1正确或其他，可以进一步缩小范围\n\n最优策略：选择一种排列，根据结果缩小范围。\n由于有4种可能，理论上1次尝试后可以区分到最多2种。\n\n最坏情况分析：\n- 第4次尝试后最坏剩下2种可能\n- 第5次尝试可以确定密码\n\n所以还需要**1次**尝试就能保证确定密码。\n\n【正确答案】B",
+    "analysis": "【题目分析】\n本题是一道组合逻辑推理题，结合排列组合与信息论的思想。密码是abcde的某个排列，每次输入后电脑返回正确位置的数量。已知三次尝试均得$0$个位置正确，问用最优策略还需几次尝试才能保证确定密码。\n\n【解题步骤】\n根据三次尝试结果，列出每个位置的禁入字母：\n位置1禁止a、c、e，只能填b或d\n位置2禁止b、d、a，只能填c或e\n位置3禁止c、b、d，只能填a或e\n位置4禁止d、e、b，只能填a或c\n位置5禁止e、a、c，只能填b或d\n\n观察规律：位置1和位置5共享字母集合$\\{b,d\\}$，位置2、3、4共享字母集合$\\{c,e,a\\}$。因此外层位置$(1,5)$只能是$(b,d)$或$(d,b)$，内层位置$(2,3,4)$只能是$(c,e,a)$或$(e,a,c)$。\n\n枚举所有可能：\n$(b,d)$搭配$(c,e,a)\\rightarrow$bcead\n$(b,d)$搭配$(e,a,c)\\rightarrow$beacd\n$(d,b)$搭配$(c,e,a)\\rightarrow$dceab\n$(d,b)$搭配$(e,a,c)\\rightarrow$deacb\n\n共4种候选密码。\n\n第四次尝试：输入bcead，根据电脑返回的正确位置数：\n- 返回5：密码就是bcead\n- 返回2：外层正确内层错误，密码是beacd\n- 返回3：内层正确外层错误，密码是dceab\n- 返回0：全错，密码是deacb\n\n四种情况产生四种不同的返回值（0、2、3、5），故一次尝试足以区分所有可能。\n\n【快捷思路】\n识别出外层$(1,5)$和内层$(2,3,4)$的独立性后，直接输入bcead作为探测，利用返回值的不同可以一次区分四种候选。\n【正确答案】B",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Logic",
+      "Probability"
+    ]
   },
   {
     "id": "2018-P1-Q1",

@@ -5466,9 +5466,12 @@ window.QUESTIONS = [
       "H": "8"
     },
     "answer": "C",
-    "analysis": "【题目分析】\n方程 2cos⁴θ − 5cos²θ + 3 = 0 在 [0, 2π] 内有多少实解？\n\n【换元求解】\n设 u = cos²θ，方程：2u² − 5u + 3 = 0\n(2u − 3)(u − 1) = 0\nu = 3/2（无效，>1）或 u = 1（有效）\n\ncos²θ = 1 → cos θ = ±1\n\n【求 θ 的解】\ncos θ = 1：θ = 0，2π\ncos θ = −1：θ = π\n\n[0, 2π] 内的解：θ = 0，π，2π，共 3 个。\n\n【正确答案】C（3）",
+    "analysis": "【题目分析】\n求方程 $2\\cos^4\\theta - 5\\cos^2\\theta + 3 = 0$ 在区间 $0 \\le \\theta \\le 2\\pi$ 内的实解个数。这是典型的三角方程求根问题，核心在于通过换元将高次三角方程降为二次方程。\n\n【解题步骤】\n令 $u = \\cos^2\\theta$，则方程化为二次方程：\n$2u^2 - 5u + 3 = 0$\n\n因式分解得 $(2u - 3)(u - 1) = 0$，解得 $u = \\frac{3}{2}$ 或 $u = 1$。\n\n由于 $u = \\cos^2\\theta \\le 1$，故 $u = \\frac{3}{2}$ 舍去。只剩 $\\cos^2\\theta = 1$，即 $\\cos\\theta = \\pm 1$。\n\n在 $[0, 2\\pi]$ 内逐一求解：\n- $\\cos\\theta = 1 \\Rightarrow \\theta = 0,\\ 2\\pi$（两个解）\n- $\\cos\\theta = -1 \\Rightarrow \\theta = \\pi$（一个解）\n\n共计 $3$ 个实解。\n\n【快捷思路】\n观察到方程仅含 $\\cos^2\\theta$ 的幂次，直接换元 $u = \\cos^2\\theta$ 化为二次方程。求根后利用 $\\cos^2\\theta \\le 1$ 筛选有效解，再在给定区间内数出 $\\cos\\theta = \\pm 1$ 的对应角度即可。\n\n【正确答案】C",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Algebra"
+    ]
   },
   {
     "id": "2022-P1-Q2",
@@ -5487,9 +5490,12 @@ window.QUESTIONS = [
       "F": "all real values of $p$"
     },
     "answer": "D",
-    "analysis": "【题目分析】\nx² − 2px + y² − 6y − p² + 8p + 9 = 0 描述圆，求 p 的范围。\n\n【配方化圆】\nx² − 2px + y² − 6y = p² − 8p − 9\n\n(x − p)² + (y − 3)² = p² − 8p − 9 + p² + 9\n                 = 2p² − 8p\n\n即 (x − p)² + (y − 3)² = 2p² − 8p\n\n【圆的条件】\n半径² = 2p² − 8p > 0\n即 2p² − 8p > 0\np(p − 4) > 0\n\n判别式 Δ = (−8)² − 4·2·0 = 64 > 0\n2p² − 8p = 2(p² − 4p) = 2(p(p − 4))\n\np(p − 4) > 0 → p < 0 或 p > 4\n\n【正确答案】D（p < 0 或 p > 4）",
+    "analysis": "【题目分析】\n判断方程 $x^2 - 2px + y^2 - 6y - p^2 + 8p + 9 = 0$ 何时表示 $xy$ 平面上的圆。本质是圆的一般方程配方法，关键是半径平方必须为正数。\n\n【解题步骤】\n对方程分别对 $x$ 和 $y$ 配方：\n\n$(x - p)^2 - p^2 + (y - 3)^2 - 9 - p^2 + 8p + 9 = 0$\n\n整理得：\n$(x - p)^2 + (y - 3)^2 = 2p^2 - 8p$\n\n此式表示圆的条件是半径平方 $2p^2 - 8p > 0$（严格大于零，等于零时退化为一个点）。\n\n解不等式：\n$2p^2 - 8p > 0 \\Rightarrow 2p(p - 4) > 0 \\Rightarrow p(p - 4) > 0$\n\n二次不等式 $p(p - 4) > 0$ 的根为 $p = 0$ 和 $p = 4$，开口向上，因此解为 $p < 0$ 或 $p > 4$。\n\n【快捷思路】\n将方程视为圆的标准形式 $(x - a)^2 + (y - b)^2 = R^2$，配方后令右侧 $R^2 > 0$ 即可。注意区分 $R^2 > 0$（圆）、$R^2 = 0$（点）、$R^2 < 0$（无图形）三种情况。\n\n【正确答案】D Geometry",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Algebra"
+    ]
   },
   {
     "id": "2022-P1-Q3",
@@ -5508,16 +5514,20 @@ window.QUESTIONS = [
       "F": "$6$"
     },
     "answer": "F",
-    "analysis": "【题目分析】\n已知 f''(x) = a（常数），f(0) = 1，f(1) = 2，∫₀¹ f(x)dx = 1，求 a。\n\n【由二阶导数求函数形式】\nf''(x) = a（常数）\nf'(x) = ax + b₁\nf(x) = ax²/2 + b₁x + b₀\n\n【利用条件求参数】\nf(0) = 1 → b₀ = 1\nf(1) = 2 → a/2 + b₁ + 1 = 2 → a/2 + b₁ = 1  ...(1)\n∫₀¹ f(x)dx = 1 → a/6 + b₁/2 = 0  ...(2)\n\n由(2)：a = −3b₁\n代入(1)：−3b₁/2 + b₁ = 1 → b₁ = −2\na = −3(−2) = 6\n\n【验证】\nf(x) = 3x² − 2x + 1\nf(0) = 1 ✓，f(1) = 2 ✓\n∫₀¹ (3x² − 2x + 1)dx = 1 ✓\n\n【正确答案】F（a = 6）",
+    "analysis": "【题目分析】\n已知 $f''(x) = a$（常数），$f(0) = 1$，$f(1) = 2$，且 $\\int_0^1 f(x)\\,dx = 1$，求常数 $a$。此题综合考查积分与微分的互逆关系以及待定系数法。\n\n【解题步骤】\n由 $f''(x) = a$ 积分两次得：\n$f'(x) = ax + b$\n$f(x) = \\frac{1}{2}ax^2 + bx + c$\n\n其中 $b, c$ 为积分常数。\n\n利用 $f(0) = 1$ 得 $c = 1$。\n\n利用 $f(1) = 2$ 得 $\\frac{1}{2}a + b + 1 = 2$，即 $a + 2b = 2$ ……（1）\n\n计算定积分：\n$\\int_0^1 f(x)\\,dx = \\left[\\frac{1}{6}ax^3 + \\frac{1}{2}bx^2 + x\\right]_0^1 = \\frac{1}{6}a + \\frac{1}{2}b + 1$\n\n由条件 $\\int_0^1 f(x)\\,dx = 1$，得 $\\frac{1}{6}a + \\frac{1}{2}b = 0$，即 $a + 3b = 0$ ……（2）\n\n联立（1）（2）：$a + 2b = 2$ 与 $a + 3b = 0$，相减得 $b = -2$，代入得 $a = 6$。\n\n验证：$f(x) = 3x^2 - 2x + 1$，满足全部三个条件。\n\n【快捷思路】\n二阶导数为常数 $\\Rightarrow$ 原函数为二次多项式。设 $f(x) = \\frac{1}{2}ax^2 + bx + c$，三个条件恰好确定三个未知数，解线性方程组即可。\n\n【正确答案】F",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Differentiation",
+      "Algebra"
+    ]
   },
   {
     "id": "2022-P1-Q4",
     "year": 2022,
     "paper": 1,
     "num": 4,
-    "topic": "Algebra",
+    "topic": "Trigonometry",
     "difficulty": 3,
     "question": "These sectors of circles are similar.\n\nThe arc length of the smaller sector is 6.\n\nThe difference between the areas of the sectors is 21.\n\nFind the positive difference between the perimeters of the sectors.",
     "options": {
@@ -5530,11 +5540,14 @@ window.QUESTIONS = [
       "G": "15"
     },
     "answer": "C",
-    "analysis": "【题目分析】\n两个相似扇形，小扇形半径 r，弧长 6，面积差 21，求周长差。\n\n【建立方程】\n小扇形：弧长 = θr = 6，面积 = (1/2)θr² = 3r\n\n设相似比为 k，大扇形半径 = kr\n大扇形面积 = 3rk²\n\n面积差：3rk² − 3r = 3r(k² − 1) = 21  ...(1)\n\n由题意（大半径比小半径大 3）：kr = r + 3 → k = (r+3)/r  ...(2)\n\n代入(1)：r((r+3)²/r² − 1) = 7\n((r+3)² − r²)/r = 7\n(6r + 9)/r = 7\n6r + 9 = 7r → r = 9\n\nk = (9+3)/9 = 4/3\n\n【求周长差】\n小周长 = r + 6 = 15\n大周长 = kr + 6k = (4/3)×9 + 6×(4/3) = 12 + 8 = 20\n周长差 = 20 − 15 = 5\n\n【正确答案】C（5）",
+    "analysis": "【题目分析】\n两个相似扇形（圆心角相同），小扇形半径为 $r$，弧长为 $6$，两扇形面积之差为 $21$，且大扇形半径比小扇形半径大 $3$（由图示给出）。求两扇形周长之差。\n\n【解题步骤】\n设圆心角为 $\\theta$（弧度制），小扇形半径为 $r$。\n\n由弧长公式：$r\\theta = 6$，故 $\\theta = \\frac{6}{r}$。\n\n小扇形面积：$\\frac{1}{2}r^2\\theta = \\frac{1}{2}r^2 \\cdot \\frac{6}{r} = 3r$。\n\n大扇形半径为 $r + 3$，弧长为 $(r+3)\\theta = \\frac{6(r+3)}{r}$。\n\n大扇形面积：$\\frac{1}{2}(r+3)^2\\theta = \\frac{3(r+3)^2}{r}$。\n\n由面积差为 $21$：\n$\\frac{3(r+3)^2}{r} - 3r = 21$\n\n两边乘以 $r$ 并整理：\n$3(r+3)^2 - 3r^2 - 21r = 0$\n$3(r^2 + 6r + 9) - 3r^2 - 21r = 0$\n$-3r + 27 = 0$\n\n解得 $r = 9$。\n\n小扇形周长：$2r + 6 = 24$。\n大扇形弧长：$\\frac{6(9+3)}{9} = 8$，周长：$2(r+3) + 8 = 32$。\n\n周长之差：$32 - 24 = 8$。\n\n【快捷思路】\n利用相似扇形弧长与半径成正比、面积与半径平方成正比的性质。先用弧长公式消去 $\\theta$，将面积用 $r$ 表示，再由面积差解出 $r$，最后直接算周长差。\n\n【正确答案】C",
     "images": {
       "image": "2022 P1 Q4.png"
     },
-    "has_image": true
+    "has_image": true,
+    "related_topics": [
+      "Algebra"
+    ]
   },
   {
     "id": "2022-P1-Q5",
@@ -5555,7 +5568,7 @@ window.QUESTIONS = [
       "H": "$13$"
     },
     "answer": "H",
-    "analysis": "【题目分析】\n递推序列 x_{n+1} = (x_n + p)/(x_n + q)，已知 x₁=3, x₂=5, x₃=7，求 x₄。\n\n【解题步骤】\n第一步：建立方程组\n利用递推公式：\nx₂ = (x₁ + p)/(x₁ + q) = (3 + p)/(3 + q) = 5\nx₃ = (x₂ + p)/(x₂ + q) = (5 + p)/(5 + q) = 7\n\n第二步：解方程组\n从 x₂：(3+p)/(3+q) = 5\n3 + p = 5(3 + q) = 15 + 5q\np - 5q = 12  ... (1)\n\n从 x₃：(5+p)/(5+q) = 7\n5 + p = 7(5 + q) = 35 + 7q\np - 7q = 30  ... (2)\n\n第三步：解 p, q\n(1) - (2): -5q + 7q = 12 - 30\n2q = -18\nq = -9\n\n代入 (1): p - 5(-9) = 12\np + 45 = 12\np = -33\n\n第四步：计算 x₄\nx₄ = (x₃ + p)/(x₃ + q)\n   = (7 + (-33))/(7 + (-9))\n   = -26/(-2)\n   = 13\n\n【正确答案】H（x₄ = 13）",
+    "analysis": "【题目分析】\n本题给出一个分式递推关系 $x_{n+1} = \\dfrac{x_n + p}{x_n + q}$，已知前三项 $x_1 = 3$，$x_2 = 5$，$x_3 = 7$，要求第四项 $x_4$。核心思路是利用已知项反推参数 $p$ 和 $q$，再代入递推公式计算。\n\n【解题步骤】\n将 $n = 1$ 和 $n = 2$ 分别代入递推公式：\n\n由 $x_2 = 5$：$\\dfrac{3 + p}{3 + q} = 5$，即 $3 + p = 15 + 5q$，得 $p - 5q = 12$……①\n\n由 $x_3 = 7$：$\\dfrac{5 + p}{5 + q} = 7$，即 $5 + p = 35 + 7q$，得 $p - 7q = 30$……②\n\n①减②得 $2q = -18$，故 $q = -9$。代回①得 $p = -33$。\n\n再计算 $x_4 = \\dfrac{x_3 + p}{x_3 + q} = \\dfrac{7 - 33}{7 - 9} = \\dfrac{-26}{-2} = 13$。\n\n【快捷思路】\n不需要先解出 $p$、$q$ 的精确值。观察两个方程 $3+p = 5(3+q)$ 和 $5+p = 7(5+q)$，相减即可快速消去 $p$ 得到 $q$。得到 $p$、$q$ 后直接代入 $n=3$ 的公式即可。\n\n【正确答案】H and Series",
     "images": null,
     "has_image": false
   },
@@ -5577,7 +5590,7 @@ window.QUESTIONS = [
       "G": "10000"
     },
     "answer": "F",
-    "analysis": "【题目分析】\n计算积分 ∫[log₂5 到 log₂20] x dx = log₂M，求 M。\n\n【计算积分】\n∫ x dx = x²/2\n\n积分值 = [(log₂20)² − (log₂5)²]/2\n\n【化简】\nlog₂20 = 2 + log₂5\n\n(log₂20)² − (log₂5)² = (2 + log₂5)² − (log₂5)²\n                      = 4 + 4log₂5\n\n积分值 = (4 + 4log₂5)/2 = 2 + 2log₂5\n\n【求 M】\nlog₂M = 2 + 2log₂5 = log₂4 + log₂25 = log₂(4×25) = log₂100\n\nM = 100\n\n【正确答案】F（M = 100）",
+    "analysis": "【题目分析】\n本题要求计算定积分 $\\displaystyle\\int_{\\log_2 5}^{\\log_2 20} x\\,dx$，并将结果表示为 $\\log_2 M$ 的形式，求 $M$。关键技巧在于利用对数运算性质化简差平方形式。\n\n【解题步骤】\n第一步：计算积分\n$$\\int x\\,dx = \\frac{x^2}{2}$$\n积分值为 $\\dfrac{1}{2}\\left[(\\log_2 20)^2 - (\\log_2 5)^2\\right]$。\n\n第二步：利用对数性质化简\n注意到 $\\log_2 20 = \\log_2(4 \\times 5) = 2 + \\log_2 5$，令 $a = \\log_2 5$，则：\n$$(\\log_2 20)^2 - (\\log_2 5)^2 = (2 + a)^2 - a^2 = 4 + 4a = 4 + 4\\log_2 5$$\n\n第三步：除以 2\n$$\\frac{1}{2}(4 + 4\\log_2 5) = 2 + 2\\log_2 5$$\n\n第四步：合并对数\n$$2 + 2\\log_2 5 = \\log_2 4 + \\log_2 25 = \\log_2(4 \\times 25) = \\log_2 100$$\n\n故 $M = 100$。\n\n【快捷思路】\n被积函数是 $x$ 的差平方结构 $(\\log_2 20)^2 - (\\log_2 5)^2$，直接用平方差公式 $(a+b)^2 - a^2 = b(2a+b)$ 也可以化简，但代换法更直观。\n\n【正确答案】F",
     "images": null,
     "has_image": false
   },
@@ -5586,7 +5599,7 @@ window.QUESTIONS = [
     "year": 2022,
     "paper": 1,
     "num": 7,
-    "topic": "Algebra",
+    "topic": "Integration",
     "difficulty": 3,
     "question": "Find the finite area enclosed between the line $y = 0$ and the curve $y = x^2 - 4|x| - 12$",
     "options": {
@@ -5598,7 +5611,7 @@ window.QUESTIONS = [
       "F": "288"
     },
     "answer": "E",
-    "analysis": "【题目分析】\n求曲线 y = x² - 4|x| - 12 与 y = 0 围成的面积。\n\n【解题步骤】\n第一步：分析曲线形状\ny = x² - 4|x| - 12\n\n|x|的转折点在x=0，需要分段处理。\n\n第二步：求与x轴交点\ny = 0: x² - 4|x| - 12 = 0\n\n设|x| = t ≥ 0:\nt² - 4t - 12 = 0\nt = [4 ± √(16+48)]/2 = [4 ± 8]/2\nt = 6 或 t = -2（舍去）\n\n|x| = 6 → x = ±6\n\n第三步：分析各区间\nx ∈ [-6, 0]: |x| = -x\ny = x² - 4(-x) - 12 = x² + 4x - 12 = (x+2)(x+6)\n\n顶点在x = -2, y = -16\n\nx ∈ [0, 6]: |x| = x\ny = x² - 4x - 12 = (x-2)(x-6)\n\n顶点在x = 2, y = -16\n\n第四步：计算面积\n总面积 = ∫₋₆⁰(x²+4x-12)dx + ∫₀⁶(x²-4x-12)dx\n\n由于曲线对称，两部分面积相等。\n\n计算∫₀⁶(x²-4x-12)dx：\n= [x³/3 - 2x² - 12x]₀⁶\n= (216/3 - 72 - 72) - 0\n= 72 - 72 - 72 = -72\n\n这是负面积（曲线在x轴下方），实际面积 = 72\n\n总面积 = 72 × 2 = 144\n\n第五步：验证\n抛物线开口向上，顶点在(-2,-16)和(2,-16)\n从x=-6到x=6，曲线在x轴下方形成封闭区域。\n\n面积 = 144（选项F）\n\n【正确答案】F",
+    "analysis": "【题目分析】\n本题求曲线 $y = x^2 - 4|x| - 12$ 与 $x$ 轴（$y = 0$）所围成的有限区域面积。含绝对值的函数需要分段处理，注意图形关于 $y$ 轴对称，可以利用对称性简化计算。\n\n【解题步骤】\n第一步：去绝对值，分段表达\n当 $x \\geq 0$ 时：$y = x^2 - 4x - 12 = (x - 6)(x + 2)$\n当 $x < 0$ 时：$y = x^2 + 4x - 12 = (x + 6)(x - 2)$\n\n第二步：求与 $x$ 轴交点\n在 $x \\geq 0$ 范围内，令 $y = 0$ 得 $x = 6$（$x = -2$ 舍去）。\n在 $x < 0$ 范围内，令 $y = 0$ 得 $x = -6$（$x = 2$ 舍去）。\n故积分区间为 $[-6, 6]$。\n\n第三步：利用对称性计算面积\n图形关于 $y$ 轴对称，只需计算右半部分再乘以 2：\n$$\\int_0^6 (x^2 - 4x - 12)\\,dx = \\left[\\frac{x^3}{3} - 2x^2 - 12x\\right]_0^6 = 72 - 72 - 72 = -72$$\n\n曲线在 $x$ 轴下方，积分值为负，实际面积为 $72$。\n总面积 $= 2 \\times 72 = 144$。\n\n【快捷思路】\n设 $t = |x| \\geq 0$，方程变为 $t^2 - 4t - 12 = 0$，解得 $t = 6$（舍去负根），立刻得到交点 $x = \\pm 6$。对称性直接减半计算量。\n\n【正确答案】E",
     "images": null,
     "has_image": false
   },
@@ -5607,7 +5620,7 @@ window.QUESTIONS = [
     "year": 2022,
     "paper": 1,
     "num": 8,
-    "topic": "Algebra",
+    "topic": "Sequences and Series",
     "difficulty": 3,
     "question": "A geometric sequence has first term $a$ and common ratio $r$, where $a$ and $r$ are positive integers and $r$ is greater than 1.\n\nThe sum of the first $n$ terms of this sequence is denoted by $S_n$\n\nIt is given that the terms of the sequence satisfy\n\n$$S_{30} - S_{20} = k S_{10}$$\n\nfor some positive integer $k$.\n\nWhat is the smallest possible value of $k$?",
     "options": {
@@ -5618,7 +5631,7 @@ window.QUESTIONS = [
       "E": "$2^{10}(2^{10} - 1)$"
     },
     "answer": "B",
-    "analysis": "【题目分析】\nTMUA 2022年 Paper 2 第8题 - 等比数列求和与整数性质\n\n【已知条件】\n- 等比数列首项 a，公比 r\n- a 和 r 都是正整数\n- r > 1\n- S₃₀ - S₂₀ = kS₁₀，k 为正整数\n\n【解题步骤】\n步骤1：写出等比数列求和公式\nSₙ = a(rⁿ - 1)/(r - 1)\n\n步骤2：计算 S₃₀ - S₂₀\nS₃₀ - S₂₀ = a(r³⁰ - 1)/(r - 1) - a(r²⁰ - 1)/(r - 1)\n           = a[(r³⁰ - 1) - (r²⁰ - 1)]/(r - 1)\n           = a(r³⁰ - r²⁰)/(r - 1)\n           = a·r²⁰(r¹⁰ - 1)/(r - 1)\n\n步骤3：计算 S₁₀\nS₁₀ = a(r¹⁰ - 1)/(r - 1)\n\n步骤4：建立关系式\nS₃₀ - S₂₀ = kS₁₀\na·r²⁰(r¹⁰ - 1)/(r - 1) = k·a(r¹⁰ - 1)/(r - 1)\nr²⁰ = k\n\n步骤5：确定 k 的最小值\n- r 是正整数且 r > 1\n- 最小 r = 2\n- k = r²⁰ = 2²⁰\n\n【验证】\n当 r = 2, a = 1 时：\nS₃₀ = 2³⁰ - 1 ≈ 10.7×10⁸\nS₂₀ = 2²⁰ - 1 ≈ 10.5×10⁵\nS₁₀ = 2¹⁰ - 1 = 1023\nk = 2²⁰ = 1,048,576 ✓\n\n【正确答案】B",
+    "analysis": "【题目分析】\n等比数列首项为 $a$，公比为 $r$，其中 $a$、$r$ 均为正整数且 $r > 1$。已知 $S_{30} - S_{20} = k S_{10}$（$k$ 为正整数），求 $k$ 的最小可能值。核心在于利用等比数列求和公式化简后得到 $k$ 与 $r$ 的关系。\n\n【解题步骤】\n第一步：写出求和公式\n$$S_n = \\frac{a(r^n - 1)}{r - 1}$$\n\n第二步：代入条件\n$$S_{30} - S_{20} = \\frac{a(r^{30} - 1)}{r - 1} - \\frac{a(r^{20} - 1)}{r - 1} = \\frac{a(r^{30} - r^{20})}{r - 1}$$\n$$k S_{10} = k \\cdot \\frac{a(r^{10} - 1)}{r - 1}$$\n\n第三步：两边相等，消去公因子\n两边同乘 $r - 1$ 再除以 $a$（$a > 0$，可消去）：\n$$r^{30} - r^{20} = k(r^{10} - 1)$$\n\n左边提取公因式：$r^{20}(r^{10} - 1) = k(r^{10} - 1)$\n\n由于 $r > 1$，故 $r^{10} - 1 \\neq 0$，两边可约去，得 $k = r^{20}$。\n\n第四步：求最小值\n$r$ 是大于 1 的正整数，最小取 $r = 2$，故 $k_{\\min} = 2^{20}$。\n\n【快捷思路】\n注意到 $S_{30} - S_{20}$ 恰好是第 21 项到第 30 项之和，即 $a r^{20} + a r^{21} + \\cdots + a r^{29} = r^{20}(a + ar + \\cdots + ar^9) = r^{20} S_{10}$，直接看出 $k = r^{20}$，无需完整代入求和公式。\n\n【正确答案】B and Series",
     "images": null,
     "has_image": false
   },
@@ -5627,7 +5640,7 @@ window.QUESTIONS = [
     "year": 2022,
     "paper": 1,
     "num": 9,
-    "topic": "Algebra",
+    "topic": "Functions",
     "difficulty": 3,
     "question": "This question is about pairs of functions f and g that satisfy\n\n$$f(x) - g(x) = 2 \\sin x$$\n\n$$f(x)g(x) = \\cos^2 x$$\n\nfor all real numbers $x$.\n\nAcross all solutions for $f(x)$, what is the minimum value that $f(x)$ attains for any $x$?",
     "options": {
@@ -5640,16 +5653,20 @@ window.QUESTIONS = [
       "G": "$-4$"
     },
     "answer": "E",
-    "analysis": "【题目分析】\n函数f,g满足 f(x)-g(x)=2sin x，f(x)g(x)=cos²x，求f(x)的最小值。\n\n【解题步骤】\n第一步：建立方程组\n设 u = f(x), v = g(x)\nu - v = 2sin x  ... (1)\nuv = cos²x      ... (2)\n\n第二步：解方程组\n从(1)：v = u - 2sin x\n代入(2)：u(u - 2sin x) = cos²x\nu² - 2sin x · u = cos²x\n\n这是关于u的二次方程：\nu² - 2sin x · u - cos²x = 0\n\n第三步：求解u\nu = [2sin x ± √(4sin²x + 4cos²x)]/2\nu = sin x ± √(sin²x + cos²x)\nu = sin x ± 1\n\n所以 f(x) = sin x + 1 或 f(x) = sin x - 1\n\n第四步：分析最小值\nf(x) = sin x + 1:\nsin x ∈ [-1, 1]\nf(x) ∈ [0, 2]\n最小值 = 0\n\nf(x) = sin x - 1:\nf(x) ∈ [-2, 0]\n最小值 = -2\n\n题目问\"f(x)的最小值\"，需要确定取哪个解。\n\n考虑两个解的乘积：\n(sin x + 1)(sin x - 1) = sin²x - 1\n\n如果f(x) = sin x + 1, g(x) = sin x - 1\n验证：f - g = 2, 不等于 2sin x ✗\n\n如果f(x) = sin x + 1, g(x) = -sin x + 1\n验证：f - g = 2sin x ✓\nfg = (sin x + 1)(-sin x + 1) = 1 - sin²x = cos²x ✓\n\n所以 f(x) = sin x + 1\n最小值 = 0\n\n或者另一个组合：\nf(x) = sin x - 1, g(x) = -sin x - 1\nf - g = 2sin x ✓\nfg = (sin x - 1)(-sin x - 1) = -sin²x - sin x + sin x + 1 = 1 - sin²x = cos²x ✓\n\n此时 f(x) = sin x - 1\n最小值 = -2\n\n题目问\"所有解中f(x)的最小值\"，取 f(x) = sin x - 1 的解，最小值 = -2。\n\n但选项A是 1 - √2 ≈ -0.414...\n\n可能题目有其他约束条件，需要完整题目重新分析。\n\n【正确答案】A（需要验证）",
+    "analysis": "【题目分析】\n已知函数 $f$ 和 $g$ 满足两个方程：$f(x)-g(x)=2\\sin x$ 与 $f(x)g(x)=\\cos^2 x$，要求在所有可能的 $f(x)$ 解中，找出 $f(x)$ 能达到的最小值。这道题的关键在于正确理解题意：我们先把 $f(x)$ 求出来（它有两个可能的函数表达式），然后在所有这些可能函数中，找出最小的函数值。\n\n【解题步骤】\n第一步：将两个方程联立。由 $f(x)-g(x)=2\\sin x$ 得 $g(x)=f(x)-2\\sin x$，代入第二个方程：\n$$f(x)\\bigl(f(x)-2\\sin x\\bigr)=\\cos^2 x$$\n展开整理得关于 $f(x)$ 的二次方程：\n$$\\bigl(f(x)\\bigr)^2-(2\\sin x)f(x)-\\cos^2 x=0$$\n\n第二步：用求根公式求解：\n$$f(x)=\\frac{2\\sin x\\pm\\sqrt{4\\sin^2 x+4\\cos^2 x}}{2}=\\sin x\\pm\\sqrt{\\sin^2 x+\\cos^2 x}=\\sin x\\pm 1$$\n\n因此 $f(x)$ 有两种可能：$f(x)=\\sin x+1$ 或 $f(x)=\\sin x-1$。\n\n第三步：分别求最小值。对 $f(x)=\\sin x+1$，因 $\\sin x\\in[-1,1]$，故 $f(x)\\in[0,2]$，最小值为 $0$。对 $f(x)=\\sin x-1$，$f(x)\\in[-2,0]$，最小值为 $-2$。\n\n第四步：题目要求在所有解的最小值中取最小者，故答案为 $-2$。\n\n【快捷思路】\n直接将 $f,g$ 视为二次方程 $t^2-(f+g)t+fg=0$ 的两根，或利用韦达定理快速得到 $f(x)=\\sin x\\pm 1$，然后分别判断最小值即可。注意题目问的是所有可能函数中的全局最小值，不要遗漏第二个解。\n\n【正确答案】E",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Algebra",
+      "Trigonometry"
+    ]
   },
   {
     "id": "2022-P1-Q10",
     "year": 2022,
     "paper": 1,
     "num": 10,
-    "topic": "Algebra",
+    "topic": "Functions",
     "difficulty": 3,
     "question": "A sequence of translations is applied to the graph of $y = x^3$\n\nWhich of the following graphs could be the result of this sequence of translations?\n\nI $y = x^3 - 3x^2 + 9x - 27$\n\nII $y = x^3 - 9x^2 + 27x - 3$\n\nIII $y = 27x^3 - 9x^2 + x - 3$",
     "options": {
@@ -5663,16 +5680,19 @@ window.QUESTIONS = [
       "H": "I, II and III"
     },
     "answer": "C",
-    "analysis": "【题目分析】\nTMUA 2022年 Paper 2 第10题。\n\n【题目内容】\nA sequence of translations is applied to the graph of $y = x^3$\n\nWhich of the fo...\n\n【解题方法】\n本题需要运用TMUA考试所涉及的数学知识，包括但不限于：\n- 代数运算与方程求解技巧\n- 函数性质分析（单调性、极值、对称性等）\n- 几何图形的坐标与方程表示\n- 逻辑推理与证明方法\n- 数论与离散数学基础\n\n【计算过程】\n根据题目具体条件，逐步分析并计算。\n\n【答案验证】\n将计算结果与选项对比，确认正确答案。\n\n【正确答案】G",
+    "analysis": "【题目分析】\n题目问：对 $y=x^3$ 的图像施加一系列平移后，下列哪些函数图像可能是结果。三个候选函数中，需要逐一判断它们是否能通过平移 $y=x^3$ 得到。核心思路是先推导平移 $y=x^3$ 后得到的一般形式，再对比各选项的系数。\n\n【解题步骤】\n第一步：推导平移后的一般形式。将 $y=x^3$ 沿 $x$ 方向平移 $a$ 个单位，再沿 $y$ 方向平移 $b$ 个单位，得到：\n$$y=(x-a)^3+b=x^3-3ax^2+3a^2x-a^3+b$$\n注意 $x^3$ 的系数始终为 $1$，且 $x^2$ 系数为 $-3a$，$x$ 系数为 $3a^2$。\n\n第二步：逐一验证。\n\n选项 I：$y=x^3-3x^2+9x-27$。由 $x^2$ 项得 $-3a=-3$，故 $a=1$。此时一般形式为 $y=x^3-3x^2+3x-1+b$，但原式中 $x$ 项系数为 $9\\neq 3$，矛盾，故不是平移。\n\n选项 II：$y=x^3-9x^2+27x-3$。由 $x^2$ 项得 $-3a=-9$，故 $a=3$。代入得 $y=x^3-9x^2+27x-27+b$，与原式对比得 $-27+b=-3$，即 $b=24$，完全吻合，故是平移。\n\n选项 III：$y=27x^3-9x^2+x-3$。$x^3$ 项系数为 $27\\neq 1$，平移不改变最高次项系数，故不是平移。\n\n第三步：只有 II 符合，答案为 C。\n\n【快捷思路】\n平移不改变多项式最高次项的系数和次高项系数的比值关系。对于三次函数 $y=x^3$ 的平移，必有 $x^3$ 系数为 $1$ 且满足 $(x\\text{ 项系数})=3a^2=(x^2\\text{ 系数}/-3)^2$。选项 I 中 $9\\neq 3\\times 1^2=3$，选项 II 中 $27=3\\times 3^2$ 成立，选项 III 首项系数不为 $1$ 直接排除。\n\n【正确答案】C",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Coordinate Geometry"
+    ]
   },
   {
     "id": "2022-P1-Q11",
     "year": 2022,
     "paper": 1,
     "num": 11,
-    "topic": "Algebra",
+    "topic": "Sequences and Series",
     "difficulty": 3,
     "question": "$$\\sum_{n=1}^{100} \\log_{10} ( 3^{1-n} )$$",
     "options": {
@@ -5686,16 +5706,19 @@ window.QUESTIONS = [
       "H": "$1 + 5050 \\log_{10} 3$"
     },
     "answer": "A",
-    "analysis": "【题目分析】\nTMUA 2022年 Paper 2 第11题。\n\n【题目内容】\n$$\\sum_{n=1}^{100} \\log_{10} ( 3^{1-n} )$$\n\n**A** $-4950 \\log_{10} 3$\n\n**B** $49...\n\n【解题方法】\n本题需要运用TMUA考试所涉及的数学知识，包括但不限于：\n- 代数运算与方程求解技巧\n- 函数性质分析（单调性、极值、对称性等）\n- 几何图形的坐标与方程表示\n- 逻辑推理与证明方法\n- 数论与离散数学基础\n\n【计算过程】\n根据题目具体条件，逐步分析并计算。\n\n【答案验证】\n将计算结果与选项对比，确认正确答案。\n\n【正确答案】C",
+    "analysis": "【题目分析】\n本题要求计算对数求和：$\\displaystyle\\sum_{n=1}^{100}\\log_{10}\\!\\left(3^{\\,1-n}\\right)$。解题的关键是利用对数性质将幂指数提取出来，将求和转化为等差数列求和。\n\n【解题步骤】\n第一步：利用对数性质 $\\log_b(a^k)=k\\log_b a$，将通项化简：\n$$\\log_{10}\\!\\left(3^{\\,1-n}\\right)=(1-n)\\log_{10}3$$\n\n第二步：将常数因子 $\\log_{10}3$ 提取到求和号外：\n$$\\sum_{n=1}^{100}(1-n)\\log_{10}3=\\left(\\sum_{n=1}^{100}(1-n)\\right)\\log_{10}3$$\n\n第三步：计算 $\\sum_{n=1}^{100}(1-n)$。展开各项：\n$$n=1:\\ 1-1=0,\\quad n=2:\\ 1-2=-1,\\quad n=3:\\ 1-3=-2,\\ \\ldots,\\quad n=100:\\ 1-100=-99$$\n即求 $0+(-1)+(-2)+\\cdots+(-99)$，共 $100$ 项，是首项为 $0$、末项为 $-99$ 的等差数列。\n\n第四步：用等差数列求和公式 $S_n=\\dfrac{n}{2}(a_1+a_n)$：\n$$S_{100}=\\frac{100}{2}(0+(-99))=50\\times(-99)=-4950$$\n\n第五步：代回原式，得最终结果 $-4950\\log_{10}3$。\n\n【快捷思路】\n$\\sum_{n=1}^{100}(1-n)=\\sum_{n=1}^{100}1-\\sum_{n=1}^{100}n=100-\\frac{100\\times 101}{2}=100-5050=-4950$。直接乘以 $\\log_{10}3$ 即可。这种拆项法比逐项展开更快。\n\n【正确答案】A and Series",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Algebra"
+    ]
   },
   {
     "id": "2022-P1-Q12",
     "year": 2022,
     "paper": 1,
     "num": 12,
-    "topic": "Functions",
+    "topic": "Coordinate Geometry",
     "difficulty": 3,
     "question": "A family of quadratic curves is given by\n\n$$y_k = 2\\left(x - \\frac{k}{2}\\right)^2 + \\frac{k^2}{2} + 4k + 3$$\n\nwhere $k$ is any real number and $y_k$ is a function of $x$.\n\nAll these curves are sketched, and the point with the lowest $y$-coordinate among all the curves $y_k$ is $(a, b)$.\n\nFind the value of $a + b$",
     "options": {
@@ -5706,9 +5729,12 @@ window.QUESTIONS = [
       "E": "$-9$"
     },
     "answer": "D",
-    "analysis": "【题目分析】\nTMUA 2022年 Paper 2 第12题。\n\n【题目内容】\nA family of quadratic curves is given by\n\n$$y_k = 2\\left(x - \\frac{k}{2}\\right)^...\n\n【解题方法】\n本题需要运用TMUA考试所涉及的数学知识，包括但不限于：\n- 代数运算与方程求解技巧\n- 函数性质分析（单调性、极值、对称性等）\n- 几何图形的坐标与方程表示\n- 逻辑推理与证明方法\n- 数论与离散数学基础\n\n【计算过程】\n根据题目具体条件，逐步分析并计算。\n\n【答案验证】\n将计算结果与选项对比，确认正确答案。\n\n【正确答案】F",
+    "analysis": "【题目分析】\n题目给出一族抛物线 $y_k=2\\!\\left(x-\\dfrac{k}{2}\\right)^{\\!2}+\\dfrac{k^2}{2}+4k+3$，其中 $k$ 为任意实数。每条抛物线的顶点纵坐标随 $k$ 变化，要求在所有抛物线的所有顶点中，找到纵坐标最小的那个点 $(a,b)$，并计算 $a+b$。这是一个两层最值问题：先对每条抛物线求最小值，再在所有最小值中求最小值。\n\n【解题步骤】\n第一步：识别抛物线的顶点。$y_k$ 已给出完全平方形式 $y_k=2(x-\\frac{k}{2})^2+(\\frac{k^2}{2}+4k+3)$。由于二次项系数 $2>0$，每条抛物线开口向上，其最小值（顶点纵坐标）为：\n$$x=\\frac{k}{2},\\quad y=\\frac{k^2}{2}+4k+3$$\n即第 $k$ 条抛物线的顶点为 $\\left(\\dfrac{k}{2},\\ \\dfrac{k^2}{2}+4k+3\\right)$。\n\n第二步：求所有顶点中纵坐标的最小值。令 $h(k)=\\dfrac{k^2}{2}+4k+3$，对 $k$ 求最小值。可用配方法：\n$$h(k)=\\frac{1}{2}(k^2+8k+6)=\\frac{1}{2}\\bigl[(k+4)^2-10\\bigr]=\\frac{(k+4)^2}{2}-5$$\n当 $k=-4$ 时，$h(k)$ 取最小值 $-5$。\n\n第三步：求对应的横坐标。$k=-4$ 时，$x=\\dfrac{k}{2}=\\dfrac{-4}{2}=-2$。\n\n第四步：因此纵坐标最小的顶点为 $(-2,-5)$，即 $a=-2$，$b=-5$，故 $a+b=-7$。\n\n【快捷思路】\n$h(k)=\\frac{k^2}{2}+4k+3$ 对 $k$ 求导得 $h'(k)=k+4$，令 $h'(k)=0$ 得 $k=-4$，代入得最小值 $-5$，对应 $x=-2$，$a+b=-7$。求导法比配方法更直接。\n\n【正确答案】D Geometry",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Differentiation"
+    ]
   },
   {
     "id": "2022-P1-Q13",
@@ -5729,7 +5755,7 @@ window.QUESTIONS = [
       "H": "$2^{\\frac{1}{6}}$"
     },
     "answer": "A",
-    "analysis": "【题目分析】\nTMUA 2022年 Paper 2 第13题。\n\n【题目内容】\nGiven that\n\n$$ \\left( a^3 + \\frac{2}{b^3} \\right) \\left( \\frac{2}{a^3} - b^3 \\ri...\n\n【解题方法】\n本题需要运用TMUA考试所涉及的数学知识，包括但不限于：\n- 代数运算与方程求解技巧\n- 函数性质分析（单调性、极值、对称性等）\n- 几何图形的坐标与方程表示\n- 逻辑推理与证明方法\n- 数论与离散数学基础\n\n【计算过程】\n根据题目具体条件，逐步分析并计算。\n\n【答案验证】\n将计算结果与选项对比，确认正确答案。\n\n【正确答案】E",
+    "analysis": "【题目分析】\n已知 $(a^3 + \\frac{2}{b^3})(\\frac{2}{a^3} - b^3) = \\sqrt{2}$，其中 $a$、$b$ 为实数，求 $ab$ 的最小值。这是一道典型的代数题，通过展开括号后引入换元，将复杂表达式转化为可解的二次方程。\n\n【解题步骤】\n第一步，展开左边括号：\n$(a^3 + \\frac{2}{b^3})(\\frac{2}{a^3} - b^3) = 2 - a^3 b^3 + \\frac{4}{a^3 b^3} - 2 = \\frac{4}{a^3 b^3} - a^3 b^3$\n于是得到 $\\frac{4}{a^3 b^3} - a^3 b^3 = \\sqrt{2}$。\n\n第二步，令 $x = a^3 b^3$，则方程变为 $\\frac{4}{x} - x = \\sqrt{2}$。两边同乘 $x$ 整理得 $x^2 + \\sqrt{2}x - 4 = 0$。\n\n第三步，用求根公式解二次方程：\n$x = \\frac{-\\sqrt{2} \\pm \\sqrt{2 + 16}}{2} = \\frac{-\\sqrt{2} \\pm 3\\sqrt{2}}{2}$\n解得 $x = -2\\sqrt{2}$ 或 $x = \\sqrt{2}$。\n\n第四步，注意 $x = (ab)^3$，所以 $ab = x^{1/3}$。要使 $ab$ 最小，取 $x = -2\\sqrt{2} = -2^{3/2}$，于是 $ab = (-2^{3/2})^{1/3} = -2^{1/2} = -\\sqrt{2}$。\n\n【快捷思路】\n展开后直接看出只含 $a^3 b^3$ 这一整体量，换元 $x = a^3 b^3$ 一步到位转化为二次方程。求最小值时取负根即可，利用指数运算法则 $(2^{3/2})^{1/3} = 2^{1/2}$ 快速得出结果。\n\n【正确答案】A",
     "images": null,
     "has_image": false
   },
@@ -5738,7 +5764,7 @@ window.QUESTIONS = [
     "year": 2022,
     "paper": 1,
     "num": 14,
-    "topic": "Coordinate Geometry",
+    "topic": "Trigonometry",
     "difficulty": 3,
     "question": "A circle has centre $O$ and radius 6.\n\n$P, Q$ and $R$ are points on the circumference with angle $POQ \\geq \\frac{\\pi}{2}$\n\nThe area of the triangle $POQ$ is $9\\sqrt{3}$\n\nWhat is the greatest possible area of triangle $PRQ$?",
     "options": {
@@ -5750,7 +5776,7 @@ window.QUESTIONS = [
       "F": "$36\\sqrt{3}$"
     },
     "answer": "D",
-    "analysis": "【题目分析】\nTMUA 2022年 Paper 2 第14题。\n\n【题目内容】\nA circle has centre $O$ and radius 6.\n\n$P, Q$ and $R$ are points on the circumfe...\n\n【解题方法】\n本题需要运用TMUA考试所涉及的数学知识，包括但不限于：\n- 代数运算与方程求解技巧\n- 函数性质分析（单调性、极值、对称性等）\n- 几何图形的坐标与方程表示\n- 逻辑推理与证明方法\n- 数论与离散数学基础\n\n【计算过程】\n根据题目具体条件，逐步分析并计算。\n\n【答案验证】\n将计算结果与选项对比，确认正确答案。\n\n【正确答案】D",
+    "analysis": "【题目分析】\n圆 $O$ 半径为 $6$，$P$、$Q$、$R$ 在圆周上，$\\angle POQ \\geq \\frac{\\pi}{2}$，三角形 $POQ$ 面积为 $9\\sqrt{3}$。求三角形 $PRQ$ 面积的最大值。这是圆的几何与三角函数综合题。\n\n【解题步骤】\n第一步，利用三角形面积公式 $A = \\frac{1}{2}ab \\sin C$ 求 $\\angle POQ$。设 $\\angle POQ = 2\\theta$，则\n$\\frac{1}{2} \\times 6 \\times 6 \\times \\sin 2\\theta = 9\\sqrt{3}$，得 $\\sin 2\\theta = \\frac{\\sqrt{3}}{2}$。\n由 $2\\theta \\geq \\frac{\\pi}{2}$ 知 $2\\theta = \\frac{2\\pi}{3}$，即 $\\theta = \\frac{\\pi}{3}$。\n\n第二步，求弦 $PQ$ 的长度。作 $O$ 到 $PQ$ 的垂线交于 $S$，则 $PS = 6 \\sin\\theta = 6 \\sin\\frac{\\pi}{3} = 3\\sqrt{3}$，故 $PQ = 6\\sqrt{3}$。同时 $OS = 6 \\cos\\theta = 6 \\cos\\frac{\\pi}{3} = 3$。\n\n第三步，固定 $PQ$ 为底边，三角形 $PRQ$ 的面积为 $\\frac{1}{2} \\times PQ \\times h$，其中 $h$ 是 $R$ 到 $PQ$ 的距离。$R$ 在圆周上，$h$ 的最大值出现在 $R$ 位于 $PQ$ 对侧最远处，此时高为 $RO + OS = 6 + 3 = 9$。\n\n第四步，最大面积为 $\\frac{1}{2} \\times 6\\sqrt{3} \\times 9 = 27\\sqrt{3}$。\n\n【快捷思路】\n核心思想是固定底边 $PQ$ 后面积仅取决于高。圆上一点到固定弦的最大距离等于半径加弦心距，直接得到最大高为 $6+3=9$，一步算出结果。\n\n【正确答案】D",
     "images": null,
     "has_image": false
   },
@@ -5759,7 +5785,7 @@ window.QUESTIONS = [
     "year": 2022,
     "paper": 1,
     "num": 15,
-    "topic": "Algebra",
+    "topic": "Differentiation",
     "difficulty": 3,
     "question": "A rectangle is drawn in the region enclosed by the curves $p$ and $q$, where\n\n$$p(x) = 8 - 2x^2$$\n\n$$q(x) = x^2 - 2$$\n\nsuch that the sides of the rectangle are parallel to the $x$- and $y$-axes.\n\nWhat is the maximum possible area of the rectangle?",
     "options": {
@@ -5773,7 +5799,7 @@ window.QUESTIONS = [
       "H": "$\\frac{40\\sqrt{10}}{9}$"
     },
     "answer": "H",
-    "analysis": "【题目分析】\nTMUA 2022年 Paper 2 第15题。\n\n【题目内容】\nA rectangle is drawn in the region enclosed by the curves $p$ and $q$, where\n\n$$...\n\n【解题方法】\n本题需要运用TMUA考试所涉及的数学知识，包括但不限于：\n- 代数运算与方程求解技巧\n- 函数性质分析（单调性、极值、对称性等）\n- 几何图形的坐标与方程表示\n- 逻辑推理与证明方法\n- 数论与离散数学基础\n\n【计算过程】\n根据题目具体条件，逐步分析并计算。\n\n【答案验证】\n将计算结果与选项对比，确认正确答案。\n\n【正确答案】F",
+    "analysis": "【题目分析】\n抛物线 $p(x) = 8 - 2x^2$ 和 $q(x) = x^2 - 2$ 围成区域内画一个边平行于坐标轴的矩形，求矩形面积的最大值。这是典型的优化问题，需要建立面积函数后用微积分求极值。\n\n【解题步骤】\n第一步，求两曲线交点。令 $8 - 2x^2 = x^2 - 2$，得 $3x^2 = 10$，即 $x = \\pm\\sqrt{\\frac{10}{3}}$。两曲线关于 $y$ 轴对称，围成一个上下封闭的区域。\n\n第二步，设矩形左右边界在 $x = \\pm a$（$0 < a < \\sqrt{\\frac{10}{3}}$）。矩形宽度为 $2a$，高度为 $(8 - 2a^2) - (a^2 - 2) = 10 - 3a^2$。\n\n第三步，面积函数为 $A(a) = 2a(10 - 3a^2) = 20a - 6a^3$。对 $a$ 求导得 $A'(a) = 20 - 18a^2$。\n\n第四步，令 $A'(a) = 0$，解得 $a = \\sqrt{\\frac{10}{9}} = \\frac{\\sqrt{10}}{3}$（取正值）。验证该值在允许范围内。\n\n第五步，代入求最大面积：\n$A = 2 \\cdot \\frac{\\sqrt{10}}{3} \\cdot (10 - 3 \\cdot \\frac{10}{9}) = \\frac{2\\sqrt{10}}{3} \\cdot \\frac{20}{3} = \\frac{40\\sqrt{10}}{9}$。\n\n【快捷思路】\n利用对称性只需一个变量 $a$ 描述矩形。面积函数 $A(a) = 20a - 6a^3$ 求导后 $a^2 = \\frac{10}{9}$ 代回时巧妙利用 $10 - 3a^2 = 10 - \\frac{10}{3} = \\frac{20}{3}$ 简化计算。\n\n【正确答案】H",
     "images": null,
     "has_image": false
   },
@@ -5794,7 +5820,7 @@ window.QUESTIONS = [
       "F": "$7x^4 + 6x^2 + 5 = 0$"
     },
     "answer": "B",
-    "analysis": "【题目分析】\nTMUA 2022年 Paper 2 第16题。\n\n【题目内容】\nThe solutions to $7x^4 - 6x^2 + 1 = 0$ are $\\pm \\cos \\theta$ and $\\pm \\cos \\beta...\n\n【解题方法】\n本题需要运用TMUA考试所涉及的数学知识，包括但不限于：\n- 代数运算与方程求解技巧\n- 函数性质分析（单调性、极值、对称性等）\n- 几何图形的坐标与方程表示\n- 逻辑推理与证明方法\n- 数论与离散数学基础\n\n【计算过程】\n根据题目具体条件，逐步分析并计算。\n\n【答案验证】\n将计算结果与选项对比，确认正确答案。\n\n【正确答案】D",
+    "analysis": "【题目分析】\n已知 $7x^4 - 6x^2 + 1 = 0$ 的解为 $\\pm\\cos\\theta$ 和 $\\pm\\cos\\beta$，求以 $\\pm\\sin\\theta$ 和 $\\pm\\sin\\beta$ 为解的方程。本题巧妙地将四次方程与三角恒等式结合，核心是利用 $\\sin^2 = 1 - \\cos^2$ 的关系做根的变换。\n\n【解题步骤】\n第一步，将原方程视为 $x^2$ 的二次方程。设 $y = x^2$，则 $7y^2 - 6y + 1 = 0$。\n\n第二步，求根公式得 $y = \\frac{6 \\pm \\sqrt{36 - 28}}{14} = \\frac{6 \\pm 2\\sqrt{2}}{14} = \\frac{3 \\pm \\sqrt{2}}{7}$。\n这两个值分别是 $\\cos^2\\theta$ 和 $\\cos^2\\beta$。\n\n第三步，利用 $\\sin^2\\theta = 1 - \\cos^2\\theta$ 和 $\\sin^2\\beta = 1 - \\cos^2\\beta$，得\n$\\sin^2\\theta$ 和 $\\sin^2\\beta$ 分别为 $\\frac{3 \\mp \\sqrt{2}}{7}$ 的补，即 $\\frac{4 \\mp \\sqrt{2}}{7}$。\n\n第四步，以 $\\pm\\sin\\theta$、$\\pm\\sin\\beta$ 为根的方程相当于 $x^2$ 的两个值为 $\\frac{4 \\pm \\sqrt{2}}{7}$。构造二次方程：\n$(x^2 - \\frac{4+\\sqrt{2}}{7})(x^2 - \\frac{4-\\sqrt{2}}{7}) = 0$\n\n第五步，展开：$x^4 - (\\frac{4+\\sqrt{2}}{7} + \\frac{4-\\sqrt{2}}{7})x^2 + \\frac{4+\\sqrt{2}}{7} \\cdot \\frac{4-\\sqrt{2}}{7} = 0$\n即 $x^4 - \\frac{8}{7}x^2 + \\frac{16-2}{49} = 0$，也就是 $x^4 - \\frac{8}{7}x^2 + \\frac{2}{7} = 0$。\n\n第六步，两边乘以 $7$ 得 $7x^4 - 8x^2 + 2 = 0$。\n\n【快捷思路】\n利用根与系数关系：原方程两根之和 $\\cos^2\\theta + \\cos^2\\beta = \\frac{6}{7}$，则 $\\sin^2\\theta + \\sin^2\\beta = 2 - \\frac{6}{7} = \\frac{8}{7}$。原方程两根之积 $\\cos^2\\theta \\cos^2\\beta = \\frac{1}{7}$，则 $\\sin^2\\theta \\sin^2\\beta = 1 - \\frac{6}{7} + \\frac{1}{7} = \\frac{2}{7}$。直接写出新方程 $x^4 - \\frac{8}{7}x^2 + \\frac{2}{7} = 0$，无需逐个求根。\n\n【正确答案】B",
     "images": null,
     "has_image": false
   },
@@ -5803,7 +5829,7 @@ window.QUESTIONS = [
     "year": 2022,
     "paper": 1,
     "num": 17,
-    "topic": "Differentiation",
+    "topic": "Trigonometry",
     "difficulty": 3,
     "question": "Find the complete set of values of $x$ for which there are two non-congruent triangles with the side lengths and angle as shown in the diagram.",
     "options": {
@@ -5815,18 +5841,21 @@ window.QUESTIONS = [
       "F": "$4 < x < 5$"
     },
     "answer": "D",
-    "analysis": "【题目分析】\nTMUA 2022年 Paper 2 第17题。\n\n【题目内容】\n![A triangle with side lengths $x - 1$ and $-x^2 + 6x - 5$, and an angle of $30^...\n\n【解题方法】\n本题需要运用TMUA考试所涉及的数学知识，包括但不限于：\n- 代数运算与方程求解技巧\n- 函数性质分析（单调性、极值、对称性等）\n- 几何图形的坐标与方程表示\n- 逻辑推理与证明方法\n- 数论与离散数学基础\n\n【计算过程】\n根据题目具体条件，逐步分析并计算。\n\n【答案验证】\n将计算结果与选项对比，确认正确答案。\n\n【正确答案】E",
+    "analysis": "【题目分析】\n已知三角形两条边长分别为 $x-1$ 和 $-x^2+6x-5$，其中夹角为 $30^\\circ$，求使存在两个非全等三角形的 $x$ 的取值范围。这是典型的 SSA（两边及一非夹角）模糊情形问题。\n\n【解题步骤】\n首先确保两边长均为正：$x-1>0$ 得 $x>1$；$-x^2+6x-5=-(x-1)(x-5)>0$ 得 $1<x<5$。综合得 $1<x<5$。\n\n对于 SSA 模糊情形，设已知边 $a=x-1$（对已知角 $30^\\circ$），邻边 $b=-x^2+6x-5$。存在两个非全等三角形的条件是：\n1. $a<b$，即 $x-1<-x^2+6x-5$，整理得 $x^2-5x+4<0$，即 $(x-1)(x-4)<0$，故 $1<x<4$。\n2. $a>b\\sin 30^\\circ$，即 $x-1>\\frac{1}{2}(-x^2+6x-5)$，整理得 $2x-2>-x^2+6x-5$，即 $x^2-4x+3>0$，$(x-1)(x-3)>0$，故 $x<1$ 或 $x>3$。\n\n两个不等式联立得 $3<x<4$，该范围已在 $1<x<5$ 内，满足所有正性条件。\n\n【快捷思路】\n识别 SSA 模糊情形后直接套用条件：$b\\sin\\theta<a<b$。代入已知量解两个不等式即可，无需画图推导。\n\n【正确答案】D",
     "images": {
       "image": "2022 P1 Q17.png"
     },
-    "has_image": true
+    "has_image": true,
+    "related_topics": [
+      "Coordinate Geometry"
+    ]
   },
   {
     "id": "2022-P1-Q18",
     "year": 2022,
     "paper": 1,
     "num": 18,
-    "topic": "Differentiation",
+    "topic": "Graphs",
     "difficulty": 3,
     "question": "It is given that\n\n$$f(x) = x^2(x - 1)^2(x - 2)$$\n\n$$g(x) = -p(x - q)^2(x - r)^2$$\n\nwhere $p$, $q$ and $r$ are positive and $q < r$\n\nFind the set of values of $q$ and $r$ that guarantees the greatest number of distinct real solutions of the equation $f(x) = g(x)$ for all $p$.",
     "options": {
@@ -5838,16 +5867,20 @@ window.QUESTIONS = [
       "F": "$q > 2$ and $r > 2$"
     },
     "answer": "B",
-    "analysis": "【题目分析】\nTMUA 2022年 Paper 2 第18题。\n\n【题目内容】\nIt is given that\n\n$$f(x) = x^2(x - 1)^2(x - 2)$$\n\n$$g(x) = -p(x - q)^2(x - r)^2$...\n\n【解题方法】\n本题需要运用TMUA考试所涉及的数学知识，包括但不限于：\n- 代数运算与方程求解技巧\n- 函数性质分析（单调性、极值、对称性等）\n- 几何图形的坐标与方程表示\n- 逻辑推理与证明方法\n- 数论与离散数学基础\n\n【计算过程】\n根据题目具体条件，逐步分析并计算。\n\n【答案验证】\n将计算结果与选项对比，确认正确答案。\n\n【正确答案】E",
+    "analysis": "【题目分析】\n给定五次多项式 $f(x)=x^2(x-1)^2(x-2)$ 和四次多项式 $g(x)=-p(x-q)^2(x-r)^2$（$p,q,r>0$，$q<r$），求使方程 $f(x)=g(x)$ 对一切 $p>0$ 都有最多不同实根的 $q,r$ 取值范围。本质是两个函数图像交点个数的讨论。\n\n【解题步骤】\n令 $h(x)=f(x)-g(x)$，方程 $f(x)=g(x)$ 即 $h(x)=0$。$h(x)$ 是五次多项式，最多 $5$ 个不同实根。\n\n分析 $f(x)$ 的图像：零点为 $x=0$（二重根，切 $x$ 轴）、$x=1$（二重根，切 $x$ 轴）、$x=2$（单根）。当 $x>2$ 时 $f(x)>0$，当 $x<2$ 时 $f(x)\\le 0$，在 $x=0$ 和 $x=1$ 附近形成两个下凹的谷。\n\n分析 $g(x)$ 的图像：$g(x)\\le 0$ 恒成立，在 $x=q$ 和 $x=r$ 处切 $x$ 轴，形成上凸的峰。\n\n要使交点始终为 $5$ 个，$g(x)$ 的峰必须覆盖 $f(x)$ 的两个谷，即 $q$ 和 $r$ 分别落在两个谷内。若 $r>2$ 或 $r<1$，当 $p$ 很大时 $g(x)$ 的峰会过高而跳过其中一个谷，交点不超过 $3$ 个。因此必须有 $1<r<2$。\n\n同理，若 $q>1$（即 $1<q<r$），则左谷未被覆盖，故必须 $q<1$。此时 $g(1)<0$，峰覆盖两个谷各产生两个交点（共 $4$ 个），再加上 $x<0$ 处由于 $f(x)$ 是五次而 $g(x)$ 是四次，当 $x\\to-\\infty$ 时 $f(x)$ 下降更快，必有第 $5$ 个交点。\n\n验证边界：$q=1$ 时在 $x=1$ 处出现二重根，不足 $5$ 个不同根；$r=2$ 时因 $x=2$ 是 $f(x)$ 的单根仍可保持 $5$ 个不同根。选项中最匹配的是 $q<1$ 且 $1<r<2$。\n\n【快捷思路】\n抓住核心：五次多项式最多 $5$ 个实根，$g(x)$ 需覆盖 $f(x)$ 的两个谷。观察零点分布即可判断 $q\\in(0,1)$，$r\\in(1,2)$。\n\n【正确答案】B",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Functions",
+      "Algebra"
+    ]
   },
   {
     "id": "2022-P1-Q19",
     "year": 2022,
     "paper": 1,
     "num": 19,
-    "topic": "Algebra",
+    "topic": "Probability",
     "difficulty": 3,
     "question": "Circle $C_1$ is defined as $x^2 + y^2 = 25$\n\nA second circle $C_2$ has radius 4 and centre $(a, b)$ where\n\n$$-2 \\le a \\le 2 \\quad \\text{and} \\quad -3 \\le b \\le 3$$\n\nIf the centre of $C_2$ is equally likely to be located anywhere within the given range, what is the probability that $C_2$ intersects $C_1$?",
     "options": {
@@ -5859,16 +5892,19 @@ window.QUESTIONS = [
       "F": "$\\frac{24 - \\pi}{24}$"
     },
     "answer": "F",
-    "analysis": "【题目分析】\nTMUA 2022年 Paper 2 第19题。\n\n【题目内容】\nCircle $C_1$ is defined as $x^2 + y^2 = 25$\n\nA second circle $C_2$ has radius 4 ...\n\n【解题方法】\n本题需要运用TMUA考试所涉及的数学知识，包括但不限于：\n- 代数运算与方程求解技巧\n- 函数性质分析（单调性、极值、对称性等）\n- 几何图形的坐标与方程表示\n- 逻辑推理与证明方法\n- 数论与离散数学基础\n\n【计算过程】\n根据题目具体条件，逐步分析并计算。\n\n【答案验证】\n将计算结果与选项对比，确认正确答案。\n\n【正确答案】B",
+    "analysis": "【题目分析】\n圆 $C_1:x^2+y^2=25$（半径 $5$，圆心原点），圆 $C_2$ 半径 $4$，圆心 $(a,b)$ 在矩形区域 $-2\\le a\\le 2$，$-3\\le b\\le 3$ 内均匀分布。求两圆相交的概率。\n\n【解题步骤】\n首先判断 $C_2$ 的圆心区域是否全部在 $C_1$ 内：矩形角点到原点最远距离为 $\\sqrt{2^2+3^2}=\\sqrt{13}<5$，因此整个矩形区域都在 $C_1$ 内部。\n\n两圆相交的条件：当 $C_2$ 的圆心 $(a,b)$ 完全在 $C_1$ 内部时，$C_2$ 不与 $C_1$ 相交当且仅当 $C_2$ 完全包含在 $C_1$ 内。由于 $C_1$ 半径为 $5$、$C_2$ 半径为 $4$，$C_2$ 完全在 $C_1$ 内部的条件是圆心距 $d<5-4=1$，即 $\\sqrt{a^2+b^2}<1$。\n\n反之，两圆相交当且仅当 $d\\ge 1$，即圆心 $(a,b)$ 不在半径为 $1$ 的小圆内。\n\n样本空间面积为矩形面积 $4\\times 6=24$。不相交区域是半径 $1$ 的圆，面积为 $\\pi$，且该小圆完全落在矩形内（因为半径 $1<2$）。因此相交区域面积为 $24-\\pi$。\n\n所求概率为 $\\frac{24-\\pi}{24}$。\n\n【快捷思路】\n利用两圆位置关系：内切时圆心距为 $R-r=1$。在 $C_1$ 内部且 $d\\ge 1$ 时两圆相交。直接计算几何概率：$(24-\\pi)/24$。\n\n【正确答案】F",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Coordinate Geometry"
+    ]
   },
   {
     "id": "2022-P1-Q20",
     "year": 2022,
     "paper": 1,
     "num": 20,
-    "topic": "Algebra",
+    "topic": "Graphs",
     "difficulty": 3,
     "question": "$n$ is the number of points of intersection of the graphs\n\n$$y = |x^2 - a^2| \\text{ and } y = a^2|x - 1|$$\n\nwhere $a$ is a real number.\n\nWhat is the smallest value of $n$ that is **not** possible?",
     "options": {
@@ -5879,9 +5915,13 @@ window.QUESTIONS = [
       "E": "$n = 5$"
     },
     "answer": "B",
-    "analysis": "【题目分析】\nTMUA 2022年 Paper 2 第20题。\n\n【题目内容】\n$n$ is the number of points of intersection of the graphs\n\n$$y = |x^2 - a^2| \\te...\n\n【解题方法】\n本题需要运用TMUA考试所涉及的数学知识，包括但不限于：\n- 代数运算与方程求解技巧\n- 函数性质分析（单调性、极值、对称性等）\n- 几何图形的坐标与方程表示\n- 逻辑推理与证明方法\n- 数论与离散数学基础\n\n【计算过程】\n根据题目具体条件，逐步分析并计算。\n\n【答案验证】\n将计算结果与选项对比，确认正确答案。\n\n【正确答案】E",
+    "analysis": "【题目分析】\n求曲线 $y=|x^2-a^2|$ 与 $y=a^2|x-1|$ 的交点个数 $n$，找出最小的不可能的 $n$ 值。需要对参数 $a$ 进行分类讨论。\n\n【解题步骤】\n利用对称性，用 $-a$ 代替 $a$ 方程不变，故不妨设 $a\\ge 0$。\n\n$y=|x^2-a^2|$ 的图像：在 $x=\\pm a$ 处与 $x$ 轴相交，在 $[-a,a]$ 区间是下凸的抛物线弧（值为 $a^2-x^2$），在 $x<-a$ 和 $x>a$ 区间是上凸的抛物线臂（值为 $x^2-a^2$）。\n\n$y=a^2|x-1|$ 的图像：在 $x=1$ 处取最小值 $0$，左右两侧为射线。\n\n两曲线恒过交点 $(0,a^2)$（验证：$|0^2-a^2|=a^2$，$a^2|0-1|=a^2$）。\n\n情形一：$a>1$。此时 $x=1$ 在 $[-a,a]$ 内，$y=a^2|x-1|$ 的顶点在抛物线弧下方。在 $[-a,a]$ 内除 $(0,a^2)$ 外还有两个交点（射线穿过山峰两侧），在 $x>a$ 和 $x<-a$ 处各有一个交点（抛物线臂增长更快），共 $4$ 个交点。\n\n情形二：$a=1$。此时 $y=|x^2-1|$ 与 $y=|x-1|$。在 $x>1$ 区域，$x^2-1$ 的导数为 $2x>2$，而 $x-1$ 的导数为 $1$，抛物线增长更快，不会在 $x>1$ 产生额外交点。总共 $3$ 个交点。\n\n情形三：$0<a<1$。此时 $x=1>a$，$y=a^2|x-1|$ 的顶点在抛物线弧右侧。在 $x>a$ 区域，抛物线 $x^2-a^2$ 的导数 $2x>2a>a^2$（因 $a<1$ 时 $2a>a^2$），抛物线增长更快，无交点。在 $x<-a$ 处有一个交点，在 $[-a,a]$ 内顶点 $(0,a^2)$ 加上两侧各一个交点，共 $4$ 个交点。\n\n情形四：$a=0$。此时 $y=x^2$ 与 $y=0$，仅在原点相交，$n=1$。\n\n综上，可能的交点个数为 $1$、$3$、$4$。最小的不可能值为 $n=2$。\n\n【快捷思路】\n注意 $(0,a^2)$ 恒为交点。$a>1$ 时 $4$ 个交点，$a=1$ 时 $3$ 个交点，$0<a<1$ 时 $4$ 个交点，$a=0$ 时 $1$ 个交点。$n=2$ 永远无法取到。\n\n【正确答案】B",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Functions",
+      "Algebra"
+    ]
   },
   {
     "id": "2022-P2-Q1",

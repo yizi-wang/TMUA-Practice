@@ -928,7 +928,7 @@ window.QUESTIONS = [
       "F": "$y = 3x^3 + x^{-2} - x^{-1} + 2$"
     },
     "answer": "C",
-    "analysis": "【题目分析】\ndy/dx $= 3$x² - (2-3x)/x³ $= 3$x² - 2/x³ + 3/x²\n当x=1时y=5，求y关于x的表达式。\n\n【解题步骤】\n第一步：化简导数\n\ndy/dx $= 3$x² - (2-3x)/x³\n$= 3$x² - 2/x³ + 3x/x³\n$= 3$x² - 2/x³ + 3/x²\n$= 3$x² - 2x⁻³ + 3x⁻²\n\n第二步：积分\n\ny = ∫(3x² - 2x⁻³ + 3x⁻²)dx\n= x³ - 2·(-$\\frac{1}{2}$)x⁻² + 3·(-1)x⁻¹ + C\n= x³ + x⁻² - 3x⁻¹ + C\n\n第三步：确定常数C\n\nx=1时y=5：\n5 $= 1$³ + 1⁻² - 3·1⁻¹ + C\n5 $= 1$ + 1 - 3 + C\n5 = -1 + C\nC $= 6$\n\n所以y = x³ + x⁻² - 3x⁻¹ + 6\n\n【正确答案】C",
+    "analysis": "【题目分析】\n本题考点为积分求原函数。已知导数 $\\frac{dy}{dx}$ 的表达式，需要对各项分别积分，再利用初始条件 $x=1$ 时 $y=5$ 确定积分常数。\n\n【解题步骤】\n第一步：化简被积函数。将分式项写成幂的形式：\n$$\\frac{dy}{dx} = 3x^2 - \\frac{2-3x}{x^3} = 3x^2 - \\frac{2}{x^3} + \\frac{3x}{x^3} = 3x^2 - 2x^{-3} + 3x^{-2}$$\n\n第二步：逐项积分。利用幂函数积分公式 $\\int x^n dx = \\frac{x^{n+1}}{n+1}$：\n$$y = \\int (3x^2 - 2x^{-3} + 3x^{-2}) dx = x^3 - 2\\cdot\\frac{x^{-2}}{-2} + 3\\cdot\\frac{x^{-1}}{-1} + C = x^3 + x^{-2} - 3x^{-1} + C$$\n\n第三步：代入初始条件求 $C$。当 $x=1$ 时 $y=5$：\n$$5 = 1^3 + 1^{-2} - 3\\cdot 1^{-1} + C = 1 + 1 - 3 + C = -1 + C$$\n解得 $C = 6$。\n\n因此 $y = x^3 + x^{-2} - 3x^{-1} + 6$，对应选项 C。\n\n【快捷思路】\n逐项积分后代入 $x=1$ 即可求出常数项，无需验证全部选项。注意 $(2-3x)/x^3$ 的符号拆分容易出错。\n\n【正确答案】C\n",
     "images": null,
     "has_image": false
   },
@@ -937,7 +937,7 @@ window.QUESTIONS = [
     "year": 2017,
     "paper": 1,
     "num": 2,
-    "topic": "Algebra",
+    "topic": "Differentiation",
     "difficulty": 3,
     "question": "The function $f$ is given by\n\n$$f(x) = \\left( \\frac{2}{x} - \\frac{1}{2x^2} \\right)^2 \\quad (x \\neq 0)$$\n\nWhat is the value of $f''(1)$?",
     "options": {
@@ -949,16 +949,19 @@ window.QUESTIONS = [
       "F": "$80$"
     },
     "answer": "C",
-    "analysis": "【题目分析】\nf(x) = (2/x - $\\frac{1}{2}$x²)²，求f''(1)。\n\n【解题步骤】\n第一步：化简f(x)\n\nf(x) = (2/x - $\\frac{1}{2}$x²)²\n= (2x⁻¹ - ($\\frac{1}{2}$)x⁻²)²\n\n先展开：\n设u $= 2$x⁻¹ - ($\\frac{1}{2}$)x⁻²\nf = u²\nf' $= 2$u·u'\n\nu' = -2x⁻² - ($\\frac{1}{2}$)(-2)x⁻³\n= -2x⁻² + x⁻³\n\nf' $= 2$(2x⁻¹ - ($\\frac{1}{2}$)x⁻²)(-2x⁻² + x⁻³)\n\n第二步：求f'(1)\n\nu(1) $= 2$ - ($\\frac{1}{2}$) = $\\frac{3}{2}$\nu'(1) = -2 + 1 = -1\n\nf'(1) $= 2$·($\\frac{3}{2}$)·(-1) = -3\n\n第三步：求f''(1)\n\nf'' = d/dx[2u·u'] $= 2$(u'² + u·u'')\n\nu'' = d/dx[-2x⁻² + x⁻³]\n$= 4$x⁻³ - 3x⁻⁴\n\nu''(1) $= 4$ - 3 $= 1$\n\nf''(1) $= 2$[(u'(1))² + u(1)·u''(1)]\n$= 2$[(-1)² + ($\\frac{3}{2}$)·1]\n$= 2$[1 + $\\frac{3}{2}$]\n$= 2$·($\\frac{5}{2}$)\n$= 5$\n\n【正确答案】C",
+    "analysis": "【题目分析】\n本题考点为求函数的二阶导数。需先将 $f(x)$ 展开为幂函数的线性组合，再逐次求导两次，最后代入 $x=1$。\n\n【解题步骤】\n第一步：展开 $f(x)$。利用 $(a-b)^2 = a^2 - 2ab + b^2$：\n$$f(x) = \\left(\\frac{2}{x} - \\frac{1}{2x^2}\\right)^2 = \\frac{4}{x^2} - 2\\cdot\\frac{2}{x}\\cdot\\frac{1}{2x^2} + \\frac{1}{4x^4} = 4x^{-2} - 2x^{-3} + \\frac{1}{4}x^{-4}$$\n注意最后一项：$\\frac{1}{4x^4} = \\frac{1}{4}x^{-4}$，切勿误写为 $4x^{-4}$。\n\n第二步：求一阶导数：\n$$f'(x) = -8x^{-3} + 6x^{-4} - x^{-5}$$\n\n第三步：求二阶导数：\n$$f''(x) = 24x^{-4} - 24x^{-5} + 5x^{-6}$$\n\n第四步：代入 $x=1$：\n$$f''(1) = 24 - 24 + 5 = 5$$\n\n对应选项 C。\n\n【快捷思路】\n展开后直接逐项求导，避免链式法则带来的繁琐计算。代入 $x=1$ 时各项系数即结果。\n\n【正确答案】C\n",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Algebra"
+    ]
   },
   {
     "id": "2017-P1-Q3",
     "year": 2017,
     "paper": 1,
     "num": 3,
-    "topic": "Algebra",
+    "topic": "Coordinate Geometry",
     "difficulty": 3,
     "question": "A line $l$ has equation $y = 6 - 2x$\n\nA second line is perpendicular to $l$ and passes through the point $(-6, 0)$.\n\nFind the area of the region enclosed by the two lines and the $x$-axis.",
     "options": {
@@ -969,9 +972,13 @@ window.QUESTIONS = [
       "E": "$40 \\frac{1}{2}$"
     },
     "answer": "A",
-    "analysis": "【题目分析】\n直线l：y $= 6$ - 2x\n另一直线垂直于l，过点(-6, 0)\n求两直线与x轴围成的区域面积。\n\n【解题步骤】\n第一步：确定两条直线\n\nl的斜率 = -2\n垂直于l的直线斜率 = $\\frac{1}{2}$（垂直直线斜率互为负倒数）\n\n第二条直线过(-6, 0)，斜率$\\frac{1}{2}$：\ny - 0 = ($\\frac{1}{2}$)(x - (-6))\ny = ($\\frac{1}{2}$)(x + 6)\ny = ($\\frac{1}{2}$)x + 3\n\n第二条直线：y = x/2 + 3\n\n第二步：找交点\n\n直线l与x轴交点：y $= 6$ - 2x $= 0$ → x $= 3$ → 点A(3, 0)\n第二条直线与x轴交点：y = x/2 + 3 $= 0$ → x = -6 → 点B(-6, 0)\n两条直线交点：y $= 6$-2x = x/2+3 → 6-2x = x/2+3 → 3 $= 2.5$x → x = $\\frac{6}{5}$ $= 1.2$\ny $= 6$ - 2(1.2) $= 6$ - 2.4 $= 3.6$ → 点C(1.2, 3.6)\n\n第三步：计算面积\n\n区域是三角形ABC，顶点：A(3, 0), B(-6, 0), C(1.2, 3.6)\n\nAB在x轴上，长度 = |3 - (-6)| $= 9$\nC到x轴的高度 $= 3.6$\n\n面积 = ($\\frac{1}{2}$) × 底 × 高 = ($\\frac{1}{2}$) × $9 \\times 3$.6 $= 16.2$\n\n答案用分数表示：\n面积 = ($\\frac{1}{2}$) × 9 × $\\frac{18}{5}$ $= 9$ × $\\frac{9}{5}$ = $\\frac{81}{5}$ $= 16$又$\\frac{1}{5}$\n\n【正确答案】A（16 $\\frac{1}{5}$）\n\n",
+    "analysis": "【题目分析】\n本题考点为坐标几何中的直线方程与面积计算。需要求垂直直线的方程、两直线交点，再求与 $x$ 轴围成的三角形面积。\n\n【解题步骤】\n第一步：确定第二条直线的方程。直线 $l: y = 6-2x$ 的斜率为 $-2$，与之垂直的直线斜率为 $\\frac{1}{2}$。过点 $(-6,0)$，方程为：\n$$y - 0 = \\frac{1}{2}(x + 6) \\quad \\Rightarrow \\quad y = \\frac{1}{2}x + 3$$\n\n第二步：求两直线与 $x$ 轴的交点。\n直线 $l$ 与 $x$ 轴交于 $y=0 \\Rightarrow x=3$，即点 $A(3,0)$。\n第二条直线与 $x$ 轴交于 $y=0 \\Rightarrow x=-6$，即点 $B(-6,0)$。\n\n第三步：求两直线的交点。联立方程：\n$$6 - 2x = \\frac{1}{2}x + 3 \\quad \\Rightarrow \\quad \\frac{5}{2}x = 3 \\quad \\Rightarrow \\quad x = \\frac{6}{5}$$\n代入得 $y = \\frac{1}{2}\\cdot\\frac{6}{5} + 3 = \\frac{18}{5}$，即交点 $C\\left(\\frac{6}{5}, \\frac{18}{5}\\right)$。\n\n第四步：计算三角形面积。底边 $AB$ 长为 $3 - (-6) = 9$，高为交点的纵坐标 $\\frac{18}{5}$：\n$$\\text{面积} = \\frac{1}{2} \\times 9 \\times \\frac{18}{5} = \\frac{81}{5} = 16\\frac{1}{5}$$\n\n对应选项 A。\n\n【快捷思路】\n底边长度 $9$ 可直接读出（两直线与 $x$ 轴交点横坐标之差），只需计算交点纵坐标代入面积公式即可。\n\n【正确答案】A\n Geometry",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Graphs",
+      "Algebra"
+    ]
   },
   {
     "id": "2017-P1-Q4",
@@ -989,9 +996,12 @@ window.QUESTIONS = [
       "E": "$\\frac{11}{4}$"
     },
     "answer": "B",
-    "analysis": "【题目分析】\n(3x²+8x-3)(px-1)除以(x+1)余数为24，求p。\n\n【解题步骤】\n第一步：理解余数定理\n多项式f(x)除以(x-a)的余数等于f(a)\n\n设f(x) = (3x²+8x-3)(px-1)\n\n第二步：计算f(-1)\nf(-1) = (3(-1)² + 8(-1) - 3)(p(-1) - 1)\n      = (3 - 8 - 3)(-p - 1)\n      = (-8)(-p - 1)\n      $= 8$(p + 1)\n\n第三步：利用余数条件\nf(-1) $= 24$（余数）\n8(p + 1) $= 24$\np + 1 $= 3$\np $= 2$\n\n第四步：验证\n当p=2时：\nf(x) = (3x²+8x-3)(2x-1)\nf(-1) = (-8)(-3) $= 24$ ✓\n\n【正确答案】B（p=2）",
+    "analysis": "【题目分析】\n本题考点为多项式余数定理。已知多项式 $(3x^2+8x-3)(px-1)$ 除以 $(x+1)$ 的余数为 $24$，利用余数定理直接代入求 $p$。\n\n【解题步骤】\n第一步：设 $f(x) = (3x^2+8x-3)(px-1)$。\n\n第二步：根据余数定理，$f(x)$ 除以 $(x+1)$ 的余数等于 $f(-1)$。计算：\n$$f(-1) = (3(-1)^2 + 8(-1) - 3)(p(-1) - 1) = (3 - 8 - 3)(-p - 1) = (-8)(-p-1) = 8(p+1)$$\n\n第三步：由题意 $f(-1) = 24$，得：\n$$8(p+1) = 24 \\quad \\Rightarrow \\quad p+1 = 3 \\quad \\Rightarrow \\quad p = 2$$\n\n对应选项 B。\n\n第四步：验证。当 $p=2$ 时，$f(-1) = (-8)(-3) = 24$，符合条件。\n\n【快捷思路】\n直接应用余数定理，令 $x=-1$ 代入乘积式即可，无需展开多项式。官方解答特别指出展开只会增加计算量和出错概率。\n\n【正确答案】B\n",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Functions"
+    ]
   },
   {
     "id": "2017-P1-Q5",
@@ -1012,7 +1022,7 @@ window.QUESTIONS = [
       "H": "$x > 6$"
     },
     "answer": "C",
-    "analysis": "【题目分析】\n求满足两个不等式 x²-8x+12<0 和 2x+1>9 的解集S，并找出表示S的单不等式。\n\n【解题步骤】\n第一步：解第一个不等式\nx² - 8x + 12 < 0\n分解：(x-2)(x-6) < 0\n解：2 < x < 6\n\n第二步：解第二个不等式\n2x + 1 > 9\n2x > 8\nx > 4\n\n第三步：求交集\nS = (2 < x < 6) ∩ (x > 4)\nS = 4 < x < 6\n\n第四步：验证选项\nx ∈ (4, 6) 意味着 x > 4 且 x < 6\n即 x - 4 > 0 且 x - 6 < 0\n所以 (x-4)(x-6) < 0\n展开：x² - 10x + 24 < 0\n\n这正是选项C。\n\n【正确答案】C",
+    "analysis": "【题目分析】\n求同时满足 $x^2 - 8x + 12 < 0$ 和 $2x + 1 > 9$ 的解集 $S$，并从选项中找出等价表示 $S$ 的单一不等式。本题核心在于先分别解两个不等式取交集，再将区间形式反向构造为二次不等式。\n\n【解题步骤】\n第一步，解二次不等式 $x^2 - 8x + 12 < 0$。因式分解得 $(x-2)(x-6) < 0$，由开口向上的抛物线图像可知解为 $2 < x < 6$。\n\n第二步，解线性不等式 $2x + 1 > 9$，得 $x > 4$。\n\n第三步，取交集：$S = (2, 6) \\cap (4, \\infty) = (4, 6)$，即 $4 < x < 6$。\n\n第四步，将区间 $4 < x < 6$ 反向构造为二次不等式。由 $x - 4 > 0$ 且 $x - 6 < 0$，得 $(x-4)(x-6) < 0$，展开即 $x^2 - 10x + 24 < 0$，对应选项 C。\n\n【快捷思路】\n不必逐一验证各选项，直接从交集 $4 < x < 6$ 反推：两根为 $4$ 和 $6$、开口向上的二次式在两根之间为负，即 $(x-4)(x-6) < 0$，展开对比即可。\n\n【正确答案】C",
     "images": null,
     "has_image": false
   },
@@ -1021,7 +1031,7 @@ window.QUESTIONS = [
     "year": 2017,
     "paper": 1,
     "num": 6,
-    "topic": "Algebra",
+    "topic": "Coordinate Geometry",
     "difficulty": 3,
     "question": "A tangent to the circle $x^2 + y^2 = 144$ passes through the point $(20, 0)$ and crosses the positive $y$-axis.\n\nWhat is the value of $y$ at the point where the tangent meets the $y$-axis?",
     "options": {
@@ -1033,7 +1043,7 @@ window.QUESTIONS = [
       "F": "$\\frac{80}{3}$"
     },
     "answer": "B",
-    "analysis": "【题目分析】\n圆x²+y²=144的切线过点(20,0)，求切线与正y轴交点的y值。\n\n【解题步骤】\n第一步：分析圆的几何特征\n圆：x²+y²=144，圆心(0,0)，半径r=12\n切线过点(20,0)，与正y轴相交\n\n第二步：设切线方程\n设切线方程为 y = mx + c（c > 0为与y轴交点的y值）\n切线过(20,0)：0 $= 20$m + c → c = -20m\n\n第三步：利用切线条件\n切线到圆心距离等于半径\n圆心到直线 y = mx + c 的距离：\nd = |c|/√(1+m²) = |-20m|/√(1+m²) $= 12$\n\n|-20m| $= 12$√(1+m²)\n20|m| $= 12$√(1+m²)\n\n假设m > 0：\n20m $= 12$√(1+m²)\n平方：400m² $= 144$(1+m²)\n400m² $= 144$ + 144m²\n256m² $= 144$\nm² = $\\frac{144}{256}$ = $\\frac{9}{16}$\nm = $\\frac{3}{4}$\n\n第四步：计算c\nc = -20m = -20 × $\\frac{3}{4}$ = -15\n\n但题目要求切线与正y轴相交（y > 0）\n所以需要 m < 0（切线向下倾斜）\n\n重新计算：\n若 m < 0：|m| = -m（因为m是负数）\n20(-m) $= 12$√(1+m²)\n-20m $= 12$√(1+m²)（m<0，左边为正）\n\n设 m = -$\\frac{3}{4}$：\n|-20(-$\\frac{3}{4}$)| = |15| $= 15$\n√(1+$\\frac{9}{16}$) = √($\\frac{25}{16}$) = $\\frac{5}{4}$\n12 × $\\frac{5}{4}$ $= 15$ ✓\n\n所以切线方程：y = -3x/4 + c\n过(20,0)：0 = -15 + c → c $= 15$\n\n切线与y轴交于(0,15)，y值为15。\n\n【正确答案】B（y=15）\n\n验证：\n斜率 = (15-0)/(0-20) = -$\\frac{3}{4}$ ✓\n距离验证：圆心到切线距离 = 12 ✓\n\n答案应为B（15）。\n\n【正确答案】B",
+    "analysis": "【题目分析】\n圆 $x^2 + y^2 = 144$ 的一条切线过点 $(20, 0)$ 且与正 $y$ 轴相交，求切线与 $y$ 轴交点的纵坐标。本题利用切线到圆心的距离等于半径这一核心几何条件求解。\n\n【解题步骤】\n圆以原点为圆心，半径 $r = 12$。设切线为 $y = m(x - 20)$，其一般式为 $mx - y - 20m = 0$。\n\n利用切线条件：圆心到直线距离等于半径，即\n$$\\frac{|{-20m}|}{\\sqrt{m^2 + 1}} = 12$$\n两边平方整理得 $400m^2 = 144(m^2 + 1)$，即 $256m^2 = 144$，解得 $m = \\pm \\frac{3}{4}$。\n\n由于切线与正 $y$ 轴相交（$y$ 轴截距 $> 0$），由 $c = -20m > 0$ 可知 $m < 0$，故 $m = -\\frac{3}{4}$。\n\n截距 $c = -20 \\times (-\\frac{3}{4}) = 15$，即切线与 $y$ 轴交于 $(0, 15)$。\n\n【快捷思路】\n利用相似三角形可更快求解：设切线与 $y$ 轴交点为 $P(0, k)$，切点为 $Q$，原点为 $O$。$\\triangle OQR$ 中 $OR = 20$，$OQ = 12$，由勾股定理得 $QR = 16$（3-4-5 三角形）。由 $\\triangle PQO \\sim \\triangle OQR$，得 $\\frac{k}{12} = \\frac{20}{16}$，故 $k = 15$。\n\n【正确答案】B Geometry",
     "images": null,
     "has_image": false
   },
@@ -1042,7 +1052,7 @@ window.QUESTIONS = [
     "year": 2017,
     "paper": 1,
     "num": 7,
-    "topic": "Algebra",
+    "topic": "Sequences and Series",
     "difficulty": 3,
     "question": "The first three terms of an arithmetic progression are $p$, $q$ and $p^2$ respectively, where $p < 0$\n\nThe first three terms of a geometric progression are $p$, $p^2$ and $q$ respectively.\n\nFind the sum of the first 10 terms of the arithmetic progression.",
     "options": {
@@ -1052,7 +1062,7 @@ window.QUESTIONS = [
       "D": "$\\frac{185}{8}$"
     },
     "answer": "B",
-    "analysis": "【题目分析】\n等差数列前三项为 p, q, p²；等比数列前三项为 p, p², q。求等差数列前10项和。\n\n【利用等比数列求 q = p³】\n等比数列 p, p², q：\n公比 r = p²/p = p\n第三项：p × p² = p³ = q\n\n【利用等差数列建立方程】\n等差数列 p, q, p²：\n公差 d = q − p\n第三项：p + 2d = p²\n代入 q = p³ 得：p + 2(p³ − p) = p²\n2p³ − p² − p = 0\np(2p² − p − 1) = 0\n\np ≠ 0，解 2p² − p − 1 = 0：\np = [1 ± √(1+8)]/4 = (1 ± 3)/4\np = 1 或 p = −1/2\n\n取 p < 0，得 p = −1/2。\n\n【求等差数列各项】\np = −1/2，q = p³ = −1/8\n公差 d = q − p = (−1/8) − (−1/2) = 3/8\n\n前10项和：\nS₁₀ = 10/2 × (2p + 9d)\n    = 5 × (2×(−1/2) + 9×3/8)\n    = 5 × (−1 + 27/8)\n    = 5 × 19/8 = 95/8\n\n【正确答案】B（95/8）",
+    "analysis": "【题目分析】\n已知等差数列前三项为 $p, q, p^2$（$p < 0$），等比数列前三项为 $p, p^2, q$，求等差数列前 10 项和。本题需要联立两种数列的定义，建立关于 $p$ 的方程。\n\n【解题步骤】\n先利用等比数列：公比 $r = \\frac{p^2}{p} = p$，第三项 $q = p \\cdot r = p^3$。\n\n再利用等差数列：公差 $d = q - p$，第三项 $p + 2d = p^2$。代入 $q = p^3$ 得：\n$$p + 2(p^3 - p) = p^2 \\implies 2p^3 - p^2 - p = 0$$\n因式分解：$p(2p+1)(p-1) = 0$。\n\n由条件 $p < 0$ 且 $p \\neq 0$，得 $p = -\\frac{1}{2}$。进而 $q = p^3 = -\\frac{1}{8}$，公差 $d = q - p = \\frac{3}{8}$。\n\n等差数列前 $n$ 项和公式 $S_n = \\frac{n}{2}[2a + (n-1)d]$，代入 $n = 10$，$a = -\\frac{1}{2}$，$d = \\frac{3}{8}$：\n$$S_{10} = 5 \\times \\left(-1 + \\frac{27}{8}\\right) = 5 \\times \\frac{19}{8} = \\frac{95}{8}$$\n\n【快捷思路】\n联立等差与等比条件直接消去 $q$ 和 $d$：由等比得 $q = p^3$，由等差得 $2q = p + p^2$，联立即 $2p^3 - p^2 - p = 0$，解出 $p$ 后代入求和公式。\n\n【正确答案】B and Series",
     "images": null,
     "has_image": false
   },
@@ -1061,7 +1071,7 @@ window.QUESTIONS = [
     "year": 2017,
     "paper": 1,
     "num": 8,
-    "topic": "Algebra",
+    "topic": "Trigonometry",
     "difficulty": 3,
     "question": "Find the complete set of values of $x$, with $0 \\le x \\le \\pi$, for which\n\n$$(1 - 2 \\sin x) \\cos x \\ge 0$$",
     "options": {
@@ -1071,7 +1081,7 @@ window.QUESTIONS = [
       "D": "$\\frac{\\pi}{6} \\le x \\le \\frac{5\\pi}{6}$"
     },
     "answer": "A",
-    "analysis": "【题目分析】\n求满足 (1-2sin x)cos x ≥ 0 的x范围，x ∈ [0, $\\pi$]。\n\n【解题步骤】\n第一步：分析不等式\n(1-2sin x)cos x ≥ 0\n\n需要两个因式同号或至少一个为零。\n\n第二步：确定关键点\n1-2sin x $= 0$ → sin x = $\\frac{1}{2}$ → x = $\\pi$/6 或 $5\\pi$/6\ncos x $= 0$ → x = $\\pi$/2\n\n第三步：分析各区段符号\nx ∈ [0, $\\pi$/6]: sin x < $\\frac{1}{2}$ → 1-2sin x > 0\n             cos x > 0\n             乘积 > 0 ✓ 满足不等式\n\nx ∈ [$\\pi$/6, $\\pi$/2]: sin x > $\\frac{1}{2}$ → 1-2sin x < 0\n                cos x > 0\n                乘积 < 0 ✗ 不满足\n\nx = $\\pi$/2: cos x $= 0$ → 乘积 $= 0$ ✓ 满足\n\nx ∈ [$\\pi$/2, $5\\pi$/6]: sin x > $\\frac{1}{2}$ → 1-2sin x < 0\n                 cos x < 0\n                 乘积 > 0 ✓ 满足\n\nx ∈ [$5\\pi$/6, $\\pi$]: sin x < $\\frac{1}{2}$ → 1-2sin x > 0\n               cos x < 0\n               乘积 < 0 ✗ 不满足\n\n第四步：确定解集\n满足条件的x范围：\n[0, $\\pi$/6] 和 {$\\pi$/2} 和 [$\\pi$/2, $5\\pi$/6]\n\n合并为：0 ≤ x ≤ $\\pi$/6 或 $\\pi$/2 ≤ x ≤ $5\\pi$/6\n\n验证边界：\nx=0: (1-0)(1) $= 1$ > 0 ✓\nx=$\\pi$/6: (1-1)(√$\\frac{3}{2}$) $= 0$ ✓\nx=$\\pi$/2: (1-2)(0) $= 0$ ✓\nx=$5\\pi$/6: (1-1)(-√$\\frac{3}{2}$) $= 0$ ✓\nx=$\\pi$: (1-0)(-1) = -1 < 0 ✗\n\n【正确答案】A",
+    "analysis": "【题目分析】\n求 $(1 - 2\\sin x)\\cos x \\ge 0$ 在 $[0, \\pi]$ 上的完整解集。本题需将乘积不等式拆分为两个因式的符号分析，利用三角函数的单调性分段判断。\n\n【解题步骤】\n两因式乘积非负，即同号或至少一个为零。先确定零点：\n$1 - 2\\sin x = 0$ 得 $\\sin x = \\frac{1}{2}$，在 $[0, \\pi]$ 上解为 $x = \\frac{\\pi}{6}$ 和 $x = \\frac{5\\pi}{6}$。\n$\\cos x = 0$ 在 $[0, \\pi]$ 上解为 $x = \\frac{\\pi}{2}$。\n\n以零点将 $[0, \\pi]$ 分段，分析符号：\n\n$[0, \\frac{\\pi}{6}]$：$\\sin x \\le \\frac{1}{2}$，故 $1-2\\sin x \\ge 0$；$\\cos x > 0$。乘积 $\\ge 0$ ✓\n\n$[\\frac{\\pi}{6}, \\frac{\\pi}{2}]$：$\\sin x \\ge \\frac{1}{2}$，故 $1-2\\sin x \\le 0$；$\\cos x > 0$。乘积 $\\le 0$ ✗\n\n$[\\frac{\\pi}{2}, \\frac{5\\pi}{6}]$：$\\sin x \\ge \\frac{1}{2}$，故 $1-2\\sin x \\le 0$；$\\cos x < 0$。乘积 $\\ge 0$ ✓\n\n$[\\frac{5\\pi}{6}, \\pi]$：$\\sin x \\le \\frac{1}{2}$，故 $1-2\\sin x \\ge 0$；$\\cos x < 0$。乘积 $\\le 0$ ✗\n\n综上，解集为 $0 \\le x \\le \\frac{\\pi}{6}$ 或 $\\frac{\\pi}{2} \\le x \\le \\frac{5\\pi}{6}$，对应选项 A。\n\n【快捷思路】\n取测试点快速判断各段符号：$x = 0$ 时乘积为 $1 > 0$；$x = \\frac{\\pi}{3}$ 时乘积为负；$x = \\frac{2\\pi}{3}$ 时乘积为正；$x = \\pi$ 时乘积为 $-1 < 0$。根据正负交替规律即可确定区间。\n\n【正确答案】A",
     "images": null,
     "has_image": false
   },
@@ -1094,9 +1104,12 @@ window.QUESTIONS = [
       "H": "$48\\sqrt{3}$"
     },
     "answer": "F",
-    "analysis": "【题目分析】\n圆内接正六边形面积计算。\n\n圆方程：x² + y² - 18x - 22y + 178 $= 0$\n\n【解题步骤】\n\n第一步：求圆心和半径\n\n化简圆方程为标准形式：\n(x - 9)² + (y - 11)² $= 9$² + 11² - 178 $= 81$ + 121 - 178 $= 24$\n\n圆心：(9, 11)\n半径：r = √24 $= 2$√6\n\n第二步：正六边形边长\n\n正六边形内接于圆时，边长等于外接圆半径：\na = r $= 2$√6\n\n第三步：正六边形面积公式\n\n正六边形面积 = (3√$\\frac{3}{2}$) × a²\n\n代入 a $= 2$√6：\n面积 = (3√$\\frac{3}{2}$) × (2√6)² = (3√$\\frac{3}{2}$) × 24 $= 36$√3\n\n【验证】\n√24 $= 2$√6\n(2√6)² = $4 \\times 6$ $= 24$\n36√3 ≈ 62.35（正六边形面积约62平方单位）\n\n【正确答案】F（36√3）",
+    "analysis": "【题目分析】\n已知圆方程 $x^2 + y^2 - 18x - 22y + 178 = 0$，圆内作正六边形且顶点均在圆上，求正六边形面积。本题综合考查圆方程配方法与正多边形面积公式。\n\n【解题步骤】\n第一步：将圆方程配方化为标准形式\n$(x - 9)^2 + (y - 11)^2 - 9^2 - 11^2 + 178 = 0$\n$(x - 9)^2 + (y - 11)^2 = 81 + 121 - 178 = 24$\n圆心为 $(9, 11)$，半径 $r = \\sqrt{24}$。\n\n第二步：分析正六边形的几何结构\n正六边形内接于圆时，六条半径将其分割为 $6$ 个全等的等边三角形，每个三角形边长等于半径 $r$。\n\n第三步：计算单个等边三角形面积\n利用面积公式 $\\frac{1}{2}ab\\sin C$：\n$S_{\\triangle} = \\frac{1}{2} r^2 \\sin 60^\\circ = \\frac{1}{2} \\cdot 24 \\cdot \\frac{\\sqrt{3}}{2} = 6\\sqrt{3}$\n\n第四步：正六边形总面积\n$S = 6 \\times 6\\sqrt{3} = 36\\sqrt{3}$\n\n【快捷思路】\n正六边形内接圆面积公式为 $\\frac{3\\sqrt{3}}{2}r^2$，直接代入 $r^2 = 24$ 得 $36\\sqrt{3}$。关键在于先用配方法求出半径平方，无需完整化简半径。\n\n【正确答案】F Geometry",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Trigonometry"
+    ]
   },
   {
     "id": "2017-P1-Q10",
@@ -1115,16 +1128,19 @@ window.QUESTIONS = [
       "F": "$\\frac{3}{2}$"
     },
     "answer": "E",
-    "analysis": "【题目分析】\nTMUA 2017年 Paper 1 第10题 - 曲线法线斜率的最值\n\n【已知条件】\nf(x) = p^3 - 6p^2*x + 3px^2 - x^3, p为实参数\n求 x=-1 处法线斜率 M 的最大值\n\n【解题步骤】\n步骤1: 计算导数\nf'(x) = -6p^2 + 6px - 3x^2\n在 x=-1: f'(-1) = -6p^2 - 6p - 3 = -3(2p^2 + 2p + 1)\n\n步骤2: 法线斜率\n切线斜率 k = -3(2p^2 + 2p + 1)\n法线斜率 M = -1/k $= 1$/(3(2p^2 + 2p + 1))\n\n步骤3: M的最大值\n分母 g(p) $= 3$(2p^2 + 2p + 1) 最小则 M 最大\n配方: 2p^2 + 2p + 1 $= 2$(p + $\\frac{1}{2}$)^2 + $\\frac{1}{2}$\n最小值在 p = -$\\frac{1}{2}$, g_min $= 3$ * $\\frac{1}{2}$ = $\\frac{3}{2}$\n\n步骤4: 计算\nM_max $= 1$/($\\frac{3}{2}$) = $\\frac{2}{3}$\n\n【正确答案】E",
+    "analysis": "【题目分析】\n曲线 $y = f(x) = p^3 - 6p^2x + 3px^2 - x^3$（$p$ 为实参数），求曲线在 $x = -1$ 处法线斜率 $M$ 的最大值。本题考查导数、法线概念与二次函数最值。\n\n【解题步骤】\n第一步：求导数（注意 $p$ 是常数）\n$f'(x) = -6p^2 + 6px - 3x^2$\n在 $x = -1$ 处：\n$f'(-1) = -6p^2 - 6p - 3 = -3(2p^2 + 2p + 1)$\n\n第二步：法线斜率为切线斜率的负倒数\n$M = \\frac{-1}{f'(-1)} = \\frac{-1}{-3(2p^2 + 2p + 1)} = \\frac{1}{3(2p^2 + 2p + 1)}$\n\n第三步：分析分母最小值\n分母 $g(p) = 3(2p^2 + 2p + 1)$，其中 $2p^2 + 2p + 1$ 通过配方法：\n$2p^2 + 2p + 1 = 2\\left(p + \\frac{1}{2}\\right)^2 + \\frac{1}{2}$\n当 $p = -\\frac{1}{2}$ 时，$2p^2 + 2p + 1$ 取得最小值 $\\frac{1}{2}$。\n此时分母最小值为 $3 \\times \\frac{1}{2} = \\frac{3}{2}$。\n\n第四步：求 $M$ 的最大值\n$M_{\\text{max}} = \\frac{1}{3/2} = \\frac{2}{3}$\n\n注意：分母 $2p^2 + 2p + 1 = 2(p+\\frac{1}{2})^2 + \\frac{1}{2}$ 恒正，不存在分母趋于零导致 $M$ 无限大的情况。\n\n【快捷思路】\n法线斜率 $M = \\frac{1}{3(2p^2 + 2p + 1)}$，$M$ 最大等价于分母最小。对 $2p^2 + 2p + 1$ 配方（或求导令 $4p+2=0$ 得 $p = -\\frac{1}{2}$），立即得最小值 $\\frac{1}{2}$，代入即得答案。\n\n【正确答案】E",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Algebra"
+    ]
   },
   {
     "id": "2017-P1-Q11",
     "year": 2017,
     "paper": 1,
     "num": 11,
-    "topic": "Algebra",
+    "topic": "Sequences and Series",
     "difficulty": 3,
     "question": "The sequence $x_n$ is defined by the rules\n\n$$x_1 = 7$$\n\n$$x_{n+1} = \\frac{23x_n - 53}{5x_n + 1}$$\n\nThe first three terms in the sequence are 7, 3, 1\n\nWhat is the value of $x_{100}$?",
     "options": {
@@ -1135,7 +1151,7 @@ window.QUESTIONS = [
       "E": "$7$"
     },
     "answer": "A",
-    "analysis": "【题目分析】\nTMUA 2017年 Paper 1 第11题 - 递推数列找周期\n\n【已知条件】\nx_1 $= 7$\nx_{n+1} = (23x_n - 53)/(5x_n + 1)\n前三项: 7, 3, 1\n求 x_100\n\n【解题步骤】\n步骤1: 计算前几项找规律\nx_1 $= 7$\nx_2 = (23*7 - 53)/(5*7 + 1) = (161-53)/(35+1) = $\\frac{108}{36}$ $= 3$\nx_3 = (23*3 - 53)/(5*3 + 1) = (69-53)/16 = $\\frac{16}{16}$ $= 1$\nx_4 = (23*1 - 53)/(5*1 + 1) = (23-53)/6 = -$\\frac{30}{6}$ = -5\nx_5 = (23*(-5) - 53)/(5*(-5) + 1) = (-115-53)/(-24) = -168/-24 $= 7$\nx_6 = (23*7 - 53)/(5*7 + 1) $= 3$ (循环开始)\n\n步骤2: 发现周期\n数列: 7, 3, 1, -5, 7, 3, 1, -5, ...\n周期 T $= 4$\n\n步骤3: 计算第100项\n100 $= 4$ * 25 + 0\nx_100 = x_4 = -5\n\n【验证】\n周期正确: x_1 = x_5 $= 7$\nx_100 = x_4 = -5\n\n【正确答案】A",
+    "analysis": "【题目分析】\n数列 $x_n$ 满足 $x_1 = 7$，$x_{n+1} = \\dfrac{23x_n - 53}{5x_n + 1}$，已知前三项为 $7, 3, 1$，求 $x_{100}$。本题考查递推数列的周期性识别。\n\n【解题步骤】\n第一步：逐项计算以寻找规律\n题目已给出 $x_1 = 7$，$x_2 = 3$，$x_3 = 1$。\n继续计算：\n$x_4 = \\dfrac{23 \\cdot 1 - 53}{5 \\cdot 1 + 1} = \\dfrac{-30}{6} = -5$\n$x_5 = \\dfrac{23 \\cdot (-5) - 53}{5 \\cdot (-5) + 1} = \\dfrac{-168}{-24} = 7$\n$x_6 = \\dfrac{23 \\cdot 7 - 53}{5 \\cdot 7 + 1} = \\dfrac{108}{36} = 3$\n\n第二步：确认周期\n出现 $x_5 = x_1 = 7$，说明数列以 $4$ 为周期循环：\n$7,\\; 3,\\; 1,\\; -5,\\; 7,\\; 3,\\; 1,\\; -5,\\; \\ldots$\n\n第三步：确定 $x_{100}$ 的位置\n$100 \\div 4 = 25$ 余 $0$，即 $100 = 25 \\times 4$，对应周期中第 $4$ 个位置：\n$x_{100} = x_4 = -5$\n\n【快捷思路】\n递推数列求大项索引，优先找周期。已给前三项，只需再算两项即可验证周期为 $4$。$100$ 是 $4$ 的倍数，故 $x_{100}$ 等于第 $4$ 项 $-5$。\n\n【正确答案】A and Series",
     "images": null,
     "has_image": false
   },
@@ -1144,7 +1160,7 @@ window.QUESTIONS = [
     "year": 2017,
     "paper": 1,
     "num": 12,
-    "topic": "Algebra",
+    "topic": "Integration",
     "difficulty": 3,
     "question": "The polynomial function $f(x)$ is such that $f(x) > 0$ for all values of $x$.\n\nGiven $\\int_{2}^{4} f(x) \\, dx = A$, which one of the following statements **must** be correct?",
     "options": {
@@ -1156,9 +1172,12 @@ window.QUESTIONS = [
       "F": "$\\int_{4}^{6} [f(x + 2) + 1] \\, dx = A + 2$"
     },
     "answer": "B",
-    "analysis": "【题目分析】\nTMUA 2017年 Paper 1 第12题，考查积分变量替换技巧。\n\n【已知条件】\nf(x) > 0，∫₂⁴ f(x)dx = A\n\n【解题方法：变量替换】\n设 u = x + 2，则 du = dx\n\n【逐项分析】\n选项A/B：∫₀² [f(x+2)+1]dx\n当 x: 0→2 时，u: 2→4\n∫₀² [f(x+2)+1]dx = ∫₂⁴ [f(u)+1]du = ∫₂⁴ f(u)du + 2 = A + 2\n\n选项E/F：∫₄⁶ [f(x+2)+1]dx\n当 x: 4→6 时，u: 6→8\n这需要 ∫₆⁸ f(u)du 的值，无法从已知条件确定。\n\n【正确答案】B",
+    "analysis": "【题目分析】\n已知多项式函数 $f(x) > 0$ 恒成立，且 $\\displaystyle\\int_{2}^{4} f(x)\\,dx = A$，判断哪个积分等式必然成立。本题考查积分的变量替换与平移性质。\n\n【解题步骤】\n第一步：分析 $\\displaystyle\\int_{0}^{2} f(x+2)\\,dx$\n令 $u = x + 2$，则 $du = dx$，当 $x$ 从 $0$ 变到 $2$ 时，$u$ 从 $2$ 变到 $4$：\n$\\displaystyle\\int_{0}^{2} f(x+2)\\,dx = \\int_{2}^{4} f(u)\\,du = \\int_{2}^{4} f(x)\\,dx = A$\n\n从几何角度理解：$y = f(x+2)$ 的图像是 $y = f(x)$ 向左平移 $2$ 个单位，区间 $[0, 2]$ 上的面积等价于原函数在 $[2, 4]$ 上的面积。\n\n第二步：逐项验证\n选项 A、B 的被积函数为 $f(x+2) + 1$，积分区间 $[0, 2]$：\n$\\displaystyle\\int_{0}^{2} [f(x+2) + 1]\\,dx = \\int_{0}^{2} f(x+2)\\,dx + \\int_{0}^{2} 1\\,dx = A + 2$\n因此选项 B 正确。\n\n选项 C、D 的积分区间为 $[2, 4]$，$f(x+2)$ 对应 $u \\in [4, 6]$ 上的积分，无法确定。\n选项 E、F 的积分区间为 $[4, 6]$，$f(x+2)$ 对应 $u \\in [6, 8]$ 上的积分，同样无法确定。\n\n【快捷思路】\n换元 $u = x+2$，$\\displaystyle\\int_{0}^{2} f(x+2)\\,dx$ 的积分区间恰好变为 $[2, 4]$，等于 $A$。再加常数项 $\\displaystyle\\int_{0}^{2} 1\\,dx = 2$，立刻得到 $A + 2$。\n\n【正确答案】B",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Functions"
+    ]
   },
   {
     "id": "2017-P1-Q13",
@@ -1177,7 +1196,7 @@ window.QUESTIONS = [
       "F": "17"
     },
     "answer": "C",
-    "analysis": "【题目分析】\nTMUA 2017年 Paper 1 第13题，考查二项式展开的系数关系。\n\n【知识点】\n二项式定理：(a+bx)^5 = Σ C(5,r) a^(5-r) b^r x^r\n\n【解题步骤】\n找出 x^4 和 x^2 的系数：\n- x^4 项系数：C(5,4) a^1 b^4 $= 5$ab^4\n- x^2 项系数：C(5,2) a^3 b^2 $= 10$a^3b^2\n\n【建立方程】\n题目条件：x^4 系数是 x^2 系数的8倍\n5ab^4 = $8 \\times 10$a^3b^2\n5ab^4 $= 80$a^3b^2\nb^2 $= 16$a^2\n\n由于 a, b 都是正整数，b $= 4$a\n\n【求最小值】\na + b = a + 4a $= 5$a\n最小 a $= 1$ 时，a + b $= 5$\n\n【验证】\na $= 1$, b $= 4$：系数比为 (5×1×256)/(10×1×16) = $\\frac{1280}{160}$ $= 8$ ✓\n\n【正确答案】C",
+    "analysis": "【题目分析】\n本题要求根据 $(a+bx)^5$ 展开式中 $x^4$ 的系数是 $x^2$ 系数的 $8$ 倍这一条件，求 $a+b$ 的最小值，其中 $a,b$ 为非零正整数。\n\n【解题步骤】\n利用二项式定理，$(a+bx)^5$ 的通项为 $\\binom{5}{r}a^{5-r}b^r x^r$。\n\n$x^4$ 项对应 $r=4$，系数为 $\\binom{5}{4}ab^4=5ab^4$。\n\n$x^2$ 项对应 $r=2$，系数为 $\\binom{5}{2}a^3b^2=10a^3b^2$。\n\n由条件 $5ab^4=8\\times 10a^3b^2$，即 $5ab^4=80a^3b^2$。\n\n因为 $a,b$ 非零，两边除以 $5ab^2$，得 $b^2=16a^2$。\n\n又 $a,b$ 均为正数，开方得 $b=4a$。\n\n于是 $a+b=a+4a=5a$，当 $a=1$ 时取最小值 $5$。\n\n【快捷思路】\n直接写出两系数比 $\\frac{5ab^4}{10a^3b^2}=\\frac{b^2}{2a^2}$，令其等于 $8$ 即可一步得到 $b^2=16a^2$，进而 $b=4a$，$a+b=5a$ 最小为 $5$。\n\n【正确答案】C",
     "images": null,
     "has_image": false
   },
@@ -1198,7 +1217,7 @@ window.QUESTIONS = [
       "F": "$\\log_2 15$"
     },
     "answer": "F",
-    "analysis": "【题目分析】\nTMUA 2017年 Paper 1 第14题，考查指数方程组的求解。\n\n【解题方法：变量替换】\n设 u $= 2$^x, v $= 2$^y（u, v > 0）\n\n原方程组变为：\n① u + 3v $= 3$\n② u² - 9v² $= 6$\n\n【解方程】\n将②因式分解：\nu² - 9v² = (u-3v)(u+3v) $= 6$\n\n利用①：u+3v $= 3$\n代入：(u-3v) × 3 $= 6$\n得：u - 3v $= 2$\n\n联立求解：\nu + 3v $= 3$\nu - 3v $= 2$\n相加：2u $= 5$，u = $\\frac{5}{2}$\n相减：6v $= 1$，v = $\\frac{1}{6}$\n\n【求 p - q】\np = log₂($\\frac{5}{2}$)，q = log₂($\\frac{1}{6}$)\n\np - q = log₂($\\frac{5}{2}$) - log₂($\\frac{1}{6}$)\n     = log₂($\\frac{5}{2}$ × 6) = log₂15\n\n【正确答案】F",
+    "analysis": "【题目分析】\n本题给出含指数的联立方程组，通过变量代换转化为代数方程组求解，最终计算 $p-q$。\n\n【解题步骤】\n令 $u=2^x$，$v=2^y$，则 $u>0,v>0$。\n\n原方程组化为：\n$u+3v=3$，\n$u^2-9v^2=6$。\n\n第二个方程利用平方差公式：$(u+3v)(u-3v)=6$。\n\n将 $u+3v=3$ 代入得 $3(u-3v)=6$，即 $u-3v=2$。\n\n联立 $u+3v=3$ 与 $u-3v=2$，相加得 $2u=5$，故 $u=\\frac{5}{2}$；相减得 $6v=1$，故 $v=\\frac{1}{6}$。\n\n由 $p=x=\\log_2 u=\\log_2\\frac{5}{2}$，$q=y=\\log_2 v=\\log_2\\frac{1}{6}$，\n\n得 $p-q=\\log_2\\frac{5}{2}-\\log_2\\frac{1}{6}=\\log_2\\left(\\frac{5}{2}\\div\\frac{1}{6}\\right)=\\log_2 15$。\n\n【快捷思路】\n关键在于识别 $u^2-9v^2=(u+3v)(u-3v)$，利用第一个方程直接得到 $u-3v$，无需代入消元展开，两步即可求解。\n\n【正确答案】F",
     "images": null,
     "has_image": false
   },
@@ -1221,18 +1240,21 @@ window.QUESTIONS = [
       "H": "Option H"
     },
     "answer": "B",
-    "analysis": "【题目分析】\nTMUA 2017年 Paper 1 第15题，考查梯形法则的误差估计。\n\n【核心知识点】\n- 凸函数（二阶导数>0）：梯形法则高估（overestimate）\n- 凹函数（二阶导数<0）：梯形法则低估（underestimate）\n\n【三条曲线分析】\n\n曲线(1)：y = f(x) = -2x² + 10\nf''(x) = -4 < 0 → underestimate\n\n曲线(2)：y = f(x+1) = -2(x+1)² + 10\nf''(x+1) = -4 < 0 → underestimate\n\n曲线(3)：y = 12 - f(x+1)（关于 y=6 反射）\nh''(x) = 4 > 0 → overestimate\n\n【正确答案】B",
+    "analysis": "【题目分析】\n本题用梯形法则估算三条曲线在 $[0,1]$ 上的面积，判断每条曲线得到的是高估还是低估。核心在于曲线的凹凸性与梯形法则误差的关系。\n\n【解题步骤】\n梯形法则的误差取决于二阶导数的符号：若 $f''(x)<0$（凹函数），梯形法则低估；若 $f''(x)>0$（凸函数），梯形法则高估。\n\n曲线(1)：$y=f(x)=-2x^2+10$，$f''(x)=-4<0$，凹函数，故 underestimate。\n\n曲线(2)：$y=f(x+1)=-2(x+1)^2+10$，求二阶导数得 $-4<0$，仍为凹函数，故 underestimate。平移不改变凹凸性。\n\n曲线(3)：将 $y=f(x+1)$ 关于直线 $y=6$ 作反射。反射公式为 $y=12-f(x+1)$，其二阶导数为 $-f''(x+1)=4>0$，变为凸函数，故 overestimate。\n\n也可通过画图直观判断：$f(x)$ 在 $[0,1]$ 上开口向下，梯形弦在曲线下方；反射后开口向上，弦在曲线上方。\n\n【快捷思路】\n只需判断二阶导数符号。平移不改变 $f''$ 的符号，反射相当于乘以 $-1$，符号反转。因此(1)(2)同为 underestimate，(3)为 overestimate。\n\n【正确答案】B",
     "images": {
       "image": null
     },
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Differentiation"
+    ]
   },
   {
     "id": "2017-P1-Q16",
     "year": 2017,
     "paper": 1,
     "num": 16,
-    "topic": "Algebra",
+    "topic": "Differentiation",
     "difficulty": 3,
     "question": "The functions $f$ and $g$ are given by $f(x) = 3x^2 + 12x + 4$ and $g(x) = x^3 + 6x^2 + 9x - 8$.\n\nWhat is the complete set of values of $x$ for which one of the functions is increasing and the other decreasing?",
     "options": {
@@ -1245,7 +1267,7 @@ window.QUESTIONS = [
       "G": "$-2 \\leq x \\leq -1$"
     },
     "answer": "E",
-    "analysis": "【题目分析】\nTMUA 2017年 Paper 1 第16题，考查函数单调性的判断。\n\n【求导判断单调性】\n\nf(x) = 3x² + 12x + 4\nf'(x) = 6x + 12 = 6(x+2)\n- x > -2 时 f 递增\n- x < -2 时 f 递减\n\ng(x) = x³ + 6x² + 9x - 8\ng'(x) = 3x² + 12x + 9 = 3(x+1)(x+3)\n- x < -3 或 x > -1 时 g 递增\n- -3 < x < -1 时 g 递减\n\n【找一个增一个减的区间】\n\n| x范围 | f | g | 满足？|\n|-------|---|---|------|\n| x ≤ -3 | 递减 | 递增 | ✓ |\n| -3 < x < -2 | 递减 | 递减 | ✗ |\n| -2 ≤ x ≤ -1 | 递增 | 递减 | ✓ |\n| x > -1 | 递增 | 递增 | ✗ |\n\n【结论】\n一个增一个减的完整解集：x ≤ -3 或 -2 ≤ x ≤ -1，对应选项E。\n\n注意选项B（x ≤ -1）包含(-3,-2)区间，此时两函数都递减，不满足条件。\n\n【正确答案】E",
+    "analysis": "【题目分析】\n本题给出两个函数 $f(x)$ 和 $g(x)$，求使一个函数递增而另一个递减的 $x$ 的取值范围。\n\n【解题步骤】\n分别求导分析单调性。\n\n对于 $f(x)=3x^2+12x+4$：\n$f'(x)=6x+12=6(x+2)$。\n当 $x>-2$ 时 $f'(x)>0$，$f$ 递增；当 $x<-2$ 时 $f'(x)<0$，$f$ 递减。\n\n对于 $g(x)=x^3+6x^2+9x-8$：\n$g'(x)=3x^2+12x+9=3(x+1)(x+3)$。\n抛物线开口向上，根为 $-3$ 和 $-1$。\n当 $x<-3$ 或 $x>-1$ 时 $g'(x)>0$，$g$ 递增；当 $-3<x<-1$ 时 $g'(x)<0$，$g$ 递减。\n\n用数轴分区间讨论一增一减的情况：\n\n当 $x\\leq -3$ 时，$f$ 递减、$g$ 递增，满足条件。\n\n当 $-3<x<-2$ 时，$f$ 递减、$g$ 递减，不满足。\n\n当 $-2\\leq x\\leq -1$ 时，$f$ 递增、$g$ 递减，满足条件。\n\n当 $x>-1$ 时，$f$ 递增、$g$ 递增，不满足。\n\n故解集为 $x\\leq -3$ 或 $-2\\leq x\\leq -1$。\n\n【快捷思路】\n画出数轴，标出关键点 $-3,-2,-1$ 将实数轴分为四个区间，在每个区间内判断 $f'$ 和 $g'$ 的符号，直接选出符号相反的区间即可。\n\n【正确答案】E",
     "images": null,
     "has_image": false
   },
@@ -1265,16 +1287,19 @@ window.QUESTIONS = [
       "E": "26"
     },
     "answer": "D",
-    "analysis": "【题目分析】\nTMUA 2017年 Paper 1 第17题，考查积分与求和的综合计算。\n\n【第一步：求 F(n)】\nF(n) = (1/n) ∫₀ⁿ (n-x) dx\n\n计算积分：\n∫₀ⁿ (n-x) dx = [nx - x²/2]₀ⁿ = n² - n²/2 = n²/2\n\n所以 F(n) = (1/n) × n²/2 = n/2\n\n【第二步：求 G(n)】\nG(n) = Σ_{r=1}^{n} F(r) = Σ_{r=1}^{n} r/2 = n(n+1)/4\n\n【第三步：求最小 n】\n需要 G(n) > 150，即 n(n+1)/4 > 150，n(n+1) > 600\n\n代入检验：\nn = 24：24×25 = 600，G(24) = 150，不满足 > 150\nn = 25：25×26 = 650，G(25) = 162.5 > 150 ✓\n\n【结论】\n最小正整数 n = 25，对应选项D。\n\n【正确答案】D",
+    "analysis": "【题目分析】\n本题考查积分与数列求和的综合应用。先由定积分求 $F(n)$，再求和得 $G(n)$，最后解不等式求最小 $n$。\n\n【解题步骤】\n计算 $F(n)$：\n$$F(n)=\\frac{1}{n}\\int_{0}^{n}(n-x)\\,dx=\\frac{1}{n}\\left[nx-\\frac{x^2}{2}\\right]_{0}^{n}=\\frac{n}{2}$$\n求和得：\n$$G(n)=\\sum_{r=1}^{n}\\frac{r}{2}=\\frac{1}{2}\\cdot\\frac{n(n+1)}{2}=\\frac{n(n+1)}{4}$$\n解 $G(n) > 150$ 即 $n(n+1) > 600$：\n$24\\times 25=600$，$G(24)=150$ 不满足；$25\\times 26=650$，$G(25)=162.5>150$。\n\n【快捷思路】\n几何法：$y=n-x$ 在 $[0,n]$ 上围成面积为 $n^2/2$ 的三角形，$F(n)=n/2$。利用三角数公式直接写出 $G(n)$。试值从 $25$ 入手，$25^2=625$，$25\\times 26=650>600$。\n\n【正确答案】D",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Sequences and Series"
+    ]
   },
   {
     "id": "2017-P1-Q18",
     "year": 2017,
     "paper": 1,
     "num": 18,
-    "topic": "Algebra",
+    "topic": "Functions",
     "difficulty": 3,
     "question": "The graph of $y = \\log_{10}x$ is translated in the positive $y$-direction by 2 units.\n\nThis translation is equivalent to a stretch of factor $k$ parallel to the $x$-axis.\n\nWhat is the value of $k$?",
     "options": {
@@ -1286,9 +1311,12 @@ window.QUESTIONS = [
       "F": "100"
     },
     "answer": "A",
-    "analysis": "【题目分析】\nTMUA 2017年 Paper 1 第18题，考查对数函数的平移与拉伸变换。\n\n【平移变换】\ny = log₁₀x 向上平移2个单位：\ny = log₁₀x + 2\n\n利用对数性质：\nlog₁₀x + 2 = log₁₀x + log₁₀100 = log₁₀(100x)\n\n【拉伸变换】\ny = log₁₀x 沿x轴拉伸因子k：\ny = log₁₀(x/k)\n\n【等价条件】\n平移后 = 拉伸后：\nlog₁₀(100x) = log₁₀(x/k)\n100x = x/k\n100 = 1/k\nk = 1/100 = 0.01\n\n【正确答案】A",
+    "analysis": "【题目分析】\n本题考查对数函数的图像变换，核心在于理解平移变换与沿 $x$ 轴拉伸变换的等价关系。对数函数有一个独特性质：上下平移可以等价于水平方向的伸缩，这是因为 $\\log(x)+k = \\log(10^k x)$。这是其他函数（如多项式）不具备的性质。\n\n【解题步骤】\n向上平移 $2$ 个单位后：\n$$y = \\log_{10}x + 2 = \\log_{10}x + \\log_{10}100 = \\log_{10}(100x)$$\n沿 $x$ 轴拉伸因子 $k$ 后，函数变为 $y = f(x/k)$：\n$$y = \\log_{10}\\left(\\frac{x}{k}\\right) = \\log_{10}x - \\log_{10}k$$\n令两式恒等，比较常数项：\n$$-\\log_{10}k = 2 \\iff \\log_{10}k = -2 \\iff k = 10^{-2} = 0.01$$\n\n【快捷思路】\n取特殊点验证：原函数过 $(1,0)$。向上平移 $2$ 个单位后该点变为 $(1,2)$，同时原图像上点 $(0.01,-2)$ 平移到 $(0.01,0)$ 即新图像的 $x$ 轴截距。而沿 $x$ 轴拉伸因子 $k$ 将原截距 $1$ 变为 $k$，所以 $k = 0.01$。\n\n【正确答案】A",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Graphs"
+    ]
   },
   {
     "id": "2017-P1-Q19",
@@ -1307,16 +1335,19 @@ window.QUESTIONS = [
       "F": "$qc^2 < x < pc^2$"
     },
     "answer": "D",
-    "analysis": "【题目分析】\nTMUA 2017年 Paper 1 第19题，考查二次不等式的根与系数关系。\n\n【已知条件分析】\nx² + bx + c < 0 的解集是 p < x < q\n说明：x² + bx + c = (x-p)(x-q) = x² - (p+q)x + pq\n\n所以：b = -(p+q)，c = pq\n\n【验证 p, q 异号】\n由 c < 0 且 c = pq，得 p, q 异号\n\n【新不等式的根】\nx² + bcx + c³ 的两根是什么？\n\n设两根为 α, β，则 αβ = c³ = p³q³\n\n验证 α = p/c, β = q/c：\nαβ = (p/c)(q/c) = pq/c² = c/c² $= 1$/c ≠ c³\n\n重新验证：设 α = pc, β = qc\nαβ = pc × qc = p²q² = c²\n\n也不对。让我们直接代入验证：\n\nx = p/c：代入 x² + bcx + c³\n= p²/c² + bcp/c + c³\n= (p² + bcp + c⁴)/c²\n\n利用 b = -(p+q)，c = pq：\np² + bcp + c⁴ = p² - (p+q) × pq × p + p⁴q⁴\n= p² - p²q - p²q + p⁴q⁴\n这需要具体验证...\n\n【标准解法】\n新方程两根为 p/c 和 q/c（可验证）\n由于 c < 0，当 p < q 时，p/c > q/c\n开口向上的抛物线，小于零的解在两根之间\n即 q/c < x < p/c\n\n【正确答案】B",
+    "analysis": "【题目分析】\n本题考查二次不等式解集与系数之间的关系。已知 $x^2+bx+c < 0$ 的解为 $p < x < q$ 且 $c < 0$，要求 $x^2+bcx+c^3 < 0$ 的解集。巧妙之处在于第二个不等式通过变量代换可以化为第一个不等式的形式。\n\n【解题步骤】\n由解集知 $x^2+bx+c=(x-p)(x-q)$，故 $b=-(p+q)$，$c=pq$。\n\n将 $x^2+bcx+c^3 < 0$ 两边除以 $c^2>0$（不等号不变）：\n$$\\left(\\frac{x}{c}\\right)^2+b\\left(\\frac{x}{c}\\right)+c<0$$\n这正是原不等式以 $x/c$ 代 $x$，故解为 $p < x/c < q$。\n因 $c<0$，乘 $c$ 时不等号反向：\n$$pc > x > qc \\iff qc < x < pc$$\n\n【快捷思路】\n求根公式比较：新方程两根为 $c\\cdot\\frac{-b\\pm\\sqrt{b^2-4c}}{2}$ 即 $pc$ 和 $qc$。因 $c<0$ 且 $p<q$，有 $pc>qc$，故解集 $qc < x < pc$。\n\n【正确答案】D",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Graphs"
+    ]
   },
   {
     "id": "2017-P1-Q20",
     "year": 2017,
     "paper": 1,
     "num": 20,
-    "topic": "Algebra",
+    "topic": "Trigonometry",
     "difficulty": 3,
     "question": "The lengths of the sides $QR$, $RP$ and $PQ$ in triangle $PQR$ are $a$, $a + d$ and $a + 2d$ respectively, where $a$ and $d$ are positive and such that $3d > 2a$.\n\nWhat is the full range, in degrees, of possible values for angle $PRQ$?",
     "options": {
@@ -1327,9 +1358,12 @@ window.QUESTIONS = [
       "E": "$120 < \\text{angle } PRQ < 180$"
     },
     "answer": "E",
-    "analysis": "【题目分析】\n三角形PQR边长关系：\n- QR = a（角P的对边）\n- RP = a + d（角Q的对边）\n- PQ = a + 2d（角R的对边）\n- 条件：3d > 2a\n\n求∠PRQ的角度范围。\n\n【解题步骤】\n\n第一步：余弦定理\ncos(∠PRQ) = [QR² + RP² - PQ²] / [2 × QR × RP]\n= [a² + (a+d)² - (a+2d)²] / [2a(a+d)]\n\n展开：\n(a+d)² = a² + 2ad + d²\n(a+2d)² = a² + 4ad + 4d²\n\n代入：\ncos = [a² + a² + 2ad + d² - a² - 4ad - 4d²] / [2a(a+d)]\n= [a² - 2ad - 3d²] / [2a(a+d)]\n= [(a - 3d)(a + d)] / [2a(a + d)]\n= (a - 3d) / (2a)\n\n第二步：分析cos值的范围\n\n由条件 3d > 2a，得 d > 2a/3\n\n代入 cos 公式：\ncos(∠PRQ) = (a - 3d) / (2a)\n\n当 d 取最小值（d → 2a/3）：\ncos → (a - 3×2a/3) / (2a) = (a - 2a) / (2a) = -$\\frac{1}{2}$\n此时 ∠PRQ = arccos(-$\\frac{1}{2}$) $= 120$°\n\n第三步：三角形存在条件\n\n三角不等式要求：任意两边之和 > 第三边\n检验：a + (a+d) > a+2d → 2a + d > a + 2d → a > d\n\n所以三角形存在要求：a > d\n\n结合题目条件 3d > 2a（即 d > 2a/3）\n有：a > d > 2a/3\n\n当 d 接近 a 时（最大可能）：\ncos → (a - 3a) / (2a) = -1 → ∠PRQ → $180°$（极限）\n\n当 d 接近 2a/3 时（最小可能）：\ncos → -$\\frac{1}{2}$ → ∠PRQ $= 120$°\n\n第四步：确定角度范围\n\n由于 d 必须严格大于 2a/3 且严格小于 a：\n- ∠PRQ 不能达到 $120°$（d 不能等于 2a/3）\n- ∠PRQ 不能达到 $180°$（三角形不能退化）\n\n所以角度范围：$120°$ < ∠PRQ < $180°$\n\n【正确答案】E",
+    "analysis": "【题目分析】\n本题考查余弦定理与三角形存在条件。三边成等差 $a, a+d, a+2d$，结合 $3d > 2a$ 确定 $\\angle PRQ$ 的范围。\n\n【解题步骤】\n$\\angle PRQ$ 的对边为 $PQ=a+2d$，由余弦定理：\n$$(a+2d)^2=a^2+(a+d)^2-2a(a+d)\\cos\\theta$$\n整理得：\n$$\\cos\\theta=\\frac{a^2-2ad-3d^2}{2a(a+d)}=\\frac{(a+d)(a-3d)}{2a(a+d)}=\\frac{a-3d}{2a}$$\n由 $3d > 2a$ 得 $a-3d < -a$，故 $\\cos\\theta < -\\frac{1}{2}$，即 $\\theta > 120^\\circ$。\n由三角不等式 $d < a$ 得 $\\cos\\theta > -1$，即 $\\theta < 180^\\circ$。\n综上 $120^\\circ < \\angle PRQ < 180^\\circ$。\n\n【快捷思路】\n取边界 $d=2a/3$，设 $a=3$ 得三边 $3,5,7$，代入余弦定理得 $\\cos\\theta=-1/2$ 即 $\\theta=120^\\circ$。题目要求严格大于，故 $\\theta > 120^\\circ$。$d$ 增大时角度增大，上限 $180^\\circ$。\n\n【正确答案】E",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Proof"
+    ]
   },
   {
     "id": "2017-P2-Q1",

@@ -5939,7 +5939,7 @@ window.QUESTIONS = [
       "E": "4"
     },
     "answer": "B",
-    "analysis": "【题目分析】\n求函数 y = 3x⁴ + 4x³ + 6x² - 5 的驻点数量。\n\n【解题步骤】\nStep 1: 求导数\ndy/dx = 12x³ + 12x² + 12x\n\nStep 2: 找驻点（导数=0）\n12x³ + 12x² + 12x = 0\n12x(x² + x + 1) = 0\n\nStep 3: 解方程\nx = 0 或 x² + x + 1 = 0\n\n对于 x² + x + 1 = 0:\n判别式 Δ = b² - 4ac = 1 - 4 = -3 < 0\n所以无实根\n\n【答案分析】\n只有 x = 0 一个驻点。\n\n但题目答案是H！说明题目可能有其他条件或答案键有误。\n需要核对原题：题目问的是\"number of stationary points\"。\n如果答案是H（选项范围A-E之外的选项），可能题目有更多选项未列出。\n\n【验证】\n计算 y(0) = -5，这是一个驻点。\n其他选项A-E（0,1,2,3,4）都表示驻点数，\n答案H表示\"其他情况\"。\n\n【正确答案】H",
+    "analysis": "【题目分析】\n题目要求确定曲线 $y = 3x^4 + 4x^3 + 6x^2 - 5$ 上驻点的个数。驻点是导数为零的点，因此核心是求导后解方程，并判断实根的个数。\n\n【解题步骤】\n第一步：对函数求导\n$$\\frac{\\mathrm{d}y}{\\mathrm{d}x} = 12x^3 + 12x^2 + 12x$$\n\n第二步：令导数为零，解方程\n$$12x^3 + 12x^2 + 12x = 0 \\quad\\Longrightarrow\\quad 12x(x^2 + x + 1) = 0$$\n\n第三步：分析因式\n由 $12x = 0$ 得 $x = 0$。\n对于二次因式 $x^2 + x + 1 = 0$，判别式 $\\Delta = 1^2 - 4 \\times 1 \\times 1 = -3 < 0$，无实根。\n\n因此方程只有一个实根 $x = 0$，即仅有一个驻点。\n\n【快捷思路】\n求导后提取公因式 $12x$，剩余二次式判别式为负，直接得到仅一个实根，无需进一步计算。\n\n【正确答案】B",
     "images": null,
     "has_image": false
   },
@@ -5959,7 +5959,7 @@ window.QUESTIONS = [
       "E": "32"
     },
     "answer": "E",
-    "analysis": "【题目分析】\n求 (1+x)⁵ × Σ(i=0 to 5) x⁵ 中 x⁵ 的系数。\n\n【解题步骤】\nStep 1: 展开 Σ(i=0 to 5) x⁵\nΣ(i=0 to 5) x⁵ = 1 + x + x² + x³ + x⁴ + x⁵\n\nStep 2: 展开 (1+x)⁵\n(1+x)⁵ = 1 + 5x + 10x² + 10x³ + 5x⁴ + x⁵\n\nStep 3: 乘法找x⁵系数\n需要找 (1+x)⁵ 中 xᵏ 的系数与 Σ 中 x^(5-k) 的系数乘积：\n\n(1+x)⁵ 的系数:\n- x⁰系数 = 1，对应 Σ 的 x⁵系数 = 1，乘积 = 1\n- x¹系数 = 5，对应 Σ 的 x⁴系数 = 1，乘积 = 5\n- x²系数 = 10，对应 Σ 的 x³系数 = 1，乘积 = 10\n- x³系数 = 10，对应 Σ 的 x²系数 = 1，乘积 = 10\n- x⁴系数 = 5，对应 Σ 的 x¹系数 = 1，乘积 = 5\n- x⁵系数 = 1，对应 Σ 的 x⁰系数 = 1，乘积 = 1\n\n总系数 = 1 + 5 + 10 + 10 + 5 + 1 = 32\n\n【正确答案】E（32）",
+    "analysis": "【题目分析】\n求 $(1+x)^5 \\times \\sum_{i=0}^{5} x^i$ 展开式中 $x^5$ 项的系数，需找出两因式中次数和为 $5$ 的所有配对并累加系数。\n\n【解题步骤】\n第一步：写出两个因式的展开式\n$$(1+x)^5 = 1 + 5x + 10x^2 + 10x^3 + 5x^4 + x^5$$\n$$\\sum_{i=0}^{5} x^i = 1 + x + x^2 + x^3 + x^4 + x^5$$\n\n第二步：逐对匹配次数和为 $5$ 的项\n$$1 \\cdot x^5 + 5x \\cdot x^4 + 10x^2 \\cdot x^3 + 10x^3 \\cdot x^2 + 5x^4 \\cdot x + x^5 \\cdot 1$$\n\n第三步：系数求和\n$$1 + 5 + 10 + 10 + 5 + 1 = 32$$\n\n【快捷思路】\n第二个因式系数全为 $1$，故 $x^5$ 系数即 $(1+x)^5$ 所有系数之和，令 $x=1$ 得 $(1+1)^5 = 32$。\n\n【正确答案】E",
     "images": null,
     "has_image": false
   },
@@ -5982,7 +5982,7 @@ window.QUESTIONS = [
       "H": "I, II and III"
     },
     "answer": "C",
-    "analysis": "【题目分析】\n找出反例使命题\"如果n是素数，则n²+2不是素数\"不成立。\n\n【解题步骤】\n第一步：理解反例概念\n反例是满足命题前提但使结论不成立的例子。\n\n第二步：逐个检验\nn = 2: 2是素数 ✓ 前提成立\n      n² + 2 = 4 + 2 = 6\n      6 = 2 × 3 不是素数 ✓ 结论成立\n      不是反例\n\nn = 3: 3是素数 ✓ 前提成立\n      n² + 2 = 9 + 2 = 11\n      11是素数 ✗ 结论不成立\n      是反例 ✓\n\nn = 4: 4 = 2 × 2 不是素数\n      前提不成立，无法检验\n      不是反例\n\n第三步：结论\n只有 n = 3 提供反例（选项II only）\n\n【正确答案】C",
+    "analysis": "【题目分析】\n命题为：若正整数 $n$ 是素数，则 $n^2 + 2$ 不是素数。要求找出该命题的反例。反例的定义是：满足前提条件（$n$ 为素数）但结论不成立（$n^2 + 2$ 也是素数）的情况。\n\n【解题步骤】\n逐一检验三个候选值：\n\n对于 I：$n = 2$\n$2$ 是素数，前提成立。$n^2 + 2 = 4 + 2 = 6 = 2 \\times 3$ 不是素数，结论也成立。因此不是反例。\n\n对于 II：$n = 3$\n$3$ 是素数，前提成立。$n^2 + 2 = 9 + 2 = 11$ 是素数，结论不成立。这就是反例。\n\n对于 III：$n = 4$\n$4 = 2 \\times 2$ 不是素数，前提不成立，因此不构成反例。\n\n综上，只有 II 提供了反例。\n\n【快捷思路】\n只需逐个代入检验：反例要求 $n$ 为素数且 $n^2+2$ 也为素数。$n=2$ 得 $6$ 非素数，$n=3$ 得 $11$ 为素数，$n=4$ 本身不是素数。快速锁定 II。\n\n【正确答案】C",
     "images": null,
     "has_image": false
   },
@@ -5991,7 +5991,7 @@ window.QUESTIONS = [
     "year": 2022,
     "paper": 2,
     "num": 4,
-    "topic": "Sequences and Series",
+    "topic": "Coordinate Geometry",
     "difficulty": 3,
     "question": "The point $P$ has coordinates $(p, q)$, and the equation of a circle is\n\n$$x^2 + 2fx + y^2 + 2gy + h = 0$$\n\nwhere $f, g, h, p$ and $q$ are all real constants.\n\nLet $L$ be the distance between the centre of the circle and the point $P$.\n\nWhich one of the following is **sufficient** on its own to be able to calculate $L$?",
     "options": {
@@ -6002,7 +6002,7 @@ window.QUESTIONS = [
       "E": "none of the options **A-D** is sufficient on its own"
     },
     "answer": "B",
-    "analysis": "【题目分析】\n圆方程: x² + 2fx + y² + 2gy + h = 0\n点 P = (p, q)\n求能计算圆心到P距离的充分条件。\n\n【解题步骤】\nStep 1: 找圆心\n圆方程化为标准形式:\nx² + 2fx + y² + 2gy + h = 0\n(x + f)² + (y + g)² = f² + g² - h\n\n圆心 = (-f, -g)\n\nStep 2: 求距离L\nL = √[(p - (-f))² + (q - (-g))²]\nL = √[(p + f)² + (q + g)²]\n\nStep 3: 分析需要哪些参数\n要计算L，需要知道:\n- 圆心坐标 (-f, -g) → 需要f, g\n- 点坐标 → 需要p, q\n\n所以只需要 f, g, p, q 四个值。\n\n【答案分析】\n选项B: f, g, p, q → 可以计算L ✓\n选项A: f, g, h → 缺少p, q，无法计算 ✗\n选项C: f, h, p, q → 缺少g，无法计算 ✗\n选项D: g, h, p, q → 缺少f，无法计算 ✗\n\n【正确答案】B",
+    "analysis": "【题目分析】\n已知圆的一般方程 $x^2 + 2fx + y^2 + 2gy + h = 0$ 和点 $P(p, q)$，需要确定哪些参数组合足以独立计算圆心到点 $P$ 的距离 $L$。\n\n【解题步骤】\n第一步：通过配方法求圆心\n将圆方程配方：\n$$(x + f)^2 - f^2 + (y + g)^2 - g^2 + h = 0$$\n整理得：\n$$(x + f)^2 + (y + g)^2 = f^2 + g^2 - h$$\n\n因此圆心坐标为 $(-f, -g)$。\n\n第二步：计算距离 $L$\n$$L^2 = (p - (-f))^2 + (q - (-g))^2 = (p + f)^2 + (q + g)^2$$\n\n第三步：分析所需参数\n要计算 $L$，需要知道 $f$、$g$、$p$、$q$ 四个值。参数 $h$ 仅影响半径，与距离 $L$ 无关。\n\n【快捷思路】\n圆心坐标由 $f$ 和 $g$ 决定（为 $(-f, -g)$），与 $h$ 无关。已知点 $P$ 坐标为 $(p, q)$，因此只需 $f, g, p, q$ 即可求距离，$h$ 是多余信息。\n\n【正确答案】B Geometry",
     "images": null,
     "has_image": false
   },
@@ -6025,16 +6025,19 @@ window.QUESTIONS = [
       "H": "I, II and III"
     },
     "answer": "F",
-    "analysis": "【题目分析】\n直线L过(1,2)，命题P：“若y截距<0则x截距>0”\n判断I=P, II=逆命题, III=逆否命题哪些必须成立。\n\n【解题步骤】\n设y截距=c，直线过(1,2)→斜率m=2-c\nx截距=-c/(2-c)\n\n分析各命题：\n命题P：若c<0则x截距>0\n当c<0时，-c>0, 2-c>2>0 → x截距>0 ✓ P成立\n\n逆命题：若x截距>0则c<0\n当c>2时，-c<0, 2-c<0 → x截距=负/负=正>0，但c>0\n所以逆命题有反例 ✗\n\n逆否命题：若x截距≤0则c≥0\n与P逻辑等价 ✓ 成立\n\n按此分析，I和III成立 → 应选F\n\n但官方答案是C（只有II成立），题目可能有特殊理解。\n\n【正确答案】C",
+    "analysis": "【题目分析】\n直线$L$过定点$(1, 2)$，涉及截距的符号与逻辑命题的真假判断。需要判断原命题P、逆命题、逆否命题三者中哪些必定成立。\n\n【解题步骤】\n设直线方程为$y - 2 = m(x - 1)$。\n\n求截距：$y$截距为$2 - m$（令$x = 0$），$x$截距为$1 - \\frac{2}{m}$（令$y = 0$，要求$m \\neq 0$）。注意$m = 0$时$y$截距为$2 > 0$，不在P的条件范围内。\n\n命题P：若$y$截距$< 0$，则$x$截距$> 0$。\n$y$截距$< 0$即$2 - m < 0 \\Rightarrow m > 2$。\n此时$x$截距$= 1 - \\frac{2}{m} > 1 - 1 = 0$，故P成立。\n\n逆命题：若$x$截距$> 0$，则$y$截距$< 0$。\n取$m = -1$，$x$截距$= 3 > 0$，但$y$截距$= 3 > 0$，逆命题不成立。\n\n逆否命题：与原命题逻辑等价，P成立则逆否命题必成立。\n\n综上，I和III成立。\n\n【快捷思路】\n过$(1, 2)$且$y$截距为负，意味着直线从左下方穿过$y$轴负半轴再经过第一象限的$(1, 2)$，必然在$(0, 1)$之间穿过$x$轴，故$x$截距为正。P直观成立，逆否命题等价于P，只需检验逆命题即可。\n\n【正确答案】F Geometry",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Logic"
+    ]
   },
   {
     "id": "2022-P2-Q6",
     "year": 2022,
     "paper": 2,
     "num": 6,
-    "topic": "Probability",
+    "topic": "Logic",
     "difficulty": 3,
     "question": "A list consists of $n$ integers.\n\nConsider the following statements:\n\nP: $n$ is odd.\n\nQ: The median of the list is one of the numbers in the list.\n\nWhich one of the following is true?",
     "options": {
@@ -6044,9 +6047,12 @@ window.QUESTIONS = [
       "D": "P is **not necessary** and **not sufficient** for Q."
     },
     "answer": "C",
-    "analysis": "【题目分析】\n判断命题 P（n是奇数）与命题 Q（中位数在列表中）的逻辑关系。\n\n【解题步骤】\n第一步：分析命题含义\nP：n 是奇数\nQ：中位数是列表中的某个数\n\n第二步：分析 P → Q（充分性）\n当 n 是奇数时：\n设列表从小到大排序为 a₁, a₂, ..., a_n\n中位数位置 = (n+1)/2，这是一个整数\n中位数 = a_{(n+1)/2}，必然在列表中\n\n所以 P → Q 成立，P 是 Q 的充分条件 ✓\n\n第三步：分析 Q → P（必要性）\n若中位数在列表中，n 是否必须为奇数？\n考虑 n 是偶数的情况：\n当 n = 4，列表为 [3, 3, 3, 3]，中位数 = (3+3)/2 = 3，在列表中\n当 n = 6，列表为 [1, 1, 2, 2, 3, 3]，中位数 = (2+2)/2 = 2，在列表中\n\n所以 Q 成立时，n 可以是奇数也可以是偶数\nQ → P 不成立，P 不是 Q 的必要条件 ✗\n\n第四步：结论\nP 是 Q 的充分条件但非必要条件\n\"P is sufficient but not necessary for Q\"\n\n【正确答案】C",
+    "analysis": "【题目分析】\n列表含$n$个整数，判断条件P（$n$为奇数）与结论Q（中位数在列表中）之间的充分必要关系。\n\n【解题步骤】\n充分性检验（P$\\Rightarrow$Q）：\n当$n$为奇数时，将$n$个整数从小到大排列，中间位置为$\\frac{n+1}{2}$，这是整数索引，中位数恰好等于列表中该位置的数。故P$\\Rightarrow$Q成立，P是Q的充分条件。\n\n必要性检验（Q$\\Rightarrow$P）：\n若中位数在列表中，$n$是否必须为奇数？取反例：列表$[2, 2]$，$n = 2$为偶数，中位数$= 2$，在列表中。一般地，任何偶数长度且中间两个数相等的列表都使Q成立但P不成立。故P不是Q的必要条件。\n\n结论：P充分但不必要。\n\n【快捷思路】\n奇数个数$\\Rightarrow$中间位置是整数索引$\\Rightarrow$中位数在列表中，充分性显然。偶数时一般不在，但若中间两数相同（如$[2, 2]$），中位数仍在列表中，故不必要。\n\n【正确答案】C",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Sequences and Series"
+    ]
   },
   {
     "id": "2022-P2-Q7",
@@ -6066,16 +6072,20 @@ window.QUESTIONS = [
       "G": "The proof is wrong, and the first error occurs on line V."
     },
     "answer": "F",
-    "analysis": "【题目分析】\n\"两个连续立方数的差总是素数\"的证明分析。\n\n【解题步骤】\n检查每行：\nI. (x+1)³ = x³ + 3x² + 3x + 1 ✓ 正确展开\nII. 差值 = 3x² + 3x + 1 ✓ 正确计算\nIII. 无法分解成整数线性因子 ✓ 正确\nIV. \"因此无法分解\" → 错误！\n    无法分解成整数因子≠无法分解\n    也≠是素数（可能有其他因子）\n\n反例验证:\nx = 1: 差 = 3+3+1 = 7（素数）✓\nx = 2: 差 = 12+6+1 = 19（素数）✓\nx = 7: 差 = 147+21+1 = 169 = 13²（不是素数！）\n\n【答案分析】\n证明在第IV行出错，逻辑跳跃\n\n【正确答案】B（证明正确但命题有反例）\n\n【修正】答案B说明证明正确但存在反例\n这与我的分析矛盾。重新理解：\n如果答案B，说明证明推导正确，但命题本身有反例。\n反例：x=7时，差=169=13²不是素数。\n\n所以答案是B",
+    "analysis": "【题目分析】\n声称两个连续正立方数之差总是素数，需要逐行检查证明过程，找出第一个错误所在的行。\n\n【解题步骤】\n逐行验证：\nI：$(x+1)^3 = x^3 + 3x^2 + 3x + 1$，代数展开正确。\nII：差值$(x+1)^3 - x^3 = 3x^2 + 3x + 1$，计算正确。\nIII：判别式$3^2 - 4 \\times 3 \\times 1 = -3 < 0$，故$3x^2 + 3x + 1$无实根，不能分解为实系数线性因子，正确。\nIV：由代数表达式不可因式分解，推断对每个正整数$x$其值不能分解——这是错误跳跃。代数表达式不可分解不等于其整数值一定是素数。例如$x^2+1$代数上不可分解，但$x=3$时$3^2+1 = 10 = 2 \\times 5$可分解。\nV：由IV推出的结论，但IV本身有误。\n\n反例验证：$6^3 - 5^3 = 216 - 125 = 91 = 7 \\times 13$，不是素数。或取$x = 7$，$3(49) + 21 + 1 = 169 = 13^2$，同样不是素数。\n\n第一个错误出现在第IV行。\n\n【快捷思路】\nI-III都是正确的代数运算。关键陷阱在IV：代数表达式不可分解$\\not\\Rightarrow$代入整数后得到素数。只要记住$x^2+1$的经典反例，就能快速定位错误在IV。\n\n【正确答案】F",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Algebra",
+      "Counterexamples"
+    ]
   },
   {
     "id": "2022-P2-Q8",
     "year": 2022,
     "paper": 2,
     "num": 8,
-    "topic": "Differentiation",
+    "topic": "Combinatorics",
     "difficulty": 3,
     "question": "A selection, $S$, of $n$ terms is taken from the arithmetic sequence 1, 4, 7, 10, ... , 70.\n\nConsider the following statement:\n\n> ($\\ast$) There are two distinct terms in $S$ whose sum is 74.\n\nWhat is the smallest value of $n$ for which ($\\ast$) is **necessarily** true?",
     "options": {
@@ -6087,16 +6097,19 @@ window.QUESTIONS = [
       "F": "23"
     },
     "answer": "C",
-    "analysis": "【题目分析】\n从等差数列1,4,7,...,70选n项，判断何时必有两项之和为74。\n\n【解题步骤】\n数列：a_k=3k-2，从k=1到24（因为3×24-2=70）\n两项之和：a_i+a_j=3i-2+3j-2=3(i+j)-4=74 → i+j=26\n\n判断必有两项之和为74的条件：\n鸽巢原理。考虑配对：(1,25),(2,24),...,(12,14)，共11组使得i+j=26\n但这些配对中，i,j范围是1到25，而我们只从1到24选。\n\n实际上：i+j=26的配对：(2,24),(3,23),...,(12,14)，共10组\n如果选n项，要保证必有配对，需要选超过10项（鸽巢原理）。\n\n由鸽巢原理：10个配对，如果选≥11项，必有至少一个配对被同时选中。\n\n【正确答案】F",
+    "analysis": "【题目分析】\n从等差数列$1, 4, 7, 10, \\ldots, 70$中选取$n$项，求使必定存在两不同项之和为$74$的最小$n$。这是鸽巢原理的经典应用。\n\n【解题步骤】\n首先确定数列项数：首项$a_1 = 1$，公差$d = 3$，通项$a_k = 3k - 2$。令$3k - 2 = 70$，得$k = 24$，共$24$项。\n\n寻找和为$74$的配对：由$a_i + a_j = 74$得$3i - 2 + 3j - 2 = 74$，即$i + j = 26$。\n配对如下：$4+70,\\ 7+67,\\ 10+64,\\ 13+61,\\ 16+58,\\ 19+55,\\ 22+52,\\ 25+49,\\ 28+46,\\ 31+43,\\ 34+40$。\n注意$37+37$不合法（要求两项不同）。共$11$组配对。\n\n未参与配对的项：$1$（对应$i = 1$，需$j = 25$超出范围）和$37$（对应$i = 13$，需$j = 13$即自身）。共$2$个孤立项。\n\n最坏情况：取$1$、$37$以及每对中各取一项，最多可选$2 + 11 = 13$项而不满足条件。因此$n = 14$时必定满足条件。\n\n【快捷思路】\n$24$项分为$11$个配对加$2$个孤立项。鸽巢原理：从$11$个配对中最多取$11$个不触发条件，加上$2$个孤立项共$13$项安全。第$14$项必补全某个配对。\n\n【正确答案】C",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Sequences and Series"
+    ]
   },
   {
     "id": "2022-P2-Q9",
     "year": 2022,
     "paper": 2,
     "num": 9,
-    "topic": "Algebra",
+    "topic": "Logic",
     "difficulty": 3,
     "question": "Consider the following statement:\n\n($*$) **For all** real numbers $x$, **if** $x < k$ **then** $x^2 < k$\n\nWhat is the complete set of values of $k$ for which ($*$) is true?",
     "options": {
@@ -6109,16 +6122,20 @@ window.QUESTIONS = [
       "G": "all real numbers"
     },
     "answer": "A",
-    "analysis": "【题目分析】\n命题: 对所有实数x，如果x<k则x²<k\n\n【解题步骤】\n分析不同k值：\n\nk ≤ 0:\nx < k ≤ 0 → x是负数\nx² > 0 但 k ≤ 0 → x² < k不成立\n命题假\n\nk > 1:\nx可以接近k但不小于k²\n例如k=2，x=-3，x²=9 > 2\n命题假\n\n0 < k ≤ 1:\n需要验证: x < k → x² < k\n对于x正数: x < k ≤ 1 → x² < x < k ✓\n对于x负数: x < k，但x²可能很大？\n例如k=0.5，x=-1，x²=1 > 0.5 ✗\n\n更仔细分析:\nx² < k → |x| < √k\n而x < k要求更宽松\n\n对于0 < k ≤ 1:\n√k ≥ k\n所以 x < k 不保证 |x| < √k\n\n【正确答案】需要重新分析，答案是D（k ≤ 1）\n\n【修正】答案D表示k≤1时命题成立。\n验证k=0: x<0 → x²<0？x²>0，不成立。\n答案可能有误或题目表述不同",
+    "analysis": "【题目分析】\n命题：对所有实数$x$，若$x < k$则$x^2 < k$。求使命题成立的$k$的取值范围。本题核心在于意识到$x$可以取负值，而负数的平方可能很大，这是解题的关键突破口。\n\n【解题步骤】\n对任意实数$k$，我们需要判断是否存在反例使$x < k$但$x^2 \\geq k$。\n\n情况一：$k \\leq 0$。取$x = k - 1$，显然$x < k$成立。但$x^2 = (k - 1)^2 > 0$，而$k \\leq 0$，故$x^2 > k$，即$x^2 < k$不成立。\n\n情况二：$k > 0$。取$x = -\\sqrt{k}$。由于$\\sqrt{k} > 0$，有$x = -\\sqrt{k} < 0 < k$，故$x < k$成立。但$x^2 = k$，不满足严格不等式$x^2 < k$。\n\n综上，无论$k$取何值，总能找到反例使命题为假。\n\n【快捷思路】\n不需要分类讨论到如此细致。只需注意到：对任何$k$，总能取一个绝对值足够大的负数$x$，使得$x < k$但$x^2$非常大，自然不小于$k$。因此不存在任何$k$使命题成立。\n\n【正确答案】A",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Proof",
+      "Counterexamples"
+    ]
   },
   {
     "id": "2022-P2-Q10",
     "year": 2022,
     "paper": 2,
     "num": 10,
-    "topic": "Algebra",
+    "topic": "Logic",
     "difficulty": 3,
     "question": "Which of the following statements is/are true?\n\nI **For all** real numbers $x$ and **for all** positive integers $n$, $x < n$\n\nII **For all** real numbers $x$, **there exists** a positive integer $n$ such that $x < n$\n\nIII **There exists** a real number $x$ such that **for all** positive integers $n$, $x < n$",
     "options": {
@@ -6132,16 +6149,19 @@ window.QUESTIONS = [
       "H": "I, II and III"
     },
     "answer": "G",
-    "analysis": "【题目分析】\n判断三个逻辑命题的真值。\n\n命题I：对所有实数x和所有正整数n，x<n\n命题II：对所有实数x，存在正整数n使得x<n\n命题III：存在实数x，对所有正整数n，x<n\n\n【解题步骤】\n命题I分析：\n反例：x=1000，n=100，此时x=1000>100=n\n命题I不成立 ❌\n\n命题II分析：\n对任意实数x，可以取n=ceil(|x|)+1（向上取整+1）\n则n>|x|≥x（当x正）或n>0>x（当x负）\n命题II成立 ✓\n\n命题III分析：\n不存在一个固定的x，使得对所有正整数n都有x<n\n因为n可以取任意小的正整数（如n=1），而x必须小于1\n但如果x<1，取n=ceil(|x|)可能使n≤|x|\n命题III不成立 ❌\n\n【正确答案】E（只有II正确）",
+    "analysis": "【题目分析】\n本题涉及全称量词与存在量词的嵌套顺序，是逻辑学中非常经典的问题。三个命题的区别仅在于量词顺序，但含义截然不同，需要逐一判断真假。\n\n【解题步骤】\n命题I：对所有实数$x$和所有正整数$n$，$x < n$。取$x = 2, n = 1$，则$2 > 1$，命题I为假。\n\n命题II：对任意实数$x$，存在正整数$n$使得$x < n$。若$x \\leq 0$，取$n = 1$即可，$x < 1 = n$成立。若$x > 0$，取大于$x$的最小正整数（即$\\lfloor x \\rfloor + 1$），则$x < n$成立。命题II为真。\n\n命题III：存在实数$x$，使得对所有正整数$n$都有$x < n$。取$x = 0$，由于正整数$n \\geq 1$，故$0 < n$对所有正整数成立。命题III为真。注意如果将正整数改为整数，则命题不成立，因为不存在小于所有整数的实数。\n\n因此II和III为真。\n\n【快捷思路】\n命题III的突破口在于选取一个\"足够小\"的固定值如$x = 0$，由于正整数集有下界$1$，$x = 0$必然小于所有正整数。量词顺序决定了搜索的范围：II是先定$x$再找$n$，III是先定$x$然后验证所有$n$。\n\n【正确答案】G",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Proof"
+    ]
   },
   {
     "id": "2022-P2-Q11",
     "year": 2022,
     "paper": 2,
     "num": 11,
-    "topic": "Algebra",
+    "topic": "Coordinate Geometry",
     "difficulty": 3,
     "question": "The diagram shows a kite $PQRS$ whose diagonals meet at $O$.\n\n$OP = x$\n$OQ = y$\n$OR = x$\n$OS = z$\n\nWhich of the following is **necessary and sufficient** for angle $SPQ$ to be a right angle?",
     "options": {
@@ -6152,11 +6172,14 @@ window.QUESTIONS = [
       "E": "$y^2 = x^2 + z^2$"
     },
     "answer": "C",
-    "analysis": "【题目分析】\n风筝PQRS，对角线交于O，求∠SPQ=90°的充要条件。\n\n【解题步骤】\n风筝性质：对角线互相垂直，OP=OR=x（对称）\n\nStep 1: 用勾股定理\n如果∠SPQ=90°，则：\n在△SPQ中，SP² + PQ² = SQ²（勾股定理）\n\nSP² = x² + z²\nPQ² = x² + y²\nSQ² = (y+z)²（SQ是对角线）\n\nStep 2: 展开\nx² + z² + x² + y² = (y+z)²\n2x² + y² + z² = y² + 2yz + z²\n2x² = 2yz\nx² = yz\n\n【验证】\nx² = yz → ∠SPQ=90°（必要且充分）\n\n【正确答案】C（x² = yz）\n\n注意：答案E（y² = x² + z²）表示△SOQ中条件\n但这不是∠SPQ的条件",
+    "analysis": "【题目分析】\n风筝$PQRS$的对角线交于$O$，已知$OP = OR = x$，$OQ = y$，$OS = z$。求$\\angle SPQ = 90^\\circ$的充要条件。风筝的核心性质是两条对角线互相垂直，这为使用勾股定理提供了基础。\n\n【解题步骤】\n由于$PQRS$是风筝，对角线$PR$与$QS$互相垂直，即$\\angle SOP = \\angle POQ = 90^\\circ$。\n\n在$Rt\\triangle SOP$中：$SP^2 = x^2 + z^2$\n\n在$Rt\\triangle POQ$中：$PQ^2 = x^2 + y^2$\n\n$\\angle SPQ = 90^\\circ$当且仅当$\\triangle SPQ$满足勾股定理：\n$SP^2 + PQ^2 = SQ^2$\n\n代入得：\n$(x^2 + z^2) + (x^2 + y^2) = (y + z)^2$\n\n化简：\n$2x^2 + y^2 + z^2 = y^2 + 2yz + z^2$\n\n$2x^2 = 2yz$，即$x^2 = yz$。\n\n因此充要条件为$x^2 = yz$。可取$x = 2, y = 4, z = 1$验证：满足$x^2 = yz = 4$，但不满足其他选项，确认C是唯一正确答案。\n\n【快捷思路】\n看到直角立刻想到勾股定理。风筝对角线垂直是隐含条件，将$\\angle SPQ = 90^\\circ$转化为边长关系即可。展开$(y + z)^2$后$y^2$和$z^2$恰好消去，直接得到简洁结果。\n\n【正确答案】C Geometry",
     "images": {
       "image": "2022 P2 Q11.png"
     },
-    "has_image": true
+    "has_image": true,
+    "related_topics": [
+      "Proof"
+    ]
   },
   {
     "id": "2022-P2-Q12",
@@ -6175,16 +6198,20 @@ window.QUESTIONS = [
       "F": "$R < Q < P$"
     },
     "answer": "F",
-    "analysis": "【题目分析】\n比较三个积分大小：P, Q, R\n\n【解题步骤】\n分析积分函数：\nP = ∫₀¹ 2^√x dx\nQ = ∫₀¹ 2^x dx\nR = ∫₀¹ (√2)^x dx = ∫₀¹ 2^(x/2) dx\n\n比较函数大小：\n对于x∈[0,1]:\n√x > x/2 > x？\n验证：\nx=0: √x=0, x/2=0, x=0 → 都相等\nx=1: √x=1, x/2=0.5, x=1 → √x最大\nx=0.25: √x=0.5, x/2=0.125, x=0.25 → √x最大\n\n指数函数单调性：\n2^t在t增大时增大\n\n所以对于大多数x:\n√x > x > x/2\n→ 2^√x > 2^x > 2^(x/2)\n\n积分值大小：\nP > Q > R\n\n【正确答案】E（R < P < Q）\n\n【修正】答案E表示从小到大排序\nR < P < Q 与P > Q > R一致",
+    "analysis": "【题目分析】\n比较三个定积分的大小：$P = \\int_{0}^{1} 2^{\\sqrt{x}} \\, dx$，$Q = \\int_{0}^{1} 2^x \\, dx$，$R = \\int_{0}^{1} (\\sqrt{2})^x \\, dx$。本题不需要实际计算积分值，只需比较被积函数在积分区间上的大小。\n\n【解题步骤】\n先化简被积函数。注意$(\\sqrt{2})^x = 2^{x/2}$，因此三个被积函数的指数分别为$\\sqrt{x}$、$x$和$\\frac{x}{2}$。\n\n比较指数大小（在$0 < x < 1$内）：\n\n首先，$x/2 < x$显然成立，故$2^{x/2} < 2^x$，即$R$的被积函数最小。\n\n其次，当$0 < x < 1$时，$x^2 < x$，两边开方得$\\sqrt{x} > x$，故$2^{\\sqrt{x}} > 2^x$，即$P$的被积函数最大。\n\n综上，在$(0, 1)$上恒有$2^{x/2} < 2^x < 2^{\\sqrt{x}}$，因此积分值满足$R < Q < P$。\n\n端点$x = 0$和$x = 1$处被积函数值相等或不改变不等关系，不影响积分大小比较。\n\n【快捷思路】\n关键洞察：在$(0, 1)$区间内，$\\sqrt{x} > x > x/2$。将$(\\sqrt{2})^x$改写为$2^{x/2}$是化简的第一步。指数函数底数$2 > 1$时单调递增，指数越大函数值越大，积分自然越大。无需实际求积分。\n\n【正确答案】F",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Graphs",
+      "Functions"
+    ]
   },
   {
     "id": "2022-P2-Q13",
     "year": 2022,
     "paper": 2,
     "num": 13,
-    "topic": "Algebra",
+    "topic": "Logic",
     "difficulty": 3,
     "question": "Consider the statement ($*$) about a real number $x$:\n\n($*$) **There exists** a real number $y$ such that $x - xy + y$ is negative.\n\nFor how many real values of $x$ is ($*$) true?",
     "options": {
@@ -6196,9 +6223,13 @@ window.QUESTIONS = [
       "F": "all values of $x$"
     },
     "answer": "E",
-    "analysis": "【题目分析】\n命题(*)：\"存在实数y使x - xy + y < 0\"\n问对多少x值成立。\n\n【解题步骤】\nx - xy + y = x + y(1-x)\n设为负：< 0\nx + y(1-x) < 0\n\n情况分析：\n1) 1-x ≠ 0（即x≠1）：\n   y(1-x) < -x\n   y < -x/(1-x)（可以找到这样的y）\n   所以对x≠1，命题成立 ✓\n\n2) x = 1：\n   1 + y(0) = 1 < 0？\n   1不小于0\n   所以x=1时，命题不成立 ✗\n\n【答案分析】\n除了x=1这一个值，命题对所有x成立\n\n【正确答案】E（all except exactly one value of x）\n\n【修正】但题目答案是C（exactly two values）\n可能我分析有误，需要重新检查",
+    "analysis": "【题目分析】\n本题考察存在量词命题的真假判定。命题(*)为：对给定的实数$x$，存在实数$y$使得$x - xy + y$为负数。需要对所有可能的$x$值分类讨论，判断命题是否成立。核心在于将表达式整理为关于$y$的线性函数，利用一次函数的值域性质来判断。\n\n【解题步骤】\n将表达式重新整理：\n$$x - xy + y = (1-x)y + x$$\n将其视为关于$y$的直线方程$my + c$，其中$m = 1-x$，$c = x$。\n\n**情况一：$m \\neq 0$即$x \\neq 1$**\n此时斜率非零，直线的值域为全体实数$\\mathbb{R}$。既然取遍所有实数，必然能取到负值。因此命题(*)成立。\n\n**情况二：$m = 0$即$x = 1$**\n此时表达式退化为$(1-1)y + 1 = 1$，恒等于$1$。无论$y$取何值，结果始终为$1$（正数），永远无法取到负值。因此命题(*)不成立。\n\n综上，命题(*)对除$x = 1$外的所有实数成立，恰有一个$x$值使之为假。\n\n【快捷思路】\n将$x - xy + y$按$y$整理为$(1-x)y + x$，直接看出是关于$y$的直线。直线斜率为零时（即$x=1$）退化为常数$1$，恒正；斜率非零时值域为$\\mathbb{R}$，必有负值。秒杀排除$x=1$即可。\n\n【正确答案】E",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Functions",
+      "Algebra"
+    ]
   },
   {
     "id": "2022-P2-Q14",
@@ -6218,9 +6249,12 @@ window.QUESTIONS = [
       "G": "The real numbers for which both inequalities are true form an interval of length 5."
     },
     "answer": "D",
-    "analysis": "【题目分析】\n求两个绝对值不等式同时成立的解集性质。\n\n【不等式分析】\n① |x+5| < |x+11|\n② |x+11| < |x+1|\n\n【解题步骤】\n**不等式①**：|x+5| < |x+11|\n\n数轴分析：两点到x的距离\n|-5和-11两点|\n\n方法：平方展开\n(x+5)² < (x+11)²\nx² + 10x + 25 < x² + 22x + 121\n10x + 25 < 22x + 121\n-12x < 96\nx > -8\n\n所以①的解：x > -8\n\n**不等式②**：|x+11| < |x+1|\n\n(x+11)² < (x+1)²\nx² + 22x + 121 < x² + 2x + 1\n22x + 121 < 2x + 1\n20x < -120\nx < -6\n\n所以②的解：x < -6\n\n**交集分析**：\nx > -8 且 x < -6\n交集：-8 < x < -6\n区间长度 = |-6 - (-8)| = 2\n\n【正确答案】D（区间长度2）\n\n注意：题目答案D说\"区间长度2\"\n这与我的计算结果一致！",
+    "analysis": "【题目分析】\n本题涉及两个绝对值不等式的联立求解。不等式$|x-a|$的几何意义是数轴上点$x$到点$a$的距离。利用这一几何直观，可以避免繁琐的分情况讨论，快速确定解集区间。\n\n【解题步骤】\n**不等式①：**$|x+5| < |x+11|$\n几何意义：$x$到$-5$的距离小于到$-11$的距离。\n$-5$和$-11$的中点为$(-5 + (-11))/2 = -8$。\n$x$更靠近$-5$，故$x$在中点右侧：$x > -8$。\n\n**不等式②：**$|x+11| < |x+1|$\n几何意义：$x$到$-11$的距离小于到$-1$的距离。\n$-11$和$-1$的中点为$(-11 + (-1))/2 = -6$。\n$x$更靠近$-11$，故$x$在中点左侧：$x < -6$。\n\n**取交集：**\n同时满足$x > -8$且$x < -6$，即$-8 < x < -6$。\n区间长度为$-6 - (-8) = 2$。\n\n**代数验证法（平方法）：**\n$|x+5| < |x+11|$两边平方得$x^2 + 10x + 25 < x^2 + 22x + 121$，化简得$12x > -96$，即$x > -8$。\n同理$|x+11| < |x+1|$平方得$20x < -120$，即$x < -6$。\n\n【快捷思路】\n记住公式$|x-a| < |x-b|$等价于$x$在$a$和$b$中点靠近$a$的一侧。中点为$(a+b)/2$，若$a > b$则解为$x > (a+b)/2$，若$a < b$则解为$x < (a+b)/2$。两个中点一算、方向一判、交集一取，十秒出答案。\n\n【正确答案】D",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Coordinate Geometry"
+    ]
   },
   {
     "id": "2022-P2-Q15",
@@ -6241,16 +6275,19 @@ window.QUESTIONS = [
       "H": "$\\log_z x = \\frac{1}{yz}$"
     },
     "answer": "F",
-    "analysis": "【题目分析】\n对数循环方程：log_x(y) = z, log_y(z) = x\n求log_z(x)的表达式。\n\n【解题步骤】\n**Step 1**: 转换对数关系\n\nlog_x(y) = z → y = x^z  (换底公式逆用)\nlog_y(z) = x → z = y^x\n\n**Step 2**: 代入消元\n\nz = y^x = (x^z)^x = x^(zx)\n\n两边取z的对数：\nlog_z(z) = log_z(x^(zx)) = zx·log_z(x)\n\n1 = zx·log_z(x)\nlog_z(x) = 1/(zx)\n\n但这是用x,z表示，题目要求用其他变量...\n\n**Step 3**: 循环关系\n\n设 log_z(x) = ?\n\n三个方程：\n- y = x^z\n- z = y^x  \n- x = z^? （需要找）\n\n从循环看：x → y → z → x\n\n利用对称性：\n如果 log_x(y) = z\n那么 log_y(x) = 1/z\n\n同理：log_z(x) 应与循环有关\n\n【推导】\ny = x^z → log_z(y) = z·log_z(x)\n\nz = y^x = (x^z)^x = x^(zx)\n\n取z的对数：log_z(z) = zx·log_z(x)\n1 = zx·log_z(x)\nlog_z(x) = 1/(zx)\n\n但题目要求用y表示...\n\n继续推导：\nz = y^x → x = log_y(z)\n\ny = x^z → z = log_x(y)\n\n【答案】需要进一步推导\n根据答案C，log_z(x) = xy\n\n【验证】\n如果 log_z(x) = xy:\nx = z^(xy)\n代入 z = y^x:\nx = (y^x)^(xy) = y^(x²y)\n\n这与 y = x^z矛盾...\n\n【修正】答案可能是特殊关系\n答案C（xy）需要特定条件验证",
+    "analysis": "【题目分析】\n本题考察对数与指数的互化关系，以及对数运算中的循环结构。已知$\\log_x y = z$和$\\log_y z = x$，通过换底和代换建立$x$、$y$、$z$三者的循环关系，最终用$x$和$z$表示$\\log_z x$。\n\n【解题步骤】\n**Step 1：将已知对数式转为指数式**\n$$\\log_x y = z \\implies y = x^z$$\n$$\\log_y z = x \\implies z = y^x$$\n\n**Step 2：消去$y$，建立$x$与$z$的关系**\n将$y = x^z$代入$z = y^x$：\n$$z = (x^z)^x = x^{zx}$$\n\n**Step 3：求解$\\log_z x$**\n对$z = x^{zx}$两边同时取$\\frac{1}{zx}$次幂：\n$$z^{1/(zx)} = (x^{zx})^{1/(zx)} = x$$\n即$x = z^{1/(xz)}$。\n\n根据对数定义，这等价于：\n$$\\log_z x = \\frac{1}{xz}$$\n\n**验证：**将$\\log_z x = \\frac{1}{xz}$代回原方程，由$z = x^{zx}$出发取对数可自洽验证。\n\n【快捷思路】\n看到$\\log_x y = z$、$\\log_y z = x$这种循环对数，立刻转为指数式$y = x^z$、$z = y^x$，代入消去中间变量$y$得到$z = x^{zx}$，再两边开$xz$次方即得$x = z^{1/(xz)}$，直接写出$\\log_z x = \\frac{1}{xz}$。三步解决，无需额外计算。\n\n【正确答案】F",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Functions"
+    ]
   },
   {
     "id": "2022-P2-Q16",
     "year": 2022,
     "paper": 2,
     "num": 16,
-    "topic": "Algebra",
+    "topic": "Counterexamples",
     "difficulty": 3,
     "question": "In this question, $a_1, \\dots, a_{100}$ and $b_1, \\dots, b_{100}$ and $c_1, \\dots, c_{100}$ are three sequences of integers such that\n\n$$a_n \\le b_n + c_n$$\n\nfor each $n$.\n\nWhich of the following statements **must** be true?\n\nI (minimum of $a_1, \\dots, a_{100}$) $\\le$ (minimum of $b_1, \\dots, b_{100}$) + (minimum of $c_1, \\dots, c_{100}$)\n\nII (minimum of $a_1, \\dots, a_{100}$) $\\ge$ (minimum of $b_1, \\dots, b_{100}$) + (minimum of $c_1, \\dots, c_{100}$)\n\nIII (maximum of $a_1, \\dots, a_{100}$) $\\le$ (maximum of $b_1, \\dots, b_{100}$) + (maximum of $c_1, \\dots, c_{100}$)",
     "options": {
@@ -6264,16 +6301,20 @@ window.QUESTIONS = [
       "H": "I, II and III"
     },
     "answer": "D",
-    "analysis": "【题目分析】\n序列不等式：a_n ≤ b_n + c_n\n分析最小值之间的关系。\n\n【解题步骤】\n设 min{a} = min of a₁...a₁₀₀\n设 min{b}, min{c} 类似\n\n**Statement I**: min{a} ≤ min{b} + min{c}\n\n反例：设所有a_n = 5，所有b_n = 1，所有c_n = 1\na_n ≤ b_n + c_n：5 ≤ 2？不成立！\n但 min{a} = 5, min{b}+min{c} = 2\n5 ≤ 2 不成立\n\n所以 I 不一定成立 ✗\n\n**Statement II**: min{a} ≥ min{b} + min{c}\n\n证明：\n设 min{a} = a_k（某一项）\n则 a_k ≤ b_k + c_k\n\n设 min{b} ≤ b_k, min{c} ≤ c_k\n所以 min{b} + min{c} ≤ b_k + c_k\n\n但 a_k ≤ b_k + c_k，这不保证 a_k ≥ min{b}+min{c}\n\n反例：a_n ≤ b_n + c_n，a_n 可以比 min{b}+min{c}小\n\n等等，让我重新思考...\n\n**正确推导**：\n对于某个k：a_k ≤ b_k + c_k ≥ min{b} + min{c}\n\n所以 min{a} ≤ a_k ≤ b_k + c_k ≥ min{b} + min{c}\n\n这不能得出 min{a} ≥ min{b} + min{c}\n\n但也不能得出 min{a} ≤ min{b} + min{c}\n\n【答案分析】根据答案C\n需要具体验证哪个成立\n\n【正确答案】C（某个Statement成立）",
+    "analysis": "【题目分析】\n本题考察序列最值与不等式的逻辑关系。已知对每个$n$都有$a_n \\leq b_n + c_n$，需要判断三个关于最小值和最大值的不等式命题哪些必然成立。解题核心策略是：先尝试构造反例否定命题，若反例失败则尝试严格证明。\n\n【解题步骤】\n记$A_{\\min}$为$a$序列最小值，$B_{\\max}$为$b$序列最大值，其余类似。\n\n**命题Ⅰ：**$A_{\\min} \\leq B_{\\min} + C_{\\min}$\n构造反例：取$b_1 = 0$，其余$b_n = 100$；$c_{100} = 0$，其余$c_n = 100$。则$B_{\\min} = 0$，$C_{\\min} = 0$。对所有$n$取$a_n = 100$，满足$a_n \\leq b_n + c_n$（$100 \\leq 100 + 100 = 200$或$100 \\leq 0 + 100 = 100$均成立）。但$A_{\\min} = 100 > 0 + 0$，命题Ⅰ不成立。\n\n**命题Ⅱ：**$A_{\\min} \\geq B_{\\min} + C_{\\min}$\n构造反例：对所有$n$取$a_n = 0$，$b_n = 1$，$c_n = 1$。条件$0 \\leq 1 + 1$成立。但$A_{\\min} = 0 < 1 + 1 = 2$，命题Ⅱ不成立。\n\n**命题Ⅲ：**$A_{\\max} \\leq B_{\\max} + C_{\\max}$\n严格证明：对任意$n$，有$a_n \\leq b_n + c_n$。而$b_n \\leq B_{\\max}$，$c_n \\leq C_{\\max}$，故$a_n \\leq B_{\\max} + C_{\\max}$。这意味着$B_{\\max} + C_{\\max}$是$a$序列的一个上界，而最大值$A_{\\max}$是上确界，因此$A_{\\max} \\leq B_{\\max} + C_{\\max}$。命题Ⅲ必然成立。\n\n综上，仅命题Ⅲ成立。\n\n【快捷思路】\n最小值不等式（Ⅰ、Ⅱ）通常不成立——因为$a_n \\leq b_n + c_n$只约束对应项，而$b$的最小值和$c$的最小值可能出现在不同位置，无法叠加到同一个$a_n$上。最大值不等式（Ⅲ）则不同：每个$a_n$都被$B_{\\max} + C_{\\max}$压住，所以最大值也被压住。记住这个直觉可快速判断。\n\n【正确答案】D",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Proof",
+      "Logic"
+    ]
   },
   {
     "id": "2022-P2-Q17",
     "year": 2022,
     "paper": 2,
     "num": 17,
-    "topic": "Algebra",
+    "topic": "Differentiation",
     "difficulty": 3,
     "question": "A student answered the following question:\n\n$a$ and $b$ are non-zero real numbers.\n\nProve that the equation $x^3 + ax^2 + b = 0$ has three distinct real roots if\n$$27b \\left( b + \\frac{4a^3}{27} \\right) < 0$$\n\nHere is the student’s solution:\n\nI We differentiate $y = x^3 + ax^2 + b$ to get $\\frac{dy}{dx} = 3x^2 + 2ax = x(3x + 2a)$\n\nSolving $\\frac{dy}{dx} = 0$ shows that the stationary points are at $(0, b)$ and $\\left( -\\frac{2a}{3}, b + \\frac{4a^3}{27} \\right)$\n\nII If $27b \\left( b + \\frac{4a^3}{27} \\right) < 0$, then $b$ and $b + \\frac{4a^3}{27}$ must have opposite signs, and so one of the stationary points is above the $x$-axis and one is below.\n\nIII If the cubic has three distinct real roots, then one of the stationary points is above the $x$-axis and one is below.\n\nIV Hence if $27b \\left( b + \\frac{4a^3}{27} \\right) < 0$, then the equation has three distinct real roots.\n\nWhich one of the following options best describes the student’s solution?",
     "options": {
@@ -6284,9 +6325,12 @@ window.QUESTIONS = [
       "E": "The solution is wrong, because the student should have shown the converse of the result in step III."
     },
     "answer": "E",
-    "analysis": "【题目分析】\n学生证明分析：三次方程有三实根的条件。\n\n【证明逐步分析】\n**Line I**: y = x³ + ax² + b\ndy/dx = 3x² + 2ax = x(3x + 2a) ✓\n\n驻点：x = 0 或 x = -2a/3 ✓\n\n**Line II-V**: 需要检查后续推导\n\n三次函数有3个实根的条件：\n- 导数有两个不同零点（两个驻点）\n- 驻点处函数值跨越y=0\n\n设 f(x) = x³ + ax² + b\nf'(x) = 3x² + 2ax\n\n驻点：x₁ = 0, x₂ = -2a/3\nf(0) = b\nf(-2a/3) = (-8a³/27) + (4a³/9) + b\n         = -8a³/27 + 12a³/27 + b\n         = 4a³/27 + b\n\n**三实根条件**：两驻点函数值异号\nf(0) × f(-2a/3) < 0\nb × (4a³/27 + b) < 0\n\n即：27b(b + 4a³/27) < 0 ✓\n\n【答案分析】\n学生证明在哪里出错？\n\n答案D表示错误在某个line\n需要逐行检查逻辑链条完整性\n\n【正确答案】D",
+    "analysis": "【题目分析】\n本题要求学生证明：对于非零实数 $a, b$，若 $27b\\!\\left(b + \\frac{4a^3}{27}\\right) < 0$，则方程 $x^3 + ax^2 + b = 0$ 有三个不同实根。学生的解法分为四步，需要判断哪一步的逻辑存在方向性错误。\n\n核心思路是先求导找驻点，再论证驻点位置与根的个数之间的关系。三次函数 $y = x^3 + ax^2 + b$ 的导数为 $3x^2 + 2ax$，驻点在 $x = 0$ 和 $x = -\\frac{2a}{3}$ 处，对应的函数值分别为 $b$ 和 $b + \\frac{4a^3}{27}$。当这两个函数值异号时，图像跨越 $x$ 轴三次，即有三个实根。\n\n【解题步骤】\n学生第 I 步求驻点，计算正确。第 II 步由条件 $27b\\!\\left(b + \\frac{4a^3}{27}\\right) < 0$ 推出两驻点函数值异号，方向正确。问题出在第 III 步：学生写的是如果三次方程有三个不同实根，则一个驻点在 $x$ 轴上方，一个在下方。但题目要求的是反过来——由驻点位置推出根的个数。第 IV 步需要用到的是第 III 步的逆命题，但学生并没有证明逆命题，而是直接使用了结论。因此第 III 步应该证明其逆命题。\n\n【快捷思路】\n这是一道逻辑方向题。题目要证 $P \\Rightarrow Q$，学生第 III 步写的是 $Q \\Rightarrow P$，而实际推理中需要的是 $P \\Rightarrow Q$。关键就是发现这个逻辑箭头方向反了。\n\n【正确答案】E",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Logic"
+    ]
   },
   {
     "id": "2022-P2-Q18",
@@ -6307,18 +6351,22 @@ window.QUESTIONS = [
       "H": "$P=(\\sin x)^{\\sin x},\\ Q=(\\sin x)^{\\cos x},\\ R=(\\cos x)^{\\cos x},\\ S=(\\cos x)^{\\sin x}$"
     },
     "answer": "E",
-    "analysis": "【题目分析】\n匹配三角函数图形：P,Q,R,S对应四种函数。\n\n【已知表格】\nx: 0 → y: 1\nx: π/6 → y: ~0.9\nx: π/3 → y: ~0.5\nx: π/2 → y: ?\n\n【函数分析】\n四个函数：\n① (cos x)^cos x\n② (sin x)^sin x\n③ (cos x)^sin x\n④ (sin x)^cos x\n\n在 x ∈ (0, π/2) 时：\n- cos x 从1递减到0\n- sin x 从0递增到1\n\n**分析① (cos x)^cos x**:\nx=0: cos=1 → 1^1 = 1 ✓（匹配表格）\nx=π/2: cos≈0 → 0^0 ≈1（极限）\n递减趋势\n\n**分析② (sin x)^sin x**:\nx=0: sin=0 → 0^0 ≈1\nx=π/2: sin=1 → 1^1 = 1\n先增后减？需要详细分析\n\n【答案分析】\n表格函数对应①\n答案A\n\n【正确答案】A",
+    "analysis": "【题目分析】\n本题要求在 $0 < x < \\frac{\\pi}{2}$ 区间内，将四条函数曲线 $y = (\\cos x)^{\\cos x}$、$y = (\\sin x)^{\\sin x}$、$y = (\\cos x)^{\\sin x}$、$y = (\\sin x)^{\\cos x}$ 与图形 P、Q、R、S 正确匹配。\n\n【解题步骤】\n最有效的方法是代入关键点的函数值来逐一排除。\n\n在 $x = 0$ 处：$(\\cos 0)^{\\cos 0} = 1^1 = 1$，$(\\cos 0)^{\\sin 0} = 1^0 = 1$，$(\\sin 0)^{\\cos 0} = 0^1 = 0$，而 $(\\sin 0)^{\\sin 0} = 0^0$ 极限为 $1$。四个函数中只有 $(\\sin x)^{\\cos x}$ 在 $x \\to 0$ 时为 $0$，对应图形 Q。\n\n在 $x = \\frac{\\pi}{2}$ 处：$(\\sin\\frac{\\pi}{2})^{\\sin\\frac{\\pi}{2}} = 1^1 = 1$，$(\\sin\\frac{\\pi}{2})^{\\cos\\frac{\\pi}{2}} = 1^0 = 1$，$(\\cos\\frac{\\pi}{2})^{\\sin\\frac{\\pi}{2}} = 0^1 = 0$。只有 $(\\cos x)^{\\sin x}$ 在 $x \\to \\frac{\\pi}{2}$ 时为 $0$，对应图形 P。\n\n剩下 $(\\cos x)^{\\cos x}$ 和 $(\\sin x)^{\\sin x}$ 对应 R 和 S。代入 $x = \\frac{\\pi}{6}$，$(\\sin\\frac{\\pi}{6})^{\\sin\\frac{\\pi}{6}} = \\left(\\frac{1}{2}\\right)^{1/2} = \\frac{1}{\\sqrt{2}} \\approx 0.7$，对应图形 S。类似地，$(\\cos x)^{\\cos x}$ 在 $x = \\frac{\\pi}{3}$ 处也约为 $0.7$，对应图形 R。\n\n因此匹配为：P = $(\\cos x)^{\\sin x}$，Q = $(\\sin x)^{\\cos x}$，R = $(\\cos x)^{\\cos x}$，S = $(\\sin x)^{\\sin x}$。\n\n【快捷思路】\n抓住端点值的唯一性：$x = 0$ 处仅一个函数值为 $0$，$x = \\frac{\\pi}{2}$ 处也仅一个函数值为 $0$，先定 Q 和 P，再用中间值区分 R 和 S。\n\n【正确答案】E",
     "images": {
       "image": "2022 P2 Q18.png"
     },
-    "has_image": true
+    "has_image": true,
+    "related_topics": [
+      "Graphs",
+      "Functions"
+    ]
   },
   {
     "id": "2022-P2-Q19",
     "year": 2022,
     "paper": 2,
     "num": 19,
-    "topic": "Algebra",
+    "topic": "Proof",
     "difficulty": 3,
     "question": "A polygon has $n$ vertices, where $n \\geq 3$. It has the following properties:\n\n*   Every vertex of the polygon lies on the circumference of a circle $C$.\n*   The centre of the circle $C$ is inside the polygon.\n*   The radii from the centre of the circle $C$ to the vertices of the polygon cut the polygon into $n$ triangles of equal area.\n\nFor which values of $n$ are these properties **sufficient** to deduce that the polygon is regular?",
     "options": {
@@ -6329,16 +6377,20 @@ window.QUESTIONS = [
       "E": "all values of $n$"
     },
     "answer": "B",
-    "analysis": "【题目分析】\nn边形顶点在圆C上，圆心在多边形内，\n半径将多边形分成n个等面积三角形。\n哪些n能推出正多边形？\n\n【解题步骤】\n每个三角形面积=1/2·R²·sin(θᵢ)，其中θᵢ是第i个中心角。\n等面积 → sin(θ₁)=sin(θ₂)=...=sin(θₙ)\n\nθᵢ>0且Σθᵢ=2π。\nsin(θᵢ)都相等。\n\nn=3：sin(θ₁)=sin(θ₂)=sin(θ₃)\nθ₁+θ₂+θ₃=2π\n如果θ₁=θ₂=θ₃=2π/3，等边三角形 ✓\n如果某个θᵢ≠2π/3，比如θ₁=π-α, θ₂=α, θ₃=π-2α\nsin(π-α)=sinα, sin(π-2α)=sin2α\n需要sinα=sin2α → α=2α或α=π-2α\nα=0（不可能）或α=π/3\n所以θ₁=2π/3, θ₂=π/3, θ₃=π/3\n但sin(2π/3)=√3/2, sin(π/3)=√3/2 ✓\n此时三个角是2π/3, π/3, π/3，不是正三角形！\n\n等等，让我重新检查...\n\n实际上，对于n=3，如果三个三角形面积相等：\n1/2·R²·sin(θ₁)=1/2·R²·sin(θ₂)=1/2·R²·sin(θ₃)\nsin(θ₁)=sin(θ₂)=sin(θ₃)\n\nθ₁+θ₂+θ₃=2π\n\n如果θ₁=θ₂=θ₃=2π/3，是正三角形。\n\n如果θ₁=π/3, θ₂=π/3, θ₃=4π/3：\nsin(π/3)=√3/2, sin(4π/3)=-√3/2\n面积不能为负，所以θᵢ∈(0,π)。\n\n实际上，圆心在多边形内，每个θᵢ∈(0,π)。\nsin(θᵢ)都相等且θᵢ∈(0,π) → θᵢ都相等。\n\n所以n=3时是正三角形 ✓\n\nn=4：θ₁+θ₂+θ₃+θ₄=2π\nsin(θᵢ)都相等。\nθᵢ=π/2都相等 → 正方形 ✓\n但θ₁=θ₃=π/3, θ₂=θ₄=2π/3也满足sin相等！\n此时不是正方形（是矩形但不是正方形）✗\n\nn≥5：类似地，可以构造非正多边形。\n\n所以只有n=3。\n\n【正确答案】B",
+    "analysis": "【题目分析】\n一个 $n$ 边形满足：所有顶点在圆 $C$ 上，圆心在多边形内部，圆心到各顶点的半径将多边形分为 $n$ 个等面积三角形。问哪些 $n$ 能由此推出该多边形是正多边形。\n\n【解题步骤】\n设圆半径为 $r$，第 $i$ 个三角形的中心角为 $\\theta_i$，则面积为 $\\frac{1}{2}r^2\\sin\\theta_i$。等面积意味着所有 $\\sin\\theta_i$ 相等。由于 $\\sin\\theta = \\sin\\phi$ 当且仅当 $\\phi = \\theta$ 或 $\\phi = \\pi - \\theta$，因此中心角可能取两种值：$\\theta$ 和 $\\pi - \\theta$。\n\n假设有 $k$ 个角为 $\\pi - \\theta$，$n-k$ 个角为 $\\theta$，则 $(n-k)\\theta + k(\\pi - \\theta) = 2\\pi$，整理得 $(n-2k)\\theta = (2-k)\\pi$。\n\n对于 $n=3$：逐一检验 $k=1,2,3$。$k=1$ 时 $\\theta = \\pi$ 不合要求；$k=2$ 时 $\\theta = 0$ 不合要求；$k=3$ 时 $\\theta = \\frac{\\pi}{3}$，三个角相等，即正三角形。因此 $n=3$ 只能是正多边形。\n\n对于 $n=4$：$k=2$ 时方程退化为 $0=0$，任意 $\\theta$ 均可。取 $\\theta \\neq \\frac{\\pi}{2}$ 则两个角为 $\\theta$，两个为 $\\pi-\\theta$，构成非正方形的矩形，满足条件但不是正多边形。\n\n对于 $n \\geq 5$：$k=1$ 时 $\\theta = \\frac{\\pi}{n-2} < \\frac{\\pi}{2}$，是锐角，构造合法，可得到非正多边形。\n\n因此仅 $n=3$ 时条件足以推出正多边形。\n\n【快捷思路】\n关键在于 $\\sin\\theta_i$ 相等不等价于 $\\theta_i$ 相等。当存在互补角 $\\theta$ 和 $\\pi-\\theta$ 时，$n \\geq 4$ 总能构造非正多边形反例，仅 $n=3$ 时方程无解（除正三角形外）。\n\n【正确答案】B",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Trigonometry",
+      "Counterexamples"
+    ]
   },
   {
     "id": "2022-P2-Q20",
     "year": 2022,
     "paper": 2,
     "num": 20,
-    "topic": "Algebra",
+    "topic": "Functions",
     "difficulty": 3,
     "question": "The functions $f_1$ to $f_5$ are defined on the real numbers by\n\n$$f_1(x) = \\cos x$$\n$$f_2(x) = \\sin(\\cos x)$$\n$$f_3(x) = \\cos(\\sin(\\cos x))$$\n$$f_4(x) = \\sin(\\cos(\\sin(\\cos x)))$$\n$$f_5(x) = \\cos(\\sin(\\cos(\\sin(\\cos x))))$$\n\nwhere all numbers are taken to be in radians.\n\nThese functions have maximum values $m_1, m_2, m_3, m_4$ and $m_5$, respectively.\n\nWhich one of the following statements is true?",
     "options": {
@@ -6350,8 +6402,11 @@ window.QUESTIONS = [
       "F": "$m_1 = m_3 = 1$ and $0 < m_4 < m_2 < 1$ and $0 < m_5 < 1$"
     },
     "answer": "E",
-    "analysis": "【题目分析】\n复合函数最大值比较：m₁到m₅\n\n【函数分析】\nf₁(x) = cos x → max = 1 (m₁ = 1)\n\nf₂(x) = sin(cos x)\ncos x ∈ [0,1]（不是完整周期）\nsin在[0,1]上的最大值？\nsin(1) ≈ 0.84\nm₂ = sin(1) < m₁ ✓\n\nf₃(x) = cos(sin(cos x))\nsin(cos x) ∈ [0, sin(1)]\ncos在[0, sin(1)]上的最大值？\ncos(0) = 1\nm₃ = cos(0) = 1 = m₁ ✓\n\nf₄(x) = sin(cos(sin(cos x)))\n内层从1开始，递减...\nm₄ < m₁ ✓\n\nf₅(x) = cos(...)\n类似分析\n\n【递减规律】\n每层嵌套，值域缩小，但cos(小值)可能=1\n\n【答案分析】\n最大值序列：m₁ = m₃ = m₅ = 1\nm₂ = m₄ = sin(1) ≈ 0.84\n\n答案D表示某种关系成立\n\n【正确答案】D",
+    "analysis": "【题目分析】\n定义五个嵌套三角函数 $f_1$ 到 $f_5$，其中 $f_1(x) = \\cos x$，后续函数交替使用 $\\sin$ 和 $\\cos$ 嵌套。比较它们各自的最大值 $m_1$ 到 $m_5$ 的大小关系。\n\n【解题步骤】\n逐层分析值域。$f_1(x) = \\cos x$，最大值 $m_1 = 1$，值域为 $[-1, 1]$。\n\n$f_2(x) = \\sin(f_1(x)) = \\sin(\\cos x)$。由于 $\\cos x \\in [-1, 1]$，而 $\\sin$ 在 $[-1, 1]$ 上的最大值为 $\\sin 1$。注意 $\\sin 1 < \\sin\\frac{\\pi}{2} = 1$（因为 $1 < \\frac{\\pi}{2}$），故 $m_2 = \\sin 1 < 1$，值域为 $[-\\sin 1, \\sin 1]$。\n\n$f_3(x) = \\cos(f_2(x)) = \\cos(\\sin(\\cos x))$。当 $f_2(x) = 0$ 时 $f_3(x) = \\cos 0 = 1$。而 $f_2$ 确实可以取到 $0$（例如 $x = \\frac{\\pi}{2}$ 时 $\\cos x = 0$，$\\sin 0 = 0$），故 $m_3 = 1$。\n\n$f_4(x) = \\sin(f_3(x))$。$f_3(x)$ 的值域为 $[\\cos(\\sin 1), 1]$，而 $\\sin$ 在该区间上单调递增，最大值为 $\\sin 1$，故 $m_4 = \\sin 1$。\n\n$f_5(x) = \\cos(f_4(x))$。$f_4$ 的值域为 $[\\sin(\\cos(\\sin 1)), \\sin 1]$，不包含 $0$（因为 $\\sin(\\cos(\\sin 1)) > 0$ 且 $\\sin 1 > 0$），故 $f_5$ 的最大值在离 $0$ 最近的点处取得，即 $m_5 = \\cos(\\sin(\\cos(\\sin 1))) < 1$。\n\n综上：$m_1 = m_3 = 1$，$m_2 = m_4 = \\sin 1$，$0 < m_5 < 1$。\n\n【快捷思路】\n奇数层以 $\\cos$ 结尾，当内层能取 $0$ 时最大值为 $1$；偶数层以 $\\sin$ 结尾，最大值为 $\\sin 1$。但 $f_5$ 的内层 $f_4$ 恒不为 $0$，所以 $m_5 < 1$。\n\n【正确答案】E",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Trigonometry"
+    ]
   }
 ];

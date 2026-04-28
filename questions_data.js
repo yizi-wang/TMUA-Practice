@@ -1890,9 +1890,12 @@ window.QUESTIONS = [
       "G": "$7$"
     },
     "answer": "D",
-    "analysis": "【题目分析】\nTMUA 2018年 Paper 1 第1题，计算定积分。\n\n【解题步骤】\n积分：∫₁⁴ (3-2x)/(x√x) dx\n\n**第一步：化简表达式**\n(3-2x)/(x√x) = (3-2x)/(x·x^(1/2)) = (3-2x)/x^(3/2)\n\n分开积分：\n= 3/x^(3/2) - 2x/x^(3/2) = 3x^(-3/2) - 2x^(-1/2)\n\n**第二步：逐项积分**\n∫3x^(-3/2)dx = 3 × x^(-1/2)/(-1/2) = -6x^(-1/2) = -6/√x\n\n∫-2x^(-1/2)dx = -2 × x^(1/2)/(1/2) = -4√x\n\n**第三步：代入边界**\n[ -6/√x - 4√x ]₁⁴\n\n= (-6/√4 - 4√4) - (-6/√1 - 4√1)\n= (-6/2 - 4×2) - (-6/1 - 4×1)\n= (-3 - 8) - (-6 - 4)\n= -11 - (-10)\n= -11 + 10\n= -1\n\n【正确答案】D",
+    "analysis": "【题目分析】\n本题要求计算定积分 $\\displaystyle\\int_{1}^{4}\\frac{3-2x}{x\\sqrt{x}}\\,dx$。被积函数为分式与根式的组合，核心思路是将分母化为幂函数形式，拆分后逐项积分。关键步骤是正确化简被积函数并准确应用幂函数积分公式。\n【解题步骤】\n将分母写成幂的形式：$x\\sqrt{x}=x^{3/2}$，拆分被积函数：\n$$\\frac{3-2x}{x^{3/2}}=3x^{-\\frac{3}{2}}-2x^{-\\frac{1}{2}}$$\n\n逐项求原函数：\n$$\\int 3x^{-\\frac{3}{2}}dx=-6x^{-\\frac{1}{2}},\\qquad\\int(-2x^{-\\frac{1}{2}})dx=-4x^{\\frac{1}{2}}$$\n\n代入上下限：\n$$\\left[-\\frac{6}{\\sqrt{x}}-4\\sqrt{x}\\right]_{1}^{4}=(-3-8)-(-6-4)=-11+10=-1$$\n【快捷思路】\n化简后原函数为 $-6x^{-1/2}-4x^{1/2}$，代入 $x=4$ 得 $-11$，代入 $x=1$ 得 $-10$，相减即得 $-1$。注意下限代入时是减去整个值，谨防符号错误。\n【正确答案】D",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Algebra"
+    ]
   },
   {
     "id": "2018-P1-Q2",
@@ -1911,7 +1914,7 @@ window.QUESTIONS = [
       "F": "$a = \\frac{38}{3}d$"
     },
     "answer": "C",
-    "analysis": "【题目分析】\nTMUA 2018年 Paper 1 第2题，等差数列前n项和问题。\n\n【解题步骤】\n已知：等差数列首项 a，公差 d\n条件：S₅ = S₈（前5项和=前8项和）\n\n**等差数列求和公式**\nSₙ = n/2 × [2a + (n-1)d]\n\n**计算S₅**\nS₅ = 5/2 × [2a + 4d] = 5/2 × (2a + 4d) = 5(a + 2d)\n\n**计算S₈**\nS₈ = 8/2 × [2a + 7d] = 4 × (2a + 7d) = 8a + 28d\n\n**建立等式**\nS₅ = S₈\n5(a + 2d) = 8a + 28d\n5a + 10d = 8a + 28d\n\n移项：\n5a - 8a = 28d - 10d\n-3a = 18d\na = -6d\n\n【正确答案】C",
+    "analysis": "【题目分析】\n本题给出等差数列首项为 $a$、公差为 $d$，且前 $5$ 项和等于前 $8$ 项和，要求找出 $a$ 与 $d$ 的关系。等差数列求和公式为 $S_n=\\frac{n}{2}[2a+(n-1)d]$，分别计算 $S_5$ 和 $S_8$ 后令其相等即可求解。本题也可利用 $S_8-S_5$ 的巧思快速作答。\n【解题步骤】\n方法一：利用求和公式\n\n$$S_5=\\frac{5}{2}[2a+4d]=5a+10d$$\n$$S_8=\\frac{8}{2}[2a+7d]=8a+28d$$\n\n令 $S_5=S_8$：\n$$5a+10d=8a+28d$$\n$$-3a=18d$$\n$$a=-6d$$\n\n方法二（快捷法）：$S_8-S_5$ 恰好等于第 $6$、$7$、$8$ 项之和。因为 $S_5=S_8$，所以这三项之和为零：\n$$(a+5d)+(a+6d)+(a+7d)=0$$\n$$3a+18d=0\\quad\\Rightarrow\\quad a=-6d$$\n【快捷思路】\n注意到 $S_8=S_5+u_6+u_7+u_8$，由 $S_5=S_8$ 直接推出 $u_6+u_7+u_8=0$，即 $(a+5d)+(a+6d)+(a+7d)=0$，一步得到 $3a+18d=0$，避免展开 $S_5$、$S_8$ 的繁琐计算。\n【正确答案】C and Series",
     "images": null,
     "has_image": false
   },
@@ -1931,7 +1934,7 @@ window.QUESTIONS = [
       "E": "$5\\sqrt{2}$"
     },
     "answer": "E",
-    "analysis": "【题目分析】\n求两圆的最短距离。\n\n圆1：(x+2)² + (y−3)² = 18，圆心 C₁ = (−2, 3)，半径 r₁ = √18 = 3√2 ≈ 4.24\n圆2：(x−7)² + (y+6)² = 2，圆心 C₂ = (7, −6)，半径 r₂ = √2 ≈ 1.41\n\n【计算圆心距离】\nd(C₁, C₂) = √[(7−(−2))² + (−6−3)²]\n          = √[9² + (−9)²]\n          = √[81 + 81] = √162 = 9√2 ≈ 12.73\n\n【判断位置关系】\nr₁ + r₂ = 3√2 + √2 = 4√2 ≈ 5.66\nd = 9√2 > r₁ + r₂，两圆外离\n\n最短距离 = 圆心距离 − 两半径之和 = 9√2 − 4√2 = 5√2\n\n【正确答案】E（5√2）",
+    "analysis": "【题目分析】\n本题求两圆之间的最短距离。首先需要从圆的标准方程 $(x-h)^2+(y-k)^2=r^2$ 中读出圆心坐标和半径，然后计算两圆心之间的距离，最后减去两半径之和即得最短距离（两圆外离时）。关键在于识别圆心和半径，并判断两圆的位置关系。\n【解题步骤】\n圆1：$(x+2)^2+(y-3)^2=18$，圆心 $C_1(-2,3)$，半径 $r_1=\\sqrt{18}=3\\sqrt{2}$。\n\n圆2：$(x-7)^2+(y+6)^2=2$，圆心 $C_2(7,-6)$，半径 $r_2=\\sqrt{2}$。\n\n计算两圆心距离：\n$$|C_1C_2|=\\sqrt{(7-(-2))^2+(-6-3)^2}=\\sqrt{9^2+(-9)^2}=\\sqrt{81+81}=\\sqrt{162}=9\\sqrt{2}$$\n\n两半径之和为 $r_1+r_2=3\\sqrt{2}+\\sqrt{2}=4\\sqrt{2}$。\n\n因为 $9\\sqrt{2}>4\\sqrt{2}$，两圆外离。最短距离为圆心距减去两半径：\n$$9\\sqrt{2}-4\\sqrt{2}=5\\sqrt{2}$$\n【快捷思路】\n识别圆心差为 $(9,-9)$，距离为 $9\\sqrt{2}$。两半径和为 $4\\sqrt{2}$，直接相减得 $5\\sqrt{2}$。画简图可快速确认两圆外离，无需额外验证。\n【正确答案】E Geometry",
     "images": null,
     "has_image": false
   },
@@ -1953,16 +1956,19 @@ window.QUESTIONS = [
       "G": "All real values of $a$"
     },
     "answer": "G",
-    "analysis": "【题目分析】\n联立方程：\n3x² + 2xy = 4\nx + y = a\n\n求a的取值范围使得方程组有两个不同的实数解（对x）。\n\n【解题步骤】\n第一步：代入消元\n\n从x + y = a得y = a - x\n\n代入第一个方程：\n3x² + 2x(a - x) = 4\n3x² + 2ax - 2x² = 4\nx² + 2ax = 4\nx² + 2ax - 4 = 0\n\n第二步：判别式分析\n\n方程x² + 2ax - 4 = 0要有两个不同的实数解，判别式>0：\n\nΔ = (2a)² - 4×1×(-4)\n= 4a² + 16\n= 4(a² + 4)\n\n由于a² ≥ 0，a² + 4 ≥ 4 > 0\n\n所以Δ = 4(a² + 4) > 0对所有实数a成立！\n\n结论：方程组对所有实数a都有两个不同的实数解。\n\n【正确答案】G（All real values of a）",
+    "analysis": "【题目分析】\n本题给出含参数 $a$ 的联立方程组，要求找出使方程组对 $x$ 有两个不同实数解的 $a$ 的取值范围。标准做法是消元得到关于 $x$ 的一元二次方程，再通过判别式 $\\Delta$ 判断根的个数。本题的巧妙之处在于判别式恒正，因此 $a$ 可取任意实数。\n【解题步骤】\n由 $x+y=a$ 得 $y=a-x$，代入第一个方程：\n$$3x^2+2x(a-x)=4$$\n$$3x^2+2ax-2x^2=4$$\n$$x^2+2ax-4=0$$\n\n这是关于 $x$ 的一元二次方程，其判别式为：\n$$\\Delta=(2a)^2-4\\times 1\\times(-4)=4a^2+16$$\n\n由于 $a^2\\geq 0$ 对所有实数 $a$ 成立，故 $4a^2+16\\geq 16>0$。\n\n判别式恒为正数，说明方程 $x^2+2ax-4=0$ 对任意实数 $a$ 都有两个不同的实数根。因此 $a$ 可取所有实数值。\n【快捷思路】\n消元后得到 $x^2+2ax-4=0$，观察判别式 $\\Delta=4a^2+16$，注意到常数项为 $+16>0$，而 $4a^2\\geq 0$，因此 $\\Delta$ 永远大于零，无需进一步分析。直接选所有实数。\n【正确答案】G",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Functions"
+    ]
   },
   {
     "id": "2018-P1-Q5",
     "year": 2018,
     "paper": 1,
     "num": 5,
-    "topic": "Algebra",
+    "topic": "Functions",
     "difficulty": 3,
     "question": "The function f is defined by $f(x) = x^3 + ax^2 + bx + c$.\n\n$a, b$ and $c$ take the values 1, 2 and 3 with no two of them being equal and not necessarily in this order.\n\nThe remainder when $f(x)$ is divided by $(x + 2)$ is $R$.\n\nThe remainder when $f(x)$ is divided by $(x + 3)$ is $S$.\n\nWhat is the largest possible value of $R - S$?",
     "options": {
@@ -1973,7 +1979,7 @@ window.QUESTIONS = [
       "E": "$29$"
     },
     "answer": "D",
-    "analysis": "【题目分析】\nf(x) = x³ + ax² + bx + c，a, b, c 取 1, 2, 3（各不相同）。\n求 R − S 的最大值，其中 R = f(−2)，S = f(−3)。\n\n【余数定理】\nR = f(−2) = −8 + 4a − 2b + c\nS = f(−3) = −27 + 9a − 3b + c\n\n【计算 R − S】\nR − S = (−8 + 4a − 2b + c) − (−27 + 9a − 3b + c)\n      = 19 − 5a + b\n\n【求最大值】\na, b ∈ {1, 2, 3}，a ≠ b\na 越小（−5a 越大），b 越大（+b 越大），R − S 越大。\n最大值：a = 1，b = 3\nR − S = 19 − 5(1) + 3 = 17\n\n验证：a=1, b=3, c=2 满足各不相同 ✓\n\n【正确答案】D（17）",
+    "analysis": "【题目分析】\n给定三次多项式 $f(x)=x^3+ax^2+bx+c$，其中 $a,b,c$ 是 $\\{1,2,3\\}$ 的一个排列（互不相等）。记 $R$ 为 $f(x)$ 除以 $(x+2)$ 的余数，$S$ 为 $f(x)$ 除以 $(x+3)$ 的余数，求 $R-S$ 的最大可能值。\n\n本题核心工具是余数定理：$f(x)$ 除以 $(x-p)$ 的余数等于 $f(p)$。因此 $R=f(-2)$，$S=f(-3)$。\n\n【解题步骤】\n由余数定理：\n$R=f(-2)=-8+4a-2b+c$\n$S=f(-3)=-27+9a-3b+c$\n\n作差得：\n$R-S=(-8+4a-2b+c)-(-27+9a-3b+c)=19-5a+b$\n\n要使 $R-S$ 最大，需 $-5a+b$ 最大。由于 $a$ 的系数为负，应取 $a$ 尽可能小；$b$ 的系数为正，应取 $b$ 尽可能大。$a,b,c$ 为 $\\{1,2,3\\}$ 的排列，故取 $a=1$，$b=3$，$c=2$。\n\n此时 $R-S=19-5\\times 1+3=17$。\n\n【快捷思路】\n直接作差消去 $c$，得到 $R-S=19-5a+b$。由于 $a$ 的系数绝对值远大于 $b$，优先让 $a$ 取最小值 $1$，再让 $b$ 取最大值 $3$，立即得到答案 $17$。\n\n【正确答案】D",
     "images": null,
     "has_image": false
   },
@@ -1982,7 +1988,7 @@ window.QUESTIONS = [
     "year": 2018,
     "paper": 1,
     "num": 6,
-    "topic": "Algebra",
+    "topic": "Trigonometry",
     "difficulty": 3,
     "question": "Find the number of solutions of the equation\n\n$$x \\sin 2x = \\cos 2x$$\n\nwith $0 \\le x \\le 2\\pi$.",
     "options": {
@@ -1993,9 +1999,12 @@ window.QUESTIONS = [
       "E": "4"
     },
     "answer": "E",
-    "analysis": "【题目分析】\n求方程 x sin 2x = cos 2x 在 0 ≤ x ≤ 2π 的解的个数。\n\n【变形方程】\ncos 2x ≠ 0 时：x tan 2x = 1\n设 t = 2x，t ∈ [0, 4π]，得 tan t = 2/t\n\n【分析交点个数】\ntan t 在每个 (kπ − π/2, kπ + π/2) 内从 −∞ 增到 +∞。\n\n| 区间 | tan t 与 2/t 交点 |\n|------|------------------|\n| (0, π/2) | ✓ 有1个 |\n| (π/2, π) | ✗ 无（tan<0, 2/t>0）|\n| (π, 3π/2) | ✓ 有1个 |\n| (3π/2, 2π) | ✗ 无 |\n| (2π, 5π/2) | ✓ 有1个 |\n| (5π/2, 3π) | ✗ 无 |\n| (3π, 7π/2) | ✓ 有1个 |\n| (7π/2, 4π) | ✗ 无 |\n\nt ∈ [0, 4π] 共 4 个交点 → x ∈ [0, 2π] 共 4 个解。\n\ncos 2x = 0 时：x·(±1) = 0 → x = 0，但 cos 0 = 1 ≠ 0，无额外解。\n\n【正确答案】E（4个解）",
+    "analysis": "【题目分析】\n求方程 $x\\sin 2x=\\cos 2x$ 在区间 $[0,2\\pi]$ 内的解的个数。\n\n这是一个超越方程，无法精确求解，但只需判断解的个数。思路是将三角函数集中到一边，转化为两个函数图像的交点问题。\n\n【解题步骤】\n首先检查 $\\cos 2x=0$ 的情形：若 $\\cos 2x=0$，则原方程变为 $x\\sin 2x=0$。但 $\\cos 2x=0$ 时 $\\sin 2x=\\pm 1\\neq 0$，而 $x=0$ 时 $\\cos 0=1\\neq 0$，故 $\\cos 2x=0$ 不会产生解。\n\n两边除以 $\\cos 2x$，得 $x\\tan 2x=1$。当 $x=0$ 时左边为 $0$ 不等于 $1$，故 $x\\neq 0$。再除以 $x$：\n$\\tan 2x=\\frac{1}{x}$\n\n令 $t=2x$，则 $t\\in[0,4\\pi]$，方程变为 $\\tan t=\\frac{2}{t}$。\n\n在 $t\\in(0,4\\pi]$ 内，$y=\\tan t$ 有四个正分支：$(0,\\frac{\\pi}{2})$、$(\\pi,\\frac{3\\pi}{2})$、$(2\\pi,\\frac{5\\pi}{2})$、$(3\\pi,\\frac{7\\pi}{2})$，每支上 $\\tan t$ 从 $-\\infty$ 单调增至 $+\\infty$。而 $y=\\frac{2}{t}>0$ 在这些正分支的区间内恒为正。\n\n在每个正分支中，$\\tan t$ 从 $-\\infty$ 到 $+\\infty$ 经过所有实数，与正的 $\\frac{2}{t}$ 恰好相交一次。共 $4$ 个正分支，故有 $4$ 个交点。\n\n在负分支 $(\\frac{\\pi}{2},\\pi)$ 等处，$\\tan t<0$ 而 $\\frac{2}{t}>0$，无交点。\n\n因此原方程在 $[0,2\\pi]$ 内有 $4$ 个解。\n\n【快捷思路】\n画图：$y=\\tan 2x$ 在 $[0,2\\pi]$ 有四个完整正分支，$y=\\frac{1}{x}$ 始终为正。每个正分支与 $\\frac{1}{x}$ 各交一次，直接数出 $4$ 个交点。\n\n【正确答案】E",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Graphs"
+    ]
   },
   {
     "id": "2018-P1-Q7",
@@ -2014,7 +2023,7 @@ window.QUESTIONS = [
       "F": "$\\sqrt{30}$"
     },
     "answer": "A",
-    "analysis": "【题目分析】\n(1 + kx²)⁷ 中 x⁶ 的系数与 (k + x)¹⁰ 中 x⁶ 的系数相等，求 k。\n\n【(1 + kx²)⁷ 中 x⁶ 的系数】\nx⁶ 项对应 r = 3（因为 (kx²)^r 中 x 的指数为 2r）\n系数 = C(7,3) · k³ = 35k³\n\n【(k + x)¹⁰ 中 x⁶ 的系数】\nx⁶ 项对应 r = 6\n系数 = C(10,6) · k⁴ = 210k⁴\n\n【建立等式】\n35k³ = 210k⁴\nk ≠ 0 时：35 = 210k\nk = 35/210 = 1/6\n\n【正确答案】A（k = 1/6）",
+    "analysis": "【题目分析】\n已知非零常数 $k$ 使得 $(1+kx^2)^7$ 与 $(k+x)^{10}$ 展开式中 $x^6$ 的系数相等，求 $k$ 的值。\n\n本题运用二项式定理，分别写出两个展开式中 $x^6$ 项的系数，建立等式求解。\n\n【解题步骤】\n对于 $(1+kx^2)^7$，通项为 $\\binom{7}{r}(kx^2)^r=\\binom{7}{r}k^r x^{2r}$。令 $2r=6$ 得 $r=3$，故 $x^6$ 的系数为：\n$\\binom{7}{3}k^3=\\frac{7\\times 6\\times 5}{3\\times 2\\times 1}k^3=35k^3$\n\n对于 $(k+x)^{10}$，通项为 $\\binom{10}{r}k^{10-r}x^r$。令 $r=6$ 得 $x^6$ 的系数为：\n$\\binom{10}{6}k^4=\\binom{10}{4}k^4=\\frac{10\\times 9\\times 8\\times 7}{4\\times 3\\times 2\\times 1}k^4=210k^4$\n\n令两系数相等：\n$35k^3=210k^4$\n\n由于 $k\\neq 0$，两边除以 $k^3$ 得：\n$35=210k$\n\n解得 $k=\\frac{35}{210}=\\frac{1}{6}$。\n\n【快捷思路】\n直接识别：$(1+kx^2)^7$ 中 $x^6$ 来自 $r=3$，系数 $35k^3$；$(k+x)^{10}$ 中 $x^6$ 来自 $r=6$，系数 $210k^4$。等式 $35k^3=210k^4$ 两边除以 $35k^3$ 得 $k=\\frac{1}{6}$。\n\n【正确答案】A",
     "images": null,
     "has_image": false
   },
@@ -2023,7 +2032,7 @@ window.QUESTIONS = [
     "year": 2018,
     "paper": 1,
     "num": 8,
-    "topic": "Algebra",
+    "topic": "Sequences and Series",
     "difficulty": 3,
     "question": "The sum to infinity of a geometric progression is 6.\n\nThe sum to infinity of the squares of each term in the progression is 12.\n\nFind the sum to infinity of the cubes of each term in the progression.",
     "options": {
@@ -2035,7 +2044,7 @@ window.QUESTIONS = [
       "F": "216"
     },
     "answer": "D",
-    "analysis": "【题目分析】\n等比数列各项无穷和 = 6，各项平方的无穷和 = 12，求各项立方的无穷和。\n\n【建立方程组】\n设首项 a，公比 r（|r| < 1）\n\nS = a/(1−r) = 6  →  a = 6(1−r)  ...(1)\n平方数列：a²/(1−r²) = 12  ...(2)\n\n代入(1)：36(1−r)² = 12(1−r²)\n3(1−r)² = 1−r²\n3 − 6r + 3r² = 1 − r²\n4r² − 6r + 2 = 0\n(2r−1)(r−1) = 0\n\n|r| < 1，取 r = 1/2，a = 6(1 − 1/2) = 3。\n\n【求立方和】\n立方数列公比 = r³ = 1/8\n无穷和 = a³/(1−r³) = 27/(1−1/8) = 27/(7/8) = 216/7\n\n【正确答案】D（216/7）",
+    "analysis": "【题目分析】\n已知一个等比数列各项的无穷项和为 $6$，各项平方的无穷项和为 $12$，求各项立方的无穷项和。\n\n本题需要利用等比数列无穷和公式 $S_\\infty=\\frac{a}{1-r}$（其中 $|r|<1$），通过已知条件联立求出首项 $a$ 和公比 $r$。\n\n【解题步骤】\n设原等比数列首项为 $a$，公比为 $r$（$|r|<1$）。\n\n由题意：\n$\\frac{a}{1-r}=6\\quad\\cdots(1)$\n\n各项平方构成新等比数列：$a^2,a^2r^2,a^2r^4,\\cdots$，公比为 $r^2$，首项为 $a^2$。其无穷和为：\n$\\frac{a^2}{1-r^2}=12\\quad\\cdots(2)$\n\n将式 $(2)$ 分母分解：$\\frac{a^2}{(1+r)(1-r)}=12$。\n\n利用式 $(1)$ 中 $\\frac{a}{1-r}=6$，代入得：\n$\\frac{a}{1+r}\\cdot 6=12$，即 $\\frac{a}{1+r}=2$\n\n于是 $a=2+2r\\quad\\cdots(3)$\n\n联立 $(1)$ 的变形 $a=6-6r$ 与 $(3)$：\n$6-6r=2+2r$\n\n解得 $r=\\frac{1}{2}$，代入得 $a=3$。\n\n各项立方构成等比数列：$a^3,a^3r^3,a^3r^6,\\cdots$，公比为 $r^3=\\frac{1}{8}$。其无穷和为：\n$\\frac{a^3}{1-r^3}=\\frac{27}{1-\\frac{1}{8}}=\\frac{27}{\\frac{7}{8}}=\\frac{216}{7}$\n\n【快捷思路】\n由 $\\frac{a^2}{1-r^2}=12$ 和 $\\frac{a}{1-r}=6$，两式相除立即得 $\\frac{a}{1+r}=2$，再与 $a=6-6r$ 联立解出 $a=3,r=\\frac{1}{2}$。立方和首项 $27$，公比 $\\frac{1}{8}$，结果为 $\\frac{216}{7}$。\n\n【正确答案】D and Series",
     "images": null,
     "has_image": false
   },
@@ -2044,7 +2053,7 @@ window.QUESTIONS = [
     "year": 2018,
     "paper": 1,
     "num": 9,
-    "topic": "Algebra",
+    "topic": "Differentiation",
     "difficulty": 3,
     "question": "Find the complete set of values of the constant $c$ for which the cubic equation\n\n$$2x^3 - 3x^2 - 12x + c = 0$$\n\nhas three distinct real solutions.",
     "options": {
@@ -2056,9 +2065,13 @@ window.QUESTIONS = [
       "F": "$c < -20$"
     },
     "answer": "B",
-    "analysis": "【题目分析】\n三次方程 2x³ − 3x² − 12x + c = 0 有三个不同实根，求 c 的范围。\n\n【求极值点】\nf(x) = 2x³ − 3x² − 12x + c\nf'(x) = 6x² − 6x − 12 = 6(x−2)(x+1)\n临界点：x = −1，x = 2\n\n【计算极值】\nf(−1) = −2 − 3 + 12 + c = 7 + c（极大值）\nf(2) = 16 − 12 − 24 + c = −20 + c（极小值）\n\n【三实根条件】\n极大值 > 0 且极小值 < 0：\n7 + c > 0  →  c > −7\n−20 + c < 0  →  c < 20\n\n故 −7 < c < 20\n\n【正确答案】B",
+    "analysis": "【题目分析】\n给定三次方程 $2x^3 - 3x^2 - 12x + c = 0$，求使方程有三个不同实根的常数 $c$ 的取值范围。三次方程的实根个数与其图像的极值位置密切相关，核心思路是利用导数找到两个极值点，要求极大值在 $x$ 轴上方且极小值在 $x$ 轴下方。\n\n【解题步骤】\n令 $f(x) = 2x^3 - 3x^2 - 12x + c$。\n\n求导得 $f'(x) = 6x^2 - 6x - 12 = 6(x-2)(x+1)$。\n\n驻点为 $x = -1$ 和 $x = 2$。由于三次项系数为正，函数先增后减再增，故 $x = -1$ 处为极大值，$x = 2$ 处为极小值。\n\n计算极值：$f(-1) = -2 - 3 + 12 + c = 7 + c$（极大值），$f(2) = 16 - 12 - 24 + c = -20 + c$（极小值）。\n\n三实根条件为极大值大于零且极小值小于零：$7 + c > 0$ 得 $c > -7$，$-20 + c < 0$ 得 $c < 20$。\n\n合并得 $-7 < c < 20$。\n\n【快捷思路】\n直接令极大值和极小值异号即可。由于 $-20 + c < 7 + c$ 恒成立，只需极小值小于零、极大值大于零，两步不等式联立即得答案。\n【正确答案】B",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Functions",
+      "Graphs"
+    ]
   },
   {
     "id": "2018-P1-Q10",
@@ -2077,7 +2090,7 @@ window.QUESTIONS = [
       "F": "There is no greatest possible value."
     },
     "answer": "E",
-    "analysis": "【题目分析】\n|x-2| ≤ 6 → -4 ≤ x ≤ 8\n|y+2| ≤ 4 → -6 ≤ y ≤ 2\n\n求|xy|的最大值。\n\n【解题步骤】\nxy的最大绝对值出现在边界：\nx = -4, y = 2 → |xy| = 8\nx = -4, y = -6 → |xy| = 24\nx = 8, y = 2 → |xy| = 16\nx = 8, y = -6 → |xy| = 48\n\n最大值 = 48\n\n【正确答案】E",
+    "analysis": "【题目分析】\n已知 $|2 - x| \\le 6$ 和 $|y + 2| \\le 4$，求 $|xy|$ 的最大可能值。这是绝对值不等式的最值问题，关键在于分别确定 $x$ 和 $y$ 的取值范围，再利用 $|xy| = |x| \\cdot |y|$ 的性质将两变量解耦。\n\n【解题步骤】\n解第一个不等式：$|2 - x| \\le 6$ 表示 $x$ 到 $2$ 的距离不超过 $6$，即 $-4 \\le x \\le 8$。因此 $|x|$ 的最大值为 $8$（在 $x = 8$ 处取得）。\n\n解第二个不等式：$|y + 2| \\le 4$ 即 $|y - (-2)| \\le 4$，表示 $y$ 到 $-2$ 的距离不超过 $4$，即 $-6 \\le y \\le 2$。因此 $|y|$ 的最大值为 $6$（在 $y = -6$ 处取得）。\n\n由于 $|xy| = |x| \\cdot |y|$，要使乘积最大，只需分别取 $|x|$ 和 $|y|$ 的最大值：$|xy|_{\\max} = 8 \\times 6 = 48$。\n\n验证可行性：$x = 8$ 在范围内，$y = -6$ 在范围内，故 $|xy| = 48$ 可以取到。\n\n【快捷思路】\n$|xy| = |x| \\cdot |y|$ 将两个变量完全分离，各自独立取最大绝对值再相乘即可，无需逐一代入边界点。$|x|_{\\max} = 8$，$|y|_{\\max} = 6$，乘积 $48$。\n【正确答案】E",
     "images": null,
     "has_image": false
   },
@@ -2086,7 +2099,7 @@ window.QUESTIONS = [
     "year": 2018,
     "paper": 1,
     "num": 11,
-    "topic": "Algebra",
+    "topic": "Differentiation",
     "difficulty": 3,
     "question": "The line $y = mx + 5$, where $m > 0$, is normal to the curve $y = 10 - x^2$ at the point $(p, q)$.\n\nWhat is the value of $p$?",
     "options": {
@@ -2098,16 +2111,19 @@ window.QUESTIONS = [
       "F": "$-\\sqrt{5}$"
     },
     "answer": "C",
-    "analysis": "【题目分析】\ny=mx+5 (m>0) 是 y=10-x² 在(p,q)处的法线。\n求p的值。\n\n【解题步骤】\ny=10-x² 的导数：y'=-2x\n在(p,q)处切线斜率=-2p\n法线斜率=1/(2p)\n\n法线方程：y-q=(1/(2p))(x-p)\n已知法线：y=mx+5，斜率m=1/(2p)\n\n法线过(p,q)：q=mp+5\n又q=10-p²\n\n所以：10-p²=mp+5\n10-p²=(1/(2p))p+5=1/2+5=11/2\np²=10-11/2=9/2\np=3/√2=3√2/2\n\n【正确答案】C",
+    "analysis": "【题目分析】\n直线 $y = mx + 5$（其中 $m > 0$）是曲线 $y = 10 - x^2$ 在点 $(p, q)$ 处的法线，求 $p$ 的值。解题需要利用导数求切线斜率，再由法线与切线垂直得到法线斜率，最后将法线方程与已知形式对比确定参数。\n\n【解题步骤】\n曲线 $y = 10 - x^2$ 的导数为 $\\frac{dy}{dx} = -2x$，在点 $(p, q)$ 处切线斜率为 $-2p$。\n\n法线斜率为切线斜率的负倒数，即 $\\frac{1}{2p}$。因此 $m = \\frac{1}{2p}$。\n\n由 $m > 0$ 可知 $p > 0$，这将帮助我们排除负根。\n\n法线经过点 $(p, q)$，而 $q = 10 - p^2$（点在曲线上），法线方程为：\n$y - (10 - p^2) = \\frac{1}{2p}(x - p)$\n\n整理得：$y = \\frac{1}{2p}x - \\frac{1}{2} + 10 - p^2$\n\n与已知形式 $y = mx + 5$ 对比截距项：$-\\frac{1}{2} + 10 - p^2 = 5$。\n\n化简得 $p^2 = \\frac{9}{2}$，即 $p = \\pm\\frac{3\\sqrt{2}}{2}$。由 $p > 0$ 得 $p = \\frac{3\\sqrt{2}}{2}$。\n\n【快捷思路】\n法线斜率 $m = \\frac{1}{2p}$，截距为 $10 - p^2 - \\frac{1}{2}$，令其等于 $5$ 一步解出 $p^2 = \\frac{9}{2}$，结合 $m > 0$ 取正根。\n【正确答案】C",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Coordinate Geometry"
+    ]
   },
   {
     "id": "2018-P1-Q12",
     "year": 2018,
     "paper": 1,
     "num": 12,
-    "topic": "Algebra",
+    "topic": "Integration",
     "difficulty": 3,
     "question": "A curve has equation $y = f(x)$, where\n\n$$f(x) = x(x - p)(x - q)(r - x)$$\n\nwith $0 < p < q < r$.\n\nYou are given that:\n\n$$\\int_{0}^{r} f(x) dx = 0$$\n\n$$\\int_{0}^{q} f(x) dx = -2$$\n\n$$\\int_{p}^{r} f(x) dx = -3$$\n\nWhat is the total area enclosed by the curve and the $x$-axis for $0 \\le x \\le r$?",
     "options": {
@@ -2119,9 +2135,12 @@ window.QUESTIONS = [
       "F": "10"
     },
     "answer": "F",
-    "analysis": "【题目分析】\nf(x)=x(x-p)(x-q)(r-x)，0<p<q<r\n∫₀ʳ f(x)dx=0, ∫₀ᵠ f(x)dx=-2, ∫ₚʳ f(x)dx=-3\n求0≤x≤r范围内曲线与x轴围成的总面积。\n\n【解题步骤】\nf(x)=x(x-p)(x-q)(r-x)\n根：0, p, q, r\n\n在[0,p]：f(x)>0（x>0, x-p<0, x-q<0, r-x>0 → 正）\n在[p,q]：f(x)<0\n在[q,r]：f(x)>0\n\n∫₀ʳ f(x)dx = ∫₀ᵖ f + ∫ₚᵠ f + ∫ᵠʳ f = 0\n∫₀ᵠ f = ∫₀ᵖ f + ∫ₚᵠ f = -2\n∫ₚʳ f = ∫ₚᵠ f + ∫ᵠʳ f = -3\n\n设A=∫₀ᵖ f, B=∫ₚᵠ f, C=∫ᵠʳ f\nA+B+C=0\nA+B=-2\nB+C=-3\n\n解：A=3, B=-5, C=2\n\n总面积 = |A|+|B|+|C| = 3+5+2 = 10\n\n【正确答案】F",
+    "analysis": "【题目分析】\n曲线 $f(x) = x(x-p)(x-q)(r-x)$（$0 < p < q < r$）在 $[0, r]$ 区间上与 $x$ 轴有四个交点 $0, p, q, r$。已知三个定积分的值，求曲线与 $x$ 轴围成的总面积。关键是判断各区间的正负号，将总面积与定积分联系起来。\n\n【解题步骤】\n最高次项系数为 $-x^4$，故 $f(x)$ 在两侧趋于 $-\\infty$。在 $[0, r]$ 上符号分布为：$[0, p]$ 上 $f(x) > 0$，$[p, q]$ 上 $f(x) < 0$，$[q, r]$ 上 $f(x) > 0$。\n\n设 $A = \\int_0^p f(x)\\,dx$（正面积），$B = \\int_p^q |f(x)|\\,dx = -\\int_p^q f(x)\\,dx$（正面积），$C = \\int_q^r f(x)\\,dx$（正面积）。\n\n将三个已知积分用 $A, B, C$ 表示：\n$\\int_0^r f\\,dx = A - B + C = 0$\n$\\int_0^q f\\,dx = A - B = -2$\n$\\int_p^r f\\,dx = -B + C = -3$\n\n由第一式减第三式得 $A = 3$；代入第二式得 $B = 5$；代入第一式得 $C = 2$。\n\n总面积 $= A + B + C = 3 + 5 + 2 = 10$。\n\n【快捷思路】\n三个积分方程 $A - B + C = 0$，$A - B = -2$，$-B + C = -3$，直接解线性方程组得 $A=3, B=5, C=2$，总面积即三者之和。核心在于正确判断各区间的正负号。\n【正确答案】F",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Graphs"
+    ]
   },
   {
     "id": "2018-P1-Q13",
@@ -2139,11 +2158,14 @@ window.QUESTIONS = [
       "E": "Point E"
     },
     "answer": "C",
-    "analysis": "【题目分析】\n给出f'(x)的图像，找f(x)的局部最小值点。\n\n【解题步骤】\nf(x)的局部最小值出现在f'(x)从负变正的点。\n\n观察f'(x)图像：\n- 点A：f'(x)=0，但f'(x)从正变负 → 局部最大值\n- 点B：f'(x)<0，不是临界点\n- 点C：f'(x)=0，f'(x)从负变正 → 局部最小值 ✓\n- 点D：f'(x)=0，但f'(x)从正变负 → 局部最大值\n- 点E：f'(x)>0，不是临界点\n\n【正确答案】C",
+    "analysis": "【题目分析】\n本题给出导函数 $y = f'(x)$ 的图像，要求判断 $f(x)$ 的局部最小值点。核心考点是利用导函数的符号变化来判定原函数的极值类型，是微积分基础中的经典题型。\n【解题步骤】\n$f(x)$ 在某点取局部最小值的充要条件是：该点处 $f'(x) = 0$，且导数在左侧为负、右侧为正（即 $f'(x)$ 由负变正穿过 $x$ 轴）。\n\n逐点分析：\n- 点 A：$f'(x) = 0$，但导数从正变负，对应局部最大值。\n- 点 B：$f'(x) < 0$，不是驻点。\n- 点 C：$f'(x) = 0$，导数从负变正，对应局部最小值。\n- 点 D：$f'(x) = 0$，但导数从正变负，对应局部最大值。\n- 点 E：$f'(x) > 0$，不是驻点。\n\n因此点 C 为 $f(x)$ 的局部最小值点。\n【快捷思路】\n直接在 $f'(x)$ 图像上找与 $x$ 轴相交且从下往上穿过的点，即为 $f(x)$ 的局部最小值点。反之，从上往下穿过的点对应局部最大值。\n【正确答案】C",
     "images": {
       "image": "2018 P1 Q13 Questions and 6 options.png"
     },
-    "has_image": true
+    "has_image": true,
+    "related_topics": [
+      "Graphs"
+    ]
   },
   {
     "id": "2018-P1-Q14",
@@ -2162,9 +2184,12 @@ window.QUESTIONS = [
       "F": "$p = \\frac{1}{64}$ and $p = 16$"
     },
     "answer": "B",
-    "analysis": "【题目分析】\ny=mx+4过(3,log₂p)和(log₂p,4)。\n求p的可能值。\n\n【解题步骤】\n代入两点：\nlog₂p = 3m + 4  ...(1)\n4 = m·log₂p + 4  ...(2)\n\n从(2)：m·log₂p = 0\n所以m=0或log₂p=0\n\n情况1：m=0\n从(1)：log₂p = 4 → p = 2⁴ = 16\n\n情况2：log₂p = 0\np = 2⁰ = 1\n\n所以p=1或p=16。\n\n【正确答案】B",
+    "analysis": "【题目分析】\n已知直线 $y = mx + 4$ 经过两点 $(3, \\log_2 p)$ 和 $(\\log_2 p, 4)$，求 $p$ 的可能值。本题将直线方程与对数运算结合，考查代入法求解参数。\n【解题步骤】\n将两点分别代入直线方程：\n$\\log_2 p = 3m + 4$ …… (1)\n$4 = m \\log_2 p + 4$ …… (2)\n\n由 (2) 得 $m \\log_2 p = 0$，因此 $m = 0$ 或 $\\log_2 p = 0$。\n\n情况一：$m = 0$，代入 (1) 得 $\\log_2 p = 4$，故 $p = 2^4 = 16$。\n情况二：$\\log_2 p = 0$，则 $p = 2^0 = 1$，代入 (1) 得 $3m + 4 = 0$，即 $m = -4/3$，存在解。\n\n综上，$p = 1$ 或 $p = 16$。\n【快捷思路】\n令 $q = \\log_2 p$ 简化记号，方程组变为 $q = 3m + 4$ 和 $4 = mq + 4$。由第二个方程立刻得到 $mq = 0$，分 $m = 0$ 和 $q = 0$ 两种情况讨论即可，避免反复书写 $\\log_2 p$。\n【正确答案】B",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Functions"
+    ]
   },
   {
     "id": "2018-P1-Q15",
@@ -2183,9 +2208,12 @@ window.QUESTIONS = [
       "F": "$4 \\log_3 20$"
     },
     "answer": "E",
-    "analysis": "【题目分析】\n3^x - (√3)^(x+4) + 20 = 0\n求所有实数解之和。\n\n【解题步骤】\n(√3)^(x+4) = 3^((x+4)/2)\n\n设u = 3^(x/2)，则3^x = u²\n(√3)^(x+4) = 3^((x+4)/2) = 3^(x/2+2) = u·3² = 9u\n\n方程变为：u² - 9u + 20 = 0\n(u-4)(u-5) = 0\nu = 4 或 u = 5\n\n3^(x/2) = 4 → x = 2log₃4\n3^(x/2) = 5 → x = 2log₃5\n\n解之和 = 2log₃4 + 2log₃5 = 2log₃(4·5) = 2log₃20\n\n【正确答案】E",
+    "analysis": "【题目分析】\n方程 $3^x - (\\sqrt{3})^{x+4} + 20 = 0$，求所有实数解之和。本题通过换元将指数方程转化为二次方程，再利用对数运算求和。\n【解题步骤】\n注意到 $\\sqrt{3} = 3^{1/2}$，所以 $(\\sqrt{3})^{x+4} = 3^{(x+4)/2} = 3^{x/2 + 2} = 9 \\cdot 3^{x/2}$。\n\n设 $u = 3^{x/2}$，则 $3^x = u^2$，原方程化为：\n$u^2 - 9u + 20 = 0$\n\n因式分解：$(u - 4)(u - 5) = 0$，得 $u = 4$ 或 $u = 5$。\n\n当 $u = 4$ 时，$3^{x/2} = 4$，取以 $3$ 为底的对数得 $x/2 = \\log_3 4$，即 $x = 2\\log_3 4$。\n当 $u = 5$ 时，$3^{x/2} = 5$，得 $x = 2\\log_3 5$。\n\n两解之和为 $2\\log_3 4 + 2\\log_3 5 = 2\\log_3(4 \\times 5) = 2\\log_3 20$。\n【快捷思路】\n换元 $u = 3^{x/2}$ 是关键一步，将指数方程降次为二次方程。解之和的计算直接利用对数法则 $\\log a + \\log b = \\log(ab)$ 合并，无需分别求出具体数值。\n【正确答案】E",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Functions"
+    ]
   },
   {
     "id": "2018-P1-Q16",
@@ -2204,16 +2232,20 @@ window.QUESTIONS = [
       "F": "$b = \\sqrt{6}$"
     },
     "answer": "F",
-    "analysis": "【题目分析】\ny=x²+bx+2 (b≥0)\n求使原点到驻点距离最小的b值。\n\n【解题步骤】\ny'=2x+b=0 → x=-b/2\n驻点：(-b/2, (-b/2)²+b(-b/2)+2) = (-b/2, b²/4-b²/2+2) = (-b/2, 2-b²/4)\n\n到原点距离平方：\nD² = (-b/2)² + (2-b²/4)²\n   = b²/4 + 4 - b² + b⁴/16\n   = b⁴/16 - 3b²/4 + 4\n\n令u=b²：f(u) = u²/16 - 3u/4 + 4\nf'(u) = u/8 - 3/4 = 0 → u = 6\n\nb² = 6 → b = √6\n\n【正确答案】F",
+    "analysis": "【题目分析】\n抛物线 $C: y = x^2 + bx + 2$（$b \\geq 0$），求使原点与驻点距离最小的 $b$ 值。本题综合了驻点求解、距离公式和最优化方法。\n【解题步骤】\n先求驻点。求导得 $y' = 2x + b$，令 $y' = 0$ 得 $x = -b/2$。\n代入原方程得 $y = (-b/2)^2 + b(-b/2) + 2 = b^2/4 - b^2/2 + 2 = 2 - b^2/4$。\n驻点为 $(-b/2, 2 - b^2/4)$。\n\n原点到驻点的距离平方为：\n$D^2 = (-b/2)^2 + (2 - b^2/4)^2 = b^2/4 + 4 - b^2 + b^4/16 = b^4/16 - 3b^2/4 + 4$\n\n令 $B = b^2$（$B \\geq 0$），则 $D^2 = B^2/16 - 3B/4 + 4$。\n对 $B$ 求导并令为零：$d(D^2)/dB = B/8 - 3/4 = 0$，解得 $B = 6$。\n\n故 $b^2 = 6$，又 $b \\geq 0$，得 $b = \\sqrt{6}$。\n【快捷思路】\n最小化距离等价于最小化距离平方，避免开根号。驻点坐标含 $b$ 的偶次幂，令 $B = b^2$ 后距离平方变为关于 $B$ 的二次函数，求最小值远比处理四次多项式简单。配方得 $(B-6)^2 - 36$ 的最小值在 $B = 6$ 处取得。\n【正确答案】F",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Coordinate Geometry",
+      "Algebra"
+    ]
   },
   {
     "id": "2018-P1-Q17",
     "year": 2018,
     "paper": 1,
     "num": 17,
-    "topic": "Probability",
+    "topic": "Algebra",
     "difficulty": 3,
     "question": "There are two sets of data: the mean of the first set is 15, and the mean of the second set is 20.\n\nOne of the pieces of data from the first set is exchanged with one of the pieces of data from the second set.\n\nAs a result, the mean of the first set of data increases from 15 to 16, and the mean of the second set of data decreases from 20 to 17.\n\nWhat is the mean of the set made by combining all the data?",
     "options": {
@@ -2224,7 +2256,7 @@ window.QUESTIONS = [
       "E": "$16\\frac{3}{4}$"
     },
     "answer": "A",
-    "analysis": "【题目分析】\nTMUA 2018年 Paper 1 第17题 - 统计学（均值与数据交换）\n\n【已知条件】\n- 第一组数据均值 = 15\n- 第二组数据均值 = 20\n- 交换一组数据中的一个值\n- 交换后：第一组均值变为 16，第二组均值变为 17\n- 求：合并所有数据的均值\n\n【解题步骤】\n步骤1：设未知量\n设第一组有 n 个数据，第二组有 m 个数据\n设从第一组交换出去的值为 a，从第二组交换出去的值为 b\n\n步骤2：建立方程（均值变化）\n第一组均值变化：\n(总和₁ - a + b)/n = 16\n(n×15 - a + b)/n = 16\n15n - a + b = 16n\nb - a = n  ... ①\n\n第二组均值变化：\n(总和₂ - b + a)/m = 17\n(m×20 - b + a)/m = 17\n20m - b + a = 17m\na - b = -3m  ... ②\n\n步骤3：联立求解\n由 ①②：n = 3m\n\n步骤4：计算合并均值\n合并后数据：n + m 个，总和 = 15n + 20m\n均值 = (15n + 20m)/(n + m)\n代入 n = 3m：\n均值 = (15×3m + 20m)/(3m + m) = (45m + 20m)/(4m) = 65m/4m = 65/4 = 16.25\n\n步骤5：表示为分数\n16.25 = 16 + 1/4 = 16 1/4\n\n【验证】\n设 m = 1，则 n = 3\n第一组原有：45，交换后总和 = 45 - a + b = 48\n第二组原有：20，交换后总和 = 20 - b + a = 17\n检验：b - a = 3，a - b = -3 ✓\n\n【正确答案】A",
+    "analysis": "【题目分析】\n本题涉及两组数据的均值变化问题。第一组均值 $15$，第二组均值 $20$，交换两个数据点后，第一组均值升至 $16$，第二组均值降至 $17$。需要求合并全部数据后的总均值。关键在于发现交换前后数据的总和保持不变。\n\n【解题步骤】\n设第一组有 $n$ 个数据，第二组有 $m$ 个数据。\n\n交换前：第一组总和为 $15n$，第二组总和为 $20m$，合计 $15n+20m$。\n\n交换后：第一组总和变为 $16n$，第二组总和变为 $17m$，合计 $16n+17m$。\n\n由于交换只是内部调整，总数据量不变，故总体总和相等：\n$$15n+20m=16n+17m\\implies 3m=n$$\n\n由此知第一组数据个数是第二组的 $3$ 倍。总数据个数为 $n+m=4m$，总和为 $15n+20m=45m+20m=65m$，因此合并均值为：\n$$\\frac{65m}{4m}=\\frac{65}{4}=16\\frac{1}{4}$$\n\n【快捷思路】\n不必单独考虑交换的具体数值。利用交换前后总和不变这一核心事实，直接列出 $15n+20m=16n+17m$，快速得到 $n=3m$，代入均值公式即可。\n【正确答案】A",
     "images": null,
     "has_image": false
   },
@@ -2233,7 +2265,7 @@ window.QUESTIONS = [
     "year": 2018,
     "paper": 1,
     "num": 18,
-    "topic": "Algebra",
+    "topic": "Trigonometry",
     "difficulty": 3,
     "question": "What is the smallest positive value of $a$ for which the line $x = a$ is a line of symmetry of the graph of $y = \\sin (2x - \\frac{4\\pi}{3})$?",
     "options": {
@@ -2244,16 +2276,19 @@ window.QUESTIONS = [
       "E": "$\\frac{19\\pi}{12}$"
     },
     "answer": "B",
-    "analysis": "【题目分析】\nTMUA 2018年 Paper 1 第18题 - 三角函数对称轴\n\n【已知条件】\n- 函数 y = sin(2x - 4π/3)\n- 求 x = a 是对称轴的最小正值 a\n\n【解题步骤】\n步骤1：确定函数基本性质\ny = sin(2x - 4π/3)\n标准形式：y = sin(2(x - 2π/3))\n周期 = π，相位移动 = 2π/3\n\n步骤2：正弦函数的对称轴\nsin(x) 的对称轴在 x = π/2 + kπ（k为整数）\n即 x = (π/2)(2k + 1)，k ∈ Z\n\n步骤3：应用到变换后的函数\n对于 y = sin(2x - 4π/3)：\n对称轴在 2x - 4π/3 = π/2 + kπ\n2x = π/2 + 4π/3 + kπ\n2x = 3π/6 + 8π/6 + 6kπ/6\n2x = (11π + 6kπ)/6\nx = (11π + 6kπ)/12 = π(11 + 6k)/12\n\n步骤4：找出最小正值\nk = 0: x = 11π/12（正值）\nk = -1: x = (11 - 6)π/12 = 5π/12（正值且更小）\nk = -2: x = (11 - 12)π/12 = -π/12（负值，舍去）\n\n最小正值：x = 5π/12\n\n步骤5：验证\n当 x = 5π/12 时：\nsin(2×5π/12 - 4π/3) = sin(5π/6 - 4π/3)\n= sin(5π/6 - 8π/6) = sin(-3π/6) = sin(-π/2) = -1\n\n检查对称性：sin 在对称轴处取极值，验证正确。\n\n【正确答案】B",
+    "analysis": "【题目分析】\n求函数 $y=\\sin\\!\\left(2x-\\frac{4\\pi}{3}\\right)$ 图像的最小正对称轴 $x=a$。正弦函数在取极值 $\\pm 1$ 处取得对称轴。\n\n【解题步骤】\n令 $2x-\\dfrac{4\\pi}{3}=\\dfrac{\\pi}{2}+n\\pi$（$n\\in\\mathbb{Z}$），即 $\\sin\\theta=\\pm 1$ 的位置。\n\n$\\sin\\theta=1$ 时：$2x-\\dfrac{4\\pi}{3}=\\dfrac{\\pi}{2}+2n\\pi$，解得 $x=\\dfrac{11\\pi}{12}+n\\pi$，最小正值 $\\dfrac{11\\pi}{12}$。\n\n$\\sin\\theta=-1$ 时：$2x-\\dfrac{4\\pi}{3}=-\\dfrac{\\pi}{2}+2n\\pi$，解得 $x=\\dfrac{5\\pi}{12}+n\\pi$，最小正值 $\\dfrac{5\\pi}{12}$。\n\n比较得 $\\dfrac{5\\pi}{12}<\\dfrac{11\\pi}{12}$，故最小正对称轴为 $x=\\dfrac{5\\pi}{12}$。\n\n【快捷思路】\n正弦函数对称轴在极值点处，分别解 $\\theta=\\pm\\pi/2$ 对应的 $x$，取最小正值即可。\n【正确答案】B",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Graphs"
+    ]
   },
   {
     "id": "2018-P1-Q19",
     "year": 2018,
     "paper": 1,
     "num": 19,
-    "topic": "Coordinate Geometry",
+    "topic": "Trigonometry",
     "difficulty": 3,
     "question": "A triangle $ABC$ is to be drawn with $AB = 10\\text{cm}$, $BC = 7\\text{cm}$ and the angle at $A$ equal to $\\theta$, where $\\theta$ is a certain specified angle.\n\nOf the two possible triangles that could be drawn, the larger triangle has three times the area of the smaller one.\n\nWhat is the value of $\\cos \\theta$?",
     "options": {
@@ -2265,16 +2300,19 @@ window.QUESTIONS = [
       "F": "$\\frac{\\sqrt{34}}{8}$"
     },
     "answer": "D",
-    "analysis": "【题目分析】\n三角形ABC: AB=10, BC=7, 角A=θ\n两个可能的三角形，大面积=3×小面积\n求cosθ。\n\n【解题步骤】\n设AC=x，由余弦定理：\nBC²=AB²+AC²-2·AB·AC·cosθ\n49=100+x²-20x·cosθ\nx²-20cosθ·x+51=0\n\n两个根x₁,x₂对应两个三角形的AC长度。\n面积S=(1/2)·AB·AC·sinθ=(1/2)·10·x·sinθ=5x·sinθ\n\n面积比：S₁/S₂=x₁/x₂=3（或1/3）\n设x₁=3x₂\n\n由韦达定理：\nx₁+x₂=20cosθ\nx₁·x₂=51\n\n3x₂·x₂=51 → x₂²=17 → x₂=√17, x₁=3√17\n\nx₁+x₂=4√17=20cosθ\ncosθ=4√17/20=√17/5\n\n【正确答案】D",
+    "analysis": "【题目分析】\n已知 $AB=10$，$BC=7$，$\\angle A=\\theta$，存在两个可能三角形（SSA 情形），大三角形面积为小三角形的 $3$ 倍，求 $\\cos\\theta$。\n\n【解题步骤】\n设 $AC=x$，由余弦定理：\n$$x^2-20x\\cos\\theta+51=0$$\n两个根 $x_1,x_2$ 对应两个三角形的 $AC$ 边长。\n\n两三角形同高（从 $B$ 到射线 $AC$），面积比等于底边比：$x_2=3x_1$。\n\n由韦达定理：$x_1+x_2=20\\cos\\theta$，$x_1\\cdot x_2=51$。代入得 $3x_1^2=51\\implies x_1=\\sqrt{17}$，$x_2=3\\sqrt{17}$。\n\n故 $x_1+x_2=4\\sqrt{17}=20\\cos\\theta$，解得 $\\cos\\theta=\\dfrac{\\sqrt{17}}{5}$。\n\n【快捷思路】\n设 $AC$ 为二次方程的根，利用面积比得 $x_2=3x_1$，结合韦达定理一步到位。\n【正确答案】D",
     "images": null,
-    "has_image": false
+    "has_image": false,
+    "related_topics": [
+      "Algebra"
+    ]
   },
   {
     "id": "2018-P1-Q20",
     "year": 2018,
     "paper": 1,
     "num": 20,
-    "topic": "Algebra",
+    "topic": "Trigonometry",
     "difficulty": 3,
     "question": "$$\\sin^2 0^\\circ + \\sin^2 1^\\circ + \\sin^2 2^\\circ + \\sin^2 3^\\circ + \\dots + \\sin^2 87^\\circ + \\sin^2 88^\\circ + \\sin^2 89^\\circ + \\sin^2 90^\\circ$$",
     "options": {
@@ -2286,7 +2324,7 @@ window.QUESTIONS = [
       "F": "46"
     },
     "answer": "E",
-    "analysis": "【题目分析】\nTMUA 2018年 Paper 1 第20题 - 三角函数求和\n\n【计算目标】\nS = sin²0° + sin²1° + sin²2° + ... + sin²90°\n\n【解题步骤】\n步骤1: 利用三角恒等式\nsin²θ = (1 - cos(2θ))/2\n\n步骤2: 分组计算\n原式 = Σ(k=0 to 90) sin²k°\n     = Σ(k=0 to 90) (1 - cos(2k°))/2\n     = (91/2) - (1/2)Σ(k=0 to 90) cos(2k°)\n\n步骤3: 利用对称性\n注意到 sin²θ + sin²(90° - θ) = sin²θ + cos²θ = 1\n\n配对: sin²0° + sin²90° = 0 + 1 = 1\n      sin²1° + sin²89° = 1\n      sin²2° + sin²88° = 1\n      ...\n      sin²44° + sin²46° = 1\n      sin²45° (单独)\n\n步骤4: 计算对数\n从 0° 到 44° 有 45 个角, 与 46° 到 90° 配对\n但 sin²45° 单独, 值为 (√2/2)² = 1/2\n\n配对数: 45 对(含 sin²90° 与 sin²0°)\n但 sin²90° = 1, sin²0° = 0, 它们和为 1\n\n重新计数:\n- sin²0° = 0\n- sin²90° = 1\n- 其他 89 项: sin²1° + sin²89° = 1, ... 共 44.5 对? 不对\n\n正确分组:\nsin²0° + sin²90° = 0 + 1 = 1\nsin²1° + sin²89° = 1\n...\nsin²44° + sin²46° = 1\nsin²45° = 1/2\n\n共 45 对加 sin²45° = 45 + 1/2 = 45.5\n\n步骤5: 验证\n或用公式: Σ(k=0 to n) sin²(kπ/n) = (n+1)/2\n当 n = 90: (91)/2 = 45.5 ✓\n\n【正确答案】E",
+    "analysis": "【题目分析】\n计算 $S=\\sin^2 0^\\circ+\\sin^2 1^\\circ+\\cdots+\\sin^2 90^\\circ$，共 $91$ 项。利用互补角的恒等关系配对求和。\n\n【解题步骤】\n利用 $\\sin^2 x+\\sin^2(90^\\circ-x)=\\sin^2 x+\\cos^2 x=1$。\n\n采用倒序相加法：\n$$2S=\\sum_{k=0}^{90}\\left[\\sin^2 k^\\circ+\\sin^2(90^\\circ-k^\\circ)\\right]=\\sum_{k=0}^{90}1=91$$\n因此 $S=\\dfrac{91}{2}=45.5$。\n\n【快捷思路】\n识别 $\\sin^2\\theta+\\sin^2(90^\\circ-\\theta)=1$ 的配对关系，共 $91$ 项倒序相加得 $2S=91$，无需逐项计算。\n【正确答案】E",
     "images": null,
     "has_image": false
   },

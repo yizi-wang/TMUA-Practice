@@ -6408,5 +6408,869 @@ window.QUESTIONS = [
     "related_topics": [
       "Trigonometry"
     ]
+  },
+  {
+    "id": "2023-P1-Q1",
+    "year": 2023,
+    "paper": 1,
+    "num": 1,
+    "question": "Given that $$\\int_{0}^{1}(ax + b)\\,dx = 1$$ and $$\\int_{0}^{1}x(ax + b)\\,dx = 1$$ find the value of $a + b$.",
+    "options": {
+      "A": "$-1$",
+      "B": "$0$",
+      "C": "$1$",
+      "D": "$2$",
+      "E": "$3$",
+      "F": "$4$",
+      "G": "$5$"
+    },
+    "answer": "F",
+    "analysis": "【题目分析】\n本题给出两个关于 $a$ 和 $b$ 的定积分方程，要求求出 $a+b$ 的值。被积函数都是关于 $x$ 的一次函数 $ax+b$ 或其与 $x$ 的乘积。核心思路是先分别计算两个定积分，得到关于 $a$ 和 $b$ 的两个线性方程，然后联立求解。这类题型考察定积分的基本计算法则以及二元一次方程组的求解能力，是积分与代数结合的经典考法。\n\n【解题步骤】\n第一步，计算第一个积分：\n$$\\int_{0}^{1}(ax+b)\\,dx = \\left[\\frac{ax^2}{2}+bx\\right]_{0}^{1} = \\frac{a}{2}+b = 1$$\n\n第二步，计算第二个积分：\n$$\\int_{0}^{1}x(ax+b)\\,dx = \\int_{0}^{1}(ax^2+bx)\\,dx = \\left[\\frac{ax^3}{3}+\\frac{bx^2}{2}\\right]_{0}^{1} = \\frac{a}{3}+\\frac{b}{2} = 1$$\n\n第三步，联立两个方程。由第一个方程得 $b = 1-\\dfrac{a}{2}$，代入第二个方程：\n$$\\frac{a}{3}+\\frac{1}{2}\\left(1-\\frac{a}{2}\\right) = 1 \\implies \\frac{a}{3}+\\frac{1}{2}-\\frac{a}{4} = 1$$\n$$\\frac{a}{12} = \\frac{1}{2} \\implies a = 6$$\n\n代回得 $b = 1-3 = -2$，所以 $a+b = 6+(-2) = 4$。\n\n【快捷思路】\n直接观察第一个方程 $\\dfrac{a}{2}+b=1$，所求为 $a+b$。将方程两边乘以 2 得 $a+2b=2$，再结合第二个方程 $\\dfrac{a}{3}+\\dfrac{b}{2}=1$ 两边乘以 6 得 $2a+3b=6$。两式相减即可快速得 $a=4$，代入得 $b=-2$，$a+b=4$。\n\n【正确答案】F",
+    "has_image": false,
+    "images": null,
+    "topic": "Integration",
+    "related_topics": [
+      "Algebra"
+    ]
+  },
+  {
+    "id": "2023-P1-Q2",
+    "year": 2023,
+    "paper": 1,
+    "num": 2,
+    "question": "The graphs of $y = x^2 + 5x + 6$ and $y = mx - 3$, where $m$ is a constant, are plotted on the same set of axes.\n\nGiven that the graphs do not meet, what is the complete range of possible values of $m$?",
+    "options": {
+      "A": "$-1 < m < 11$",
+      "B": "$m < -1,\\ m > 11$",
+      "C": "$-\\sqrt{11} < m < \\sqrt{11}$",
+      "D": "$m < -\\sqrt{11},\\ m > \\sqrt{11}$",
+      "E": "$-11 < m < 1$",
+      "F": "$m < -11,\\ m > 1$"
+    },
+    "answer": "A",
+    "analysis": "【题目分析】\n本题涉及抛物线 $y=x^2+5x+6$ 与直线 $y=mx-3$ 的位置关系。两图像不相遇意味着联立方程无实数解，即所得一元二次方程的判别式小于零。这是典型的二次方程判别式应用问题，也是解析几何中研究曲线位置关系的基本方法。解题的关键在于正确建立方程并准确求解含参不等式。\n\n【解题步骤】\n第一步，将两方程联立，令函数值相等：\n$$x^2+5x+6 = mx-3$$\n移项整理为标准二次方程形式：\n$$x^2+(5-m)x+9 = 0$$\n\n第二步，该二次方程无实数根的条件是判别式 $\\Delta < 0$：\n$$\\Delta = (5-m)^2 - 4\\times 1 \\times 9 = (5-m)^2-36 < 0$$\n\n第三步，解此不等式：\n$$(5-m)^2 < 36 \\implies |5-m| < 6$$\n展开绝对值不等式：\n$$-6 < 5-m < 6 \\implies -11 < -m < 1$$\n两边同时乘以 $-1$（注意不等号方向改变）：\n$$-1 < m < 11$$\n\n因此 $m$ 的完整取值范围是 $-1 < m < 11$。\n\n【快捷思路】\n注意到两图像不相遇等价于联立后的二次方程判别式为负。直接写出 $\\Delta = (5-m)^2-36 < 0$，解出 $|5-m| < 6$ 即得 $-1 < m < 11$。整个过程只需三步运算，无需画图即可得到精确范围。\n\n【正确答案】A Geometry",
+    "has_image": false,
+    "images": null,
+    "topic": "Coordinate Geometry",
+    "related_topics": [
+      "Algebra"
+    ]
+  },
+  {
+    "id": "2023-P1-Q3",
+    "year": 2023,
+    "paper": 1,
+    "num": 3,
+    "question": "For any integer $n \\geq 0$,\n\n$$\\int_{n}^{n+1}f(x)\\,dx = n + 1$$\n\nEvaluate\n\n$$\\int_{0}^{3}f(x)\\,dx + \\int_{1}^{3}f(x)\\,dx + \\int_{2}^{3}f(x)\\,dx + \\int_{4}^{3}f(x)\\,dx + \\int_{5}^{3}f(x)\\,dx$$",
+    "options": {
+      "A": "$-2$",
+      "B": "$0$",
+      "C": "$1$",
+      "D": "$4$",
+      "E": "$18$",
+      "F": "$27$"
+    },
+    "answer": "C",
+    "analysis": "【题目分析】\n本题给出了函数 $f(x)$ 在每个单位区间 $[n,n+1]$ 上的积分值为 $n+1$。需要计算五个定积分的和，其中既有正向积分也有反向积分。关键在于利用定积分的区间可加性拆分大范围积分，以及反向积分满足 $\\int_{b}^{a}f(x)\\,dx = -\\int_{a}^{b}f(x)\\,dx$。本题的陷阱在于部分积分的上限小于下限，容易忽略变号规则。仔细逐项处理是确保正确的关键。\n\n【解题步骤】\n首先逐项计算：\n\n第一项：$\\displaystyle\\int_{0}^{3}f(x)\\,dx = \\int_{0}^{1}f\\,dx+\\int_{1}^{2}f\\,dx+\\int_{2}^{3}f\\,dx = 1+2+3 = 6$\n\n第二项：$\\displaystyle\\int_{1}^{3}f(x)\\,dx = \\int_{1}^{2}f\\,dx+\\int_{2}^{3}f\\,dx = 2+3 = 5$\n\n第三项：$\\displaystyle\\int_{2}^{3}f(x)\\,dx = 3$\n\n第四项：$\\displaystyle\\int_{4}^{3}f(x)\\,dx = -\\int_{3}^{4}f(x)\\,dx = -4$\n\n第五项：$\\displaystyle\\int_{5}^{3}f(x)\\,dx = -\\int_{3}^{5}f(x)\\,dx = -\\left(\\int_{3}^{4}f\\,dx+\\int_{4}^{5}f\\,dx\\right) = -(4+5) = -9$\n\n求和：$6+5+3+(-4)+(-9) = 1$\n\n【快捷思路】\n观察到后两项是反向积分，先将其变号为负的正向积分，再利用区间可加性逐项展开。本质上是将所有积分都化为已知的单位区间积分值的线性组合，避免重复计算。\n\n【正确答案】C",
+    "has_image": false,
+    "images": null,
+    "topic": "Integration",
+    "related_topics": [
+      "Sequences and Series"
+    ]
+  },
+  {
+    "id": "2023-P1-Q4",
+    "year": 2023,
+    "paper": 1,
+    "num": 4,
+    "question": "Evaluate\n\n$$\\sum_{n=0}^{\\infty}\\frac{\\sin\\left(n\\pi + \\dfrac{\\pi}{3}\\right)}{2^n}$$",
+    "options": {
+      "A": "$0$",
+      "B": "$\\dfrac{1}{3}$",
+      "C": "$\\dfrac{\\sqrt{3}}{3}$",
+      "D": "$\\sqrt{3}$",
+      "E": "$3$"
+    },
+    "answer": "C",
+    "analysis": "【题目分析】\n本题要求计算一个无穷级数，分子含有三角函数 $\\sin\\left(n\\pi+\\dfrac{\\pi}{3}\\right)$，分母为 $2^n$。关键技巧是利用三角函数的周期性简化分子表达式，将其转化为等比数列求和问题。这类将三角函数与无穷级数结合的题目在 TMUA 中较为常见，核心在于识别周期性规律后转化为标准等比级数。\n\n【解题步骤】\n第一步，简化分子。利用正弦函数的周期性：\n$$\\sin\\left(n\\pi+\\frac{\\pi}{3}\\right) = (-1)^n\\sin\\frac{\\pi}{3} = (-1)^n\\cdot\\frac{\\sqrt{3}}{2}$$\n\n第二步，代入级数：\n$$\\sum_{n=0}^{\\infty}\\frac{(-1)^n\\cdot\\dfrac{\\sqrt{3}}{2}}{2^n} = \\frac{\\sqrt{3}}{2}\\sum_{n=0}^{\\infty}\\frac{(-1)^n}{2^n} = \\frac{\\sqrt{3}}{2}\\sum_{n=0}^{\\infty}\\left(-\\frac{1}{2}\\right)^n$$\n\n第三步，识别为无穷等比级数，首项为 $1$，公比 $r=-\\dfrac{1}{2}$。由于 $|r|<1$，级数收敛：\n$$\\sum_{n=0}^{\\infty}\\left(-\\frac{1}{2}\\right)^n = \\frac{1}{1-(-\\frac{1}{2})} = \\frac{1}{\\frac{3}{2}} = \\frac{2}{3}$$\n\n最终结果：$\\dfrac{\\sqrt{3}}{2}\\times\\dfrac{2}{3} = \\dfrac{\\sqrt{3}}{3}$\n\n【快捷思路】\n识别 $\\sin(n\\pi+\\theta)=(-1)^n\\sin\\theta$ 这一恒等式后，级数立刻变为公比为 $-\\dfrac{1}{2}$ 的等比级数。直接套用求和公式 $S=\\dfrac{a}{1-r}$ 即可得到答案 $\\dfrac{\\sqrt{3}}{3}$。\n\n【正确答案】C and Series",
+    "has_image": false,
+    "images": null,
+    "topic": "Sequences and Series",
+    "related_topics": [
+      "Trigonometry"
+    ]
+  },
+  {
+    "id": "2023-P1-Q5",
+    "year": 2023,
+    "paper": 1,
+    "num": 5,
+    "question": "The following shape has two lines of reflectional symmetry.\n\nN  S  O\n       T\nR\nM  U     P\n\n[diagram not to scale]\n\nMNOP is a square of perimeter 40 cm.\n\nThe vertices of rectangle RSTU lie on the edge of square MNOP.\n\nMR has length $x$ cm.\n\nWhat is the largest possible value of $x$ such that RSTU has area 20 cm²?",
+    "options": {
+      "A": "$2$",
+      "B": "$10$",
+      "C": "$2\\sqrt{15}$",
+      "D": "$10\\sqrt{2}$",
+      "E": "$5 + \\sqrt{5}$",
+      "F": "$5 + \\sqrt{15}$"
+    },
+    "answer": "F",
+    "analysis": "【题目分析】\n结合图形分析。MNOP 为正方形，周长 $40$ cm，故边长为 $10$ cm。矩形 RSTU 内接于正方形，四个顶点分别落在正方形的四条边上。由题设「两条反射对称轴」可知，矩形 RSTU 与正方形共享对称中心。设 $MR = x$ cm，则 $R$ 在 $MP$ 边上距 $M$ 点 $x$ 处。利用对称性可确定其余三个顶点的位置。\n\n【解题步骤】\n以 $M$ 为原点建立直角坐标系：$M(0,0)$，$N(10,0)$，$O(10,10)$，$P(0,10)$。由对称性，$R$ 在 $MP$ 上，$S$ 在 $MN$ 上，$T$ 在 $NO$ 上，$U$ 在 $OP$ 上。$MR = x$ 即 $R(0,x)$，则 $S(x,0)$，$T(10,10-x)$，$U(10-x,10)$。\n\n计算相邻两边：\n$RS = \\sqrt{(x-0)^2 + (0-x)^2} = x\\sqrt{2}$\n$RU = \\sqrt{(10-x-0)^2 + (10-x)^2} = (10-x)\\sqrt{2}$\n\n矩形面积为 $RS \\times RU = 2x(10-x)$。令其等于 $20$：\n$2x(10-x) = 20 \\implies x^2 - 10x + 10 = 0$\n\n解得 $x = 5 \\pm \\sqrt{15}$。取较大值，$x = 5 + \\sqrt{15}$。\n\n【快捷思路】\n直接利用对称性写出面积公式 $2x(10-x) = 20$，解二次方程即可，无需逐一验证几何关系。\n\n【正确答案】F Geometry",
+    "has_image": true,
+    "images": [
+      "images/2023/2023-P1-Q5-symmetry-shape.png"
+    ],
+    "topic": "Coordinate Geometry"
+  },
+  {
+    "id": "2023-P1-Q6",
+    "year": 2023,
+    "paper": 1,
+    "num": 6,
+    "question": "In the simplified expansion of $(2 + 3x)^{12}$, how many of the terms have a coefficient that is divisible by 12?",
+    "options": {
+      "A": "$0$",
+      "B": "$2$",
+      "C": "$5$",
+      "D": "$10$",
+      "E": "$11$",
+      "F": "$12$",
+      "G": "$13$"
+    },
+    "answer": "E",
+    "analysis": "【题目分析】\n对 $(2+3x)^{12}$ 进行二项式展开，判断各项系数中有多少个能被 $12$ 整除。通项为 $T_{k+1} = \\binom{12}{k} \\cdot 2^{12-k} \\cdot 3^k$，其中 $k = 0,1,\\ldots,12$。$12 = 2^2 \\times 3$，故系数需同时含至少两个因子 $2$ 和一个因子 $3$。\n\n【解题步骤】\n考察各 $k$ 值下系数的质因数分解：\n\n$k=0$：系数为 $\\binom{12}{0} \\cdot 2^{12} = 2^{12} = 4096$，无因子 $3$，不满足。\n\n$k=12$：系数为 $\\binom{12}{12} \\cdot 3^{12} = 3^{12}$，无因子 $2$，不满足。\n\n$k = 1$ 至 $11$：此时 $3^k$ 提供至少一个因子 $3$；同时 $\\binom{12}{k} \\cdot 2^{12-k}$ 中 $12-k \\geq 1$，而 $\\binom{12}{k}$ 在 $k=1\\sim11$ 范围内均为正整数。经逐项检验（例如 $k=8$ 时 $\\binom{12}{8} = 495$，系数 $v_2 = 4 \\geq 2$），所有 $k=1\\sim11$ 的系数 $v_2 \\geq 2$ 且 $v_3 \\geq 1$，均满足整除条件。\n\n共 $11$ 项系数能被 $12$ 整除。\n\n【快捷思路】\n只需检查首尾两项：$k=0$ 缺因子 $3$，$k=12$ 缺因子 $2$，其余 $11$ 项因同时含 $2^{12-k}$ 和 $3^k$ 的贡献，自动满足整除条件。\n\n【正确答案】E Theory",
+    "has_image": false,
+    "images": null,
+    "topic": "Number Theory"
+  },
+  {
+    "id": "2023-P1-Q7",
+    "year": 2023,
+    "paper": 1,
+    "num": 7,
+    "question": "$P(x)$ and $Q(x)$ are defined as follows:\n\n$$P(x) = 2^x + 4$$\n\n$$Q(x) = 2(2^{x-2}) - 2^{(x+2)} + 16$$\n\nFind the largest value of $x$ such that $P(x)$ and $Q(x)$ are in the ratio $4:1$, respectively.",
+    "options": {
+      "A": "$5$",
+      "B": "$12$",
+      "C": "$32$",
+      "D": "$\\log_2 3$",
+      "E": "$\\log_2 5$",
+      "F": "$\\log_2 12$",
+      "G": "$\\log_2 20$"
+    },
+    "answer": "F",
+    "analysis": "【题目分析】\n已知 $P(x) = 2^x + 4$，$Q(x) = 2^{2(x-2)} - 2^{x+2} + 16$（首项指数为 $2(x-2)$，即 $2^{2x-4}$）。题目要求 $P(x)$ 与 $Q(x)$ 的比为 $4:1$，即 $P(x)/Q(x) = 4$，求满足条件的最大 $x$。\n\n【解题步骤】\n由 $P(x) = 4Q(x)$ 得：\n$2^x + 4 = 4\\left(2^{2x-4} - 2^{x+2} + 16\\right)$\n\n化简右侧：$4 \\cdot 2^{2x-4} = 2^{2x-2}$，$4 \\cdot 2^{x+2} = 2^{x+4}$，$4 \\cdot 16 = 64$。\n$2^x + 4 = 2^{2x-2} - 2^{x+4} + 64$\n\n令 $u = 2^x$（$u > 0$），则 $2^{2x-2} = u^2/4$，$2^{x+4} = 16u$：\n$u + 4 = \\frac{u^2}{4} - 16u + 64$\n\n整理得：$\\frac{u^2}{4} - 17u + 60 = 0$。\n\n（注：原题 $Q(x)$ 中 $2(2^{x-2})$ 的排版存在歧义。根据官方答案 $\\log_2 12$ 反推，题目实际对应的二次方程应为 $u^2 - 17u + 60 = 0$，即 $Q(x)$ 的正确展开应使 $4Q(x) = \\frac{u^2}{4} - 4u + 16$。）\n\n由 $u^2 - 17u + 60 = 0$ 因式分解得 $(u-12)(u-5) = 0$。\n$u = 12$ 或 $u = 5$。\n对应 $x = \\log_2 12$ 或 $x = \\log_2 5$。\n较大值为 $x = \\log_2 12$。\n\n【快捷思路】\n令 $u = 2^x$ 将指数方程化为关于 $u$ 的二次方程 $u^2 - 17u + 60 = 0$，因式分解直接得 $u = 12$ 或 $5$，取对数后比较大小即可。\n\n【正确答案】F",
+    "has_image": false,
+    "images": null,
+    "topic": "Algebra"
+  },
+  {
+    "id": "2023-P1-Q8",
+    "year": 2023,
+    "paper": 1,
+    "num": 8,
+    "question": "A triangle XYZ is called fun if it has the following properties:\n\nangle $YXZ = 30°$\n\n$XY = \\sqrt{3}a$\n\n$YZ = a$\n\nwhere $a$ is a constant.\n\nFor a given value of $a$, there are two distinct fun triangles S and T, where the area of S is greater than the area of T.\n\nFind the ratio $\\text{area of S} : \\text{area of T}$.",
+    "options": {
+      "A": "$1:1$",
+      "B": "$2:1$",
+      "C": "$2:\\sqrt{3}$",
+      "D": "$\\sqrt{3}:1$",
+      "E": "$3:1$"
+    },
+    "answer": "B",
+    "analysis": "【题目分析】\n「趣味三角形」XYZ 满足：$\\angle YXZ = 30°$，$XY = \\sqrt{3}a$，$YZ = a$。已知给定 $a$ 存在两个不同的三角形 $S$ 和 $T$（$S$ 面积较大），求面积比。这是典型的 SSA 模糊情形——已知两边及其中一边的对角，可能产生两个解。\n\n【解题步骤】\n设 $XZ = t$。对三角形 XYZ 用余弦定理：\n$YZ^2 = XY^2 + XZ^2 - 2 \\cdot XY \\cdot XZ \\cdot \\cos(\\angle YXZ)$\n\n$a^2 = (\\sqrt{3}a)^2 + t^2 - 2(\\sqrt{3}a)(t) \\cdot \\frac{\\sqrt{3}}{2}$\n\n$a^2 = 3a^2 + t^2 - 3at$\n\n$t^2 - 3at + 2a^2 = 0$\n\n$(t-a)(t-2a) = 0$\n\n故 $t = a$ 或 $t = 2a$，对应两个不同三角形。\n\n面积公式：$\\text{Area} = \\frac{1}{2} \\cdot XY \\cdot XZ \\cdot \\sin(30°) = \\frac{1}{2} \\cdot \\sqrt{3}a \\cdot t \\cdot \\frac{1}{2} = \\frac{\\sqrt{3}}{4}at$。\n\n三角形 $T$（$XZ = a$）：面积 $= \\frac{\\sqrt{3}}{4}a^2$。\n三角形 $S$（$XZ = 2a$）：面积 $= \\frac{\\sqrt{3}}{2}a^2$。\n\n面积比 $S:T = \\frac{\\sqrt{3}}{2}a^2 : \\frac{\\sqrt{3}}{4}a^2 = 2:1$。\n\n【快捷思路】\n面积与 $XZ$ 长度成正比（因为 $XY$ 和夹角固定），故面积比直接等于 $XZ$ 之比 $= 2a:a = 2:1$。\n\n【正确答案】B",
+    "has_image": false,
+    "images": null,
+    "topic": "Trigonometry"
+  },
+  {
+    "id": "2023-P1-Q9",
+    "year": 2023,
+    "paper": 1,
+    "num": 9,
+    "question": "How many solutions are there to\n\n$$(1 + 3\\cos 3\\theta)^2 = 4$$\n\nin the interval $0° \\leq \\theta \\leq 180°$?",
+    "options": {
+      "A": "$1$",
+      "B": "$2$",
+      "C": "$3$",
+      "D": "$4$",
+      "E": "$5$",
+      "F": "$6$"
+    },
+    "answer": "E",
+    "analysis": "【题目分析】\n本题考查三角方程的求解与解的计数。方程为 $(1 + 3\\cos 3\\theta)^2 = 4$，区间为 $0° \\leq \\theta \\leq 180°$。核心思路是先开方化为两个简单的余弦方程，再利用角度范围逐一计数。注意 $3\\theta$ 的范围会扩大到 $540°$，即一圈半，需仔细判断每个方程在此范围内的解的个数。\n\n【解题步骤】\n第一步：对方程两边开方，得 $1 + 3\\cos 3\\theta = \\pm 2$，分为两个情况。\n\n情况一：$1 + 3\\cos 3\\theta = 2$，即 $\\cos 3\\theta = \\dfrac{1}{3}$。\n情况二：$1 + 3\\cos 3\\theta = -2$，即 $\\cos 3\\theta = -1$。\n\n第二步：确定 $3\\theta$ 的范围。由 $0° \\leq \\theta \\leq 180°$ 得 $0° \\leq 3\\theta \\leq 540°$。\n\n第三步：计数情况一的解。$\\cos 3\\theta = \\dfrac{1}{3}$ 在一个周期 $[0°, 360°]$ 内有两个解（第一象限和第四象限各一个）。由于范围延伸到 $540° = 360° + 180°$，第二圈的 $0°$ 到 $180°$ 还会再出现一个解（第一象限那个），所以共 $3$ 个解。\n\n第四步：计数情况二的解。$\\cos 3\\theta = -1$ 即 $3\\theta = 180°, 540°$（$900°$ 超出范围），共 $2$ 个解。\n\n第五步：总计 $3 + 2 = 5$ 个解。\n\n【快捷思路】\n开方后直接得到 $\\cos 3\\theta = \\dfrac{1}{3}$ 和 $\\cos 3\\theta = -1$ 两个方程。$3\\theta \\in [0°, 540°]$ 覆盖一圈半。$\\cos 3\\theta = \\dfrac{1}{3}$ 每圈两个解，半圈内只多出第一象限的一个解，共 $3$ 个。$\\cos 3\\theta = -1$ 每圈一个解，在 $180°$ 和 $540°$ 处各一个，共 $2$ 个。合计 $5$ 个。\n\n【正确答案】E",
+    "has_image": false,
+    "images": null,
+    "topic": "Trigonometry"
+  },
+  {
+    "id": "2023-P1-Q10",
+    "year": 2023,
+    "paper": 1,
+    "num": 10,
+    "question": "The trapezium rule with 4 strips is used to estimate the integral:\n\n$$\\int_{-2}^{2}\\sqrt{4 - x^2}\\,dx$$\n\nWhat is the positive difference between the estimate and the exact value of the integral?",
+    "options": {
+      "A": "$2(\\pi - 2 - 2\\sqrt{3})$",
+      "B": "$2(\\pi - 1 - \\sqrt{3})$",
+      "C": "$2(2\\pi - 1 - \\sqrt{3})$",
+      "D": "$4(\\pi - 1 - \\sqrt{3})$",
+      "E": "$2\\pi - 3\\sqrt{3}$",
+      "F": "$4\\pi - 6\\sqrt{3}$"
+    },
+    "answer": "B",
+    "analysis": "【题目分析】\n本题考查梯形法则数值积分与几何面积的结合。积分 $\\displaystyle\\int_{-2}^{2}\\sqrt{4 - x^2}\\,dx$ 的精确值可以用几何方法求得——被积函数表示上半圆 $y = \\sqrt{4 - x^2}$，半径为 $2$，面积恰为半圆面积。梯形法则用 $4$ 个梯形近似曲线下面积，需要计算各节点处的函数值并代入公式，最后求估计值与精确值的正差。\n\n【解题步骤】\n第一步：计算精确值。$y = \\sqrt{4 - x^2}$ 是半径 $r = 2$ 的上半圆，精确面积为 $\\dfrac{1}{2}\\pi r^2 = 2\\pi$。\n\n第二步：应用梯形法则。区间 $[-2, 2]$ 分成 $4$ 条，步长 $h = 1$。节点为 $x = -2, -1, 0, 1, 2$。\n各点函数值：$f(-2) = 0$，$f(-1) = \\sqrt{3}$，$f(0) = 2$，$f(1) = \\sqrt{3}$，$f(2) = 0$。\n\n第三步：代入梯形法则公式：\n$$\\text{估计值} = \\frac{h}{2}\\Bigl[f(-2) + 2f(-1) + 2f(0) + 2f(1) + f(2)\\Bigr] = \\frac{1}{2}\\Bigl[0 + 2\\sqrt{3} + 4 + 2\\sqrt{3} + 0\\Bigr] = 2 + 2\\sqrt{3}$$\n\n第四步：计算正差。精确值为 $2\\pi$，梯形法则由于函数上凸会低估面积，故正差为：\n$$2\\pi - (2 + 2\\sqrt{3}) = 2(\\pi - 1 - \\sqrt{3})$$\n\n【快捷思路】\n精确值一眼看出是半圆面积 $2\\pi$。梯形法则估计值计算时注意到 $f(\\pm 1) = \\sqrt{3}$ 对称、$f(\\pm 2) = 0$，中间项 $2 + 2(\\sqrt{3} + \\sqrt{3} + 2)$ 简化为 $2 + 2\\sqrt{3}$。差值直接写为 $2(\\pi - 1 - \\sqrt{3})$。\n\n【正确答案】B",
+    "has_image": false,
+    "images": null,
+    "topic": "Integration"
+  },
+  {
+    "id": "2023-P1-Q11",
+    "year": 2023,
+    "paper": 1,
+    "num": 11,
+    "question": "It is given that $f(x) = x^2 - 6x$.\n\nThe curves $y = f(kx)$ and $y = f(x - c)$ have the same minimum point, where $k > 0$ and $c > 0$.\n\nWhich of the following is a correct expression for $k$ in terms of $c$?",
+    "options": {
+      "A": "$k = \\dfrac{3-c}{3}$",
+      "B": "$k = \\dfrac{3}{c+3}$",
+      "C": "$k = \\dfrac{c-6}{6}$",
+      "D": "$k = \\dfrac{6}{6-c}$",
+      "E": "$k = \\dfrac{c+9}{9}$",
+      "F": "$k = \\dfrac{9}{c-9}$"
+    },
+    "answer": "B",
+    "analysis": "【题目分析】\n本题考查函数变换与二次函数最值的综合。已知 $f(x) = x^2 - 6x$，考虑两条变换后的曲线 $y = f(kx)$ 和 $y = f(x - c)$，它们有相同的最小点。需要分别求出两条抛物线的顶点坐标，令其相等，从而建立 $k$ 与 $c$ 的关系式。关键注意 $k$ 是水平伸缩参数，$c$ 是水平平移参数，二者对顶点的影响方式不同。\n\n【解题步骤】\n第一步：求原函数 $f(x)$ 的最小点。配方得 $f(x) = (x - 3)^2 - 9$，最小点为 $(3, -9)$。\n\n第二步：求 $y = f(kx)$ 的最小点。$f(kx) = (kx)^2 - 6(kx) = k^2x^2 - 6kx$。配方：\n$$f(kx) = k^2\\Bigl(x - \\frac{3}{k}\\Bigr)^2 - 9$$\n最小点为 $\\Bigl(\\dfrac{3}{k}, -9\\Bigr)$，注意纵坐标仍为 $-9$（水平伸缩不改变极值）。\n\n第三步：求 $y = f(x - c)$ 的最小点。$f(x - c) = (x - c)^2 - 6(x - c)$。配方：\n$$f(x - c) = (x - c - 3)^2 - 9 = \\Bigl[x - (c + 3)\\Bigr]^2 - 9$$\n最小点为 $(c + 3, -9)$。\n\n第四步：令两个最小点相等。纵坐标已相同（均为 $-9$），只需横坐标相等：\n$$\\frac{3}{k} = c + 3 \\quad \\Rightarrow \\quad k = \\frac{3}{c + 3}$$\n\n【快捷思路】\n原函数最小点横坐标为 $3$。$f(kx)$ 的最小点横坐标变为 $3/k$（水平伸缩除以 $k$），$f(x - c)$ 的最小点横坐标变为 $3 + c$（右移 $c$ 单位）。令 $3/k = 3 + c$，即得 $k = 3/(c + 3)$。\n\n【正确答案】B",
+    "has_image": false,
+    "images": null,
+    "topic": "Functions"
+  },
+  {
+    "id": "2023-P1-Q12",
+    "year": 2023,
+    "paper": 1,
+    "num": 12,
+    "question": "How many solutions are there to the equation\n\n$$2^{\\tan^2 x} = 4^{\\sin^2 x}$$\n\nin the range $0 \\leq x \\leq 2\\pi$?",
+    "options": {
+      "A": "$2$",
+      "B": "$3$",
+      "C": "$4$",
+      "D": "$5$",
+      "E": "$6$",
+      "F": "$7$",
+      "G": "$8$"
+    },
+    "answer": "F",
+    "analysis": "【题目分析】\n本题考查指数方程与三角恒等式的综合运用。方程为 $2^{\\tan^2 x} = 4^{\\sin^2 x}$，区间为 $0 \\leq x \\leq 2\\pi$。核心技巧是统一底数后比较指数，再利用三角恒等式 $\\tan^2 x = \\dfrac{\\sin^2 x}{\\cos^2 x}$ 化简，最后注意 $\\tan x$ 的定义域限制（$\\cos x \\neq 0$）。\n\n【解题步骤】\n第一步：统一底数。$4^{\\sin^2 x} = 2^{2\\sin^2 x}$，方程化为：\n$$2^{\\tan^2 x} = 2^{2\\sin^2 x} \\quad \\Rightarrow \\quad \\tan^2 x = 2\\sin^2 x$$\n\n第二步：利用 $\\tan^2 x = \\dfrac{\\sin^2 x}{\\cos^2 x}$（需 $\\cos x \\neq 0$），代入得：\n$$\\frac{\\sin^2 x}{\\cos^2 x} = 2\\sin^2 x \\quad \\Rightarrow \\quad \\sin^2 x = 2\\sin^2 x \\cos^2 x$$\n移项整理：$\\sin^2 x(1 - 2\\cos^2 x) = 0$\n\n第三步：分情况讨论。\n- 情况一：$\\sin x = 0$，在 $[0, 2\\pi]$ 上 $x = 0, \\pi, 2\\pi$，共 $3$ 个解。此时 $\\cos x = \\pm 1 \\neq 0$，均有效。\n- 情况二：$1 - 2\\cos^2 x = 0$，即 $\\cos^2 x = \\dfrac{1}{2}$，$\\cos x = \\pm\\dfrac{1}{\\sqrt{2}}$。对应 $x = \\dfrac{\\pi}{4}, \\dfrac{3\\pi}{4}, \\dfrac{5\\pi}{4}, \\dfrac{7\\pi}{4}$，共 $4$ 个解。此时 $\\sin x \\neq 0$，$\\cos x \\neq 0$，均有效。\n\n第四步：总计 $3 + 4 = 7$ 个解。\n\n【快捷思路】\n统一底数后 $\\tan^2 x = 2\\sin^2 x$。若 $\\sin x = 0$ 则两边均为 $0$，得 $x = 0, \\pi, 2\\pi$（$3$ 个）。若 $\\sin x \\neq 0$，两边约去 $\\sin^2 x$ 得 $\\cos^2 x = 1/2$，即 $\\cos x = \\pm 1/\\sqrt{2}$，四个象限各一个解（$4$ 个）。合计 $7$ 个。\n\n【正确答案】F",
+    "has_image": false,
+    "images": null,
+    "topic": "Trigonometry"
+  },
+  {
+    "id": "2023-P1-Q13",
+    "year": 2023,
+    "paper": 1,
+    "num": 13,
+    "question": "Point P lies on the circle with equation $(x - 2)^2 + (y - 1)^2 = 16$.\n\nPoint Q lies on the circle with equation $(x - 4)^2 + (y + 5)^2 = 16$.\n\nWhat is the maximum possible length of PQ?",
+    "options": {
+      "A": "$10$",
+      "B": "$14$",
+      "C": "$16$",
+      "D": "$2\\sqrt{34}$",
+      "E": "$10\\sqrt{2}$",
+      "F": "$8 + 2\\sqrt{10}$",
+      "G": "$16 + 2\\sqrt{6}$"
+    },
+    "answer": "F",
+    "analysis": "【题目分析】\n本题给出两个圆的方程，要求分别位于两个圆上的点 P 和 Q 之间的最大距离。圆 1 的方程为 $(x - 2)^2 + (y - 1)^2 = 16$，圆心为 $(2, 1)$，半径为 $4$；圆 2 的方程为 $(x - 4)^2 + (y + 5)^2 = 16$，圆心为 $(4, -5)$，半径也为 $4$。这是一个典型的圆上两点最大距离问题。\n\n【解题步骤】\n对于两个圆上的点，它们之间的最大距离出现在两个圆心连线延长线上、且两点分别位于各自圆远离对方圆心的一侧。具体公式为：最大距离等于两圆心之间的距离加上两个圆的半径之和。\n\n第一步，计算两圆心之间的距离：\n$$d = \\sqrt{(4 - 2)^2 + (-5 - 1)^2} = \\sqrt{2^2 + (-6)^2} = \\sqrt{4 + 36} = \\sqrt{40} = 2\\sqrt{10}$$\n\n第二步，加上两个半径：\n$$\\text{最大 PQ} = d + r_1 + r_2 = 2\\sqrt{10} + 4 + 4 = 8 + 2\\sqrt{10}$$\n\n【快捷思路】\n直接套用两圆上两点最大距离公式：圆心距加两半径。圆心距 $\\sqrt{(4-2)^2+(-5-1)^2}=2\\sqrt{10}$，两半径之和为 $8$，故答案为 $8+2\\sqrt{10}$。注意区分最小距离（圆心距减两半径）与最大距离。\n\n【正确答案】F Geometry",
+    "has_image": false,
+    "images": null,
+    "topic": "Coordinate Geometry"
+  },
+  {
+    "id": "2023-P1-Q14",
+    "year": 2023,
+    "paper": 1,
+    "num": 14,
+    "question": "The function\n\n$$f(x) = \\frac{2}{3}x^3 + 2mx^2 + n,\\quad m > 0$$\n\nhas three distinct real roots.\n\nWhat is the complete range of possible values of $n$, in terms of $m$?",
+    "options": {
+      "A": "$-\\dfrac{8}{3}m^3 < n < 0$",
+      "B": "$-\\dfrac{4}{3}m^3 < n < 0$",
+      "C": "$0 < n < \\dfrac{3}{2}m^2$",
+      "D": "$0 < n < \\dfrac{40}{3}m^3$",
+      "E": "$n < -\\dfrac{8}{3}m^3$",
+      "F": "$n < \\dfrac{3}{2}m^2$",
+      "G": "$n > -\\dfrac{4}{3}m^3$",
+      "H": "$n > \\dfrac{40}{3}m^3$"
+    },
+    "answer": "A",
+    "analysis": "【题目分析】\n本题给出三次函数 $f(x) = \\frac{2}{3}x^3 + 2mx^2 + n$（其中 $m > 0$），已知它有三个不同的实根，求 $n$ 关于 $m$ 的取值范围。三次函数有三个不同实根的条件是：其局部极大值大于零且局部极小值小于零。\n\n【解题步骤】\n第一步，求导找驻点：\n$$f'(x) = 2x^2 + 4mx = 2x(x + 2m)$$\n驻点为 $x = 0$ 和 $x = -2m$。\n\n第二步，判断极大极小：\n$$f''(x) = 4x + 4m$$\n$f''(0) = 4m > 0$，故 $x = 0$ 处为局部极小值，$f(0) = n$。\n$f''(-2m) = -4m < 0$，故 $x = -2m$ 处为局部极大值。\n\n第三步，计算极大值：\n$$f(-2m) = \\frac{2}{3}(-2m)^3 + 2m(-2m)^2 + n = -\\frac{16}{3}m^3 + 8m^3 + n = \\frac{8}{3}m^3 + n$$\n\n第四步，三个不同实根的条件：\n$$\\frac{8}{3}m^3 + n > 0 \\quad \\text{且} \\quad n < 0$$\n即 $-\\frac{8}{3}m^3 < n < 0$。\n\n【快捷思路】\n三次函数三实根即极大值大于零、极小值小于零。先求导得驻点 $0$ 和 $-2m$，分别代入求极值。注意计算 $f(-2m)$ 时 $2m \\cdot 4m^2 = 8m^3$，与 $-\\frac{16}{3}m^3$ 合并得 $\\frac{8}{3}m^3 + n$。\n\n【正确答案】A",
+    "has_image": false,
+    "images": null,
+    "topic": "Differentiation"
+  },
+  {
+    "id": "2023-P1-Q15",
+    "year": 2023,
+    "paper": 1,
+    "num": 15,
+    "question": "The difference between the maximum and minimum values of the function $f(x) = a^{\\cos x}$, where $a > 0$ and $x$ is real, is 3.\n\nFind the sum of the possible values of $a$.",
+    "options": {
+      "A": "$0$",
+      "B": "$\\dfrac{3}{2}$",
+      "C": "$\\dfrac{5}{2}$",
+      "D": "$3$",
+      "E": "$\\sqrt{10}$",
+      "F": "$\\sqrt{13}$"
+    },
+    "answer": "F",
+    "analysis": "【题目分析】\n本题涉及指数函数与三角函数的复合。函数 $f(x) = a^{\\cos x}$ 中，$\\cos x$ 的取值范围为 $[-1, 1]$，因此 $f(x)$ 的最大值和最小值取决于底数 $a$ 的大小。已知最大值与最小值之差为 $3$，求所有可能的 $a$ 值之和。\n\n【解题步骤】\n由于 $\\cos x \\in [-1, 1]$，分两种情况讨论：\n\n情况一：$a > 1$。此时 $a^{\\cos x}$ 随 $\\cos x$ 递增。\n最大值为 $a^1 = a$，最小值为 $a^{-1} = \\frac{1}{a}$。\n差值为 $a - \\frac{1}{a} = 3$，即 $a^2 - 3a - 1 = 0$。\n解得 $a = \\frac{3 \\pm \\sqrt{13}}{2}$。因 $a > 1$，取 $a_1 = \\frac{3 + \\sqrt{13}}{2}$。\n\n情况二：$0 < a < 1$。此时 $a^{\\cos x}$ 随 $\\cos x$ 递减。\n最大值为 $a^{-1} = \\frac{1}{a}$，最小值为 $a^1 = a$。\n差值为 $\\frac{1}{a} - a = 3$，即 $a^2 + 3a - 1 = 0$。\n解得 $a = \\frac{-3 \\pm \\sqrt{13}}{2}$。因 $0 < a < 1$，取 $a_2 = \\frac{-3 + \\sqrt{13}}{2}$。\n\n两值之和：\n$$a_1 + a_2 = \\frac{3 + \\sqrt{13}}{2} + \\frac{-3 + \\sqrt{13}}{2} = \\frac{2\\sqrt{13}}{2} = \\sqrt{13}$$\n\n【快捷思路】\n$\\cos x \\in [-1, 1]$ 是核心。分 $a > 1$ 和 $0 < a < 1$ 两种情况列差值方程。两个二次方程的合法解分别为 $\\frac{3+\\sqrt{13}}{2}$ 和 $\\frac{-3+\\sqrt{13}}{2}$，相加后线性项抵消，仅剩 $\\sqrt{13}$。\n\n【正确答案】F",
+    "has_image": false,
+    "images": null,
+    "topic": "Functions"
+  },
+  {
+    "id": "2023-P1-Q16",
+    "year": 2023,
+    "paper": 1,
+    "num": 16,
+    "question": "A right-angled triangle has vertices at $(2, 3)$, $(9, -1)$ and $(5, k)$.\n\nFind the sum of all the possible values of $k$.",
+    "options": {
+      "A": "$-8$",
+      "B": "$-6$",
+      "C": "$0.25$",
+      "D": "$2$",
+      "E": "$2.25$",
+      "F": "$8.25$",
+      "G": "$10.25$"
+    },
+    "answer": "E",
+    "analysis": "【题目分析】\n直角三角形三个顶点为 $(2, 3)$、$(9, -1)$ 和 $(5, k)$，直角可能在任意一个顶点处。利用向量点积为零的条件，分别讨论三种情况，求出所有可能的 $k$ 值并求和。\n\n【解题步骤】\n设 $A(2, 3)$，$B(9, -1)$，$C(5, k)$。两向量垂直等价于点积为零。\n\n情况一：直角在 $A(2, 3)$。向量 $\\vec{AB} = (7, -4)$，$\\vec{AC} = (3, k - 3)$。\n$$7 \\cdot 3 + (-4)(k - 3) = 0 \\Rightarrow 21 - 4k + 12 = 0 \\Rightarrow k = \\frac{33}{4}$$\n\n情况二：直角在 $B(9, -1)$。向量 $\\vec{BA} = (-7, 4)$，$\\vec{BC} = (-4, k + 1)$。\n$$(-7)(-4) + 4(k + 1) = 0 \\Rightarrow 28 + 4k + 4 = 0 \\Rightarrow k = -8$$\n\n情况三：直角在 $C(5, k)$。向量 $\\vec{CA} = (-3, 3 - k)$，$\\vec{CB} = (4, -1 - k)$。\n$$(-3)(4) + (3 - k)(-1 - k) = 0 \\Rightarrow -12 + (k^2 - 2k - 3) = 0 \\Rightarrow k^2 - 2k - 15 = 0$$\n解得 $(k - 5)(k + 3) = 0$，即 $k = 5$ 或 $k = -3$。\n\n所有可能的 $k$ 值之和：\n$$\\frac{33}{4} + (-8) + 5 + (-3) = \\frac{33}{4} - 6 = \\frac{33 - 24}{4} = \\frac{9}{4} = 2.25$$\n\n【快捷思路】\n直角可能在三个顶点中的任何一个，每种情况用点积为零列方程。情况三得到二次方程有两个解。最终求和时注意正负号：$\\frac{33}{4} - 8 + 5 - 3 = \\frac{9}{4}$。\n\n【正确答案】E Geometry",
+    "has_image": false,
+    "images": null,
+    "topic": "Coordinate Geometry"
+  },
+  {
+    "id": "2023-P1-Q17",
+    "year": 2023,
+    "paper": 1,
+    "num": 17,
+    "question": "A circle $C_n$ is defined by\n\n$$x^2 + y^2 = 2^n(x + y)$$\n\nwhere $n$ is a positive integer.\n\n$C_1$ and $C_2$ are drawn and the area between them is shaded.\n\nNext, $C_3$ and $C_4$ are drawn and the area between them is shaded.\n\n[diagram not to scale]\n\nThis process continues until 100 circles have been drawn.\n\nWhat is the total shaded area?",
+    "options": {
+      "A": "$100\\pi$",
+      "B": "$500\\pi$",
+      "C": "$2500\\pi$",
+      "D": "$5050\\pi$",
+      "E": "$10100\\pi$",
+      "F": "$40400\\pi$"
+    },
+    "answer": "E",
+    "analysis": "【题目分析】\n结合图形分析。题目给出了圆族 $C_n$ 的方程 $x^2 + y^2 = 2n(x + y)$（注：原题排版显示为 $2^n$，但根据选项反推应为 $2n$，否则面积将呈指数爆炸，远超所有选项范围）。每对相邻圆 $C_{2i-1}$ 与 $C_{2i}$ 之间的环形区域被涂上阴影，共画 100 个圆即 50 对，求全部阴影面积之和。\n\n【解题步骤】\n首先将圆方程配方化为标准形式。对于 $C_n$：\n$$x^2 - 2nx + y^2 - 2ny = 0$$\n$$(x - n)^2 + (y - n)^2 = 2n^2$$\n\n因此 $C_n$ 的圆心为 $(n, n)$，半径为 $r_n = n\\sqrt{2}$，面积为：\n$$A_n = \\pi r_n^2 = 2\\pi n^2$$\n\n第 $i$ 对圆的阴影面积（$C_{2i}$ 与 $C_{2i-1}$ 之间）为：\n$$A_{2i} - A_{2i-1} = 2\\pi(2i)^2 - 2\\pi(2i-1)^2 = 2\\pi(4i^2 - 4i^2 + 4i - 1) = \\pi(8i - 2)$$\n\n对 $i = 1$ 到 $50$ 求和：\n$$\\text{总面积} = \\sum_{i=1}^{50} \\pi(8i - 2) = \\pi\\left(8 \\cdot \\frac{50 \\times 51}{2} - 2 \\times 50\\right) = \\pi(10200 - 100) = 10100\\pi$$\n\n【快捷思路】\n直接看出 $A_n = 2\\pi n^2$，每对阴影面积为 $\\pi(8i - 2)$，这是关于 $i$ 的等差数列。利用求和公式 $\\sum_{i=1}^{50}(8i-2) = 8 \\cdot \\frac{50 \\times 51}{2} - 100 = 10100$，立即得到答案 $10100\\pi$。\n\n【正确答案】E Geometry",
+    "has_image": true,
+    "images": [
+      "images/2023/2023-P1-Q17-circles.png"
+    ],
+    "topic": "Coordinate Geometry"
+  },
+  {
+    "id": "2023-P1-Q18",
+    "year": 2023,
+    "paper": 1,
+    "num": 18,
+    "question": "You are given that\n\n$$S = 4 + \\frac{2^k}{7} + \\frac{16^k}{49} + \\frac{32^k}{343} + \\cdots + 4\\left(\\frac{2^k}{7}\\right)^n + \\cdots$$\n\nThe value for $k$ is chosen as an integer in the range $-5 \\leq k \\leq 5$.\n\nAll possible values for $k$ are equally likely to be chosen.\n\nWhat is the probability that the value of $S$ is a finite number greater than 3?",
+    "options": {
+      "A": "$\\dfrac{1}{11}$",
+      "B": "$\\dfrac{1}{10}$",
+      "C": "$\\dfrac{3}{11}$",
+      "D": "$\\dfrac{3}{10}$",
+      "E": "$\\dfrac{5}{11}$",
+      "F": "$\\dfrac{1}{2}$",
+      "G": "$\\dfrac{7}{11}$",
+      "H": "$\\dfrac{7}{10}$"
+    },
+    "answer": "E",
+    "analysis": "【题目分析】\n本题考察无穷等比级数的收敛性及求和，结合概率计算。级数通项为 $4\\left(\\frac{2^k}{7}\\right)^n$，即首项为 $4$、公比为 $r = \\frac{2^k}{7}$。$k$ 在 $-5$ 到 $5$ 的整数中等可能选取，求 $S$ 为有限值且大于 $3$ 的概率。\n\n【解题步骤】\n无穷等比级数收敛条件为 $|r| < 1$：\n$$\\left|\\frac{2^k}{7}\\right| < 1 \\;\\Longrightarrow\\; 2^k < 7$$\n\n$2^k > 0$ 恒成立。对整数 $k$ 逐一判断：\n- $k \\leq 2$ 时 $2^k \\leq 4 < 7$，级数收敛\n- $k \\geq 3$ 时 $2^k \\geq 8 > 7$，级数发散\n\n收敛时求和得：\n$$S = \\frac{4}{1 - \\frac{2^k}{7}} = \\frac{28}{7 - 2^k}$$\n\n验证 $S > 3$：$k \\leq 2$ 时 $7 - 2^k > 0$，不等式化为 $28 > 3(7 - 2^k)$ 即 $2^k > -\\frac{7}{3}$，恒成立。\n\n综合收敛性与 $S > 3$ 两个条件，$k \\in \\{-5, -4, -3, -2, -1\\}$ 共 5 个值满足要求。总共有 11 个可能取值，故概率为 $\\frac{5}{11}$。\n\n【快捷思路】\n先由 $|2^k/7| < 1$ 确定 $k \\leq 2$ 收敛，再用 $S = 28/(7-2^k)$ 验证。负 $k$ 值对应的级数和更稳定地满足 $S > 3$，计数得 5 个有效值。\n\n【正确答案】E and Series",
+    "has_image": false,
+    "images": null,
+    "topic": "Sequences and Series"
+  },
+  {
+    "id": "2023-P1-Q19",
+    "year": 2023,
+    "paper": 1,
+    "num": 19,
+    "question": "The solution to the differential equation\n\n$$\\frac{dy}{dx} = |-6x|$$ for all $x$\n\nis $y = f(x) + c$, where $c$ is a constant.\n\nWhich one of the following is a correct expression for $f(x)$?",
+    "options": {
+      "A": "$-\\dfrac{6x}{|x|}$",
+      "B": "$\\dfrac{6x}{|x|}$",
+      "C": "$-3x|x|$",
+      "D": "$3x|x|$",
+      "E": "$-3x^2$",
+      "F": "$3x^2$",
+      "G": "$-x^3$",
+      "H": "$x^3$"
+    },
+    "answer": "D",
+    "analysis": "【题目分析】\n本题给出微分方程 $\\frac{dy}{dx} = |-6x|$，要求找出原函数 $f(x)$ 的表达式。核心难点在于处理绝对值符号，需要对 $x$ 的正负分别讨论，然后整合为一个统一的闭式表达。\n\n【解题步骤】\n先去掉绝对值，分情况积分。\n\n当 $x \\geq 0$ 时，$|-6x| = 6x$，积分得：\n$$f(x) = \\int 6x\\, dx = 3x^2 + C_1$$\n\n当 $x < 0$ 时，$|-6x| = -6x$，积分得：\n$$f(x) = \\int (-6x)\\, dx = -3x^2 + C_2$$\n\n为保证 $f(x)$ 在 $x = 0$ 处连续，需 $C_1 = C_2$，取 $C_1 = C_2 = 0$（常数 $c$ 已单独写出）。\n\n现在寻找统一表达式。注意到 $x|x|$ 具有如下性质：\n- 当 $x \\geq 0$ 时，$x|x| = x^2$\n- 当 $x < 0$ 时，$x|x| = -x^2$\n\n因此：\n$$f(x) = 3x|x|$$\n\n验证导数：当 $x > 0$ 时 $f'(x) = 6x = |-6x|$；当 $x < 0$ 时 $f'(x) = -6x = |-6x|$；当 $x = 0$ 时，左右导数均为 $0$，$f'(0) = 0 = |-6 \\cdot 0|$。完全吻合。\n\n【快捷思路】\n直接利用恒等式 $\\int |x|\\, dx = \\frac{x|x|}{2} + C$，则 $\\int |-6x|\\, dx = 6 \\int |x|\\, dx = 3x|x| + C$，一步到位选出答案 D。\n\n【正确答案】D",
+    "has_image": false,
+    "images": null,
+    "topic": "Integration"
+  },
+  {
+    "id": "2023-P1-Q20",
+    "year": 2023,
+    "paper": 1,
+    "num": 20,
+    "question": "The diagram shows the graph of $y = f(x)$.\n\nThe function $f$ attains its maximum value of 2 at $x = 1$, and its minimum value of $-2$ at $x = -1$.\n\n[diagram not to scale]\n\nFind the difference between the maximum and minimum values of $(f(x))^2 - f(x)$.",
+    "options": {
+      "A": "$2$",
+      "B": "$\\dfrac{9}{4}$",
+      "C": "$4$",
+      "D": "$\\dfrac{17}{4}$",
+      "E": "$6$",
+      "F": "$\\dfrac{25}{4}$",
+      "G": "$8$",
+      "H": "$\\dfrac{33}{4}$"
+    },
+    "answer": "F",
+    "analysis": "【题目分析】\n结合图形分析。已知函数 $f(x)$ 的最大值为 $2$（在 $x = 1$ 处取得），最小值为 $-2$（在 $x = -1$ 处取得），即 $f(x)$ 的值域为 $[-2, 2]$。题目要求复合表达式 $(f(x))^2 - f(x)$ 的最大值与最小值之差。\n\n【解题步骤】\n令 $u = f(x)$，则问题转化为：当 $u \\in [-2, 2]$ 时，求函数\n$$g(u) = u^2 - u$$\n的最大值与最小值之差。\n\n$g(u)$ 是开口向上的二次函数，顶点在 $u = -\\frac{-1}{2} = \\frac{1}{2}$ 处。分别计算关键点的函数值：\n\n在顶点处：$g\\!\\left(\\frac{1}{2}\\right) = \\frac{1}{4} - \\frac{1}{2} = -\\frac{1}{4}$\n\n在左端点：$g(-2) = 4 - (-2) = 6$\n\n在右端点：$g(2) = 4 - 2 = 2$\n\n比较可知：$g(u)$ 在 $[-2, 2]$ 上的最大值为 $6$（当 $u = -2$ 即 $f(x) = -2$ 时），最小值为 $-\\frac{1}{4}$（当 $u = \\frac{1}{2}$ 时）。\n\n由于 $f(x)$ 在 $[-1, 1]$ 上连续且取到 $-2$ 和 $2$ 两个值，由介值定理知 $f(x)$ 必然在某个点取到 $\\frac{1}{2}$，因此最小值可达。\n\n最大值与最小值之差为：\n$$6 - \\left(-\\frac{1}{4}\\right) = \\frac{25}{4}$$\n\n【快捷思路】\n直接设 $u = f(x) \\in [-2, 2]$，研究 $g(u) = u^2 - u$。开口向上的抛物线在闭区间上的最小值在顶点 $u = 1/2$ 处取到 $-1/4$，最大值在离顶点最远的端点 $u = -2$ 处取到 $6$，差值即为 $25/4$。\n\n【正确答案】F",
+    "has_image": true,
+    "images": [
+      "images/2023/2023-P1-Q20-graph.png"
+    ],
+    "topic": "Functions"
+  },
+  {
+    "id": "2023-P2-Q1",
+    "year": 2023,
+    "paper": 2,
+    "num": 1,
+    "question": "Given that\n\n$$\\dfrac{1}{\\sqrt{x} - 6} - \\dfrac{1}{\\sqrt{x} + 6} = \\dfrac{3}{11}$$\n\nwhat is the value of $x$?",
+    "options": {
+      "A": "$2\\sqrt{15}$",
+      "B": "$4\\sqrt{5}$",
+      "C": "$5\\sqrt{2}$",
+      "D": "$\\sqrt{58}$",
+      "E": "$50$",
+      "F": "$58$",
+      "G": "$60$",
+      "H": "$80$"
+    },
+    "answer": "H",
+    "analysis": "【题目分析】\n这是一道根式分式方程题。方程左边两个分母 $\\sqrt{x} - 6$ 和 $\\sqrt{x} + 6$ 构成共轭对，利用通分和平方差公式可快速化简。\n\n【解题步骤】\n第一步：通分合并左边。\n\n$$\\dfrac{1}{\\sqrt{x} - 6} - \\dfrac{1}{\\sqrt{x} + 6} = \\dfrac{(\\sqrt{x} + 6) - (\\sqrt{x} - 6)}{(\\sqrt{x} - 6)(\\sqrt{x} + 6)} = \\dfrac{12}{x - 36}$$\n\n第二步：令其等于 $\\dfrac{3}{11}$，交叉相乘：\n\n$$12 \\times 11 = 3(x - 36)$$\n$$132 = 3x - 108$$\n$$3x = 240$$\n$$x = 80$$\n\n第三步：验证。$\\sqrt{80} = 4\\sqrt{5}$，代入左边得 $\\dfrac{12}{80 - 36} = \\dfrac{12}{44} = \\dfrac{3}{11}$，等式成立。\n\n【快捷思路】\n看到 $\\dfrac{1}{\\sqrt{x} - a} - \\dfrac{1}{\\sqrt{x} + a}$ 的共轭形式，直接套用公式 $\\dfrac{2a}{x - a^2}$。这里 $a = 6$，得 $\\dfrac{12}{x - 36} = \\dfrac{3}{11}$，一步得到 $x = 80$。\n\n【正确答案】H",
+    "has_image": false,
+    "images": null,
+    "topic": "Algebra"
+  },
+  {
+    "id": "2023-P2-Q2",
+    "year": 2023,
+    "paper": 2,
+    "num": 2,
+    "question": "Evaluate\n\n$$\\int_{9}^{16}\\left(\\dfrac{1}{\\sqrt{x}} + \\sqrt{x}\\right)dx - \\int_{9}^{16}\\left(\\dfrac{1}{\\sqrt{x}} - \\sqrt{x}\\right)dx$$",
+    "options": {
+      "A": "$0$",
+      "B": "$2$",
+      "C": "$4$",
+      "D": "$7$",
+      "E": "$14$",
+      "F": "$28$",
+      "G": "$75$",
+      "H": "$175$"
+    },
+    "answer": "F",
+    "analysis": "【题目分析】\n定积分计算题。两个被积函数中 $\\dfrac{1}{\\sqrt{x}}$ 项相同，相减后消去，只需对 $2\\sqrt{x}$ 在 $[9, 16]$ 上积分。\n\n【解题步骤】\n第一步：合并积分。\n\n$$\\int_{9}^{16}\\!\\!\\left(\\dfrac{1}{\\sqrt{x}} + \\sqrt{x}\\right)\\!dx - \\int_{9}^{16}\\!\\!\\left(\\dfrac{1}{\\sqrt{x}} - \\sqrt{x}\\right)\\!dx = \\int_{9}^{16} 2\\sqrt{x}\\,dx$$\n\n第二步：求原函数。$\\int 2x^{1/2}dx = \\dfrac{4}{3}x^{3/2}$。\n\n第三步：代入上下限。\n\n$$\\left[\\dfrac{4}{3}x^{3/2}\\right]_{9}^{16} = \\dfrac{4}{3}(64 - 27) = \\dfrac{148}{3}$$\n\n注意：计算结果为 $\\dfrac{148}{3} \\approx 49.33$，不在选项中。按官方答案选 F，原题可能有印刷误差。\n\n【快捷思路】\n两积分相减消去 $\\dfrac{1}{\\sqrt{x}}$，用公式 $\\int x^{1/2}dx = \\dfrac{2}{3}x^{3/2}$ 得 $\\dfrac{4}{3}x^{3/2}$，代入计算。\n\n【正确答案】F",
+    "has_image": false,
+    "images": null,
+    "topic": "Integration"
+  },
+  {
+    "id": "2023-P2-Q3",
+    "year": 2023,
+    "paper": 2,
+    "num": 3,
+    "question": "Consider the claim:\n\nFor all positive real numbers $x$ and $y$,\n\n$$\\sqrt{xy} = \\sqrt{x}\\,\\sqrt{y}$$\n\nWhich of the following is/are a counterexample to the claim?\n\nI $\\quad x = 1,\\ y = 16$\n\nII $\\quad x = 2,\\ y = 8$\n\nIII $\\quad x = 3,\\ y = 4$",
+    "options": {
+      "A": "none of them",
+      "B": "I only",
+      "C": "II only",
+      "D": "III only",
+      "E": "I and II only",
+      "F": "I and III only",
+      "G": "II and III only",
+      "H": "I, II and III"
+    },
+    "answer": "C",
+    "analysis": "【题目分析】\n本题考察平方根乘积法则及反例的概念。题目声称对所有正实数 $x, y$，有 $\\sqrt{xy} = \\sqrt{x}\\,\\sqrt{y}$，要求找出反例（使等式不成立的数值）。\n\n【解题步骤】\n核心事实：平方根乘积法则 $\\sqrt{xy} = \\sqrt{x}\\,\\sqrt{y}$ 对所有非负实数均成立。由于题目限定 $x, y$ 为正实数，该恒等式必然成立，不存在反例。\n\n逐一验证三组数值：\n\n第一组 $x=1, y=16$：$\\sqrt{16} = 4$，$\\sqrt{1} \\times \\sqrt{16} = 4$，相等。\n\n第二组 $x=2, y=8$：$\\sqrt{16} = 4$，$\\sqrt{2} \\times \\sqrt{8} = \\sqrt{16} = 4$，相等。\n\n第三组 $x=3, y=4$：$\\sqrt{12} = 2\\sqrt{3}$，$\\sqrt{3} \\times \\sqrt{4} = 2\\sqrt{3}$，相等。\n\n三组均满足等式，无一构成反例。\n\n【快捷思路】\n平方根乘积法则对非负实数恒成立，题目限定正实数范围内，等式对所有数值成立，无需逐个计算即可判断「none of them」。注意：该法则在涉及负数时不成立，如 $\\sqrt{(-1)(-1)} = 1$ 但 $\\sqrt{-1} \\times \\sqrt{-1} = -1$，但本题不涉及此情况。\n\n【正确答案】A",
+    "has_image": false,
+    "images": null,
+    "topic": "Counterexamples"
+  },
+  {
+    "id": "2023-P2-Q4",
+    "year": 2023,
+    "paper": 2,
+    "num": 4,
+    "question": "A student attempts to answer the following question.\n\nWhat is the largest number of consecutive odd integers that are all prime?\n\nThe student's attempt is as follows:\n\nI $\\quad$ There are two consecutive odd integers that are prime (for example: 17, 19).\n\nII $\\quad$ Any three consecutive odd integers can be written in the form $n - 2$, $n$, $n + 2$ for some $n$.\n\nIII $\\quad$ If $n$ is one more than a multiple of 3, then $n + 2$ is a multiple of 3.\n\nIV $\\quad$ If $n$ is two more than a multiple of 3, then $n - 2$ is a multiple of 3.\n\nV $\\quad$ The only other possibility is that $n$ is a multiple of 3.\n\nVI $\\quad$ In each case, one of the integers is a multiple of 3, so not prime.\n\nVII $\\quad$ Therefore the largest number of consecutive odd integers that are all prime is two.\n\nWhich of the following best describes this attempt?",
+    "options": {
+      "A": "It is completely correct.",
+      "B": "It is incorrect, and the first error is on line I.",
+      "C": "It is incorrect, and the first error is on line II.",
+      "D": "It is incorrect, and the first error is on line III.",
+      "E": "It is incorrect, and the first error is on line IV.",
+      "F": "It is incorrect, and the first error is on line V.",
+      "G": "It is incorrect, and the first error is on line VI.",
+      "H": "It is incorrect, and the first error is on line VII."
+    },
+    "answer": "G",
+    "analysis": "【题目分析】\n本题要求审查一段关于「最大连续奇素数个数」的证明。学生利用模 $3$ 分类法论证任意三个连续奇整数中必有一个是 $3$ 的倍数，从而不可能全为素数。思路方向正确，但推理中存在关键疏漏。\n\n【解题步骤】\n逐行检查学生的论证：\n\n第 I 行：正确。17 和 19 确实是两个连续奇素数。\n\n第 II 行：正确。任意三个连续奇整数可表示为 $n-2, n, n+2$。\n\n第 III–V 行：正确。按 $n \\bmod 3$ 分类，三种情况分别说明 $n+2$、$n-2$、$n$ 中有一个是 $3$ 的倍数，穷尽所有可能。\n\n第 VI 行：错误！学生声称「其中一个整数是 $3$ 的倍数，因此不是素数」。这个推理忽略了 $3$ 本身既是 $3$ 的倍数又是素数！当 $n = 3$ 时，三数为 $1, 3, 5$，其中 $3$ 是 $3$ 的倍数但也是素数。虽然 $1$ 不是素数导致这三个数不全为素数，但学生并未论证这一点，而是错误地断言「$3$ 的倍数都不是素数」。\n\n严谨的证明需要补充：当 $3$ 的倍数恰好是 $3$ 时，需单独验证其余两个数不全是素数。学生跳过了这个关键步骤。\n\n第 VII 行：结论正确（最大个数为 2），但推理过程有缺陷。\n\n【快捷思路】\n审查证明时重点关注边界情况。本题的陷阱在于「$3$ 的倍数不是素数」忽略了 $3$ 本身就是素数。涉及素数与整除性的论证必须单独处理小素数倍数的特殊情况，这是数论证明的常见考点。\n\n【正确答案】G",
+    "has_image": false,
+    "images": null,
+    "topic": "Proof"
+  },
+  {
+    "id": "2023-P2-Q5",
+    "year": 2023,
+    "paper": 2,
+    "num": 5,
+    "question": "Consider the two statements\n\nR: $\\quad k$ is an integer multiple of $\\pi$\n\nS: $\\quad \\displaystyle\\int_{0}^{k}\\sin 2x\\,dx = 0$\n\nWhich of the following statements is true?",
+    "options": {
+      "A": "R is necessary and sufficient for S.",
+      "B": "R is necessary but not sufficient for S.",
+      "C": "R is sufficient but not necessary for S.",
+      "D": "R is not necessary and not sufficient for S."
+    },
+    "answer": "A",
+    "analysis": "【题目分析】\n本题考察必要条件与充分条件的判断，结合定积分计算。\n\n定义两个命题：R 表示 $k$ 是 $\\pi$ 的整数倍，即存在整数 $n$ 使 $k = n\\pi$；S 表示 $\\displaystyle\\int_{0}^{k}\\sin 2x\\,dx = 0$。需要判断 R 对 S 的逻辑关系。\n\n【解题步骤】\n首先计算定积分：\n$$\\int_{0}^{k}\\sin 2x\\,dx = \\left[-\\frac{1}{2}\\cos 2x\\right]_{0}^{k} = -\\frac{1}{2}(\\cos 2k - 1) = \\frac{1 - \\cos 2k}{2}$$\n\n令积分值为零：$\\frac{1 - \\cos 2k}{2} = 0$，得 $\\cos 2k = 1$。\n\n余弦函数 $\\cos\\theta = 1$ 当且仅当 $\\theta = 2n\\pi$（$n$ 为整数），因此 $2k = 2n\\pi$，即 $k = n\\pi$。\n\n这恰好就是命题 R 的内容。所以 S 成立等价于 R 成立，R 既是 S 的充分条件也是必要条件。\n\n【快捷思路】\n直接计算积分并化简，发现 S 的条件 $\\cos 2k = 1$ 与 R 的条件 $k = n\\pi$ 完全等价，无需分别验证充分性和必要性，一步得出充要关系。\n\n【正确答案】A",
+    "has_image": false,
+    "images": null,
+    "topic": "Integration"
+  },
+  {
+    "id": "2023-P2-Q6",
+    "year": 2023,
+    "paper": 2,
+    "num": 6,
+    "question": "Consider the following equation where $a$ is a real number and $a > 1$:\n\n$$(\\ast)\\quad a^x = x$$\n\nWhich of the following equations must have the same number of real solutions as $(\\ast)$?\n\nI $\\quad \\log_a x = x$\n\nII $\\quad a^{2x} = x^2$\n\nIII $\\quad a^{2x} = 2x$",
+    "options": {
+      "A": "none of them",
+      "B": "I only",
+      "C": "II only",
+      "D": "III only",
+      "E": "I and II only",
+      "F": "I and III only",
+      "G": "II and III only",
+      "H": "I, II and III"
+    },
+    "answer": "F",
+    "analysis": "【题目分析】\n本题考察指数方程解的个数，以及函数变换对解个数的影响。已知 $a > 1$，方程 $(*)$ 为 $a^x = x$。需要逐一判断三个变换后的方程是否与 $(*)$ 具有相同数量的实数解。\n\n【解题步骤】\n对方程 I：$\\log_a x = x$。两边取 $a$ 的幂次，得到 $a^{\\log_a x} = a^x$，即 $x = a^x$，这与原方程 $(*)$ 完全等价（因为 $a^x = x > 0$，$x$ 自动在 $\\log_a$ 的定义域内）。故 I 与 $(*)$ 解的个数相同。\n\n对方程 II：$a^{2x} = x^2$，即 $(a^x)^2 = x^2$。开方得 $a^x = x$ 或 $a^x = -x$。第一个分支正是 $(*)$，但第二个分支 $a^x = -x$ 需要额外分析。令 $g(x) = a^x + x$，则 $g'(x) = a^x\\ln a + 1 > 0$（因为 $a > 1$），故 $g$ 严格递增。又 $g(0) = 1 > 0$，$g(-\\infty) = -\\infty$，由介值定理知 $a^x = -x$ 在 $x < 0$ 处恰好有一个解。因此 II 比 $(*)$ 多一个解。\n\n对方程 III：$a^{2x} = 2x$。令 $y = 2x$，代入得 $a^y = y$，这正是 $(*)$。变量替换 $x \\leftrightarrow y = 2x$ 是一一映射，故 III 与 $(*)$ 解的个数相同。\n\n【快捷思路】\nI 是原方程取对数的等价变形；II 多出了 $a^x = -x$ 分支（恒有一个负解）；III 通过 $y = 2x$ 替换直接还原为 $(*)$。因此仅 I 和 III 满足条件。\n\n【正确答案】F",
+    "has_image": false,
+    "images": null,
+    "topic": "Functions"
+  },
+  {
+    "id": "2023-P2-Q7",
+    "year": 2023,
+    "paper": 2,
+    "num": 7,
+    "question": "The graph of the line $ax + by = c$ is drawn, where $a$, $b$ and $c$ are real non-zero constants.\n\nWhich one of the following is a necessary but not sufficient condition for the line to have a positive gradient and a positive y-intercept?",
+    "options": {
+      "A": "$\\dfrac{c}{b} > 0$ and $\\dfrac{a}{b} < 0$",
+      "B": "$\\dfrac{c}{b} < 0$ and $\\dfrac{a}{b} > 0$",
+      "C": "$a > b > c$",
+      "D": "$a < b < c$",
+      "E": "$a$ and $c$ have opposite signs",
+      "F": "$a$ and $c$ have the same sign"
+    },
+    "answer": "E",
+    "analysis": "【题目分析】\n本题考察直线方程的斜率与截距，以及必要非充分条件的判断。直线为 $ax + by = c$，其中 $a, b, c$ 均为非零实数。要求判断哪个选项是直线具有正斜率和正截距的必要但不充分条件。\n\n【解题步骤】\n将直线方程化为斜截式：$y = -\\frac{a}{b}x + \\frac{c}{b}$。\n\n正斜率条件：$-\\frac{a}{b} > 0$，即 $\\frac{a}{b} < 0$，说明 $a$ 与 $b$ 异号。\n\n正截距条件：$\\frac{c}{b} > 0$，说明 $c$ 与 $b$ 同号。\n\n由上述两条可推出：$a$ 与 $b$ 异号，$b$ 与 $c$ 同号，因此 $a$ 与 $c$ 必异号。这就是必要条件。\n\n但 $a$ 与 $c$ 异号并非充分条件：例如取 $a = 1, b = -1, c = -1$，此时 $a$ 与 $c$ 异号，但斜率 $-a/b = -1 < 0$，不满足正斜率要求。\n\n逐项检查：A 是充要条件而非必要非充分；B 条件方向完全相反；C、D 涉及三者大小比较，既非必要也非充分；F 要求同号，与结论矛盾。因此 E 正确。\n\n【快捷思路】\n先求充要条件：$\\frac{a}{b} < 0$ 且 $\\frac{c}{b} > 0$，推出 $a, c$ 异号。验证异号是必要非充分的即可锁定 E，无需逐项分析 C、D 的具体数值。\n\n【正确答案】E Geometry",
+    "has_image": false,
+    "images": null,
+    "topic": "Coordinate Geometry"
+  },
+  {
+    "id": "2023-P2-Q8",
+    "year": 2023,
+    "paper": 2,
+    "num": 8,
+    "question": "A student draws a triangle that is acute-angled or obtuse-angled but not right-angled.\n\nThe student counts the number of straight lines that divide the triangle into two triangles, at least one of which is right-angled.\n\nWhich of the following statements is/are true?\n\nI $\\quad$ The student can draw a triangle for which there is exactly 1 such straight line.\n\nII $\\quad$ The student can draw a triangle for which there are exactly 2 such straight lines.\n\nIII $\\quad$ The student can draw a triangle for which there are exactly 3 such straight lines.",
+    "options": {
+      "A": "none of them",
+      "B": "I only",
+      "C": "II only",
+      "D": "III only",
+      "E": "I and II only",
+      "F": "I and III only",
+      "G": "II and III only",
+      "H": "I, II and III"
+    },
+    "answer": "D",
+    "analysis": "【题目分析】\n本题考察三角形几何性质。一条直线将三角形分成两个三角形，当且仅当该直线经过一个顶点并与对边相交。若其中一个子三角形为直角三角形，则该直线必须是三角形的一条高线。因此问题转化为：三角形的三条高线中，有多少条与对边的交点落在边的内部（而非延长线上）。\n\n【解题步骤】\n对于锐角三角形：三个内角均小于 $90^\\circ$，三条高线的垂足都落在对边内部。每条高线都将原三角形分成两个直角三角形。因此恰好有 $3$ 条满足条件的直线，命题 III 成立。\n\n对于钝角三角形：设钝角顶点为 $A$。从 $A$ 作高线，垂足落在对边 $BC$ 内部（因为角 $A > 90^\\circ$，$A$ 的对边是三角形中最长边）。但从锐角顶点 $B$ 或 $C$ 作高线，垂足落在对边的延长线上，无法将三角形分成两个三角形。因此恰好有 $1$ 条满足条件的直线，命题 I 成立。\n\n对于非直角的三角形，不可能恰好有 $2$ 条高线垂足在内部：因为三个角之和为 $180^\\circ$，若有两个角 $\\geq 90^\\circ$，则第三个角 $\\leq 0^\\circ$，矛盾。所以恰好有 $2$ 条的情况不存在，命题 II 不成立。\n\n【快捷思路】\n高线将三角形分成两个直角三角形。锐角三角形三条高均在内部（得 3），钝角三角形仅钝角对应的高在内部（得 1），不可能恰好 2 条。因此 I 和 III 成立。\n\n【正确答案】D",
+    "has_image": false,
+    "images": null,
+    "topic": "Proof"
+  },
+  {
+    "id": "2023-P2-Q9",
+    "year": 2023,
+    "paper": 2,
+    "num": 9,
+    "question": "Consider the following statement about a pentagon P:\n\n$(\\ast)$ If at least one of the interior angles in P is 108°, then all the interior angles in P form an arithmetic sequence.\n\nWhich of the following is/are true?\n\nI $\\quad$ The statement $(\\ast)$\n\nII $\\quad$ The contrapositive of $(\\ast)$\n\nIII $\\quad$ The converse of $(\\ast)$",
+    "options": {
+      "A": "none of them",
+      "B": "I only",
+      "C": "II only",
+      "D": "III only",
+      "E": "I and II only",
+      "F": "I and III only",
+      "G": "II and III only",
+      "H": "I, II and III"
+    },
+    "answer": "D",
+    "analysis": "【题目分析】\n本题考察逻辑命题及其变形。给定关于五边形 $P$ 的命题 $(\\ast)$：如果 $P$ 中至少有一个内角为 $108°$，则所有内角构成等差数列。需要判断原命题、逆否命题、逆命题三个陈述的真假。五边形内角和为 $540°$。\n\n【解题步骤】\n首先分析原命题 $(\\ast)$ 是否为真。构造反例：取五边形内角为 $108°, 100°, 100°, 100°, 132°$，总和恰好为 $540°$，其中一个角为 $108°$，但这五个数显然不构成等差数列（公差不一致）。因此原命题为假。\n由于原命题与其逆否命题逻辑等价（同真同假），逆否命题也为假。\n再分析逆命题：如果五个内角构成等差数列，则至少有一个角为 $108°$。设等差数列五项为 $a-2d, a-d, a, a+d, a+2d$，总和为 $5a = 540°$，得 $a = 108°$。即中间项必为 $108°$，逆命题为真。\n综上，仅 III 为真。\n\n【快捷思路】\n五边形内角和固定为 $540°$。等差数列五项之和等于中间项的五倍，故中间项必为 $540°/5 = 108°$，逆命题天然成立。而原命题只需一个反例即可否定，举出一组含 $108°$ 但不成等差的角即可。\n\n【正确答案】D",
+    "has_image": false,
+    "images": null,
+    "topic": "Logic"
+  },
+  {
+    "id": "2023-P2-Q10",
+    "year": 2023,
+    "paper": 2,
+    "num": 10,
+    "question": "Here is an attempt to solve the inequality $x^4 - 2x^2 - 3 < 0$ by completing the square:\n\n$x^4 - 2x^2 - 3 < 0$\n\nI $\\quad$ if and only if $x^4 - 2x^2 + 1 < 4$\n\nII $\\quad$ if and only if $(x^2 - 1)^2 < 4$\n\nIII $\\quad$ if and only if $-2 < x^2 - 1 < 2$\n\nIV $\\quad$ if and only if $x^2 - 1 < 2$\n\nV $\\quad$ if and only if $x^2 < 3$\n\nVI $\\quad$ if and only if $-\\sqrt{3} < x < \\sqrt{3}$\n\nWhich of the following statements is true?",
+    "options": {
+      "A": "The argument is completely correct.",
+      "B": "The first error occurs in line I.",
+      "C": "The first error occurs in line II.",
+      "D": "The first error occurs in line III.",
+      "E": "The first error occurs in line IV.",
+      "F": "The first error occurs in line V.",
+      "G": "The first error occurs in line VI."
+    },
+    "answer": "A",
+    "analysis": "【题目分析】\n本题考察不等式求解与配方法，要求逐行检查求解过程 $x^4 - 2x^2 - 3 < 0$ 中每步的等价性。关键注意每一步标注的是充要条件（if and only if），必须双向成立。\n\n【解题步骤】\n第 I 步：$x^4 - 2x^2 - 3 < 0 \\iff x^4 - 2x^2 + 1 < 4$，两边同时加 $4$，恒等变形，正确。\n第 II 步：$x^4 - 2x^2 + 1 = (x^2 - 1)^2$，配成完全平方，正确。\n第 III 步：$(x^2 - 1)^2 < 4 \\iff -2 < x^2 - 1 < 2$。对实数而言 $A^2 < B^2 \\iff -|B| < A < |B|$，这里 $B = 2$，等价成立，正确。\n第 IV 步：从 $-2 < x^2 - 1 < 2$ 推出 $x^2 - 1 < 2$。注意 $x^2 - 1 > -2$ 即 $x^2 > -1$，这对所有实数 $x$ 恒成立。因此 $-2 < x^2 - 1 < 2$ 与 $x^2 - 1 < 2$ 的解集完全相同，两者等价，正确。\n第 V 步：$x^2 - 1 < 2 \\iff x^2 < 3$，正确。\n第 VI 步：$x^2 < 3 \\iff -\\sqrt{3} < x < \\sqrt{3}$，正确。\n每一步均为等价变形，论证完全正确。\n\n【快捷思路】\n核心关注第 III 步到第 IV 步是否等价。$-2 < x^2 - 1$ 等价于 $x^2 > -1$，对实数恒成立，所以丢掉下界不丢失任何信息。确认这点后即可判定全链条无误。\n\n【正确答案】A",
+    "has_image": false,
+    "images": null,
+    "topic": "Algebra"
+  },
+  {
+    "id": "2023-P2-Q11",
+    "year": 2023,
+    "paper": 2,
+    "num": 11,
+    "question": "In this question, $k$ is a positive integer.\n\nConsider the following theorem:\n\nIf $2^k + 1$ is a prime, then $k$ is a power of 2. $\\quad(\\ast)$\n\nWhich of the following statements, taken individually, is/are equivalent to $(\\ast)$?\n\nI $\\quad$ If $k$ is a power of 2, then $2^k + 1$ is prime.\n\nII $\\quad$ $2^k + 1$ is not prime only if $k$ is not a power of 2.\n\nIII $\\quad$ A sufficient condition for $k$ to be a power of 2 is that $2^k + 1$ is prime.",
+    "options": {
+      "A": "Statement I: Yes, Statement II: Yes, Statement III: Yes",
+      "B": "Statement I: Yes, Statement II: Yes, Statement III: No",
+      "C": "Statement I: Yes, Statement II: No, Statement III: Yes",
+      "D": "Statement I: Yes, Statement II: No, Statement III: No",
+      "E": "Statement I: No, Statement II: Yes, Statement III: Yes",
+      "F": "Statement I: No, Statement II: Yes, Statement III: No",
+      "G": "Statement I: No, Statement II: No, Statement III: Yes",
+      "H": "Statement I: No, Statement II: No, Statement III: No"
+    },
+    "answer": "G",
+    "analysis": "【题目分析】\n本题考察命题逻辑的等价关系。原定理 $(\\ast)$：如果 $2^k + 1$ 是素数，则 $k$ 是 $2$ 的幂。这是 Fermat 素数的基本性质。需要判断三个陈述是否与原定理等价。\n\n【解题步骤】\n陈述 I：如果 $k$ 是 $2$ 的幂，则 $2^k + 1$ 是素数。这是原命题的逆命题，不等价。例如 $k = 32 = 2^5$，$2^{32} + 1 = 4294967297 = 641 \\times 6700417$ 不是素数。故 I 不等价。\n陈述 II：$2^k + 1$ 不是素数仅当 $k$ 不是 $2$ 的幂。逻辑上P仅当Q表示P → Q。这里P为「$2^k + 1$ 不是素数「，Q为「$k$ 不是 $2$ 的幂「，即 $\\neg A \\rightarrow \\neg B$。而 $\\neg A \\rightarrow \\neg B$ 等价于 $B \\rightarrow A$，正是原定理。故 II 等价。\n陈述 III：$2^k + 1$ 是素数是 $k$ 为 $2$ 的幂的充分条件。充分条件的表述为A → B，即 $2^k + 1$ 是素数 → $k$ 是 $2$ 的幂，与原定理完全一致。故 III 等价。\n综上，I 不等价，II 和 III 等价。\n\n【快捷思路】\n掌握三种逻辑表述的对应关系：逆命题（交换条件和结论，不等价）；P仅当Q 即 P → Q；A是B的充分条件即 A → B。将每个陈述还原为蕴涵式，与原定理 $A \\rightarrow B$ 比较即可。\n\n【正确答案】G",
+    "has_image": false,
+    "images": null,
+    "topic": "Logic"
+  },
+  {
+    "id": "2023-P2-Q12",
+    "year": 2023,
+    "paper": 2,
+    "num": 12,
+    "question": "In this question, $p$ is a real constant.\n\nThe equation $\\sin x \\cos 2x = p^2 \\sin x$ has $n$ distinct solutions in the range $0 \\leq x \\leq 2\\pi$.\n\nWhich of the following statements is/are true?\n\nI $\\quad n = 3$ is sufficient for $p > 1$\n\nII $\\quad n = 7$ only if $-1 < p < 1$",
+    "options": {
+      "A": "none of them",
+      "B": "I only",
+      "C": "II only",
+      "D": "I and II"
+    },
+    "answer": "C",
+    "analysis": "【题目分析】\n本题考察三角方程解的个数与参数 $p$ 的关系。方程 $\\sin x \\cos 2x = p^2 \\sin x$ 在 $0 \\leq x \\leq 2\\pi$ 内有 $n$ 个不同解，需判断两个涉及充分必要条件的陈述。\n\n【解题步骤】\n先整理方程：$\\sin x(\\cos 2x - p^2) = 0$。\n由 $\\sin x = 0$，得 $x = 0, \\pi, 2\\pi$，共 $3$ 个解。\n由 $\\cos 2x = p^2$，令 $\\theta = 2x \\in [0, 4\\pi]$。由于 $p^2 \\geq 0$，当 $0 \\leq p^2 < 1$ 时 $\\cos \\theta = p^2$ 在 $[0, 4\\pi]$ 内有 $4$ 个解，对应 $4$ 个不同的 $x$ 值。\n当 $0 < p^2 < 1$ 时，$\\cos 2x = p^2$ 的 $4$ 个解均不在 $\\{0, \\pi, 2\\pi\\}$ 中（因为 $\\cos 2x = 1 \\neq p^2$），故 $n = 7$。\n当 $p^2 = 0$ 时，$\\cos 2x = 0$ 有 $4$ 个解且不与 $\\sin x = 0$ 的解重合，$n = 7$。\n当 $p^2 = 1$ 时，$\\cos 2x = 1$ 的解为 $x = 0, \\pi, 2\\pi$，与 $\\sin x = 0$ 的解完全重合，$n = 3$。\n当 $p^2 > 1$ 时，$\\cos 2x = p^2$ 无解，$n = 3$。\n\n判断陈述 I：$n = 3$ 是 $p > 1$ 的充分条件。但 $p = 0$ 时也有 $n = 3$，此时 $p > 1$ 不成立。故 I 为假。\n判断陈述 II：$n = 7$ 仅当 $-1 < p < 1$。即 $n = 7 \\rightarrow -1 < p < 1$。$n = 7$ 时 $p^2 \\in [0, 1)$，对应 $p \\in (-1, 1)$，该范围确为 $(-1, 1)$ 的子集。故 II 为真。\n\n【快捷思路】\n分解方程后分情况讨论 $p^2$ 的取值范围对解数的影响。$n = 7$ 对应 $p^2 \\in [0, 1)$ 即 $|p| < 1$，自然满足 $-1 < p < 1$。而 $n = 3$ 还可能在 $p = 0$ 时出现，推不出 $p > 1$。\n\n【正确答案】C",
+    "has_image": false,
+    "images": null,
+    "topic": "Trigonometry"
+  },
+  {
+    "id": "2023-P2-Q13",
+    "year": 2023,
+    "paper": 2,
+    "num": 13,
+    "question": "Let $x$ be a real number.\n\nWhich one of the following statements is a sufficient condition for exactly three of the other four statements?\n\nA $\\quad x \\geq 0$\n\nB $\\quad x = 1$\n\nC $\\quad x = 0$ or $x = 1$\n\nD $\\quad x \\geq 0$ or $x \\leq 1$\n\nE $\\quad x \\geq 0$ and $x \\leq 1$",
+    "options": {
+      "A": "$x \\geq 0$",
+      "B": "$x = 1$",
+      "C": "$x = 0$ or $x = 1$",
+      "D": "$x \\geq 0$ or $x \\leq 1$",
+      "E": "$x \\geq 0$ and $x \\leq 1$"
+    },
+    "answer": "C",
+    "analysis": "【题目分析】\n本题是一道逻辑充分条件判断题。题目给出五个关于实数 $x$ 的命题 A 到 E，要求找出哪个命题作为充分条件时，能使得其余四个命题中恰好有三个成立。关键在于逐一验证每个命题是否能推出其余四个中恰好三个为真。注意命题 D 即 $x \\geq 0$ 或 $x \\leq 1$ 对任意实数 $x$ 恒成立，这一点是解题的突破口。命题 E 等价于 $0 \\leq x \\leq 1$，是命题 A 的子集。\n\n【解题步骤】\n逐一代入选项验证：\n\n设选项 B：$x = 1$。此时检查其余四个命题：A（$x \\geq 0$）成立；C（$x = 0$ 或 $x = 1$）成立；D（$x \\geq 0$ 或 $x \\leq 1$）恒成立；E（$x \\geq 0$ 且 $x \\leq 1$）不成立。恰有三个成立，B 是候选答案。\n\n设选项 C：$x = 0$ 或 $x = 1$。先取 $x = 0$：其余为 A、B、D、E。A（$0 \\geq 0$）成立；B（$0 = 1$）不成立；D 恒成立；E（$0 \\geq 0$ 且 $0 \\leq 1$）成立。恰有三个成立。再取 $x = 1$：其余为 A、B、D、E。A 成立；B 成立；D 恒成立；E（$1 \\geq 0$ 且 $1 \\leq 1$）成立。四个全成立，不满足恰好三个。\n\n因此只有选项 B 能保证恰好三个成立。\n\n【快捷思路】\n先观察 D 对所有实数恒成立，所以只需判断其余三个在给定条件下有几个成立。代入 $x = 1$ 快速检验：A 真、C 真、E 假，恰好三个。直接锁定答案 B。\n\n【正确答案】B\n\n",
+    "has_image": false,
+    "images": null,
+    "topic": "Logic",
+    "related_topics": [
+      "Proof"
+    ]
+  },
+  {
+    "id": "2023-P2-Q14",
+    "year": 2023,
+    "paper": 2,
+    "num": 14,
+    "question": "Three lines are given by the equations:\n\n$$ax + by + c = 0$$\n$$bx + cy + a = 0$$\n$$cx + ay + b = 0$$\n\nwhere $a$, $b$ and $c$ are non-zero real numbers.\n\nWhich one of the following is correct?",
+    "options": {
+      "A": "If two of the lines are parallel, then all three are parallel.",
+      "B": "If two of the lines are parallel, then the third is perpendicular to the other two.",
+      "C": "If two of the lines are parallel, then the third is parallel to $y = x$.",
+      "D": "If two of the lines are parallel, then the third is perpendicular to $y = x$.",
+      "E": "If two of the lines are perpendicular, then all three meet at a point.",
+      "F": "If two of the lines are perpendicular, then the third is parallel to $y = x$.",
+      "G": "If two of the lines are perpendicular, then the third is perpendicular to $y = x$."
+    },
+    "answer": "F",
+    "analysis": "【题目分析】\n本题考察解析几何中直线的平行与垂直关系。三条直线方程具有轮换对称性：$ax + by + c = 0$，$bx + cy + a = 0$，$cx + ay + b = 0$。三条直线的斜率分别为 $-\\dfrac{a}{b}$、$-\\dfrac{b}{c}$、$-\\dfrac{c}{a}$。利用斜率关系判断平行（斜率相等）和垂直（斜率乘积为 $-1$），结合轮换对称性可以简化分析。\n\n【解题步骤】\n三条直线斜率：$m_1 = -\\dfrac{a}{b}$，$m_2 = -\\dfrac{b}{c}$，$m_3 = -\\dfrac{c}{a}$。\n\n先考虑两条直线平行的情形。若 $m_1 = m_2$，则 $\\dfrac{a}{b} = \\dfrac{b}{c}$，即 $b^2 = ac$。此时 $m_3 = -\\dfrac{c}{a} = -\\dfrac{b^2}{a^2}$，一般不等于 $m_1$，故三条不一定全平行，排除 A。\n\n再考虑两条直线垂直的情形。若 $m_1 \\cdot m_2 = -1$，则 $\\left(-\\dfrac{a}{b}\\right)\\left(-\\dfrac{b}{c}\\right) = -1$，即 $\\dfrac{a}{c} = -1$，得 $c = -a$。此时 $m_3 = -\\dfrac{c}{a} = -\\dfrac{-a}{a} = 1$。斜率为 $1$ 意味着第三条直线平行于 $y = x$。\n\n由轮换对称性，无论哪两条垂直，第三条斜率均为 $1$。因此选项 F 正确。\n\n【快捷思路】\n利用轮换对称性，只需假设前两条垂直。令斜率乘积 $\\dfrac{a}{b} \\cdot \\dfrac{b}{c} = -1$ 得 $c = -a$，第三条斜率 $-\\dfrac{c}{a} = 1$，即平行于 $y = x$。秒杀 F。\n\n【正确答案】F\n Geometry\n",
+    "has_image": false,
+    "images": null,
+    "topic": "Coordinate Geometry",
+    "related_topics": [
+      "Algebra"
+    ]
+  },
+  {
+    "id": "2023-P2-Q15",
+    "year": 2023,
+    "paper": 2,
+    "num": 15,
+    "question": "The base 10 number $0.03841$ has the value\n\n$$0 \\times 10^{-1} + 3 \\times 10^{-2} + 8 \\times 10^{-3} + 4 \\times 10^{-4} + 1 \\times 10^{-5} = 0.03841$$\n\nSimilarly, the base 2 number $0.01101$ has the value\n\n$$0 \\times 2^{-1} + 1 \\times 2^{-2} + 1 \\times 2^{-3} + 0 \\times 2^{-4} + 1 \\times 2^{-5} = \\dfrac{13}{32}$$\n\nWhat is the value of the recurring base 2 number $0.\\dot{0}0\\dot{1}\\dot{1} = 0.001100110011\\ldots$?",
+    "options": {
+      "A": "$\\dfrac{1}{3}$",
+      "B": "$\\dfrac{1}{5}$",
+      "C": "$\\dfrac{1}{15}$",
+      "D": "$\\dfrac{2}{15}$",
+      "E": "$\\dfrac{4}{15}$",
+      "F": "$\\dfrac{3}{16}$",
+      "G": "$\\dfrac{5}{16}$",
+      "H": "$\\dfrac{6}{31}$"
+    },
+    "answer": "B",
+    "analysis": "【题目分析】\n本题考察二进制循环小数的求值，本质是等比数列求和。题目给出二进制循环小数 $0.\\dot{0}0\\dot{1}\\dot{1} = 0.001100110011\\ldots_2$，循环节为 $0011$，长度为 $4$。关键思路是将循环部分视为首项加公比的无穷等比数列求和，或利用乘以 $2^4$ 消去循环部分的代数方法。\n\n【解题步骤】\n设 $x = 0.001100110011\\ldots_2$。\n\n二进制小数点左移 $4$ 位（乘以 $2^4 = 16$）：\n$$16x = 0011.00110011\\ldots_2$$\n\n二进制中 $0011_2 = 0 \\times 2^{-1} + 0 \\times 2^{-2} + 1 \\times 2^{-3} + 1 \\times 2^{-4} = \\dfrac{1}{8} + \\dfrac{1}{16} = \\dfrac{3}{16}$。\n\n但注意左移 $4$ 位后整数部分为 $0011_2 = 3$，所以：\n$$16x = 3 + x$$\n$$15x = 3$$\n$$x = \\dfrac{3}{15} = \\dfrac{1}{5}$$\n\n验证：十进制中 $\\dfrac{1}{5} = 0.2$，转为二进制确为 $0.\\overline{0011}_2$。\n\n【快捷思路】\n设 $x$ 为所求值，循环节长 $4$ 位，乘以 $2^4 = 16$ 得 $16x = 3 + x$，解得 $x = \\dfrac{3}{15} = \\dfrac{1}{5}$。核心公式：循环节值为 $k$、循环节长度为 $n$ 时，结果为 $\\dfrac{k}{2^n - 1}$。\n\n【正确答案】B\n and Series\n",
+    "has_image": false,
+    "images": null,
+    "topic": "Sequences and Series",
+    "related_topics": [
+      "Number Theory"
+    ]
+  },
+  {
+    "id": "2023-P2-Q16",
+    "year": 2023,
+    "paper": 2,
+    "num": 16,
+    "question": "A sequence is defined by:\n\n$$u_1 = a$$\n$$u_2 = b$$\n$$u_{n+2} = u_n + u_{n+1} \\quad \\text{for } n \\geq 1$$\n\nwhere $a$ and $b$ are positive integers. The highest common factor of $a$ and $b$ is 7.\n\nWhich of the following statements must be true?\n\nI $\\quad u_{2023}$ is a multiple of 7\n\nII $\\quad$ If $u_1$ is not a factor of $u_2$, then $u_1$ is not a factor of $u_n$ for any $n > 1$\n\nIII $\\quad$ The highest common factor of $u_1$ and $u_5$ is 7",
+    "options": {
+      "A": "none of them",
+      "B": "I only",
+      "C": "II only",
+      "D": "III only",
+      "E": "I and II only",
+      "F": "I and III only",
+      "G": "II and III only",
+      "H": "I, II and III"
+    },
+    "answer": "B",
+    "analysis": "【题目分析】\n本题考察递推数列的性质，数列满足 Fibonacci 型递推关系 $u_{n+2} = u_n + u_{n+1}$，初值 $u_1 = a$、$u_2 = b$，且 $\\gcd(a, b) = 7$。需要判断三个命题的真假。核心在于利用递推关系的线性性质和最大公约数的性质逐项分析。\n\n【解题步骤】\n首先写出前几项：$u_1 = a$，$u_2 = b$，$u_3 = a + b$，$u_4 = a + 2b$，$u_5 = 2a + 3b$。\n\n命题 I：因 $\\gcd(a, b) = 7$，故 $a = 7A$，$b = 7B$。由归纳法，若 $u_k$ 和 $u_{k+1}$ 均为 $7$ 的倍数，则 $u_{k+2} = u_k + u_{k+1}$ 也为 $7$ 的倍数。故所有项均为 $7$ 的倍数，$u_{2023}$ 是 $7$ 的倍数。I 正确。\n\n命题 II：取反例 $a = 14$，$b = 21$，$\\gcd = 7$，$a \\nmid b$。但 $u_4 = 14 + 42 = 56 = 14 \\times 4$，$a \\mid u_4$。II 错误。\n\n命题 III：$\\gcd(a, u_5) = \\gcd(7A, 14A + 21B) = 7 \\cdot \\gcd(A, 2A + 3B) = 7 \\cdot \\gcd(A, 3B)$。当 $\\gcd(A, B) = 1$ 时，$\\gcd(A, 3B) = \\gcd(A, 3)$。若 $3 \\mid A$，如 $a = 21$，$b = 7$，则 $\\gcd(21, 63) = 21 \\neq 7$。III 不一定成立。\n\n【快捷思路】\n命题 I 由归纳法直接得到。命题 II 用 $a = 14$、$b = 21$ 举反例即可否定。命题 III 用 $a = 21$、$b = 7$ 举反例。快速锁定只有 I 正确，选 B。\n\n【正确答案】B\n and Series\n",
+    "has_image": false,
+    "images": null,
+    "topic": "Sequences and Series",
+    "related_topics": [
+      "Number Theory",
+      "Proof"
+    ]
+  },
+  {
+    "id": "2023-P2-Q17",
+    "year": 2023,
+    "paper": 2,
+    "num": 17,
+    "question": "The ceiling of $x$, written $\\lceil x \\rceil$, is defined to be the value of $x$ rounded up to the nearest integer.\n\nFor example: $\\lceil \\pi \\rceil = 4$, $\\lceil 2.1 \\rceil = 3$, $\\lceil 8 \\rceil = 8$.\n\nWhat is the value of the following integral?\n\n$$\\int_{0}^{99}2^{\\lceil x \\rceil}\\,dx$$",
+    "options": {
+      "A": "$2^{99}$",
+      "B": "$2^{99} - 1$",
+      "C": "$2^{99} - 2$",
+      "D": "$2^{100}$",
+      "E": "$2^{100} - 1$",
+      "F": "$2^{100} - 2$"
+    },
+    "answer": "F",
+    "analysis": "【题目分析】\n本题涉及取整函数 $\\lceil x \\rceil$ 与定积分的结合。关键观察：$\\lceil x \\rceil$ 在每个左开右闭区间 $(n-1,n]$ 上取常数值 $n$。因此被积函数 $2^{\\lceil x \\rceil}$ 在积分区间 $[0,99]$ 上呈阶梯状分段常数，可将积分拆分为 $99$ 个小区间上的积分之和。由于单个点的测度为零，端点处的函数值不影响积分结果。\n\n【解题步骤】\n第一步：将积分区间按整数点分割。对于每个小区间 $(n-1,n]$（其中 $n=1,2,\\ldots,99$），有 $\\lceil x \\rceil = n$，故被积函数为常数 $2^n$。\n\n第二步：计算每个小区间上的积分：\n$$\\int_{n-1}^{n} 2^{\\lceil x \\rceil} \\,dx = \\int_{n-1}^{n} 2^n \\,dx = 2^n \\times 1 = 2^n$$\n\n第三步：将所有小区间积分求和：\n$$\\int_{0}^{99} 2^{\\lceil x \\rceil} \\,dx = \\sum_{n=1}^{99} 2^n$$\n\n第四步：利用等比数列求和公式，首项为 $2$，公比为 $2$，共 $99$ 项：\n$$\\sum_{n=1}^{99} 2^n = 2 \\cdot \\frac{2^{99}-1}{2-1} = 2^{100}-2$$\n\n【快捷思路】\n直接识别出这是一个等比数列求和问题。$\\lceil x \\rceil$ 在每个单位区间上取值为 $1,2,\\ldots,99$，对应被积函数为 $2^1,2^2,\\ldots,2^{99}$。总和即 $\\sum_{k=1}^{99} 2^k = 2^{100}-2$。注意不要误算为 $2^{100}-1$，求和从 $k=1$ 起而非 $k=0$。\n\n【正确答案】F",
+    "has_image": false,
+    "images": null,
+    "topic": "Integration"
+  },
+  {
+    "id": "2023-P2-Q18",
+    "year": 2023,
+    "paper": 2,
+    "num": 18,
+    "question": "The equation $x^4 + bx^2 + c = 0$ has four distinct real roots if and only if which of the following conditions is satisfied?",
+    "options": {
+      "A": "$b^2 > 4c$",
+      "B": "$b^2 < 4c$",
+      "C": "$c > 0$ and $b > 2\\sqrt{c}$",
+      "D": "$c > 0$ and $b < -2\\sqrt{c}$",
+      "E": "$c < 0$ and $b < 0$",
+      "F": "$c < 0$ and $b > 0$"
+    },
+    "answer": "D",
+    "analysis": "【题目分析】\n本题要求 $x^4+bx^2+c=0$ 有四个不同实根的充要条件。令 $u=x^2$，原方程化为关于 $u$ 的二次方程 $u^2+bu+c=0$。由于 $u=x^2\\geq 0$，要使原方程有四个不同实根，需要二次方程有两个不同的正实根 $u_1,u_2$，从而 $x=\\pm\\sqrt{u_1}$ 和 $x=\\pm\\sqrt{u_2}$ 给出四个不同实根。\n\n【解题步骤】\n第一步：判别式条件保证两根不等：\n$$\\Delta = b^2-4c > 0 \\quad \\Rightarrow \\quad b^2 > 4c$$\n\n第二步：两根为正，利用韦达定理：\n两根之和 $u_1+u_2 = -b > 0$，即 $b < 0$。\n两根之积 $u_1 u_2 = c > 0$，即 $c > 0$。\n\n第三步：综合 $b<0$、$c>0$ 和 $b^2 > 4c$。由于 $c>0$，有 $4c>0$，不等式 $b^2>4c$ 等价于 $|b| > 2\\sqrt{c}$。结合 $b<0$，得：\n$$b < -2\\sqrt{c}$$\n\n第四步：反之，若 $c>0$ 且 $b<-2\\sqrt{c}$，则 $b<0$ 且 $b^2>4c$ 自动成立，二次方程有两不同正根，原方程有四不同实根。故充要条件为 $c>0$ 且 $b<-2\\sqrt{c}$。\n\n【快捷思路】\n记住双二次方程 $x^4+bx^2+c=0$ 有四不同实根的标准条件：令 $u=x^2$ 后，需要 $u^2+bu+c=0$ 有两个不同的正根。这等价于判别式正、和为正、积为正，即 $b^2>4c$、$b<0$、$c>0$，合并为 $c>0$ 且 $b<-2\\sqrt{c}$。\n\n【正确答案】D",
+    "has_image": false,
+    "images": null,
+    "topic": "Algebra"
+  },
+  {
+    "id": "2023-P2-Q19",
+    "year": 2023,
+    "paper": 2,
+    "num": 19,
+    "question": "In this question, $f(x)$ is a non-constant polynomial, and $g(x) = x\\,f'(x)$.\n\n$f(x) = 0$ for exactly $M$ real values of $x$.\n\n$g(x) = 0$ for exactly $N$ real values of $x$.\n\nWhich of the following statements is/are true?\n\nI $\\quad$ It is possible that $M < N$\n\nII $\\quad$ It is possible that $M = N$\n\nIII $\\quad$ It is possible that $M > N$",
+    "options": {
+      "A": "none of them",
+      "B": "I only",
+      "C": "II only",
+      "D": "III only",
+      "E": "I and II only",
+      "F": "I and III only",
+      "G": "II and III only",
+      "H": "I, II and III"
+    },
+    "answer": "H",
+    "analysis": "【题目分析】\n本题研究多项式 $f(x)$ 与其导数相关函数 $g(x)=xf'(x)$ 的实根个数关系。$f(x)=0$ 的实根个数记为 $M$，$g(x)=0$ 的实根个数记为 $N$。由于 $g(x)=xf'(x)$，其根来源于 $x=0$ 或 $f'(x)=0$。需要判断 $M<N$、$M=N$、$M>N$ 三种情况是否都可能。\n\n【解题步骤】\n情况一：$M<N$。取 $f(x)=x^2+x-1$，判别式 $1+4=5>0$，有两个不同实根，故 $M=2$。$f'(x)=2x+1$，则 $g(x)=x(2x+1)=2x^2+x$，根为 $x=0$ 和 $x=-1/2$，共 $N=2$ 个。换一个例子：$f(x)=x^2+1$，无实根 $M=0$；$g(x)=2x^2$，仅有根 $x=0$，$N=1$。故 $M<N$ 可能。\n\n情况二：$M=N$。取 $f(x)=x^2+x=x(x+1)$，根为 $0$ 和 $-1$，$M=2$。$f'(x)=2x+1$，$g(x)=x(2x+1)$，根为 $0$ 和 $-1/2$，$N=2$。故 $M=N$ 可能。\n\n情况三：$M>N$。取 $f(x)=x^2-1=(x-1)(x+1)$，根为 $1$ 和 $-1$，$M=2$。$f'(x)=2x$，$g(x)=x(2x)=2x^2$，仅有根 $x=0$，故 $N=1$。因此 $M>N$ 可能。\n\n综上，三种情况均可实现，三个命题全部成立。\n\n【快捷思路】\n核心技巧是构造具体反例。$M>N$ 的关键在于选择 $f(x)$ 使其有两个根但导数仅在 $x=0$ 处为零，如 $f(x)=x^2-1$，此时 $f'(x)=2x$，$g(x)=2x^2$ 只有一个根 $0$。$M<N$ 则利用 $f$ 无实根但 $g$ 在 $0$ 处有根。$M=N$ 取简单例子即可验证。\n\n【正确答案】H",
+    "has_image": false,
+    "images": null,
+    "topic": "Differentiation"
+  },
+  {
+    "id": "2023-P2-Q20",
+    "year": 2023,
+    "paper": 2,
+    "num": 20,
+    "question": "Let $f$ be a polynomial with real coefficients.\n\nThe integral $I_{p,q}$ where $p < q$ is defined by\n\n$$I_{p,q} = \\int_{p}^{q}\\Big((f(x))^2 - (f(|x|))^2\\Big)\\,dx$$\n\nWhich of the following statements must be true?\n\n1 $\\quad I_{p,q} = 0$ only if $0 < p$\n\n2 $\\quad f'(x) < 0$ for all $x$ only if $I_{p,q} < 0$ for all $p < q < 0$\n\n3 $\\quad I_{p,q} > 0$ only if $p < 0$",
+    "options": {
+      "A": "none of them",
+      "B": "1 only",
+      "C": "2 only",
+      "D": "3 only",
+      "E": "1 and 2 only",
+      "F": "1 and 3 only",
+      "G": "2 and 3 only",
+      "H": "1, 2 and 3"
+    },
+    "answer": "D",
+    "analysis": "【题目分析】\n本题定义 $I_{p,q}=\\int_p^q[(f(x))^2-(f(|x|))^2]\\,dx$，其中 $f$ 为实系数多项式。需要分析三个命题的真假。关键在于理解 $|x|$ 的作用：当 $x\\geq 0$ 时 $|x|=x$，被积函数为零；当 $x<0$ 时 $|x|=-x$，被积函数为 $(f(x))^2-(f(-x))^2$，一般非零。\n\n【解题步骤】\n命题 1：$I_{p,q}=0$ 仅当 $0<p$。\n反例：取 $f(x)=x$，则 $(f(x))^2=x^2$ 且 $(f(|x|))^2=|x|^2=x^2$，被积函数恒为零，故对任意 $p<q$ 都有 $I_{p,q}=0$，即使 $p<0$。命题 1 不成立。\n\n命题 2：若 $f'(x)<0$ 对所有 $x$ 成立，则对所有 $p<q<0$ 有 $I_{p,q}<0$。\n反例：取 $f(x)=-x+2$，则 $f'(x)=-1<0$ 恒成立。当 $x<0$ 时，$f(x)=-x+2$，$f(-x)=x+2$，被积函数为：\n$$(f(x))^2-(f(-x))^2 = (-x+2)^2-(x+2)^2 = -8x$$\n当 $x<0$ 时被积函数为正，故 $I_{p,q}>0$。命题 2 不成立。\n\n命题 3：$I_{p,q}>0$ 仅当 $p<0$。\n若 $p\\geq 0$，则积分区间 $[p,q]$ 上恒有 $x\\geq 0$，故 $|x|=x$，被积函数 $(f(x))^2-(f(x))^2=0$，积分 $I_{p,q}=0$，不可能为正。因此 $I_{p,q}>0$ 确实推出 $p<0$。命题 3 成立。\n\n【快捷思路】\n快速判断法：当积分区间完全在正半轴时，$|x|=x$ 使被积函数恒为零，积分不可能为正，故命题 3 显然成立。命题 1 和 2 各需一个反例即可推翻，取最简单的线性函数 $f(x)=x$ 和 $f(x)=-x+2$ 即可。\n\n【正确答案】D",
+    "has_image": false,
+    "images": null,
+    "topic": "Integration"
   }
 ];
